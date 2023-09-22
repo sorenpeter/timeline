@@ -4,15 +4,15 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title><?=$title?> - Timeline</title>
 </head>
 <body >
 
 <!-- PHP: GET HEADER  --><?php include 'partials/header.php';?>
 
-
-    <strong>Following: <?php echo count($twtFollowingList); ?> feeds</strong>
+<center>
+    <h1>Following: <?php echo count($twtFollowingList); ?> feeds</h1>
 
     <table>
         <tr><th></th><th>Nick</th><th>URL</th></tr>
@@ -28,5 +28,10 @@
     </tr>
     <?php } ?>
     </table>
+
+</center>
+
+<!-- PHP: GET FOOTER  --><?php include 'partials/footer.php';?>
+
 </body>
 </html>

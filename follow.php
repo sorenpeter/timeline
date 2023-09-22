@@ -10,7 +10,7 @@ if ($config['debug_mode']) {
 
 $txt_file_path = $config['txt_file_path'];
 
-require_once('session.php');
+require_once('base.php');
 
 /*
 if (!has_valid_session()) {

@@ -18,7 +18,7 @@
     if( isset($_SESSION['password'])) {
         if($_SESSION['password']=="$password")
         {
-        header("Location: /");
+        header("Location: .");
         die();
  ?>
         <h1>You are loggged in now</h1>

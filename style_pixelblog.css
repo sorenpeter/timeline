@@ -1,0 +1,559 @@
+/* == Variables == */
+
+:root {
+    --roundness: 0.25rem;
+    --pod-color: #222; 
+    /*--pod-muted: #3623BD;*/
+    /*--bg-body: #fff;*/
+    /*--bg-post: #F7F7F7;*/
+    /*--bg-code: #eee;*/
+    /*--code-color: #D22F27;*/
+    /*--text-color: #444;*/
+    /*--text-small: #aaa;*/
+    /*--icon-color: #888;*/
+    --link-color: blue; 
+    --link-visited: purple;
+    --link-active: red; 
+    /*--link-nav: #222;*/
+    /*--input-box: #fff;*/
+    --input-border: #ccc;
+    --button-text: #fff;
+    --border-color: #ccc;
+    --warning: #941100;
+}
+
+/* == Meta Classes ======================================== */
+
+    .left {
+        float: left;
+        /*text-align: left;*/
+    }
+    .center {
+        float: center;
+        text-align: center;
+    }
+    .right {
+        float: right;
+        /*text-align: right;*/
+    }
+
+    .avoidwrap {
+        display:inline-block;
+    }
+
+    .fullwidth {
+        display: block;
+    }
+
+/* Minimal grid system with auto-layout columns (from pico.css) */
+ 
+/* .grid {
+   grid-column-gap: 1rem;
+   grid-row-gap: 1rem;
+   display: grid;
+   grid-template-columns: 1fr;
+   margin: 0; }
+
+   @media (min-width: 992px) {
+     .grid {
+       grid-template-columns: repeat(auto-fit, minmax(0%, 1fr)); } }
+   .grid > * {
+     min-width: 0; }*/
+
+/* == Typography ============================ */
+
+    body {
+        color: var(--text-color);
+        margin: 0 auto;
+        max-width: 85ch;
+        padding: 0.5rem 0;
+        background-color: var(--bg-body);
+        font-weight: 400;
+        padding: 0.5rem;
+    }
+    body, input {
+        font-family: system-ui, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; /* To use the system default font. */
+        line-height: 1.4;
+    }
+
+    /* Links */
+
+    a {
+        color: var(--link-color);
+        /*text-decoration: none;*/
+    }
+    a:visited {
+        color: var(--primary);
+        /*color: var(--link-visited);*/
+        /*text-decoration: none;*/
+    }
+
+/* == Icons ======================== */
+
+    .ti {
+        color: var(--icon-color);
+        padding-right: 0.25rem;
+    }
+
+/* == Header / Navigation ======================= */
+
+    .edit {
+        background-color: yellow;
+        display: flex;        
+        justify-content: space-between;
+    }
+
+    header {
+        display: block;
+        /*margin-top: 0.5rem;*/
+        margin-bottom: 2rem;
+    }
+
+    header a,
+    header a:visited {
+        color: var(--pod-color);
+    }
+
+    header nav {
+        margin-bottom: 0.75rem;        
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+    }
+    nav ul li {
+        display: inline-block;
+        margin: 0 0.2rem;
+        padding: 0 0.2rem;
+    }
+
+    nav a, nav a:visited {
+        color: var(--link-nav);
+        /*text-decoration: none;*/
+    }
+
+/* == Forms (from https://adi.tilde.institute/default.css/) ==================== */
+
+    form {
+        align-content: center;
+        display: flex;
+    }
+
+    label {
+        display: block;
+        font-size: small;
+    }
+
+    input, textarea, select {
+        box-sizing: border-box;
+        display: inline-block;
+/*        margin: .5ex 0 1ex 0;*/
+/*        padding: 1ex .5em;*/
+/*        padding: 0.25rem;*/
+        border: thin solid var(--input-border);
+        border-radius: var(--roundness);
+        /*width: 100%;*/
+        font-size: 1em;
+        background-color: var(--input-box);
+        color: var(--text-color);
+    }
+
+    input[type="text"], 
+    input[type="file"] {
+        flex-grow: 1;
+        margin-right: 0.5rem;
+    }
+
+    input[type=checkbox], input[type=radio] {
+        display: inline;
+        width: auto;
+    }
+
+    textarea {
+        font-family: inherit;
+        width: 100%;
+        background-color: var(--input-box);
+    }
+
+    input[type="submit"],
+    a.button, button {
+        background-color: var(--pod-color);
+        border-radius: var(--roundness);
+        border: thin solid var(--pod-color);
+        color: var(--button-text);
+        display: block;
+/*        margin-top: -1rem;*/
+        font-size: 1em;
+        padding: 1ex 1rem;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    button.primary {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    fieldset {
+        border: thin solid var(--border-color);
+        border-radius: var(--roundness);
+        margin: 0.5rem 0;
+        padding: 0.5rem 0.75rem;
+    }
+
+
+    hr {
+        background: var(--border-color);
+        border: 0;
+        height: 1px;
+        width: 100%;
+    }
+
+    .avatar img {
+      width: 3rem;
+      height: 3rem;
+      object-fit: cover;
+      border-radius: var(--roundness);
+    }
+
+/* == Timeline styline ========================== */
+
+    /* Post with outline */
+    article.h-entry {
+        margin: 1rem 0;
+        padding: 0.5rem;
+        background-color: var(--bg-post);
+        border-radius: var(--roundness);
+        /*border: solid thin var(--border-color);*/
+    }
+
+    .u-author {
+      display: flex;
+      flex-direction: row;
+      /*align-items: center;*/
+    }
+
+    article .p-name {
+      display: block;
+      left: 0px !important;
+      /*font-weight: 400;*/
+      /*font-size: 34px;*/
+      font-size: 1.2rem;
+      /*color: #1095c1;*/
+      padding-bottom: 0.2rem;
+    }
+
+    a.p-name, a.p-name:visited {
+        font-weight: 600;    
+        color: var(--link-nav);
+    }
+
+    article .p-org,
+    article .p-summary a em,
+    article .p-summary p a em {
+      font-style: normal;
+      left: 0px !important;
+      font-weight: 400;
+      color: var(--text-small);
+      white-space: nowrap;
+    }
+
+    .p-summary {
+        /*padding: 0.5rem;*/
+    }
+
+    .author a {
+        text-decoration: none;
+    }
+
+
+    .author nav ul li {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+/* == Profile ===================== */
+
+/*    .profileCard {
+        margin: 1rem 0;
+        padding: 0.5rem;
+        background-color: var(--bg-post);
+        border-radius: var(--roundness);
+        border: solid thin var(--border-color);
+    }
+
+    .profileCard .grid {
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 1rem;
+    }
+
+    .profileCard img {
+        height: 4.5rem;
+        width: 4.5rem;
+        margin-right: 0.5rem;
+        float: left;
+    }
+
+    .profileCard div.bio  {
+        margin-top: -0.75em;
+        margin-left: 1.7em;
+        word-break: break-all;
+    }
+
+    .profileCard a.u-url.p-name {
+        display: block;
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin: 0.75rem;
+    }
+
+    .profileCard .p-org {
+        color: var(--text-small);
+    }
+
+    .profileCard blockquote {
+        margin: 0.75rem;
+    }
+
+    .profileCard aside {
+        text-align: center;
+    }
+
+    .profileCard small.compact  {
+        display: block;
+    }
+
+    .profileCard summary {
+        text-align: center;
+        padding: 0;
+    }
+
+    .profileCard details {
+        text-align: left;
+    } 
+
+    .profileCard a.button {
+        color: var(--button-text);
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+        font-weight: 600;*/
+        /*color: var(--bg-post);*/
+        /*background-color: var(--button-bg);*/
+        /*border-radius: var(--roundness);*/
+        /*border: solid thin #FFF; var(--bg-body);*/
+    }
+
+/*    .profileCard a.button.off {
+        background-color: var(--pod-color);
+        color: var(--button-text);
+    }*/
+
+/* == Footer ===================== */
+
+footer {
+    margin-top: 1rem;
+    border-top: 1px solid var(--pod-color);  
+    padding: 0.25rem;
+    font-size: small;
+}
+
+footer nav ul li {
+    margin: 0;
+    padding: 0 0.1rem;
+}
+
+footer a, footer a:visited,
+footer a .ti, footer a:visited .ti {
+  color: var(--pod-color);
+  padding: 0;
+}
+
+/* Mobile Styling  (from: vanillacss.com) */
+@media screen and (max-width: 85ch) {
+
+    table { table-layout: auto; }
+
+    .right { float: none; }
+
+    /*.twt-hash { float: right; }*/
+
+    .profileCard .grid {
+       grid-template-columns: 1fr;
+    }
+
+    header nav {
+        margin-bottom: 0;
+    }
+
+    nav.pod-menu ul.right {
+        display: grid;
+        /*grid-template-columns: auto auto auto;   */
+        font-size: initial;
+    }
+
+    nav.user-menu {
+        padding: 0;
+    }
+
+    nav.user-menu ul {
+       display: grid;
+    }
+
+    nav ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    nav.toolbar-nav ul.right {
+       display: grid;
+    }
+
+    nav.toolbar-nav #post,
+    button {
+        width: 100%;
+    }
+
+    footer nav ul {
+        margin: 0.25rem auto;
+        display: block;
+        text-align: center;
+      }
+} 
+
+
+/* ===  Picoblog.css by darch.dk */
+
+main li {
+    /*background-color: var(--bg-post); */
+    margin-left: -2.5rem;
+    list-style: none;
+    /*border: solid thin var(--border-color);*/
+    /*border-radius: var(--roundness);*/
+    padding: 10px;
+    /*margin-bottom: 0.5rem;*/
+    /*border-top: solid thin var(--border-color);*/
+} 
+
+li a.date  {
+    display: block;
+    font-size: small;
+    text-align: right;
+    color: var(--text-small);
+    margin: 0.5rem 0;
+    padding: 0.2rem 0.5rem;
+    border-bottom: solid thin var(--border-color);    
+}
+
+li a.date:hover  {
+    /*color: var(--link-active);*/
+    /*border-color: var(--link-active);*/
+}
+
+
+/* http://jsbin.com/giqovotudi/edit?html,css,output */
+
+p.grid { /*https://smolcss.dev/*/  
+    --min: 15ch;
+    --gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: var(--gap);
+    margin-left: 0.5rem;
+}
+p.grid > a.image {
+    flex: 1 1 var(--min);
+    margin-top: 1rem;    
+}
+
+
+img {
+    display: block;
+    /*margin-top: 0.5rem;*/
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: var(--roundness);
+/*    border: thin solid var(--border-color);*/
+}
+
+
+/* == Timeline ===================== */
+
+/*.timeline a img {
+    display: block;
+    cursor:zoom-in;
+    margin: 0.5rem auto;
+}*/
+
+p.grid a img {
+    margin: -0.5rem;
+}
+
+@media screen and (max-width: 760px) {
+    body {
+        /* Center body in page */
+        margin: 0.5rem;
+    }
+
+    h1 {
+        font-size: -0.5rem;
+    }
+
+    li {
+        margin-left:  -2.5rem;
+        /*margin-right: 0.5rem;*/
+    }
+}
+
+.warning {
+    color: var(--warning);
+}
+
+/* == Gallery ===================== */
+
+.gallery {
+    max-width: 1200px;
+    margin: 0 auto ;
+    display: grid;
+    grid-gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /*grid-auto-rows: 225px;*/
+    /*grid-auto-flow: dense;*/
+}  
+
+.gallery a img {
+    /* https://web.dev/aspect-ratio/ */
+    aspect-ratio: 1 / 1; 
+    width: 100%;
+    /*height: 100%;*/
+    /*object-fit: cover;*/
+    /*background-color: var(--border-color);*/
+}
+
+/* == Posting / Upload ===================== */
+
+.upload .ti,
+.posting .ti {
+    color: var(--code-color);
+    font-size: large;
+}
+
+.upload img {
+    width: 12ch;
+    height: initial;
+    /*margin: 0.25rem auto;*/
+}
+
+.upload code {
+    padding: 0.25rem;
+    color: var(--code-color);
+    background-color: var(--input-box);
+    font-size: smaller;
+}
+
+.upload a.button {
+    width: fit-content;
+    block-size: fit-content;
+    margin: 0.5rem auto;
+}

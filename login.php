@@ -1,5 +1,5 @@
 <?php
-    require_once("partials/session.php"); // TODO: Move all to base.php
+    require_once("libs/session.php"); // TODO: Move all to base.php
 ?>
 
 <html>
@@ -12,21 +12,26 @@
   <body >
 
 <?php
-    if($_SESSION['password']=="æøå123") // TODO: Replace by var from config.ini
-    {
-        ?>
+    //$config = parse_ini_file('private/config.ini');
+    //$password = $config['password'];
+    
+    if( isset($_SESSION['password'])) {
+        if($_SESSION['password']=="$password")
+        {
+        header("Location: /");
+        die();
+ ?>
         <h1>You are loggged in now</h1>
         <form method="post" action="" id="logout_form">
           <input type="submit" name="page_logout" value="LOGOUT" style="background-color: #000; color: #f00; font-family: monospace;">
-        </form>  
-<?php
-    } else {
-        ?>
+        </form>
+
+<?php } } else { ?>
         <h1>Log in:</h1>
         <form method="post" action="" id="login_form">
-            <input type="password" name="pass" placeholder="*******"><br>
+            <input type="password" name="pass"><br>
             <input type="submit" name="submit_pass" value="Login">
-            <p><font style="color:red;"><?php echo $error;?></font></p>
+            <p><font style="color:red;"><?php if(isset($error)) {echo $error;}?></font></p>
         </form>
 <?php } ?>
 

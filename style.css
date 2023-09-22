@@ -1,0 +1,261 @@
+* {
+/*    border: thin solid pink;*/
+}
+
+/* from PaperMod: https://github.com/adityatelange/hugo-PaperMod/tree/54a3c6073518005182f3c3250ddb7e8c0cacd7ad/assets/css */
+:root {
+  --gap: 1rem;
+  --content-gap: 20px;
+  --nav-width: 1024px;
+  --main-width: 720px;
+  --header-height: 60px;
+  --footer-height: 60px;
+  --radius: 8px;
+  --theme: rgb(255, 255, 255);
+  --entry: rgb(255, 255, 255);
+  --primary: rgb(30, 30, 30);
+  --secondary: rgb(108, 108, 108);
+  --tertiary: rgb(214, 214, 214);
+  --content: rgb(31, 31, 31);
+  --hljs-bg: rgb(28, 29, 33);
+  --code-bg: rgb(245, 245, 245);
+  --border: rgb(238, 238, 238);
+}
+
+body {
+    background-color: var(--code-bg);
+    font-family: sans-serif;
+    max-width: 700px;
+    margin: 1rem auto;
+    line-height: 1.25;
+}
+
+a, button, body, h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+}
+
+/* == Forms (from https://adi.tilde.institute/default.css/) ==================== */
+
+form {
+    align-content: center;
+    display: flex;
+}
+
+label {
+    display: block;
+    font-size: small;
+}
+
+input, textarea, select {
+    box-sizing: border-box;
+    display: inline-block;
+/*        margin: .5ex 0 1ex 0;*/
+margin-top: -0.5rem;
+    padding: 1ex .5rem;
+    border: thin solid var(--border);
+    border-radius: var(--radius);
+    /*width: 100%;*/
+    font-size: 1em;
+    background-color: var(--entry);
+    color: var(--primary);
+}
+
+input[type="text"], 
+input[type="file"] {
+    flex-grow: 1;
+    margin-right: 0.5rem;
+}
+
+input[type=checkbox], input[type=radio] {
+    display: inline;
+    width: auto;
+}
+
+textarea {
+    font-family: inherit;
+    width: 100%;
+    background-color: var(--input-box);
+}
+
+input[type="submit"],
+a.button, button {
+    background-color: var(--pod-color);
+    border-radius: var(--radius);
+    border: thin solid var(--pod-color);
+    color: var(--button-text);
+    display: block;
+/*        margin-top: -1rem;*/
+    font-size: 1em;
+    padding: 1ex 1rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+button.primary {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+fieldset {
+    border: thin solid var(--border-color);
+    border-radius: var(--radius);
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+}
+
+/* --- */
+
+.right {
+    float: right;
+}
+
+
+hr {
+    background: var(--border-color);
+    border: 0;
+    height: 1px;
+    width: 100%;
+}
+
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0.5rem;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+nav form {
+    margin: 0;
+}
+
+nav .link-btn { 
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    color: var(--primary);
+    font-weight: bold;
+/*    text-decoration: underline;*/
+}
+
+img {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+img.avatar {
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+}
+
+a.author {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.profile {
+    padding: 0 1rem;
+    display: grid;
+/*    grid-template-columns: 4rem 3fr 1fr;*/
+    grid-template-columns: 4rem 1fr;
+    grid-gap: 1rem;
+    margin: 1rem 0;
+}
+
+.profile img.avatar {
+    width: 4rem;
+    height: 4rem;
+/*    border-radius: 100%;*/
+}
+
+.profile .author {
+    font-size: larger;
+}
+
+
+.profile blockquote {
+    margin: 0.5rem 0;
+    color: var(--secondary);
+}
+
+.profile nav a {
+    font-size: small;
+    text-decoration: underline;
+}
+
+article {
+    background-color: var(--entry);
+    color: var(--secondary);
+    border-radius: 0.25rem;
+    border: thin solid var(--border);
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+article.post-entry {
+    display: grid;
+    grid-gap: var(--gap);
+    grid-template-columns: 48px auto;
+}
+
+article .twt-msg {
+    padding: 0.5rem 0;
+}
+
+article .twt-msg img {
+    margin: 0.25rem -0.25rem;
+    border: thin solid var(--border);
+}
+
+article .twt-msg > img:first-child {
+    margin-top: 0;
+}
+
+article .twt-msg > img:last-child {
+    margin-bottom: 0;
+}
+
+article small {
+    padding-left: 0.15rem ;
+}
+
+article small .right{
+    padding-right: 0.25rem;
+}
+
+nav.pagnation {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+footer {
+    border-top: thin solid var(--border);
+    margin-top: 1rem;
+    text-align: center;
+}

@@ -17,6 +17,7 @@ require_once("partials/base.php");
 
 <!-- PHP: GET HEADER  --><?php include 'partials/header.php';?>
 
+<main>
 <!-- PHP: GET PROFILE CARD  -->
 <?php 
 if (!empty($_GET['twts'])) { // Show twts for some user
@@ -34,7 +35,6 @@ if (!empty($_GET['twts'])) { // Show twts for some user
     }
 } ?>
 
-<main class="timeline">
 
 <!-- PHP: GET TIMELIE  --><?php include 'partials/timeline.php'?>
 

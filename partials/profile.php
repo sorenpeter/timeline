@@ -21,15 +21,6 @@ $profile = getTwtsFromTwtxtString($url);
 
     <blockquote><?= $profile->description ?></blockquote>
 
-    <nav>
-      <ul>
-        <li><a href="">Posts</a></li>
-        <li><a href="">Replies</a></li>
-        <li><a href="">Gallery</a></li>
-        <li><a target="_blank" href="<?= $profile->mainURL ?>"></i>twtxt.txt</a></li>
-      </ul>
-    </nav>
-
   </section>
 
 <!--   <aside>
@@ -39,3 +30,12 @@ $profile = getTwtsFromTwtxtString($url);
   </aside> -->
 
 </div>
+
+<nav class="profile">
+  <ul>
+    <li><a href="">Posts</a></li>
+    <li><a href="">Replies</a></li>
+    <li><a href="">Gallery</a></li>
+    <li><a target="_blank" href="<?= $profile->mainURL ?>"></i>twtxt.txt</a></li>
+  </ul>
+</nav>

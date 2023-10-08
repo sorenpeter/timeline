@@ -5,6 +5,8 @@
     <option value="twtxt.txt" selected>twtxt.txt (Main)</option>
     <?php
 
+      // TODO: fix it so if List -> Selected for both public and private lists
+    
       if( isset($_SESSION['password'])) {
         if($_SESSION['password']=="$password") { // Hacky login
 
@@ -25,11 +27,11 @@
         }
       }
 
-      foreach (glob("lists/twtxt-*.txt") as $filename) {
+      foreach (glob("twtxt-*.txt") as $filename) {
           if($filename == $_GET['lists']) $attr="selected";
           else $attr = "";
           $listName = $filename;
-          $listName = str_replace("lists/twtxt-", "", $listName);
+          $listName = str_replace("twtxt-", "", $listName);
           $listName = str_replace("_", " ", $listName);
           $listName = str_replace(".txt", "", $listName);
           echo "<option value='{$filename}' {$attr}>$listName</option>";

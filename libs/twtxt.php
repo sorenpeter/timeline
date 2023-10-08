@@ -123,15 +123,17 @@ function replaceMentionsFromTwt(string $twtString): string {
 	// Example input: 'Hello @<eapl.mx https://eapl.mx/twtxt.txt>, how are you? @<nick https://server.com/something/twtxt.txt>';
 	// Example output: Hello <a href="?url=https://eapl.mx/twtxt.txt">@eapl.mx@eapl.mx/twtxt.txt</a>, how are you? <a href="?url=https://server.com/something/twtxt.txt">@nick@server.com/something/twtxt.txt</a>
 
-	#$pattern = '/@<([^ ]+)\s([^>]+)>/';
-	#$replacement = '<a href="?url=$2">@$1</a>';
+	$pattern = '/@<([^ ]+)\s([^>]+)>/';
+	$replacement = '<a href="?url=$2">@$1</a>';
 	#$twtString = '@<nick https://eapl.mx/twtxt.txt>';
-	$pattern = '/@<([^ ]+) ([^>]+)>/';
-	$replacement = '@$1';
-
+	#$pattern = '/@<([^ ]+) ([^>]+)>/';
+	#$replacement = '@$1';
 	$result = preg_replace($pattern, $replacement, $twtString);
-
 	return $result;
+
+	// from https://github.com/hxii/picoblog/blob/master/picoblog.php
+	//$pattern = '/\@<([a-zA-Z0-9\.]+)\W+(https?:\/\/[^>]+)>/';
+    //return preg_replace($pattern,'<a href="$2">@$1</a>',$twtString);
 }
 
 function replaceLinksFromTwt(string $twtString) {
@@ -156,11 +158,22 @@ function replaceMarkdownLinksFromTwt(string $twtString) {
 
 function replaceImagesFromTwt(string $twtString) {
 	$pattern = '/!\[(.*?)\]\((.*?)\)/';
-	$replacement = '<img src="$2" alt="$1">';
+	//$replacement = '<img src="$2" alt="$1">';
+	$replacement = '<a href="$2"><img src="$2" alt="$1"></a>';
 	$result = preg_replace($pattern, $replacement, $twtString);
 
 	return $result;
 }
+
+function replaceTagsFromTwt(string $twtString) {
+	$pattern = '/#(\w+)?/';
+	$replacement = '<a href="#">#\1</a>'; // Dummy link
+	//$replacement = '<a href="?tag=$1" class="tag">#${1}</a>';
+	$result = preg_replace($pattern, $replacement, $twtString);
+
+	return $result;
+}
+
 
 function getTimeElapsedString($timestamp, $full = false) {
 	$now = new DateTime;
@@ -320,7 +333,7 @@ function getTwtsFromTwtxtString($url) {
 				$twtContent = replaceMentionsFromTwt($twtContent);
 
 				// Convert HTML problematic characters
-				$twtContent = htmlentities($twtContent);
+				//$twtContent = htmlentities($twtContent); // TODO: Messing up rendering of @mentions #BUG
 
 				// Replace the Line separator character (U+2028)
 				// \u2028 is \xE2 \x80 \xA8 in UTF-8
@@ -331,8 +344,9 @@ function getTwtsFromTwtxtString($url) {
 				// that's why I leave the UTF-8 representation for future reference
 				$twtContent = str_replace("\u{2028}", "\n<br>\n", $twtContent);
 				$twtContent = replaceLinksFromTwt($twtContent);
-				$twtContent = replaceImagesFromTwt($twtContent);
-				$twtContent = replaceMarkdownLinksFromTwt($twtContent);
+				//$twtContent = replaceMarkdownLinksFromTwt($twtContent);
+				//$twtContent = replaceImagesFromTwt($twtContent);
+				$twtContent = Slimdown::render($twtContent);
 
 				// Get and remote the hash
 				$hash = getReplyHashFromTwt($twtContent);
@@ -340,9 +354,11 @@ function getTwtsFromTwtxtString($url) {
 					$twtContent = str_replace("(#$hash)", '', $twtContent);
 				}
 
+				// TODO: Make ?tag= filtering feature
+				$twtContent = replaceTagsFromTwt($twtContent); 
+
 				// TODO: Get mentions
 				$mentions = getMentionsFromTwt($twtContent);
-
 
 				// Get Lang metadata
 
@@ -370,7 +386,7 @@ function getTwtsFromTwtxtString($url) {
 				$twt->mainURL = $twtxtData->mainURL;
 
 				$twtxtData->twts[$timestamp] = $twt;
-				// TODO: Interpret the content as markdown
+				// TODO: Interpret the content as markdown -- @DONE using Slimdown.php above
 			}
 		}
 	}

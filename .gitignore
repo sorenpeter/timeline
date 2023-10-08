@@ -5,3 +5,4 @@ Thumbs.db
 *.DS_Store
 *.txt
 private/cache/
+error_log

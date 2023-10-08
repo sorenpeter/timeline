@@ -1,7 +1,7 @@
 <header>
     <nav>
         <ul>
-            <li>🧶 <a href=".">Timeline</a> for
+            <li>🧶 <a href="/">Timeline</a> for
                 <a href="http://localhost:8000/?twts=http://darch.dk/twtxt.txt">sorenpeter</a>@darch.dk</li> <!-- TODO: make automatic via PHP and show avatar as well -->
                 <li><?php include 'partials/listSelect.php'; ?></li>
         </ul>

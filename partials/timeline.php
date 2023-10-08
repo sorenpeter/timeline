@@ -28,12 +28,15 @@
 
             <small>
                 <?php if($twt->replyToHash) { ?>
-                    <a href="?hash=<?= $twt->replyToHash?>">Conversation</a> | 
+                    <!-- <a href="?hash=<?= $twt->replyToHash?>">Conversation</a> |  -->
+                    <a href="/conv/<?= $twt->replyToHash?>">Conversation: #<?= $twt->replyToHash?></a> | 
                 <?php } ?>
-                <!-- TODO make depending on session or nor -->
+                <!-- TODO: make depending on session or nor -->
                 <a href="new_twt.php?hash=<?= $twt->hash ?>">Reply</a>
-                (<a href="new_twt.php?hash=<?= $twt->hash ?>">via email</a>)
-                <a href='?hash=<?= $twt->hash ?>' class="right"><span title="<?= $twt->fullDate ?> "><?= $twt->displayDate ?></span></a>
+                (<a href="new_twt.php?hash=<?= $twt->hash ?>">via email</a>) <!-- TODO: mailto-link -->
+                <!-- <a href='/?hash=<?= $twt->hash ?>' class="right"><span title="<?= $twt->fullDate ?> "><?= $twt->displayDate ?></span></a> -->
+                <a href='/post/<?= $twt->hash ?>' class="right"><span title="<?= $twt->fullDate ?> "><?= $twt->displayDate ?></span></a>
+
             </small>
         </div>
     </article>

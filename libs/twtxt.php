@@ -139,7 +139,7 @@ function replaceMentionsFromTwt(string $twtString): string {
 function replaceLinksFromTwt(string $twtString) {
 	// Regular expression pattern to match URLs
 	$pattern = '/(?<!\S)(\b(https?|ftp|gemini|spartan|gopher):\/\/\S+|\b(?!:\/\/)\w+(?:\.\w+)+(?:\/\S+)?)(?!\S)/';
-
+    
 	// Replace URLs with clickable links
 	$replacement = '<a href="$1">$1</a>';
 	$result = preg_replace($pattern, $replacement, $twtString);

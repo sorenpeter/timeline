@@ -25,7 +25,7 @@ class Slimdown {
 	public static $rules = array (
 		'/```(.*?)```/s' => self::class .'::code_parse',                                                          // code blocks
 		//'/\n(#+)(.*)/' => self::class .'::header',                                                                // headers
-		'/\n(#\s+)(.*)/' => self::class .'::header',                          // headers - only with a space between # and text, to avoid matching with `#hashtags`
+		'/\n(#\s+)(.*)/' => self::class .'::header',  // headers - only with a space between # and text, to avoid matching with `#hashtags`
 		//'/\!\[([^\[]+)\]\(([^\)]+)\)/' => self::class .'::img',                                        // images
 		'/\!\[(.*?)\]\(([^\)]+)\)/' => self::class .'::img',                                        // images 2
 		'/\[([^\[]+)\]\(([^\)]+)\)/' => self::class .'::link',                                                    // links

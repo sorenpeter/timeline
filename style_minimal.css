@@ -1,89 +1,49 @@
-/* Simple CSS overwrites */
-
-::backdrop, :root {
-  --sans-font: -apple-system,BlinkMacSystemFont,"Avenir Next",Avenir,"Nimbus Sans L",Roboto,"Noto Sans","Segoe UI",Arial,Helvetica,"Helvetica Neue",sans-serif;
-  --mono-font: Consolas,Menlo,Monaco,"Andale Mono","Ubuntu Mono",monospace;
-  --standard-border-radius: 0.5rem;
-  --bg: #fff;
-  --accent-bg: #f5f7ff;
-  --text: #212121;
-  --text-light: #585858;
-  --border: #d8dae1; /*#898EA4;*/
-  --accent: #0d47a1;
-  --code: #d81b60;
-  --preformatted: #444;
-  --marked: #ffdd33;
-  --disabled: #efefef;
-}
-
-body > header {
-    padding-bottom: 0;
-}
-
-header > nav a {
-/*    border: none;*/
-}
-
-    
-/* Timeline Style */
-
 .right {
     float: right;
-    margin-right: 0.25rem;
 }
 
-
-/*body {
+body {
     font-family: sans-serif;
     line-height: 1.25;
 }
-*/
-/*main {
+
+main {
     max-width: 700px;
     margin: 1rem auto;
 }
-*/
 
-/*nav {    
+nav {    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: calc(var(--nav-width) + var(--gap) * 2);
     margin-inline-start: auto;
     margin-inline-end: auto;
-}*/
+}
 
-/*nav ul {
+nav ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding-left: 0.5rem;
     margin: 0.25rem 0rem;
-}*/
-
-
-
-header p a,
-header p a:visited {
-    font-weight: bold;
-    color: var(--text);
-    text-decoration: none;
 }
 
+
 nav ul.secondary {
-/*    padding: 0 0.75rem;*/
+    padding: 0 0.75rem;
     font-size: small;
 }
 
-/*nav ul li {
+nav ul li {
     display: inline-block;
     list-style: none;
-}*/
+}
 
-header a {
-/*    text-decoration: none;*/
-/*    font-weight: bold;*/
-/*    line-height: 1.5;*/
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1.5;
 }
 
 nav form {
@@ -97,7 +57,7 @@ nav .link-btn {
     margin: 0;
     padding: 0;
     width: 100%;
-    color: var(--text);
+    color: var(--primary);
     font-weight: bold;
     border-radius: 0;
 }
@@ -117,17 +77,15 @@ img.avatar {
 
 a.author {
     text-decoration: none;
-    color: var(--text);
+    color: var(--primary);
 }
-
-/* === PROFILE === */
 
 .profile {
     padding: 0 1rem;
     display: grid;
     grid-template-columns: 4rem 1fr;
     grid-gap: 1rem;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
 }
 
 .profile img.avatar {
@@ -140,15 +98,16 @@ a.author {
 }
 
 
-.profile p {
+.profile blockquote {
     margin: 0.5rem 0;
-    color: var(--text-light);
+    color: var(--secondary);
 }
 
-/* === TIMELINE === */
-
 article {
-    color: var(--text-light);
+    background-color: var(--entry);
+    color: var(--secondary);
+    border-radius: 0.25rem;
+    border: thin solid grey;
     margin: 0.5rem;
     padding: 0.5rem;
 }
@@ -177,6 +136,7 @@ article .twt-msg > blockquote {
 
 article .twt-msg img {
     margin: 0.25rem -0.25rem;
+    border: thin solid grey;
 }
 
 article .twt-msg > img:first-child {
@@ -187,25 +147,9 @@ article .twt-msg > img:last-child {
     margin-bottom: 0;
 }
 
-article small {
-    font-size: small;
-}
-
-article small a,
-article small a:visited {
-    color: var(--text);
-
-}
-
-/* === New Post Form === */
-
-#new_twt {
-    border: none;
-    text-align: center
-}
-
-#new_twt input[type="submit"] {
-    min-width: 33%;
+article small a.right {
+    padding-right: 0.25rem;
+    font-weight: normal;    
 }
 
 nav.pagnation {

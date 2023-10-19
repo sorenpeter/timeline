@@ -14,12 +14,15 @@ $timezone = $config['timezone'];
 
 require_once('libs/session.php');
 
+// if (!has_valid_session()) {
+// 	header('Location: /login.php');
+// 	exit();
+// }
 
-if (!has_valid_session()) {
-	header('Location: login.php');
+if (!isset($_SESSION['password'])) {
+	header('Location: /login');
 	exit();
 }
-
 
 $textareaValue = '';
 if (isset($_GET['hash'])) {
@@ -76,26 +79,31 @@ if (isset($_POST['submit'])) {
 
 	header('Refresh:0; url=.');
 	exit;
+	
 } else { ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>twtxt</title>
-	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-<h1><a href=".">twtxt</a></h1>
-	<form method="POST" class="column">
+
+<?php
+require_once("partials/base.php");
+
+$title = "New post - ".$title;
+
+include_once 'partials/header.php';
+?>
+
+<article id="new_twt">
+	<form method="POST">
 		<div id="posting">
 			<textarea class="textinput" id="new_post" name="new_post"
 				rows="4" cols="100" autofocus required
 				placeholder="Your twt"><?= $textareaValue ?></textarea>
-			<br>
-			<input class="btn" type="submit" value="Post" name="submit">
+			<!-- <br> -->
+			<input type="submit" value="Post" name="submit">
 		</div>
 	</form>
-</body>
-</html>
+</article>
+
+<!-- PHP: GET TIMELIE  --><?php include_once 'partials/timeline.php'?>
+
+<!-- PHP: GET FOOTER  --><?php include_once 'partials/footer.php';?>
+
 <?php } ?>

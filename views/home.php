@@ -1,18 +1,12 @@
-<?php require_once("partials/base.php"); ?>
+<?php
+require_once("partials/base.php");
 
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Timeline</title>
-</head>
-<body >
+//$title = "Login - ".$title;
 
-<!-- PHP: GET HEADER  --><?php include 'partials/header.php';?>
+include 'partials/header.php';
+?>
 
-<main>
-<!-- PHP: GET PROFILE CARD  -->
+<!-- PHP: PROFILE CARD -->
 <?php 
 if (!empty($_GET['twts'])) { // Show twts for some user
     $twtsURL = $_GET['twts'];
@@ -30,11 +24,13 @@ if (!empty($_GET['twts'])) { // Show twts for some user
 } ?>
 
 
-<!-- PHP: GET TIMELIE  --><?php include 'partials/timeline.php'?>
+<!-- PHP: NEW POST BOX -->
+<?php
+if( isset($_SESSION['password'])) { 
+    include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
+} ?>
 
-</main>
+<!-- PHP: TIMELINE --><?php include 'partials/timeline.php'?>
 
-<!-- PHP: GET FOOTER  --><?php include 'partials/footer.php';?>
+<!-- PHP: FOOTER  --><?php include 'partials/footer.php';?>
 
-</body>
-</html> 

@@ -24,10 +24,8 @@
 class Slimdown {
 	public static $rules = array (
 		'/```(.*?)```/s' => self::class .'::code_parse',                                                          // code blocks
-		//'/\n(#+)(.*)/' => self::class .'::header',                                                                // headers
-		'/\n(#\s+)(.*)/' => self::class .'::header',  // headers - only with a space between # and text, to avoid matching with `#hashtags`
-		//'/\!\[([^\[]+)\]\(([^\)]+)\)/' => self::class .'::img',                                        // images
-		'/\!\[(.*?)\]\(([^\)]+)\)/' => self::class .'::img',                                        // images 2
+		'/\n(#+)\s+(.*)/' => self::class .'::header',                                                             // headers
+		'/\!\[([^\[]*?)\]\(([^\)]+)\)/' => self::class .'::img',                                                  // images
 		'/\[([^\[]+)\]\(([^\)]+)\)/' => self::class .'::link',                                                    // links
 		'/(\*\*|__)(?=(?:(?:[^`]*`[^`\r\n]*`)*[^`]*$))(?![^\/<]*>.*<\/.+>)(.*?)\1/' => '<strong>\2</strong>',     // bold
 		'/(\*|_)(?=(?:(?:[^`]*`[^`\r\n]*`)*[^`]*$))(?![^\/<]*>.*<\/.+>)(.*?)\1/' => '<em>\2</em>',                // emphasis
@@ -79,6 +77,7 @@ class Slimdown {
 		}
 		if (! empty ($trimmed)) {
 			//return sprintf ("\n<p>%s</p>\n", $trimmed);
+			return sprintf ("\n%s\n", $trimmed);
 		}
 		return $trimmed;
 	}

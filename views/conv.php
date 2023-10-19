@@ -10,22 +10,10 @@ if (!empty($id)) {
 
 // && !preg_match('/conv/', $request)
 
+$title = "Conversation: ".$id." - ".$title;
+
+include 'partials/header.php';
 ?>
-
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <title>Conversation: <?= $id ?></title>
-</head>
-<body >
-
-
-
-<!-- PHP: GET HEADER  --><?php include 'partials/header.php';?>
-
-<main>
 
 <h2>Conversation</h2>
 
@@ -33,9 +21,4 @@ if (!empty($id)) {
 
 <!-- PHP: GET TIMELIE  --><?php include 'partials/timeline.php'?>
 
-</main>
-
 <!-- PHP: GET FOOTER  --><?php include 'partials/footer.php';?>
-
-</body>
-</html> 

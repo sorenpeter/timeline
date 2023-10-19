@@ -13,11 +13,6 @@ if(isset($_POST['submit_pass']) && $_POST['pass'])
     }
     else
     {
-        $error="Incorrect Pssword";
+        $error="Incorrect Password";
     }
-}
-
-if(isset($_POST['page_logout']))
-{
-    unset($_SESSION['password']);
 }

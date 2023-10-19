@@ -1,4 +1,5 @@
-<?php
+<?php require_once('partials/base.php');
+
 // TODO: Give a warning if the file is not found
 $config = parse_ini_file('private/config.ini');
 
@@ -10,7 +11,7 @@ if ($config['debug_mode']) {
 
 $txt_file_path = $config['txt_file_path'];
 
-require_once('partials/base.php');
+
 
 /*
 if (!has_valid_session()) {
@@ -60,29 +61,31 @@ if (isset($_POST['url'])) {
 	header('Refresh:0; url=.');
 	exit;
 } else { ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>twtxt</title>
-	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-<h1><a href=".">twtxt</a></h1>
-	<form method="POST" class="column">
-		<div id="follow">
-			<label for="url">URL to follow</label>
-			<br>
-			<input type="url" id="url" name="url" class="input" size="50" autocomplete="off" required>
-			<br>
-			<label for="nick">Nick</label>
-			<br>
-			<input type="text" id="nick" name="nick" class="input" size="50" autocomplete="off" required>
-			<br>
-			<input type="submit" value="Follow" class="btn">
-		</div>
-	</form>
-</body>
-</html>
+
+<?php
+require_once("partials/base.php");
+
+$title = "Add feed - ".$title;
+
+include 'partials/header.php';
+?>
+
+<h1>Add a new feed to follow</h1>
+
+<form method="POST" class="column">
+	<div id="follow">
+		<label for="url">URL to follow</label>
+		<br>
+		<input type="url" id="url" name="url" class="input" size="50" autocomplete="off" required>
+		<br>
+		<label for="nick">Nick</label>
+		<br>
+		<input type="text" id="nick" name="nick" class="input" size="50" autocomplete="off" required>
+		<br>
+		<input type="submit" value="Follow" class="btn">
+	</div>
+</form>
+
+<!-- PHP: GET FOOTER  --><?php include 'partials/footer.php';?>
+
 <?php } ?>

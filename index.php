@@ -12,10 +12,16 @@ $viewDir = '/views/';
 
 // Define your routes using regular expressions
 
+
+// TODO: re-add auto detection of files in /views as routes
 $routes = [
     '/' => 'home.php',
-    '/admin' => 'admin.php',
-    '/about' => 'about.php',
+    '/new' => 'new_twt.php',
+    '/add' => 'add_feed.php',
+    '/following' => 'following.php',
+    '/refresh' => 'load_twt_files.php',
+    '/login' => 'login.php',
+    '/logout' => 'logout.php',
     '/profile/([a-zA-Z0-9_-]+)' => 'profile.php',
     '/conv/([a-zA-Z0-9]{7})' => 'conv.php', // matches only twtHash of exactly 7 alphanumeric characters 
     '/post/([a-zA-Z0-9]{7})' => 'post.php', // matches only twtHash of exactly 7 alphanumeric characters 

@@ -124,7 +124,8 @@ function replaceMentionsFromTwt(string $twtString): string {
 	// Example output: Hello <a href="?url=https://eapl.mx/twtxt.txt">@eapl.mx@eapl.mx/twtxt.txt</a>, how are you? <a href="?url=https://server.com/something/twtxt.txt">@nick@server.com/something/twtxt.txt</a>
 
 	$pattern = '/@<([^ ]+)\s([^>]+)>/';
-	$replacement = '<a href="?url=$2">@$1</a>';
+	//$replacement = '<a href="/?url=$2">@$1</a>';
+	$replacement = '<a href="/?twts=$2">@$1</a>';
 	#$twtString = '@<nick https://eapl.mx/twtxt.txt>';
 	#$pattern = '/@<([^ ]+) ([^>]+)>/';
 	#$replacement = '@$1';
@@ -137,6 +138,10 @@ function replaceMentionsFromTwt(string $twtString): string {
 }
 
 function replaceLinksFromTwt(string $twtString) {
+
+	// TODO: Make this NOT match with `inline code` to avoid links in code-snippets
+	// 1. Look into how yarnd handles this
+
 	// Regular expression pattern to match URLs
 	$pattern = '/(?<!\S)(\b(https?|ftp|gemini|spartan|gopher):\/\/\S+|\b(?!:\/\/)\w+(?:\.\w+)+(?:\/\S+)?)(?!\S)/';
     
@@ -343,10 +348,11 @@ function getTwtsFromTwtxtString($url) {
 				// For some reason I was having trouble finding this nomenclature
 				// that's why I leave the UTF-8 representation for future reference
 				$twtContent = str_replace("\u{2028}", "\n<br>\n", $twtContent);
-				$twtContent = replaceLinksFromTwt($twtContent);
+				
 				//$twtContent = replaceMarkdownLinksFromTwt($twtContent);
 				//$twtContent = replaceImagesFromTwt($twtContent);
 				$twtContent = Slimdown::render($twtContent);
+				$twtContent = replaceLinksFromTwt($twtContent); // TODO: 
 
 				// Get and remote the hash
 				$hash = getReplyHashFromTwt($twtContent);
@@ -355,7 +361,7 @@ function getTwtsFromTwtxtString($url) {
 				}
 
 				// TODO: Make ?tag= filtering feature
-				$twtContent = replaceTagsFromTwt($twtContent); 
+				//$twtContent = replaceTagsFromTwt($twtContent); 
 
 				// TODO: Get mentions
 				$mentions = getMentionsFromTwt($twtContent);

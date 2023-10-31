@@ -9,19 +9,19 @@ include('partials/header.php');
 <!-- PHP: PROFILE CARD -->
 <?php
 
-$twtsURL = $config['public_txt_url'];
-// $twtsURL = "http://darch.dk/twtxt.txt";
+//$twtsURL = $config['public_txt_url'];
+//$profile = getTwtsFromTwtxtString($twtsURL);
+
 
 /* from base.php */
 
 # Show twts only for URL in query request, else show user timeline
 
 if (!empty($_GET['url'])) { // Show twts for some user
-    echo "before GET(url): ".$twtsURL."<br>";
     $twtsURL = $_GET['url'];
-    echo "after GET(url): ".$twtsURL."<br>";
+    $profile = getTwtsFromTwtxtString($twtsURL);
 
-    if (filter_var($twtsurl, FILTER_VALIDATE_URL) === FALSE) {
+    if (filter_var($twtsURL, FILTER_VALIDATE_URL) === FALSE) {
         die('Not a valid URL');
     }
 
@@ -30,18 +30,22 @@ if (!empty($_GET['url'])) { // Show twts for some user
         $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
     }
 
-} else { // Show timeline for the URL
+} 
+else { // Show timeline for the URL
     $twtsURL = $config['public_txt_url'];
-    //$twtsURL = "http://darch.dk/twtxt.txt";
-
-    if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
+    // $twtsURL = "https://lyse.isobeef.org/twtxt.txt";
+    // $profile = getTwtsFromTwtxtString($twtsURL);
+    header("Location: /profile?url=".$twtsURL);
+    
+    /*
+    if (filter_var($twtsURL, FILTER_VALIDATE_URL) === FALSE) {
         die('Not a valid URL');
     }
 
     $parsedTwtxtFile = getTwtsFromTwtxtString($twtsURL);
     if (!is_null($parsedTwtxtFile)) {
         $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
-    }
+    }*/
 }
 
 $twts = [];
@@ -54,28 +58,6 @@ foreach ($parsedTwtxtFiles as $currentTwtFile) {
 }
 
 krsort($twts, SORT_NUMERIC);
-
-
-/* Profile header 
-
-if (empty($_GET['url'])) { // Show twts for some user
-    $twtsURL = $config['txt_file_path'];
-
-    if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
-        die('Not a valid URL');
-    }
-
-    $parsedTwtxtFile = getTwtsFromTwtxtString($twtsURL);
-    if (!is_null($parsedTwtxtFile)) {
-        $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
-    }
-}
-*/
-
-echo $twtsURL;
-
-$profile = getTwtsFromTwtxtString($twtsURL);
-
 
 ?>  
 

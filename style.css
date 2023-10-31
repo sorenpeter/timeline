@@ -68,7 +68,11 @@ header > nav a {
     margin: 0.25rem 0rem;
 }*/
 
-
+header img.avatar {
+    height: 1.5rem;
+    width:  1.5rem;
+    vertical-align: sub;
+}
 
 header p a,
 header p a:visited {
@@ -152,6 +156,16 @@ a.author {
     color: var(--text-light);
 }
 
+.profile a,
+.profile a:visited {
+    color: var(--text);
+}
+
+.profile a:hover {
+    color: var(--accent);
+}
+
+
 /* === TIMELINE === */
 
 article {
@@ -202,6 +216,10 @@ article small a,
 article small a:visited {
     color: var(--text);
 
+}
+
+article small a:hover {
+    color: var(--accent);
 }
 
 /* === New Post Form === */

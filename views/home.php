@@ -33,13 +33,44 @@ if (!empty($_GET['twts'])) { // Show profile for some user
 if (isset($_SESSION['password'])) { 
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
 }
-
-/*
 else {
-    $url = "Location: /?twts=".$config['public_txt_url'];
-    //header($url);
+    $twtsURL = $config['public_txt_url'];
+    // $twtsURL = "http://darch.dk/twtxt.txt";
+    header("Location: /profile?url=".$twtsURL);
+    // die();
 }
-*/
+
+?>
+
+<?php // Load user timeline
+
+$parsedTwtxtFiles = [];
+
+foreach ($fileLines as $currentLine) {
+    if (str_starts_with($currentLine, '#')) {
+        if (!is_null(getDoubleParameter('follow', $currentLine))) {
+            $follow = getDoubleParameter('follow', $currentLine);
+            $twtFollowingList[] = $follow;
+
+            // Read the parsed files if in Cache
+            $followURL = $follow[1];
+            $parsedTwtxtFile = getTwtsFromTwtxtString($followURL);
+            if (!is_null($parsedTwtxtFile)) {
+                $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
+            }
+        }
+    }
+}
+
+
+$twts = [];
+
+# Combine all the followers twts
+foreach ($parsedTwtxtFiles as $currentTwtFile) {
+    if (!is_null($currentTwtFile)) {
+        $twts += $currentTwtFile->twts;
+    }
+}
 
 ?>
 

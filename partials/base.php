@@ -81,7 +81,7 @@ $twtFollowingList = [];
 
 // Show twts only for URL in query request, else show user timeline
 
-if (!empty($_GET['twts'])) { // Show twts for some user
+if (!empty($_GET['twts'])) { // Show twts for some user --> /profile
     $twtsURL = $_GET['twts'];
     if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
         die('Not a valid URL');
@@ -92,7 +92,7 @@ if (!empty($_GET['twts'])) { // Show twts for some user
         $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
     }
 
-} else { // Show timeline for the URL
+} else { // Show timeline for the URL --> / (home)
     $parsedTwtxtFiles = [];
     foreach ($fileLines as $currentLine) {
         if (str_starts_with($currentLine, '#')) {
@@ -120,7 +120,7 @@ foreach ($parsedTwtxtFiles as $currentTwtFile) {
     }
 }
 
-// Show individual posts
+# Show individual posts
 if (!empty($_GET['hash'])) {
     $hash = $_GET['hash'];
     $twts = array_filter($twts, function($twt) use ($hash) {

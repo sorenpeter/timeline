@@ -7,8 +7,10 @@ include 'partials/header.php';
 ?>
 
 <!-- PHP: PROFILE CARD -->
-<?php 
-if (!empty($_GET['twts'])) { // Show twts for some user
+<?php
+
+/*
+if (!empty($_GET['twts'])) { // Show profile for some user
     $twtsURL = $_GET['twts'];
 
     // TODO: Give a propper error if feed is not valid
@@ -21,14 +23,25 @@ if (!empty($_GET['twts'])) { // Show twts for some user
         $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
         include 'partials/profile.php';
     }
-} ?>
+}
+*/
 
+?>
 
 <!-- PHP: NEW POST BOX -->
 <?php
-if( isset($_SESSION['password'])) { 
+if (isset($_SESSION['password'])) { 
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
-} ?>
+}
+
+/*
+else {
+    $url = "Location: /?twts=".$config['public_txt_url'];
+    //header($url);
+}
+*/
+
+?>
 
 <!-- PHP: TIMELINE --><?php include 'partials/timeline.php'?>
 

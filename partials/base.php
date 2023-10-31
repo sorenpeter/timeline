@@ -78,6 +78,9 @@ $fileContent = mb_convert_encoding($fileContent, 'UTF-8');
 $fileLines = explode("\n", $fileContent);
 $twtFollowingList = [];
 
+
+// Show twts only for URL in query request, else show user timeline
+
 if (!empty($_GET['twts'])) { // Show twts for some user
     $twtsURL = $_GET['twts'];
     if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
@@ -117,13 +120,13 @@ foreach ($parsedTwtxtFiles as $currentTwtFile) {
     }
 }
 
+// Show individual posts
 if (!empty($_GET['hash'])) {
     $hash = $_GET['hash'];
     $twts = array_filter($twts, function($twt) use ($hash) {
         return $twt->hash === $hash || $twt->replyToHash === $hash;
     });
 }
-
 
 krsort($twts, SORT_NUMERIC);
 

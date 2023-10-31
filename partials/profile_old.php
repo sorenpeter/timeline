@@ -4,6 +4,7 @@
 if (!empty($_GET['twts'])) {
   $url = $twtsURL;
 }
+
 $profile = getTwtsFromTwtxtString($url);
 
 ?>  
@@ -22,12 +23,12 @@ $profile = getTwtsFromTwtxtString($url);
     <p><?= $profile->description ?></p>
 
     <small>
-      <a href="">Posts</a> | 
+<!--       <a href="">Posts</a> | 
       <a href="">Replies</a> | 
       <a href="">Gallery</a> |
-
+ -->
       <!-- <span class="right"> -->
-        <a href="following.php">Following <?php echo count($twtFollowingList); ?></a> | 
+        <!-- <a href="/following.php">Following <?php echo count($twtFollowingList); ?></a> |  -->
         <a target="_blank" href="<?= $profile->mainURL ?>"></i>twtxt.txt</a> | 
         <a href="https://yarn.social">How to follow</a>
       <!-- </span> -->
@@ -37,17 +38,3 @@ $profile = getTwtsFromTwtxtString($url);
   </div>
 
 </div>
-
-<!-- <nav>
-  <ul>
-    <li><a href="">Posts</a></li>
-    <li><a href="">Replies</a></li>
-    <li><a href="">Gallery</a></li>
-  </ul>
-
-   <ul class="right">
-    <li><a href="https://yarn.social" class="button">How to follow...</a></li>
-    <li><a href="following.php">Following <?php echo count($twtFollowingList); ?></a></li>
-    <li><a target="_blank" href="<?= $profile->mainURL ?>"></i>twtxt.txt</a></li>
-  </ul>
-</nav> -->

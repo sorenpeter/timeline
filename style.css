@@ -1,4 +1,4 @@
-/* Simple CSS overwrites */
+/* === SimpleCSS overwrites === */
 
 ::backdrop, :root {
   --sans-font: -apple-system,BlinkMacSystemFont,"Avenir Next",Avenir,"Nimbus Sans L",Roboto,"Noto Sans","Segoe UI",Arial,Helvetica,"Helvetica Neue",sans-serif;
@@ -17,7 +17,14 @@
 }
 
 body > header {
+    display: flex;
+    justify-content: space-between;
     padding-bottom: 0;
+}
+
+body > header p {
+/*  max-width: 40rem;*/
+  margin: 1rem;
 }
 
 header > nav a {
@@ -25,7 +32,7 @@ header > nav a {
 }
 
     
-/* Timeline Style */
+/* === Timeline Style === */
 
 .right {
     float: right;

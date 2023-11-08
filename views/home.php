@@ -33,12 +33,12 @@ if (!empty($_GET['twts'])) { // Show profile for some user
 if (isset($_SESSION['password'])) { 
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
 }
-else {
+/*else {
     $twtsURL = $config['public_txt_url'];
     // $twtsURL = "http://darch.dk/twtxt.txt";
-    header("Location: /profile?url=".$twtsURL);
+    header("Location: profile?url=".$twtsURL);
     // die();
-}
+}*/
 
 ?>
 

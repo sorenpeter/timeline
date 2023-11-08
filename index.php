@@ -1,8 +1,10 @@
 <?php 
 
-//require_once("router.php");
-//require_once("views/home.php");
-//require_once("partials/base.php");
+// Adds support for installation in subfolder
+$base  = dirname($_SERVER['PHP_SELF']) ;
+if ($base === '/' || $base === '\\'){
+    $base = '';
+}
 
 $request = $_SERVER['REQUEST_URI'];
 $path = parse_url($request, PHP_URL_PATH);
@@ -27,9 +29,10 @@ $routes = [
     '/post/([a-zA-Z0-9]{7})' => 'post.php', // matches only twtHash of exactly 7 alphanumeric characters 
 ];
 
+
 // Loop through the defined routes and try to match the request URI
 foreach ($routes as $pattern => $action) {
-    if (preg_match('#^' . $pattern . '$#', $path, $matches)) {
+    if (preg_match('#^' . $base.$pattern . '$#', $path, $matches)) {
         
         // Extract any matched parameters (e.g., username)      
         if(!empty($matches[1])) {
@@ -46,6 +49,7 @@ foreach ($routes as $pattern => $action) {
 // If no matching route is found, handle as a 404
 http_response_code(404);
 echo "<h1>Oops! Page not found.</h1>";
+echo __DIR__ . $viewDir . $action;
 
 /* Credit:
     - PHP FOR BEGINNERS #4 - Create a dynamic Router: https://www.youtube.com/watch?v=eaHBK2XJ5Io

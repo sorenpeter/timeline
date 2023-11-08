@@ -1,7 +1,7 @@
 <?php 
 
 $profile = getTwtsFromTwtxtString($config['public_txt_url']);
-$profile = getTwtsFromTwtxtString("http://darch.dk/twtxt.txt");
+// $profile = getTwtsFromTwtxtString("http://darch.dk/twtxt.txt");
 
 ?>
 

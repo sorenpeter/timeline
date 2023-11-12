@@ -125,7 +125,7 @@ function replaceMentionsFromTwt(string $twtString): string {
 
 	$pattern = '/@<([^ ]+)\s([^>]+)>/';
 	//$replacement = '<a href="/?url=$2">@$1</a>';
-	$replacement = '<a href="/?twts=$2">@$1</a>';
+	$replacement = '<a href="'.str_replace("/index.php", "", $_SERVER["SCRIPT_NAME"]).'/?profil=$2">@$1</a>';
 	#$twtString = '@<nick https://eapl.mx/twtxt.txt>';
 	#$pattern = '/@<([^ ]+) ([^>]+)>/';
 	#$replacement = '@$1';

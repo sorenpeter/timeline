@@ -20,7 +20,7 @@ require_once('libs/session.php');
 // }
 
 if (!isset($_SESSION['password'])) {
-	header('Location: /login');
+	header('Location: ./login');
 	exit();
 }
 

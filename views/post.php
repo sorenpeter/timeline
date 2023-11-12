@@ -7,12 +7,12 @@ if (!empty($id)) {
     });
 }
 
-$title = "Post: ".$id." - ".$title;
+$title = "Post #".$id." - ".$title;
 
 include 'partials/header.php';
 ?>
 
-<h2>Post: #<?= $id ?></h2>
+<!-- <h2>Post: #<?= $id ?></h2> -->
 
 <!-- PHP: GET TIMELIE  --><?php include 'partials/timeline.php'?>
 

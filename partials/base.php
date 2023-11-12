@@ -78,11 +78,8 @@ $fileContent = mb_convert_encoding($fileContent, 'UTF-8');
 $fileLines = explode("\n", $fileContent);
 $twtFollowingList = [];
 
-
-// Show twts only for URL in query request, else show user timeline
-
-if (!empty($_GET['twts'])) { // Show twts for some user --> /profile
-    $twtsURL = $_GET['twts'];
+if (!empty($_GET['profile'])) { // Show profile for some user
+    $twtsURL = $_GET['profile'];
     if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
         die('Not a valid URL');
     }
@@ -92,7 +89,7 @@ if (!empty($_GET['twts'])) { // Show twts for some user --> /profile
         $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
     }
 
-} else { // Show timeline for the URL --> / (home)
+} else { // Show timeline for the URL
     $parsedTwtxtFiles = [];
     foreach ($fileLines as $currentLine) {
         if (str_starts_with($currentLine, '#')) {
@@ -120,13 +117,13 @@ foreach ($parsedTwtxtFiles as $currentTwtFile) {
     }
 }
 
-# Show individual posts
 if (!empty($_GET['hash'])) {
     $hash = $_GET['hash'];
     $twts = array_filter($twts, function($twt) use ($hash) {
         return $twt->hash === $hash || $twt->replyToHash === $hash;
     });
 }
+
 
 krsort($twts, SORT_NUMERIC);
 
@@ -141,3 +138,5 @@ if (!empty($_GET['page'])) {
 
 $startingTwt = (($page - 1) * TWTS_PER_PAGE);
 $twts = array_slice($twts, $startingTwt, TWTS_PER_PAGE);
+
+$baseURL = str_replace("/index.php", "", $_SERVER['SCRIPT_NAME']);

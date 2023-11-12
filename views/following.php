@@ -19,7 +19,7 @@ include 'partials/header.php';
         <?php foreach ($twtFollowingList as $currentFollower) { ?>
         <tr>
             <!-- <td></td> -->
-            <td><a href="/?twts=<?= $currentFollower[1] ?>"><?= $currentFollower[0] ?></a></td>
+            <td><a href="<?= $baseURL ?>/?profile=<?= $currentFollower[1] ?>"><?= $currentFollower[0] ?></a></td>
             <!-- <td><a href="/?twt=<?= $currentFollower[1] ?>"><?= $currentFollower[0] ?></a></td> -->
             <td><?= $currentFollower[1] ?>
             <!-- <?php if ($validSession) { ?> -->

@@ -7,11 +7,9 @@ include 'partials/header.php';
 ?>
 
 <!-- PHP: PROFILE CARD -->
-<?php
-
-/*
-if (!empty($_GET['twts'])) { // Show profile for some user
-    $twtsURL = $_GET['twts'];
+<?php 
+if (!empty($_GET['profile'])) { // Show twts for some user
+    $twtsURL = $_GET['profile'];
 
     // TODO: Give a propper error if feed is not valid
     if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
@@ -23,56 +21,14 @@ if (!empty($_GET['twts'])) { // Show profile for some user
         $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
         include 'partials/profile.php';
     }
-}
-*/
+} ?>
 
-?>
 
 <!-- PHP: NEW POST BOX -->
 <?php
-if (isset($_SESSION['password'])) { 
+if( isset($_SESSION['password'])) { 
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
-}
-/*else {
-    $twtsURL = $config['public_txt_url'];
-    // $twtsURL = "http://darch.dk/twtxt.txt";
-    header("Location: profile?url=".$twtsURL);
-    // die();
-}*/
-
-?>
-
-<?php // Load user timeline
-
-$parsedTwtxtFiles = [];
-
-foreach ($fileLines as $currentLine) {
-    if (str_starts_with($currentLine, '#')) {
-        if (!is_null(getDoubleParameter('follow', $currentLine))) {
-            $follow = getDoubleParameter('follow', $currentLine);
-            $twtFollowingList[] = $follow;
-
-            // Read the parsed files if in Cache
-            $followURL = $follow[1];
-            $parsedTwtxtFile = getTwtsFromTwtxtString($followURL);
-            if (!is_null($parsedTwtxtFile)) {
-                $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
-            }
-        }
-    }
-}
-
-
-$twts = [];
-
-# Combine all the followers twts
-foreach ($parsedTwtxtFiles as $currentTwtFile) {
-    if (!is_null($currentTwtFile)) {
-        $twts += $currentTwtFile->twts;
-    }
-}
-
-?>
+} ?>
 
 <!-- PHP: TIMELINE --><?php include 'partials/timeline.php'?>
 

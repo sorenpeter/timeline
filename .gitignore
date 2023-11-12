@@ -4,6 +4,7 @@ Icon?
 Thumbs.db
 *.DS_Store
 *.txt
+!twtxt_template.txt
 private/cache/*
 !private/cache/.gitkeep
 private/config.ini

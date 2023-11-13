@@ -17,7 +17,7 @@ include_once 'partials/header.php';
 
 <h2>Conversation</h2>
 
-<p>Recent twts in reply to <a href="/post/<?= $id ?>">#<?= $id ?></a></p>
+<p>Recent twts in reply to <a href="<?= $baseURL ?>/post/<?= $id ?>">#<?= $id ?></a></p>
 
 <!-- PHP: GET TIMELIE  --><?php include_once 'partials/timeline.php'?>
 

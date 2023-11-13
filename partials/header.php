@@ -24,19 +24,20 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
     <nav>
 
         <ul class="secondary">
-            <li><?php include 'partials/lists.php'; ?></li>
-            <li><a href="<?= $baseURL ?>/following">Following <?php // echo count($twtFollowingList); ?></a></li>
             <?php //if ($validSession) {  // TODO: Make login seqcure ?>
             <?php if( isset($_SESSION['password'])) { /*
                 if($_SESSION['password']=="$password") {*/ // Hacky login ?>   
+                <li><?php include 'partials/lists.php'; ?></li>
                 <li><a href="<?= $baseURL ?>/refresh?url=<?= $url ?>">Refresh</a></li>
+                <li><a href="<?= $baseURL ?>/following">Following <?php // echo count($twtFollowingList); ?></a></li>
                 <li><a href="<?= $baseURL ?>/add">Add feed</a></li>
+                <li><a href="<?= $baseURL ?>/?profile=<?=$url ?>">Profile</a></li>                
                 <li><a href="<?= $baseURL ?>/logout">Log Out</a></li>
             <?php /*}*/ } else { ?>
+                <li><a href="<?= $baseURL ?>/following">Following <?php // echo count($twtFollowingList); ?></a></li>
+                <li><a href="<?= $baseURL ?>/?profile=<?= $url ?>">Profile</a></li>                
                 <li><a href="<?= $baseURL ?>/login">Log in</a></li>
             <?php }  ?>
-                <!-- <li><a href="<?= $baseURL ?>/?profile=<?=$profile->mainURL ?>">Profile</a></li> -->
-                <li><a href="<?= $baseURL ?>/?profile=<?=$config["public_txt_url"] ?>">Profile</a></li>
         </ul>
     </nav>
 </header>

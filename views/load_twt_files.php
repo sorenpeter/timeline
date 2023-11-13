@@ -8,6 +8,11 @@ require_once('libs/hash.php');
 
 $config = parse_ini_file('private/config.ini');
 
+if (!isset($_SESSION['password'])) {
+	header('Location: ./login');
+	exit();
+}
+
 $max_execution_time = intval($config['max_execution_time']);
 if ($max_execution_time < 1) {
 	$max_execution_time = 1;

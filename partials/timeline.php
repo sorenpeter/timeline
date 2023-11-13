@@ -49,4 +49,11 @@
         </div>
     </article>
 
-<?php } ?>
+<?php } 
+
+
+if (!isset($_SESSION['password'])) {
+    echo '<center><a href="mailto:'.$config['email'].'?subject=RE: '.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'" class="button">Comment via email</a></center>';
+    }
+
+?>

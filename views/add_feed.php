@@ -11,7 +11,10 @@ if ($config['debug_mode']) {
 
 $txt_file_path = $config['txt_file_path'];
 
-
+if (!isset($_SESSION['password'])) {
+	header('Location: ./login');
+	exit();
+}
 
 /*
 if (!has_valid_session()) {

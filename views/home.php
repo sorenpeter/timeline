@@ -3,7 +3,7 @@ require_once("partials/base.php");
 
 //$title = "Login - ".$title;
 
-include 'partials/header.php';
+include_once 'partials/header.php';
 ?>
 
 <!-- PHP: PROFILE CARD -->
@@ -31,7 +31,7 @@ if( isset($_SESSION['password'])) {
 }
 ?>
 
-<!-- PHP: TIMELINE --><?php include 'partials/timeline.php'?>
+<!-- PHP: TIMELINE --><?php include_once 'partials/timeline.php'?>
 
-<!-- PHP: FOOTER  --><?php include 'partials/footer.php';?>
+<!-- PHP: FOOTER  --><?php include_once 'partials/footer.php';?>
 

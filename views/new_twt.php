@@ -24,7 +24,7 @@ if (!isset($_SESSION['password'])) {
 	exit();
 }
 
-$textareaValue = '';
+//$textareaValue = '';
 if (isset($_GET['hash'])) {
 	$hash = $_GET['hash'];
 	$textareaValue = "(#$hash) ";
@@ -59,7 +59,10 @@ if (isset($_POST['submit'])) {
 		date_default_timezone_set('UTC');
 	}
 
+	//$datetime = gmdate('Y-m-d\TH:i:s\Z', $date->format('U'));
+	//$twt = $datetime . "\t$new_post\n";
 	$twt = date('c') . "\t$new_post\n";
+
 
 	if (strpos($contents, NEW_TWT_MARKER) !== false) {
 		// Add the previous marker

@@ -9,11 +9,11 @@ if (!empty($id)) {
 
 $title = "Post #".$id." - ".$title;
 
-include 'partials/header.php';
+include_once 'partials/header.php';
 ?>
 
 <!-- <h2>Post: #<?= $id ?></h2> -->
 
-<!-- PHP: GET TIMELIE  --><?php include 'partials/timeline.php'?>
+<!-- PHP: GET TIMELIE  --><?php include_once 'partials/timeline.php'?>
 
-<!-- PHP: GET FOOTER  --><?php include 'partials/footer.php';?>
+<!-- PHP: GET FOOTER  --><?php include_once 'partials/footer.php';?>

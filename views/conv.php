@@ -12,13 +12,19 @@ if (!empty($id)) {
 
 $title = "Conversation: ".$id." - ".$title;
 
-include 'partials/header.php';
+include_once 'partials/header.php';
 ?>
 
 <h2>Conversation</h2>
 
 <p>Recent twts in reply to <a href="/post/<?= $id ?>">#<?= $id ?></a></p>
 
-<!-- PHP: GET TIMELIE  --><?php include 'partials/timeline.php'?>
+<!-- PHP: GET TIMELIE  --><?php include_once 'partials/timeline.php'?>
 
-<!-- PHP: GET FOOTER  --><?php include 'partials/footer.php';?>
+<?php
+if (isset($_SESSION['password'])) {
+    $textareaValue = "(#$id) ";
+    include 'views/new_twt.php';
+} ?>
+
+<!-- PHP: GET FOOTER  --><?php include_once 'partials/footer.php';?>

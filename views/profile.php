@@ -35,7 +35,7 @@ else { // Show timeline for the URL
     $twtsURL = $config['public_txt_url'];
     // $twtsURL = "https://lyse.isobeef.org/twtxt.txt";
     // $profile = getTwtsFromTwtxtString($twtsURL);
-    header("Location: /profile?url=".$twtsURL);
+    header("Location: ".$baseURL."/profile?url=".$twtsURL);
     
     /*
     if (filter_var($twtsURL, FILTER_VALIDATE_URL) === FALSE) {

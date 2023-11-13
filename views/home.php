@@ -28,7 +28,8 @@ if (!empty($_GET['profile'])) { // Show twts for some user
 <?php
 if( isset($_SESSION['password'])) { 
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
-} ?>
+}
+?>
 
 <!-- PHP: TIMELINE --><?php include 'partials/timeline.php'?>
 

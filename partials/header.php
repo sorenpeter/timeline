@@ -18,8 +18,8 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
     <p>
         <a href="<?= $baseURL ?>">
             <img class="avatar" src="<?= $profile->avatar ?>" alt="" loading="lazy">
-            Timeline for <?= $profile->nick ?>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
-        </a>
+            <!-- Timeline for --><?= $profile->nick ?></a>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
+
     </p> 
     <nav>
 

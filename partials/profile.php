@@ -22,14 +22,14 @@ $profile = getTwtsFromTwtxtString($url);
     <p><?= $profile->description ?></p>
 
     <small>
-      <a href="">Posts</a> | 
-      <a href="">Replies</a> | 
-      <a href="">Gallery</a> |
+      <!-- <a href="">Posts</a> |  -->
+      <!-- <a href="">Replies</a> |  -->
+      <!-- <a href="">Gallery</a> | -->
 
       <!-- <span class="right"> -->
-        <a href="following.php">Following <?php echo count($twtFollowingList); ?></a> | 
-        <a target="_blank" href="<?= $profile->mainURL ?>"></i>twtxt.txt</a> | 
-        <a href="https://yarn.social">How to follow</a>
+        <!-- <a href="following.php">Following <?php echo count($twtFollowingList); ?></a> |  -->
+        <a target="_blank" href="<?= $profile->mainURL ?>"></i><?= $profile->mainURL ?></a>
+        (<a href="https://yarn.social">How to follow</a>)
       <!-- </span> -->
 
     </small>

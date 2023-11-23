@@ -17,7 +17,7 @@ declare(strict_types=1);
 # hash(string) =
 #
 
-require_once("libs/session.php");
+require_once('libs/session.php');
 require_once('libs/twtxt.php');
 require_once('libs/hash.php');
 require_once('libs/Slimdown.php');
@@ -32,7 +32,7 @@ $config = parse_ini_file('private/config.ini');
 // TODO: Take the title from the config.ini
 $title = "Timeline"; // Fallback, should be set in all views
 
-// HACKED by sp@darch.dk 
+// HACKED by sp@darch.dk
     if(!empty($_GET['list'])) {
         $url = "https://darch.dk/twtxt-lists/".$_GET['list'];
     }

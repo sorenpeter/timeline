@@ -24,7 +24,7 @@ if (!isset($_SESSION['password'])) {
 	exit();
 }
 
-//$textareaValue = '';
+$textareaValue = '';
 if (isset($_GET['hash'])) {
 	$hash = $_GET['hash'];
 	$textareaValue = "(#$hash) ";
@@ -82,10 +82,9 @@ if (isset($_POST['submit'])) {
 
 	header('Refresh:0; url=.');
 	exit;
-	
-} else { ?>
 
-<?php
+} else {
+
 require_once("partials/base.php");
 
 $title = "New post - ".$title;
@@ -105,8 +104,8 @@ include_once 'partials/header.php';
 	</form>
 </article>
 
-<!-- PHP: GET TIMELIE  --><?php include_once 'partials/timeline.php'?>
+<!-- PHP: GET TIMELINE  --><?php include_once 'partials/timeline.php' ?>
 
-<!-- PHP: GET FOOTER  --><?php include_once 'partials/footer.php';?>
+<!-- PHP: GET FOOTER  --><?php include_once 'partials/footer.php'; ?>
 
 <?php } ?>

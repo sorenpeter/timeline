@@ -19,11 +19,11 @@
             <div class="twt-msg">
                 <?= $twt->content ?>
 
-                <!-- Not sure what this does... 
+                <!-- Not sure what this does...
                 <?php foreach ($twt->mentions as $mention) { ?>
                     <br><?= $mention['nick'] ?>(<?= $mention['url'] ?>) 
                 <?php } ?>
-                -->
+                 -->
             </div>
 
             <small>

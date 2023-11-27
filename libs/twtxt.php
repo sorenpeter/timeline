@@ -253,6 +253,7 @@ function replaceMentionsFromTwt(string $twtString): string {
 	//$replacement = '<a href="/?url=$2">@$1</a>';
 
 	$replacement = '<a href="'.str_replace("/index.php", "", $_SERVER["SCRIPT_NAME"]).'/?profile=$2">@$1</a>';
+	$replacement .= '<a href="$2" class="webmention"></a>'; // Adds a hidden link direcly to the twtxt.txt of the mentioned target
 
 	#$twtString = '@<nick https://eapl.mx/twtxt.txt>';
 

@@ -18,6 +18,27 @@ curl_close($ch);
 $source = ob_get_contents();
 ob_end_clean();
 
+/*
+function twtFromDate($url) {
+	// Split URL into fragment and file path, and retrurns twt maching date
+	$datetime = parse_url($url, PHP_URL_FRAGMENT);
+	$twtfile = strtok($url, "#");
+	return preg_grep($datetime, file($twtfile));	
+}
+
+function twtMentionInSource($url){
+	// Tests if twt contains a mentions to target
+	$pattern = '/@<([^>]+)\s([^>]+)>/'; // Matches "@<nick url>"
+
+	return preg_match($pattern);
+}
+
+if (str_contains($url, ".txt#")) {
+		
+}
+*/
+
+
 if (stristr($source, $_POST['target'])) {
 header($_SERVER['SERVER_PROTOCOL'] . ' 202 Accepted');
 
@@ -28,7 +49,8 @@ $logfile = './mentions.txt'; /* Make sure file is writeable */
 $log  = date("Y-m-d\TH:i:s\Z") . "\t" 
     ."Recived webmention from ".$_POST['source']
     ." mentioning ".$_POST['target']
-   	." (IP: ".$_SERVER['REMOTE_ADDR'].")".PHP_EOL;
+   	//." (IP: ".$_SERVER['REMOTE_ADDR'].")"
+   	.PHP_EOL;
  	file_put_contents($logfile, $log, FILE_APPEND);
 
 }

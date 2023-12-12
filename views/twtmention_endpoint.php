@@ -18,37 +18,42 @@ curl_close($ch);
 $source = ob_get_contents();
 ob_end_clean();
 
-/*
 function twtFromDate($url) {
 	// Split URL into fragment and file path, and retrurns twt maching date
 	$datetime = parse_url($url, PHP_URL_FRAGMENT);
 	$twtfile = strtok($url, "#");
-	return preg_grep($datetime, file($twtfile));	
+	return preg_grep($datetime, explode(PHP_EOL,$source));	
 }
 
-function twtMentionInSource($url){
+function twtMentionInSource($twt){
 	// Tests if twt contains a mentions to target
 	$pattern = '/@<([^>]+)\s([^>]+)>/'; // Matches "@<nick url>"
-
-	return preg_match($pattern);
+	// Match only mention of specific URL from TARGET
+	return preg_match($pattern, $twt);
 }
 
-if (str_contains($url, ".txt#")) {
-		
-}
-*/
-
-
-if (stristr($source, $_POST['target'])) {
+if (stristr($_POST['source'], ".txt#")) {
 	header($_SERVER['SERVER_PROTOCOL'] . ' 202 Accepted');
+	
+	// Split URL into fragment and file path, and retrurns twt maching date
+	$datetime = "/".parse_url($_POST['source'], PHP_URL_FRAGMENT)."/";
+	//$twtfile = strtok($_POST['source'], "#");
+	$txt = explode(PHP_EOL, $source);
+	$twt = preg_grep($datetime, $txt);	
 
-	# Now do something with $source e.g. parse it for h-entry and h-card and store what you find.
 
-	$logfile = './mentions.txt'; /* Make sure file is writeable */
+	/*
+	if (twtMentionInSource($twt) {
+		$twtMention = "YES!";
+	}
+	*/
+
+	$logfile = './mentions.txt'; // Make sure file is writeable
 
 	$log  = date("Y-m-d\TH:i:s\Z") . "\t" 
 	    ."Recived webmention from ".$_POST['source']
 	    ." mentioning ".$_POST['target']
+	    ." -- ".$twt.$datetime
 	   	//." (IP: ".$_SERVER['REMOTE_ADDR'].")"
 	   	.PHP_EOL;
 	 	file_put_contents($logfile, $log, FILE_APPEND);

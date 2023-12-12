@@ -38,6 +38,7 @@ $routes = [
     //'/profile/([a-zA-Z0-9_-]+)' => 'profile.php',
     '/conv/([a-zA-Z0-9]{7})' => 'conv.php', // matches only twtHash of exactly 7 alphanumeric characters 
     '/post/([a-zA-Z0-9]{7})' => 'post.php', // matches only twtHash of exactly 7 alphanumeric characters 
+    '/twtmention' => 'twtmention_endpoint.php',
     '/webmention' => 'webmention_endpoint.php',
 ];
 

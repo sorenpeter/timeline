@@ -34,9 +34,11 @@ $routes = [
     '/login' => 'login.php',
     '/logout' => 'logout.php',
     '/profile' => 'profile.php',
+    '/profile' => 'profile.php',
     //'/profile/([a-zA-Z0-9_-]+)' => 'profile.php',
     '/conv/([a-zA-Z0-9]{7})' => 'conv.php', // matches only twtHash of exactly 7 alphanumeric characters 
     '/post/([a-zA-Z0-9]{7})' => 'post.php', // matches only twtHash of exactly 7 alphanumeric characters 
+    '/webmention' => 'webmention_endpoint.php',
 ];
 
 // Loop through the defined routes and try to match the request URI

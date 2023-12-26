@@ -8,6 +8,7 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="webmention" href="<?= $baseURL ?>/webmention" />
     <link rel="stylesheet" href="<?= $baseURL ?>/libs/simple.css">
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/style.css">
     <title><?= $title ?></title>
@@ -19,7 +20,6 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
         <a href="<?= $baseURL ?>">
             <img class="avatar" src="<?= $profile->avatar ?>" alt="" loading="lazy">
             <!-- Timeline for --><?= $profile->nick ?></a>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
-
     </p> 
     <nav>
 

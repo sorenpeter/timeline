@@ -7,7 +7,7 @@
 </center> -->
 
 <?php foreach ($twts as $twt) { ?>
-    <article class="post-entry">
+    <article class="post-entry" id="<?= $twt->hash ?>">
         <a href="<?= $baseURL ?>/?profile=<?= $twt->mainURL ?>">
             <img src='<?= $twt->avatar ?>' class="avatar" onerror="this.onerror=null;this.src='imgs/image_not_found.png';">
         </a>

@@ -6,31 +6,33 @@ if (!empty($_GET['profile'])) {
 }
 $profile = getTwtsFromTwtxtString($url);
 
+$profileURL = $baseURL.'/?profile='.$profile->mainURL;
+
 ?>  
 
 <div class="profile">
 
-  <a href="<?= $profile->mainURL ?>">
+  <a href="<?= $profileURL ?>">
     <img class="avatar" src="<?= $profile->avatar ?>" alt="" loading="lazy">
   </a>
 
   <div>
-      <a href="<?= $profile->mainURL ?>" class="author">
+      <a href="<?= $profileURL ?>" class="author">
         <strong><?= $profile->nick ?></strong>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
       </a>
 
     <p><?= $profile->description ?></p>
 
     <small>
-      <!-- <a href="">Posts</a> |  -->
+      <a href="<?= $profileURL ?>">Posts</a> | 
       <!-- <a href="">Replies</a> |  -->
-      <!-- <a href="">Gallery</a> | -->
+      <a href="<?= $baseURL ?>/gallery?profile=<?= $profile->mainURL ?>">Gallery</a>
 
-      <!-- <span class="right"> -->
+      <span class="right">
         <!-- <a href="following.php">Following <?php echo count($twtFollowingList); ?></a> |  -->
         <a target="_blank" href="<?= $profile->mainURL ?>"></i><?= $profile->mainURL ?></a>
         (<a href="https://yarn.social">How to follow</a>)
-      <!-- </span> -->
+      </span>
 
     </small>
 

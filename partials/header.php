@@ -17,9 +17,13 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 
 <header>
     <p>
-        <a href="<?= $baseURL ?>">
+        <a href="/">
             <img class="avatar" src="<?= $profile->avatar ?>" alt="" loading="lazy">
-            <?= $profile->nick ?></a>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
+            <?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
+        </a>
+        <!-- <a href="<?= $baseURL ?>">
+            <img class="avatar" src="<?= $profile->avatar ?>" alt="" loading="lazy">
+            <?= $profile->nick ?></a>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?> -->
     </p> 
     <nav>
 
@@ -27,14 +31,16 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
             <?php //if ($validSession) {  // TODO: Make login seqcure ?>
             <?php if( isset($_SESSION['password'])) { /*
                 if($_SESSION['password']=="$password") {*/ // Hacky login ?>   
-                <li><?php include 'partials/lists.php'; ?></li>
                 <li><a href="<?= $baseURL ?>/refresh?url=<?= $url ?>">Refresh</a></li>
-                <li><a href="<?= $baseURL ?>/following">Following <?php // echo count($twtFollowingList); ?></a></li>
-                <li><a href="<?= $baseURL ?>/add">Add feed</a></li>
+                <li><a href="<?= $baseURL ?>">Timeline</a></li>
                 <li><a href="<?= $baseURL ?>?profile=<?=$url ?>">Profile</a></li>                
                 <li><a href="<?= $baseURL ?>/gallery?profile=<?= $profile->mainURL ?>">Gallery</a></li>
+                <li><a href="<?= $baseURL ?>/following">Following <?php // echo count($twtFollowingList); ?></a></li>
+                <li><a href="<?= $baseURL ?>/add">Add feed</a></li>
                 <li><a href="<?= $baseURL ?>/logout">Log Out</a></li>
+                <li><?php include 'partials/lists.php'; ?></li>
             <?php /*}*/ } else { ?>
+                <li><a href="<?= $baseURL ?>">Timeline</a></li>
                 <li><a href="<?= $baseURL ?>?profile=<?= $url ?>">Profile</a></li>
                 <li><a href="<?= $baseURL ?>/gallery?profile=<?= $profile->mainURL ?>">Gallery</a></li>
                 <li><a href="<?= $baseURL ?>/following">Following <?php // echo count($twtFollowingList); ?></a></li>

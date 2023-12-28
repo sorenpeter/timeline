@@ -35,13 +35,16 @@ if (!empty($_GET['profile'])) { // Show twts for some user
 <div class="gallery">
 
 <?php 
+
 foreach ($twts as $twt) {
     $img_array = getImagesFromTwt($twt->content);
 
     foreach ($img_array as $img) {
-        //echo '<a href="'.$baseURL.'/post/'.$twt->hash.'">'.$img[0].'</a>';
+        $img_link = $img[0];
+
+        echo '<a href="'.$baseURL.'/post/'.$twt->hash.'">'.$img_link.'</a>';
         // Workaround until cache issue is resolved 
-        echo '<a href="'.$baseURL.'/?profile='.$twt->mainURL.'#'.$twt->hash.'">'.$img[0].'</a>';
+        //echo '<a href="'.$baseURL.'/?profile='.$twt->mainURL.'#'.$twt->hash.'">'.$img[0].'</a>';
     }
 }
 ?>

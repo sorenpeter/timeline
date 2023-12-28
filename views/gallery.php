@@ -39,10 +39,7 @@ foreach ($twts as $twt) {
     $img_array = getImagesFromTwt($twt->content);
 
     foreach ($img_array as $img) {
-        $img_link = $img[0];
-
-        echo '<a href="'.$baseURL.'/post/'.$twt->hash.'">'.$img_link.'</a>';
-        //echo '<a href="'.$baseURL.'/?profile='.$twt->mainURL.'#'.$twt->hash.'">'.$img[0].'</a>'; // Workaround until cache issue is resolved 
+        echo '<a href="'.$baseURL.'/post/'.$twt->hash.'">'.$img[0].'</a>';
     }
 }
 ?>

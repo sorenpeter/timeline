@@ -1,4 +1,5 @@
-<?php require_once('partials/base.php');
+<?php
+require_once('partials/base.php');
 
 // TODO: Give a warning if the file is not found
 $config = parse_ini_file('private/config.ini');
@@ -66,8 +67,6 @@ if (isset($_POST['url'])) {
 } else { ?>
 
 <?php
-require_once("partials/base.php");
-
 $title = "Add feed - ".$title;
 
 include 'partials/header.php';

@@ -30,13 +30,13 @@ if (!empty($_GET['url'])) { // Show twts for some user
         $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
     }
 
-} 
+}
 else { // Show timeline for the URL
     $twtsURL = $config['public_txt_url'];
     // $twtsURL = "https://lyse.isobeef.org/twtxt.txt";
     // $profile = getTwtsFromTwtxtString($twtsURL);
     header("Location: ".$baseURL."/profile?url=".$twtsURL);
-    
+
     /*
     if (filter_var($twtsURL, FILTER_VALIDATE_URL) === FALSE) {
         die('Not a valid URL');
@@ -59,7 +59,7 @@ foreach ($parsedTwtxtFiles as $currentTwtFile) {
 
 krsort($twts, SORT_NUMERIC);
 
-?>  
+?>
 
 <div class="profile">
 
@@ -75,13 +75,13 @@ krsort($twts, SORT_NUMERIC);
     <p><?= $profile->description ?></p>
 
     <small>
-<!--       <a href="">Posts</a> | 
-      <a href="">Replies</a> | 
+<!--       <a href="">Posts</a> |
+      <a href="">Replies</a> |
       <a href="">Gallery</a> |
  -->
       <!-- <span class="right"> -->
         <!-- <a href="/following.php">Following <?php echo count($twtFollowingList); ?></a> |  -->
-        <a target="_blank" href="<?= $profile->mainURL ?>"></i>twtxt.txt</a> | 
+        <a target="_blank" href="<?= $profile->mainURL ?>"></i>twtxt.txt</a> |
         <a href="https://yarn.social">How to follow</a>
       <!-- </span> -->
 
@@ -94,7 +94,7 @@ krsort($twts, SORT_NUMERIC);
 
 <!-- PHP: NEW POST BOX -->
 <?php
-if( isset($_SESSION['password'])) { 
+if( isset($_SESSION['password'])) {
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
 } ?>
 

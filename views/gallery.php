@@ -8,7 +8,7 @@ include_once 'partials/header.php';
 
 
 <!-- PHP: PROFILE CARD -->
-<?php 
+<?php
 if (!empty($_GET['profile'])) { // Show twts for some user
     $twtsURL = $_GET['profile'];
 
@@ -34,8 +34,7 @@ if (!empty($_GET['profile'])) { // Show twts for some user
 <!-- PHP: GALLERY -->
 <div class="gallery">
 
-<?php 
-
+<?php
 foreach ($twts as $twt) {
     $img_array = getImagesFromTwt($twt->content);
 
@@ -43,8 +42,7 @@ foreach ($twts as $twt) {
         $img_link = $img[0];
 
         echo '<a href="'.$baseURL.'/post/'.$twt->hash.'">'.$img_link.'</a>';
-        // Workaround until cache issue is resolved 
-        //echo '<a href="'.$baseURL.'/?profile='.$twt->mainURL.'#'.$twt->hash.'">'.$img[0].'</a>';
+        //echo '<a href="'.$baseURL.'/?profile='.$twt->mainURL.'#'.$twt->hash.'">'.$img[0].'</a>'; // Workaround until cache issue is resolved 
     }
 }
 ?>

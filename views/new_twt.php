@@ -84,12 +84,11 @@ if (isset($_POST['submit'])) {
 	exit;
 
 } else {
+	require_once("partials/base.php");
 
-require_once("partials/base.php");
+	$title = "New post - ".$title;
 
-$title = "New post - ".$title;
-
-include_once 'partials/header.php';
+	include_once 'partials/header.php';
 ?>
 
 <article id="new_twt">

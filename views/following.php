@@ -10,7 +10,7 @@ include 'partials/header.php';
     <h1><?= $profile->nick ?> follows <?php echo count($twtFollowingList); ?> feeds</h1>
 
     <table>
-    
+
         <tr>
             <!-- <th></th> -->
             <th>Nick</th>

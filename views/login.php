@@ -5,11 +5,11 @@ $title = "Login - ".$title;
 
 include 'partials/header.php';
 ?>
-        
+
 <?php
     //$config = parse_ini_file('private/config.ini');
     //$password = $config['password'];
-    
+
     if( isset($_SESSION['password'])) {
         if($_SESSION['password']=="$password") {
         header("Location: .");

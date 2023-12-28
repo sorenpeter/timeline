@@ -1,4 +1,5 @@
-<?php require_once("partials/base.php"); 
+<?php
+require_once("partials/base.php");
 
 // Get the hash (only post, not replies) as $id from the router
 if (!empty($id)) {

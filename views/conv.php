@@ -1,4 +1,6 @@
-<?php require_once("partials/base.php"); 
+<?php
+$paginateTwts = false;
+require_once("partials/base.php");
 
 // Get the hashes (both post and replies) as $id from the router and return an inverted list
 if (!empty($id)) {
@@ -19,7 +21,7 @@ include_once 'partials/header.php';
 
 <p>Recent twts in reply to <a href="<?= $baseURL ?>/post/<?= $id ?>">#<?= $id ?></a></p>
 
-<!-- PHP: GET TIMELIE  --><?php include_once 'partials/timeline.php'?>
+<!-- PHP: GET TIMELINE  --><?php include_once 'partials/timeline.php'?>
 
 <?php
 if (isset($_SESSION['password'])) {

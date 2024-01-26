@@ -33,16 +33,18 @@ if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
 	die('Not a valid URL');
 }
 
-echo "Loading URL: $url<br>\n<br>\n";
-#ob_flush();
+echo '<label id="refreshLabel" for="refreshProgress">Loading feeds followed by: '.$url.'</label><br>';
+echo '<progress id="refreshProgress" value=""></progress>';
+
+ob_flush();
 
 const DEBUG_TIME_SECS = 300;
 const PRODUCTION_TIME_SECS = 5;
 $fileContent = getCachedFileContentsOrUpdate($url, PRODUCTION_TIME_SECS);
 $fileContent = mb_convert_encoding($fileContent, 'UTF-8');
-
 $fileLines = explode("\n", $fileContent);
 
+// Build Following List
 $twtFollowingList = [];
 
 foreach ($fileLines as $currentLine) {
@@ -53,55 +55,32 @@ foreach ($fileLines as $currentLine) {
 	}
 }
 
-# Load all the files
-# Save a flag to know it's loading files in the background
-/*
-foreach ($twtFollowingList as $following) {
-	echo "Updating: $following[1]<br>\n";
-	#ob_flush();
-	flush();
-	updateCachedFile($following[1]);
-}
-*/
-//echo 'Finished';
-//ob_flush();
 
-//header('Location: /');
-//exit();
-
-/* from: https://github.com/w3shaman/php-progress-bar */
-
-echo '<div id="progress" style="width:500px;border:1px solid #ccc;"></div>';
-
-echo '<div id="information" style="width"></div>';
-
+/* Progress bar based on: https://github.com/w3shaman/php-progress-bar */
 
 $i = 1;
+$total = count($twtFollowingList);
 foreach ($twtFollowingList as $following) {	
-	$total = count($twtFollowingList);
-    // Calculate the percentation
-    $percent = intval($i/$total * 100)."%";
+	$float = $i/$total;
+    $percent = intval($float * 100)."%";
     
     // Javascript for updating the progress bar and information
     echo '<script language="javascript">
-    document.getElementById("progress").innerHTML="<div style=\"width:'.$percent.';background-color:#ddd;\">&nbsp;</div>";
-    document.getElementById("information").innerHTML="'.$i.' row(s) processed.";
-    </script>';
+    		document.getElementById("refreshLabel").innerHTML = "Updating: '.$following[1].' ('.$i.'/'.$total.')";
+    		document.getElementById("refreshProgress").value = "'.$float.'"; 
+    		document.getElementById("refreshProgress").innerHTML = "'.$percent.'"; 
+    	</script>';
 
-    
-// This is for the buffer achieve the minimum size in order to flush data
+    updateCachedFile($following[1]);
 
-	echo "Updating: $following[1]"." (".$i."/".$total.")<br>\n";
-	updateCachedFile($following[1]);
-    
-// Send output to browser immediately
-    flush();
+    ob_flush(); // Send output to browser immediately
     $i++;
 }
 
-echo 'Finished';
-
 
 // Tell user that the process is completed
-echo '<script language="javascript">document.getElementById("information").innerHTML="Process completed"</script>';
+echo '<script language="javascript">document.getElementById("refreshLabel").innerHTML="Refreshed '.$total.' feeds"</script>';
+
+//header('Location: /');
+exit();
 

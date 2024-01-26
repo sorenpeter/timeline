@@ -44,6 +44,7 @@ $fileContent = mb_convert_encoding($fileContent, 'UTF-8');
 $fileLines = explode("\n", $fileContent);
 
 $twtFollowingList = [];
+
 foreach ($fileLines as $currentLine) {
 	if (str_starts_with($currentLine, '#')) {
 		if (!is_null(getDoubleParameter('follow', $currentLine))) {
@@ -54,13 +55,53 @@ foreach ($fileLines as $currentLine) {
 
 # Load all the files
 # Save a flag to know it's loading files in the background
+/*
 foreach ($twtFollowingList as $following) {
 	echo "Updating: $following[1]<br>\n";
 	#ob_flush();
+	flush();
 	updateCachedFile($following[1]);
 }
-echo 'Finished';
-#ob_flush();
+*/
+//echo 'Finished';
+//ob_flush();
 
-header('Location: /');
-exit();
+//header('Location: /');
+//exit();
+
+/* from: https://github.com/w3shaman/php-progress-bar */
+
+echo '<div id="progress" style="width:500px;border:1px solid #ccc;"></div>';
+
+echo '<div id="information" style="width"></div>';
+
+
+$i = 1;
+foreach ($twtFollowingList as $following) {	
+	$total = count($twtFollowingList);
+    // Calculate the percentation
+    $percent = intval($i/$total * 100)."%";
+    
+    // Javascript for updating the progress bar and information
+    echo '<script language="javascript">
+    document.getElementById("progress").innerHTML="<div style=\"width:'.$percent.';background-color:#ddd;\">&nbsp;</div>";
+    document.getElementById("information").innerHTML="'.$i.' row(s) processed.";
+    </script>';
+
+    
+// This is for the buffer achieve the minimum size in order to flush data
+
+	echo "Updating: $following[1]"." (".$i."/".$total.")<br>\n";
+	updateCachedFile($following[1]);
+    
+// Send output to browser immediately
+    flush();
+    $i++;
+}
+
+echo 'Finished';
+
+
+// Tell user that the process is completed
+echo '<script language="javascript">document.getElementById("information").innerHTML="Process completed"</script>';
+

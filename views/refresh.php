@@ -18,11 +18,10 @@ include 'partials/header.php';
 ?>
 
 <p id="refreshLabel">
-    <span id=refreshInfo>Loading feeds followed by:</span>
-    <span id=refreshURL><?= preg_replace('(^https?://)', '', $url) ?><span>
-    <span id="refreshCounter">(1 of 10)</span>
+    <span id="refreshInfo">Loading feeds followed by:</span>
+    <span id="refreshURL"><?= preg_replace('(^https?://)', '', $url) ?></span>
+    <span id="refreshCounter"></span>
 </p>
-
 <progress id="refreshProgress" value=""></progress>
 
 <?php
@@ -62,18 +61,21 @@ foreach ($fileLines as $currentLine) {
 $i = 1;
 $total = count($twtFollowingList);
 
+echo '<script language="javascript">document.getElementById("refreshInfo").innerHTML = "Updating feed from:"</script>';
+
 foreach ($twtFollowingList as $following) { 
     //ob_start();
     $float = $i/$total;
     $percent = intval($float * 100)."%";
-    
+    $feed = $following[1];
+    //$feed = preg_replace('(^https?://)', '', $feed);
+    //$feed = $following[0].'@'. parse_url($following[1], PHP_URL_HOST);
+    $feed = $following[0].' ('.$following[1].')';
+
     // Javascript for updating the progress bar and information
     echo '<script language="javascript">
-            document.getElementById("refreshInfo").innerHTML = "
-                <span id=refreshInfo>Updating:</span>
-                <span id=refreshURL>'.preg_replace('(^https?://)', '', $following[1]).'<span>
-                <span id="refreshCounter">('.$i.' of '.$total.')</span>
-            ";
+            document.getElementById("refreshURL").innerHTML = "'.$feed.'";
+            document.getElementById("refreshCounter").innerHTML = "('.$i.' of '.$total.')";
             document.getElementById("refreshProgress").value = "'.$float.'"; 
             document.getElementById("refreshProgress").innerHTML = "'.$percent.'"; 
         </script>';
@@ -86,7 +88,9 @@ foreach ($twtFollowingList as $following) {
 
 // Tell user that the process is completed
 echo '<script language="javascript">
-        document.getElementById("refreshLabel").innerHTML="Refreshed '.$total.' feeds";
+        document.getElementById("refreshInfo").innerHTML="Refreshed '.$total.' feeds";
+        document.getElementById("refreshURL").innerHTML = "";
+        document.getElementById("refreshCounter").innerHTML = "";
         history.back();
     </script>';
 

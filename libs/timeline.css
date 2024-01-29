@@ -246,10 +246,10 @@ nav.pagnation {
 
 #refreshInfo {
     font-weight: bold;
+/*    display: block;*/
 }
 
 #refreshURL {
-    display: block;    
 }
 
 #refreshCounter {

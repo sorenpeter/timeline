@@ -4,12 +4,14 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 
 ?>
 
+<!doctype html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="<?= $baseURL ?>/libs/simple.css">
-    <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/simple.css">
+    <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/timeline.css">
+    <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/custom_style.css">
     <title><?= $title ?></title>
 </head>
 <body>
@@ -43,5 +45,3 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 </header>
 
 <main>
-
-

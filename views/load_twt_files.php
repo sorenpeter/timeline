@@ -2,9 +2,13 @@
 # Gets the followers from an URL and then gets all the Followers twtxt.txt files
 # Intended to be run in the background
 
+/*
 require_once("libs/session.php"); // TODO: Move all to base.php
 require_once('libs/twtxt.php');
 require_once('libs/hash.php');
+*/
+
+require_once("partials/base.php");
 
 $config = parse_ini_file('private/config.ini');
 
@@ -13,6 +17,7 @@ if (!isset($_SESSION['password'])) {
 	exit();
 }
 
+
 $max_execution_time = intval($config['max_execution_time']);
 if ($max_execution_time < 1) {
 	$max_execution_time = 1;
@@ -20,9 +25,13 @@ if ($max_execution_time < 1) {
 
 ini_set('max_execution_time', $max_execution_time);
 
-#ob_start();
+//ob_start();
 
-$config = parse_ini_file('private/config.ini');
+//require_once 'partials/header.php';
+//ob_flush();
+
+
+//$config = parse_ini_file('private/config.ini');
 $url = $config['public_txt_url'];
 
 if (!empty($_GET['url'])) {

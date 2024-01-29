@@ -238,6 +238,26 @@ nav.pagnation {
     padding: 0.5rem 0;
 }
 
+
+/* === REFRESH === */
+
+#refreshLabel {
+}
+
+#refreshInfo {
+    font-weight: bold;
+}
+
+#refreshURL {
+    display: block;    
+}
+
+#refreshCounter {
+    float: right;
+}
+
+
+/* === FOOTER === */
 footer {
     border-top: thin solid grey;
     margin-top: 1rem;

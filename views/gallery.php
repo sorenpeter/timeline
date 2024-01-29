@@ -23,9 +23,9 @@ if (!empty($_GET['profile'])) { // Show twts for some user
         include 'partials/profile.php';
     }
 } else {
-    // code...
-    //$filecontent = file('../twtxt.txt');
-    $twtsURL = file($profile->mainURL);
+    // TODO: default to rendering the local users gallery, if no profile specified
+    //echo $profile->mainURL;;
+    //$twtsURL = $profile->mainURL; // correct URL for twtxt.txt
 }
 
 ?>
@@ -39,7 +39,7 @@ foreach ($twts as $twt) {
     $img_array = getImagesFromTwt($twt->content);
 
     foreach ($img_array as $img) {
-        echo '<a href="'.$baseURL.'/post/'.$twt->hash.'">'.$img[0].'</a>';
+        echo '<a href="'.$baseURL.'/conv/'.$twt->hash.'">'.$img[0].'</a>';
     }
 }
 ?>

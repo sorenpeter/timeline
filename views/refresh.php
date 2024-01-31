@@ -18,7 +18,7 @@ include 'partials/header.php';
 ?>
 
 <p id="refreshLabel">
-    <span id="refreshInfo">Loading feeds followed by:</span>
+    <strong id="refreshInfo">Loading feeds followed by:</strong>
     <span id="refreshURL"><?= preg_replace('(^https?://)', '', $url) ?></span>
     <span id="refreshCounter"></span>
 </p>
@@ -88,8 +88,8 @@ foreach ($twtFollowingList as $following) {
 
 // Tell user that the process is completed
 echo '<script language="javascript">
-        document.getElementById("refreshInfo").innerHTML="Refreshed '.$total.' feeds";
-        document.getElementById("refreshURL").innerHTML = "";
+        document.getElementById("refreshInfo").innerHTML="Refreshed '.$total.' feeds from:";
+        document.getElementById("refreshURL").innerHTML = "'.preg_replace('(^https?://)', '', $url).'";
         document.getElementById("refreshCounter").innerHTML = "";
         history.back();
     </script>';

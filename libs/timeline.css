@@ -241,12 +241,9 @@ nav.pagnation {
 
 /* === REFRESH === */
 
-#refreshLabel {
-}
-
 #refreshInfo {
-    font-weight: bold;
-/*    display: block;*/
+	display: block;
+    text-align: center:
 }
 
 #refreshURL {

@@ -17,13 +17,16 @@ include 'partials/header.php';
 
 ?>
 
-<label id="refreshLabel" for="refreshProgress">Loading feeds followed by: <?=$url?></label><br>
+<p id="refreshLabel">
+    <strong id="refreshInfo">Loading feeds followed by:</strong>
+    <span id="refreshURL"><?= preg_replace('(^https?://)', '', $url) ?></span>
+    <span id="refreshCounter"></span>
+</p>
 <progress id="refreshProgress" value=""></progress>
 
 <?php
 
 include 'partials/footer.php';
-//echo str_repeat(' ',1024*64);
 ob_start();
 
 flush();
@@ -58,14 +61,21 @@ foreach ($fileLines as $currentLine) {
 $i = 1;
 $total = count($twtFollowingList);
 
+echo '<script language="javascript">document.getElementById("refreshInfo").innerHTML = "Updating feed from:"</script>';
+
 foreach ($twtFollowingList as $following) { 
     //ob_start();
     $float = $i/$total;
     $percent = intval($float * 100)."%";
-    
+    $feed = $following[1];
+    //$feed = preg_replace('(^https?://)', '', $feed);
+    //$feed = $following[0].'@'. parse_url($following[1], PHP_URL_HOST);
+    $feed = $following[0].' ('.$following[1].')';
+
     // Javascript for updating the progress bar and information
     echo '<script language="javascript">
-            document.getElementById("refreshLabel").innerHTML = "Updating: '.$following[1].' ('.$i.' of '.$total.')";
+            document.getElementById("refreshURL").innerHTML = "'.$feed.'";
+            document.getElementById("refreshCounter").innerHTML = "('.$i.' of '.$total.')";
             document.getElementById("refreshProgress").value = "'.$float.'"; 
             document.getElementById("refreshProgress").innerHTML = "'.$percent.'"; 
         </script>';
@@ -78,7 +88,8 @@ foreach ($twtFollowingList as $following) {
 
 // Tell user that the process is completed
 echo '<script language="javascript">
-        document.getElementById("refreshLabel").innerHTML="Refreshed '.$total.' feeds";
+        document.getElementById("refreshInfo").innerHTML="Refreshed '.$total.' feeds from:";
+        document.getElementById("refreshURL").innerHTML = "'.preg_replace('(^https?://)', '', $url).'";
+        document.getElementById("refreshCounter").innerHTML = "";
         history.back();
     </script>';
-

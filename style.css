@@ -254,10 +254,18 @@ nav.pagnation {
     padding: 0.5rem 0;
 }
 
-footer {
-    border-top: thin solid grey;
-    margin-top: 1rem;
-    text-align: center;
+/* === REFRESH === */
+
+#refreshInfo {
+    display: block;
+    text-align: center:
+}
+
+#refreshURL {
+}
+
+#refreshCounter {
+    float: right;
 }
 
 /* == Gallery ===================== */
@@ -280,4 +288,13 @@ footer {
     object-fit: cover;
     /*background-color: var(--border-color);*/
     border-radius: 0.25rem;
+}
+
+
+/* === FOOTER === */
+
+footer {
+    border-top: thin solid grey;
+    margin-top: 1rem;
+    text-align: center;
 }

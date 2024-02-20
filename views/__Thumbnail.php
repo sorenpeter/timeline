@@ -42,15 +42,16 @@ function createThumbnail($src, $dest, $thumbHeight) {
     return true;
 }
 
-$galleryDir = "gallery/";
-$thumbDir = "thumb/";
-$allowedExtensions = array("jpg", "jpeg", "png", "gif", "webp"); // Remove "mp4" from allowed extensions
+// $galleryDir = "gallery/";
+$thumbDir = "private/thumb/";
+$allowedExtensions = array("jpg", "jpeg", "png", "gif", "webp");
 
 // Check and create the "thumb" directory if it doesn't exist
 if (!file_exists($thumbDir)) {
     mkdir($thumbDir);
 }
 
+/*
 $galleryFiles = scandir($galleryDir);
 
 foreach ($galleryFiles as $file) {
@@ -75,4 +76,4 @@ foreach ($galleryFiles as $file) {
     }
 }
 
-?>
+*/

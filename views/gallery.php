@@ -1,9 +1,15 @@
 <?php
 require_once("partials/base.php");
 
+// require_once 'libs/Thumbnail.php';
+
 $title = "Gallery - ".$title;
 
 include_once 'partials/header.php';
+
+require_once("libs/Cropper.php");
+$thumb = new \CoffeeCode\Cropper\Cropper("media/thumbnails", 75, 5, true);
+
 ?>
 
 
@@ -41,6 +47,42 @@ foreach ($twts as $twt) {
     foreach ($img_array as $img) {
         echo '<a href="'.$baseURL.'/conv/'.$twt->hash.'">'.$img[0].'</a>';
     }
+
+/*
+    $doc = new DOMDocument();
+    $doc->loadHTML($twt->content);
+    $img_array = $doc->getElementsByTagName('img');
+
+    foreach ($img_array as $img) {
+        $url = $img->getAttribute('src');
+        $alt = $img->getAttribute('alt');
+        //echo "<br/>Title:" . $img->getAttribute('title');
+
+        echo "<img src='{$thumb->make($url, 200)}' alt='".$alt."' title='".$alt."'>";
+    }
+
+/*
+    foreach ($img_array as $img) {
+        echo $img[0];
+        $extension = pathinfo($img, PATHINFO_EXTENSION);
+        if (in_array(strtolower($extension), $allowedExtensions)) {
+        $imageURL = $galleryDir . $img;
+        $thumbURL = $thumbDir . $img;
+
+        if (!file_exists($thumbURL)) {
+            createThumbnail($imageURL, $thumbURL, 200); // The thumbnail will have a height of 200 pixels.
+        }
+
+        echo '<a href="'.$baseURL.'/conv/'.$twt->hash.'">
+                <img src="' . $thumbURL . '" height="200" />
+              </a>';
+    }
+
+
+    }
+*/
+
+
 }
 ?>
 

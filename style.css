@@ -256,6 +256,11 @@ nav.pagnation {
 
 /* === REFRESH === */
 
+progress,
+progress::-moz-progress-bar {
+/*	border: revert;*/
+}
+
 #refreshInfo {
     display: block;
     text-align: center:

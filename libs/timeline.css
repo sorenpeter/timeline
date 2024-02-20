@@ -1,19 +1,41 @@
 /* === SimpleCSS overwrites === */
+:root, ::backdrop {
+    
+    /* Default (light) theme */
+    --sans-font: -apple-system,BlinkMacSystemFont,"Avenir Next",Avenir,"Nimbus Sans L",Roboto,"Noto Sans","Segoe UI",Arial,Helvetica,"Helvetica Neue",sans-serif;
+    --mono-font: Consolas,Menlo,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+    --standard-border-radius: 0.5rem;
+    --bg: #fff;
+    --accent-bg: #f5f7ff;
+    --text: #212121;
+    --text-light: #585858;
+    --border: #d8dae1; /*#898EA4;*/
+    --accent: #0d47a1;
+    --code: #d81b60;
+    --preformatted: #444;
+    --marked: #ffdd33;
+    --disabled: #efefef;
+}
 
-::backdrop, :root {
-  --sans-font: -apple-system,BlinkMacSystemFont,"Avenir Next",Avenir,"Nimbus Sans L",Roboto,"Noto Sans","Segoe UI",Arial,Helvetica,"Helvetica Neue",sans-serif;
-  --mono-font: Consolas,Menlo,Monaco,"Andale Mono","Ubuntu Mono",monospace;
-  --standard-border-radius: 0.5rem;
-  --bg: #fff;
-  --accent-bg: #f5f7ff;
-  --text: #212121;
-  --text-light: #585858;
-  --border: #d8dae1; /*#898EA4;*/
-  --accent: #0d47a1;
-  --code: #d81b60;
-  --preformatted: #444;
-  --marked: #ffdd33;
-  --disabled: #efefef;
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root,
+  ::backdrop {
+    color-scheme: dark;
+    --bg: #212121;
+    --accent-bg: #2b2b2b;
+    --text: #dcdcdc;
+    --text-light: #ababab;
+    --accent: #ffb300;
+    --code: #f06292;
+    --preformatted: #ccc;
+    --disabled: #111;
+  }
+  /* Add a bit of transparency so light media isn't so glaring in dark mode */
+  img,
+  video {
+    opacity: 0.8;
+  }
 }
 
 body > header {
@@ -117,6 +139,7 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: 0.25rem;
+    border: thin solid var(--border);
 }
 
 img.avatar {
@@ -183,10 +206,6 @@ article .twt-msg {
     padding: 0.5rem 0;
 }
 
-article .twt-msg a {
-    text-decoration: underline;
-}
-
 article .twt-msg > blockquote {
     margin: 0;
     border-left: thick solid grey;
@@ -217,9 +236,6 @@ article small a:visited {
 
 }
 
-article small a:hover {
-    color: var(--accent);
-}
 
 /* === New Post Form === */
 
@@ -238,11 +254,14 @@ nav.pagnation {
     padding: 0.5rem 0;
 }
 
-
 /* === REFRESH === */
 
 #refreshInfo {
 	display: block;
+}
+
+#refreshInfo {
+    display: block;
     text-align: center:
 }
 
@@ -253,8 +272,31 @@ nav.pagnation {
     float: right;
 }
 
+/* == Gallery ===================== */
+
+.gallery {
+    max-width: 1200px;
+    margin: 0 auto ;
+    display: grid;
+    grid-gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /*grid-auto-rows: 225px;*/
+    /*grid-auto-flow: dense;*/
+}  
+
+.gallery a img {
+    /* https://web.dev/aspect-ratio/ */
+    aspect-ratio: 1 / 1; 
+    width: 100%;
+    /*height: 100%;*/
+    object-fit: cover;
+    /*background-color: var(--border-color);*/
+    border-radius: 0.25rem;
+}
+
 
 /* === FOOTER === */
+
 footer {
     border-top: thin solid grey;
     margin-top: 1rem;

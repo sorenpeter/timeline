@@ -115,6 +115,7 @@ class Slimdown {
 		// Substitute _ and * in links so they don't break the URLs
 		$link = str_replace (['_', '*'], ['{^^^}', '{~~~}'], $link);
 		return sprintf ('<img src=\'%s\' alt=\'%s\' />', $link, $text);
+		//return sprintf ('<img src=\'/thumb?image=%s\' alt=\'%s\' />', $link, $text); // added support for thumbnail generation on the fly
 	}
 
 	private static function fix_link ($regs) {

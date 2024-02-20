@@ -93,4 +93,3 @@ echo '<script language="javascript">
         document.getElementById("refreshCounter").innerHTML = "";
         history.back();
     </script>';
-

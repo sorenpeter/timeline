@@ -12,7 +12,7 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 	<link rel="webmention" href="<?= $baseURL ?>/webmention" />
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/simple.css">
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/timeline.css">
-    <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/custom_style.css">
+    <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/custom.css">
     <title><?= $title ?></title>
 </head>
 <body>

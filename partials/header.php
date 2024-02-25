@@ -21,15 +21,15 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 <header>
     <p>
         <a href="/">
-            <!-- <img class="logo" src="<?= $baseURL ?>/media/logo.png"> -->
+            <img class="logo" src="<?= $baseURL ?>/media/logo.png">
             <?= $config['site_title']; ?>
         </a>
 <!--        <a href="/">
-            <img class="avatar" src="<?= $profile->avatar ?>" alt="" loading="lazy">
+            <img class="logo" src="<?= $profile->avatar ?>" alt="" loading="lazy">
             <?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
         </a>
          <a href="/">
-            <img class="avatar" src="<?= $profile->avatar ?>" alt="" loading="lazy">
+            <img class="logo" src="<?= $profile->avatar ?>" alt="" loading="lazy">
             <?= $profile->nick ?>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
         </a> -->
     </p> 

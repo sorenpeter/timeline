@@ -14,7 +14,9 @@ include 'partials/header.php';
         <tr>
             <!-- <th></th> -->
             <th>Nick</th>
-            <th>URL</th></tr>
+            <th>URL</th>
+            <th>Time ago</th>
+        </tr>
 
         <?php foreach ($twtFollowingList as $currentFollower) { ?>
         <tr>
@@ -22,9 +24,26 @@ include 'partials/header.php';
             <td><a href="<?= $baseURL ?>/?profile=<?= $currentFollower[1] ?>"><?= $currentFollower[0] ?></a></td>
             <!-- <td><a href="/?twt=<?= $currentFollower[1] ?>"><?= $currentFollower[0] ?></a></td> -->
             <td><?= $currentFollower[1] ?>
-            <!-- <?php if ($validSession) { ?> -->
-            <!-- <a href="?remove_url=<?= $currentFollower[1] ?>">Remove</a> -->
-            <!-- <?php } ?> -->
+                <!-- <?php //if ($validSession) { ?> -->
+                <!-- <a href="?remove_url=<?= $currentFollower[1] ?>">Remove</a> -->
+                <!-- <?php // } ?> -->
+            </td>
+            <td>
+                <?php
+                    // Test first if URL is a valid feed:
+                    if (is_array(getTwtsFromTwtxtString($currentFollower[1])->twts)) {
+
+                        // Then test if latest twt is at top or bottom of file:
+                        $resetVar = reset(getTwtsFromTwtxtString($currentFollower[1])->twts);
+                        $endVar = end(getTwtsFromTwtxtString($currentFollower[1])->twts);
+                        if ($resetVar->timestamp < $endVar->timestamp) { // TODO: this can be swapped to get time of first twt
+                            echo $endVar->displayDate;
+                        } else {
+                            echo $resetVar->displayDate;
+                        }
+                    }
+                ?>
+
             </td>
         </tr>
         <?php } ?>

@@ -396,6 +396,7 @@ function getTwtsFromTwtxtString($url) {
 
 				$twt->originalTwtStr = $currentLine;
 				$twt->hash = getHashFromTwt($currentLine, $twtxtData->mainURL);
+				$twt->timestamp = $timestamp;
 				$twt->fullDate = date('j F Y h:i:s A', $timestamp) . ' (UTC)';
 				$twt->displayDate = $displayDate;
 				$twt->content = $twtContent;

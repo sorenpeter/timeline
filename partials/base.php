@@ -33,7 +33,8 @@ $title = "Timeline"; // Fallback, should be set in all views
 
 // HACKED by sp@darch.dk
     if(!empty($_GET['list'])) {
-        $url = "https://darch.dk/twtxt-lists/".$_GET['list'];
+        $url = $baseURL.$_GET['list'];
+        //$url = "https://darch.dk/".$_GET['list'];
     }
     else {
         $url = $config['public_txt_url'];

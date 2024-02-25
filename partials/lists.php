@@ -34,9 +34,9 @@
           $listName = str_replace("twtxt-", "", $listName);
           $listName = str_replace("_", " ", $listName);
           $listName = str_replace(".txt", "", $listName);
+          //$filename = "TODO".$baseURL."/".$filename;
           echo "<option value='{$filename}' {$attr}>$listName</option>";
-      }
-
+      }      
     ?>
     </select>
     <noscript><button type="submit">View list</button></noscript>

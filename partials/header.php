@@ -13,6 +13,7 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/simple.css">
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/timeline.css">
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/custom.css">
+    <link rel="icon" type="image/x-icon" href="<?= $baseURL ?>/media/logo.png">
     <title><?= $title ?></title>
 </head>
 <body>
@@ -20,12 +21,17 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 <header>
     <p>
         <a href="/">
+            <!-- <img class="logo" src="<?= $baseURL ?>/media/logo.png"> -->
+            <?= $config['site_title']; ?>
+        </a>
+<!--        <a href="/">
             <img class="avatar" src="<?= $profile->avatar ?>" alt="" loading="lazy">
             <?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
         </a>
-        <!-- <a href="<?= $baseURL ?>">
+         <a href="/">
             <img class="avatar" src="<?= $profile->avatar ?>" alt="" loading="lazy">
-            <?= $profile->nick ?></a>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?> -->
+            <?= $profile->nick ?>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
+        </a> -->
     </p> 
     <nav>
 
@@ -42,11 +48,11 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
                 <li><a href="<?= $baseURL ?>/logout">Log Out</a></li>
                 <li><?php include 'partials/lists.php'; ?></li>
             <?php /*}*/ } else { ?>
-                <li><a href="<?= $baseURL ?>">Timeline</a></li>
                 <li><a href="<?= $baseURL ?>?profile=<?= $url ?>">Profile</a></li>
                 <li><a href="<?= $baseURL ?>/gallery?profile=<?= $profile->mainURL ?>">Gallery</a></li>
                 <li><a href="<?= $baseURL ?>/following">Following <?php // echo count($twtFollowingList); ?></a></li>
-                <li><a href="<?= $baseURL ?>/login">Log in</a></li>
+                <li><a href="<?= $baseURL ?>">Timeline</a></li>
+                <li><a href="<?= $baseURL ?>/login" class="secondary">Log in</a></li>
             <?php }  ?>
         </ul>
     </nav>

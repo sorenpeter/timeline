@@ -12,7 +12,7 @@ $profileURL = $baseURL . '/?profile=' . $profile->mainURL;
 <div class="profile">
 
   <a href="<?=$profileURL?>">
-    <img class="avatar" src="<?=$profile->avatar?>" alt="" loading="lazy">
+    <img class="avatar" src="<?=$profile->avatar?>" onerror="this.onerror=null;this.src='<?= $baseURL ?>/media/default.png';">
   </a>
 
   <div>

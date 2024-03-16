@@ -190,7 +190,8 @@ article.post-entry {
 }
 
 article .twt-msg {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0 ;
+    overflow-wrap: anywhere; 
 }
 
 article .twt-msg > blockquote {

@@ -13,7 +13,7 @@
         // Private lists
         echo "<option disabled>Private Lists:</option>";
         foreach (glob("private/twtxt-*.txt") as $filename) {
-            if($filename == $_GET['lists']) $attr="selected";
+            if($filename == $_GET['list']) $attr="selected";
             else $attr = "";
             $listName = $filename;
             $listName = str_replace("private/twtxt-", "", $listName);
@@ -28,7 +28,7 @@
       }
 
       foreach (glob("twtxt-*.txt") as $filename) {
-          if($filename == $_GET['lists']) $attr="selected";
+          if($filename == $_GET['list']) $attr="selected";
           else $attr = "";
           $listName = $filename;
           $listName = str_replace("twtxt-", "", $listName);

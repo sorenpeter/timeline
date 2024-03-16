@@ -15,7 +15,9 @@ include 'partials/header.php';
             <!-- <th></th> -->
             <th>Nick</th>
             <th>URL</th>
-            <th>Time ago</th>
+            <?php if($_SESSION['password']=="$password") { ?>
+                <th>Time ago</th>
+            <?php } ?>
         </tr>
 
         <?php foreach ($twtFollowingList as $currentFollower) { ?>
@@ -28,12 +30,13 @@ include 'partials/header.php';
                 <!-- <a href="?remove_url=<?= $currentFollower[1] ?>">Remove</a> -->
                 <!-- <?php // } ?> -->
             </td>
+            <?php if($_SESSION['password']=="$password") { ?>
             <td>
                 <?php
                     // Test first if URL is a valid feed:
                     if (is_array(getTwtsFromTwtxtString($currentFollower[1])->twts)) {
 
-                        // Then test if latest twt is at top or bottom of file:
+                        // Then test if latest twt is at start or end of file:
                         $resetVar = reset(getTwtsFromTwtxtString($currentFollower[1])->twts);
                         $endVar = end(getTwtsFromTwtxtString($currentFollower[1])->twts);
                         if ($resetVar->timestamp < $endVar->timestamp) { // TODO: this can be swapped to get time of first twt
@@ -45,6 +48,8 @@ include 'partials/header.php';
                 ?>
 
             </td>
+            <?php } ?>
+
         </tr>
         <?php } ?>
 

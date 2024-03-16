@@ -55,16 +55,18 @@ if (isset($_POST['submit'])) {
 
 	$contents = file_get_contents($txt_file_path);
 
-	if (!date_default_timezone_set($timezone)) {
+	/*if (!date_default_timezone_set($timezone)) {
 		date_default_timezone_set('UTC');
-	}
+	}*/ // Turned this off, so now the server need to have set the right timezone, seem to work for CET 
 
 	//$datetime = gmdate('Y-m-d\TH:i:s\Z', $date->format('U'));
 	//$twt = $datetime . "\t$new_post\n";
-	$twt = date('c') . "\t$new_post\n";
+	//$twt = date('c') . "\t$new_post\n";
+	$datetime = date('Y-m-d\TH:i:sp'); // abracting to be used for webmentions
+	$twt = "\n" . $datetime . "\t" .$new_post; // NB: only works with PHP 8
 
-
-	if (strpos($contents, NEW_TWT_MARKER) !== false) {
+	// TODO: Turn off append at top?!
+	/*if (strpos($contents, NEW_TWT_MARKER) !== false) {
 		// Add the previous marker
 		// Take note that doesn't not work if twtxt file has CRLF line ending
 		// (which is wrong anyway)
@@ -73,15 +75,20 @@ if (isset($_POST['submit'])) {
 	} else {
 		// Fall back if the marker is not found.
 		$contents .= $twt;
-	}
+	}*/
+	
+	// Append twt at the end of file
+	$contents .= $twt;
+	
 
 	// TODO: Add error handling if write to the file fails
 	// For example due to permissions problems
 	// https://www.w3docs.com/snippets/php/how-can-i-handle-the-warning-of-file-get-contents-function-in-php.html
 	$file_write_result = file_put_contents($txt_file_path, $contents);
 
-	header('Refresh:0; url=.');
-	exit;
+	//header('Refresh:0; url=.');
+	header("Location: refresh?url=".$public_txt_url); // Trying to fix issue with douple posting
+	exit; // 
 
 } else {
 	require_once("partials/base.php");

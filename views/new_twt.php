@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
 	$datetime = date('Y-m-d\TH:i:sp'); // abracting to be used for webmentions
 	$twt = "\n" . $datetime . "\t" .$new_post; // NB: only works with PHP 8
 
-	// TODO: Turn off append at top?!
+	// TODO: Delete?
 	/*if (strpos($contents, NEW_TWT_MARKER) !== false) {
 		// Add the previous marker
 		// Take note that doesn't not work if twtxt file has CRLF line ending
@@ -80,15 +80,43 @@ if (isset($_POST['submit'])) {
 	// Append twt at the end of file
 	$contents .= $twt;
 	
-
-	// TODO: Add error handling if write to the file fails
+// TODO: Add error handling if write to the file fails
 	// For example due to permissions problems
 	// https://www.w3docs.com/snippets/php/how-can-i-handle-the-warning-of-file-get-contents-function-in-php.html
-	$file_write_result = file_put_contents($txt_file_path, $contents);
+
+	$file_write_result = file_put_contents($txt_file_path, $contents); 
+// TODO: replace with file_put_contents($logfile, $log, FILE_APPEND)  -- https://www.w3schools.com/php/func_filesystem_file_put_contents.asp
+
+	// Send webmentions (TODO: move to it own file?)
+	$new_mentions = getMentionsFromTwt($twt); 
+
+	foreach ($new_mentions as $mention) {
+		//print_r(getMentionsFromTwt($twt));
+		//echo $mention["nick"] . " from " . $mention["url"]."<br>";
+
+		// TODO: detect endpoint via $mention["url"]
+
+		$targets_webmention_endpoint = "https://darch.dk/timeline/webmention";
+
+		$your_url = "https://darch.dk/twtxt.txt#:~:text=".$datetime;
+		//$your_url = "https://darch.dk/twtxt.txt#:~:text=2024-03-16T20:38:31Z";
+		$target_url = $mention["url"];
+
+		$payload = "source=".$your_url."&target=".$target_url;
+
+		echo $payload;
+		
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $targets_webmention_endpoint);
+		curl_setopt($curl, CURLOPT_POST, TRUE);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
+		$data = curl_exec($curl);
+		curl_close($curl);
+	}
 
 	//header('Refresh:0; url=.');
 	header("Location: refresh?url=".$public_txt_url); // Trying to fix issue with douple posting
-	exit; // 
+	exit;
 
 } else {
 	require_once("partials/base.php");

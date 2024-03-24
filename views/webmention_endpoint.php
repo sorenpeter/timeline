@@ -35,9 +35,9 @@ if (stristr($source, $_POST['target'])) {
 	$logfile = './mentions.txt'; /* Make sure file is writeable */
 
 	$log  = date("Y-m-d\TH:i:s\Z") . "\t" 
-		."You were mentioned in: ".$_POST['source']
-		." " 
-		."> ". $twt[1]
+		.'You were mentioned in: <a href="'.$_POST['source'].',%0A" rel=noopener>'.$_POST['source'].'</a>' // "%0A" means new line
+		." " // add a line break before blockquote
+		."> " . $twt[1]
 	    //."Recived webmention from ".$_POST['source']
 	    //." mentioning ".$_POST['target']
 	   	//." (IP: ".$_SERVER['REMOTE_ADDR'].")"
@@ -45,9 +45,7 @@ if (stristr($source, $_POST['target'])) {
 	 	file_put_contents($logfile, $log, FILE_APPEND);
 
 
-
 # Send email fork: https://gist.github.com/otherjoel/9301d985622f0d3d1a09
-
 
 }
 else {

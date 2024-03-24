@@ -7,6 +7,7 @@ if (!empty($_GET['profile'])) {
 
 $profile = getTwtsFromTwtxtString($url);
 $profileURL = $baseURL . '/?profile=' . $profile->mainURL;
+$textareaValue = "@<$profile->nick $profile->mainURL> ";
 ?>
 
 <div class="profile">

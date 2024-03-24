@@ -23,7 +23,9 @@ include_once 'partials/header.php';
 
 <!-- PHP: GET TIMELINE  --><?php include_once 'partials/timeline.php'?>
 
+
 <?php
+
 if (isset($_SESSION['password'])) {
     $textareaValue = "(#$id) ";
     include 'views/new_twt.php';

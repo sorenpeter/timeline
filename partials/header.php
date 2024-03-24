@@ -46,7 +46,7 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
                 <li><a href="<?= $baseURL ?>/following">Following <?php // echo count($twtFollowingList); ?></a></li>
                 <li><a href="<?= $baseURL ?>/add">Add feed</a></li>
                 <li><a href="<?= $baseURL ?>/logout">Log Out</a></li>
-                <li><?php include 'partials/lists.php'; ?></li>
+                <li><?php // include 'partials/lists.php'; ?></li>
             <?php /*}*/ } else { ?>
                 <li><a href="<?= $baseURL ?>?profile=<?= $url ?>">Profile</a></li>
                 <li><a href="<?= $baseURL ?>/gallery?profile=<?= $profile->mainURL ?>">Gallery</a></li>

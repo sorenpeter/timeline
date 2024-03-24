@@ -24,11 +24,6 @@ if (!isset($_SESSION['password'])) {
 	exit();
 }
 
-$textareaValue = '';
-if (isset($_GET['hash'])) {
-	$hash = $_GET['hash'];
-	$textareaValue = "(#$hash) ";
-}
 
 if (isset($_POST['submit'])) {
 	$new_post = filter_input(INPUT_POST, 'new_post');
@@ -94,43 +89,70 @@ if (isset($_POST['submit'])) {
 		//print_r(getMentionsFromTwt($twt));
 		//echo $mention["nick"] . " from " . $mention["url"]."<br>";
 
-		// TODO: detect endpoint via $mention["url"]
-
-		$targets_webmention_endpoint = "https://darch.dk/timeline/webmention";
-
-		$your_url = "https://darch.dk/twtxt.txt#:~:text=".$datetime;
-		//$your_url = "https://darch.dk/twtxt.txt#:~:text=2024-03-16T20:38:31Z";
-		$target_url = $mention["url"];
-
-		$payload = "source=".$your_url."&target=".$target_url;
-
-		echo $payload;
+		// Detect webmention endpoint define in twtxt.txt as `# webmention = URL`
+		$targets_webmention_endpoint = getSingleParameter("webmention", file_get_contents($mention["url"]));
 		
-		$curl = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $targets_webmention_endpoint);
-		curl_setopt($curl, CURLOPT_POST, TRUE);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
-		$data = curl_exec($curl);
-		curl_close($curl);
+		if (!isset($targets_webmention_endpoint)) {
+			echo "<p>No endpoint found in: ".$mention["url"]."</p>";
+
+		} else {
+
+			$new_twt_url = $public_txt_url."#:~:text=".$datetime; 
+			//$target_url = $mention["url"];
+			$payload = "source=".$new_twt_url."&target=".$mention["url"];
+			//echo $payload;
+			
+			$curl = curl_init();
+			curl_setopt($curl, CURLOPT_URL, $targets_webmention_endpoint);
+			curl_setopt($curl, CURLOPT_POST, TRUE);
+			curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
+			$data = curl_exec($curl);
+			$status = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
+			curl_close($curl);
+
+			echo "<p>A webmention was send to: ".$targets_webmention_endpoint." (Status: $status)</p>";
+		}
 	}
 
 	//header('Refresh:0; url=.');
-	header("Location: refresh?url=".$public_txt_url); // Trying to fix issue with douple posting
-	exit;
+	//header("Location: refresh?url=".$public_txt_url); // Trying to fix issue with douple posting
+	//exit;
 
 } else {
 	require_once("partials/base.php");
-
 	$title = "New post - ".$title;
-
 	include_once 'partials/header.php';
+
+
+if (!isset($textareaValue)) {
+	$textareaValue = '';
+}
+
+if (isset($_GET['hash'])) {
+	$hash = $_GET['hash'];
+	$textareaValue = "(#$hash) ";
+
+	// COPY from conv.php
+	// TODO: make into a partial or global function
+	// Get the hashes (both post and replies) as $hash from the router and return an inverted list	
+    $twt_op = array_filter($twts, function($twt) use ($hash) {
+        return $twt->hash === $hash; //|| $twt->replyToHash === $hash;
+    });
+    //$twts = array_reverse($twts, true);    
+
+    //$textareaValue .= print_r($twts);
+    //$textareaValue .= $twts["nick"];
+
+	include_once 'partials/timeline.php';
+}
+
 ?>
 
 <article id="new_twt">
 	<form method="POST">
 		<div id="posting">
 			<textarea class="textinput" id="new_post" name="new_post"
-				rows="4" cols="100" autofocus required
+				rows="4" cols="100" autofocus required onfocus="var val=this.value; this.value=''; this.value= val;"
 				placeholder="Your twt"><?= $textareaValue ?></textarea>
 			<!-- <br> -->
 			<input type="submit" value="Post" name="submit">
@@ -138,7 +160,7 @@ if (isset($_POST['submit'])) {
 	</form>
 </article>
 
-<!-- PHP: GET TIMELINE  --><?php include_once 'partials/timeline.php' ?>
+<!-- PHP: GET TIMELINE  --><?php include_once 'partials/timeline.php'; ?>
 
 <!-- PHP: GET FOOTER  --><?php include_once 'partials/footer.php'; ?>
 

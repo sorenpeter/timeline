@@ -30,9 +30,13 @@ $textareaValue = "@<$profile->nick $profile->mainURL> ";
 
       <span class="right">
         <!-- <a href="following.php">Following <?php echo count($twtFollowingList); ?></a> |  -->
-        <a target="_blank" href="<?=$profile->mainURL?>"></i><?=$profile->mainURL?></a>
+        <a target="_blank" href="<?=$profile->mainURL?>"><?=$profile->mainURL?></a>
         (<a href="https://yarn.social">How to follow</a>)
       </span>
+
+      <div class="tagcloud">
+        <?php include_once 'partials/tag_cloud.php'; ?>
+      </div>
 
     </small>
 

@@ -34,7 +34,8 @@ class Twt {
 	public $emoji;
 	public $nick;
 	public $mainURL;
-	public $images;
+	public $images = [];
+	public $tags = [];
 }
 
 # https://stackoverflow.com/a/39360281/13173382
@@ -118,6 +119,24 @@ function getImagesFromTwt(string $twtString) {
 	return $result;
 }
 
+function getTagsFromTwt(string $twtString) {
+	//$pattern = '/(?<!\()\B#\w+(?!\))/iu';
+	$pattern = '/(?<=\B)#(\w+)/';
+	//$pattern = '/(?<=\s|^)#(\w+)/';
+	// TODO: Fix so it does not match with url#fragments (\B vs \s)
+	// But for some reason this does not work: '/(?<!\()\s#\w+(?!\))/iu';
+
+	preg_match_all($pattern, $twtString, $matches, PREG_SET_ORDER);
+
+	$result = array();
+
+	foreach ($matches as $match) {
+		$result[] = array($match[0]);
+	}
+
+	return $result;
+}
+
 function getMentionsFromTwt(string $twtString) {
 	$pattern = '/@<([^>]+)\s([^>]+)>/'; // Matches "@<nick url>"
 	preg_match_all($pattern, $twtString, $matches, PREG_SET_ORDER);
@@ -187,8 +206,8 @@ function replaceImagesFromTwt(string $twtString) {
 
 function replaceTagsFromTwt(string $twtString) {
 	$pattern = '/#(\w+)?/';
-	$replacement = '<a href="#">#\1</a>'; // Dummy link
-	//$replacement = '<a href="?tag=$1" class="tag">#${1}</a>';
+	//$replacement = '<a href="#">#\1</a>'; // Dummy link
+	$replacement = '<a href="?search=$1" class="tag">#${1}</a>';
 	$result = preg_replace($pattern, $replacement, $twtString);
 
 	return $result;
@@ -376,7 +395,7 @@ function getTwtsFromTwtxtString($url) {
 				}
 
 				// TODO: Make ?tag= filtering feature
-				//$twtContent = replaceTagsFromTwt($twtContent); 
+				$twtContent = replaceTagsFromTwt($twtContent); 
 
 				// TODO: Get mentions
 				$mentions = getMentionsFromTwt($twtContent);

@@ -282,6 +282,24 @@ nav.pagnation {
     border-radius: 0.25rem;
 }
 
+/* == Tag Cloud ===================== */
+
+.tagcloud {
+    margin-top: 0.75rem;
+    border-top: thin solid var(--border);
+    padding: 0.2rem;
+}
+
+.tagcloud a,
+.tagcloud a:visited {
+    text-decoration: none;
+    padding-right: 0.2rem;
+    color: var(--text-light);
+}
+
+.tagcloud a.active {
+    color: red;
+}
 
 /* === FOOTER === */
 

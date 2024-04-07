@@ -144,10 +144,13 @@ a.author {
 
 .profile {
     padding: 0 1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-grid {
     display: grid;
     grid-template-columns: 4rem 1fr;
     grid-gap: 1rem;
-    margin-bottom: 2rem;
 }
 
 .profile img.avatar {
@@ -157,11 +160,12 @@ a.author {
 
 .profile .author {
     font-size: larger;
+    line-height: 1;
 }
 
 
 .profile p {
-    margin: 0.5rem 0;
+    margin: 0.2rem 0;
     color: var(--text-light);
 }
 
@@ -174,10 +178,19 @@ a.author {
     color: var(--accent);
 }
 
-.profile .filters a {
+.profile-nav {
+    margin-top: 1rem;
+    font-size: smaller;    
+}
+
+.profile-filters {
+    padding: 0.25rem;
+}
+
+.profile-filters a {
     text-decoration: none;
-    font-weight: bold;
     padding-right: 0.5rem;
+    font-weight: bold;    
 }
 
 .profile a.active {
@@ -189,7 +202,8 @@ a.author {
 .tagcloud {
     margin-top: 0.75rem;
     border-top: thin solid var(--border);
-    padding: 0.2rem;
+    padding: 0.5rem 0.25rem;
+    text-align: justify;
 }
 
 .tagcloud a,
@@ -199,6 +213,7 @@ a.author {
     line-height: 1;
     color: var(--text-light);
 }
+
 
 .tagcloud a.active {
     color: var(--accent);

@@ -47,36 +47,43 @@ if ($is_gallery) {
 
 <div class="profile">
 
-  <a href="<?=$profile->avatar?>">
-	<img class="avatar" src="<?=$profile->avatar?>" onerror="this.onerror=null;this.src='<?= $baseURL ?>/media/default.png';">
-  </a>
+	<div class="profile-grid">
 
-  <div>
-	  <a href="<?=$profileURL?>" class="author">
-		<strong><?=$profile->nick?></strong>@<?=parse_url($profile->mainURL, PHP_URL_HOST);?>
+	  <a href="<?=$profile->avatar?>">
+		<img class="avatar" src="<?=$profile->avatar?>" onerror="this.onerror=null;this.src='<?= $baseURL ?>/media/default.png';">
 	  </a>
 
-	<p><?=$profile->description?></p>
+	  <div>
 
-	<small>
-	  <span class="filters">
-		<a <?=$posts_active?> href="<?=$profileURL?>" >Posts</a>
-		<a <?=$replies_active?> href="<?=$baseURL?>/replies?profile=<?=$profile->mainURL?>" >Replies</a>
-		<a <?=$gallery_artive?> href="<?=$baseURL?>/gallery?profile=<?=$profile->mainURL?>" >Gallery</a>
+		  <a href="<?=$profileURL?>" class="author">
+			<strong><?=$profile->nick?></strong>@<?=parse_url($profile->mainURL, PHP_URL_HOST);?>
+		  </a>
+
+			<p><?=$profile->description?></p>
+
+			<!-- <p>Links: (TODO)</p> -->
+
+	  </div>
+
+	</div>
+	<div class="profile-nav">
+
+	  <span class="profile-filters">
+			<a <?=$posts_active?> href="<?=$profileURL?>" >Posts</a>
+			<a <?=$replies_active?> href="<?=$baseURL?>/replies?profile=<?=$profile->mainURL?>" >Replies</a>
+			<a <?=$gallery_artive?> href="<?=$baseURL?>/gallery?profile=<?=$profile->mainURL?>" >Gallery</a>
 	  </span>
 
 	  <span class="right">
-		<!-- <a href="following.php">Following <?php echo count($twtFollowingList); ?></a> |  -->
-		<a target="_blank" href="<?=$profile->mainURL?>"><?=$profile->mainURL?></a>
-		(<a href="https://yarn.social">How to follow</a>)
+			<!-- <a href="following.php">Following <?php echo count($twtFollowingList); ?></a> |  -->
+			<a target="_blank" href="<?=$profile->mainURL?>"><?=$profile->mainURL?></a>
+			(<a href="https://yarn.social">How to follow</a>)
 	  </span>
 
 	  <div class="tagcloud">
-		<?php include_once 'partials/tag_cloud.php'; ?>
-	  </div>
+			<?php include_once 'partials/tag_cloud.php'; ?>
+		</div>
 
-	</small>
-
-  </div>
+	</div>
 
 </div>

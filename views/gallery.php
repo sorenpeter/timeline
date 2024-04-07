@@ -36,6 +36,7 @@ if (!empty($_GET['profile'])) { // Show twts for some user
 
 ?>
 
+<?php include_once 'partials/search.php'; ?>
 
 <!-- PHP: GALLERY -->
 <div class="gallery">

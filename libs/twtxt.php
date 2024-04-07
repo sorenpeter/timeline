@@ -122,6 +122,7 @@ function getImagesFromTwt(string $twtString) {
 function getTagsFromTwt(string $twtString) {
 	//$pattern = '/(?<!\()\B#\w+(?!\))/iu';
 	$pattern = '/(?<=\B)#(\w+)/';
+	//$pattern = "/\(#\w{7}\)/";
 	//$pattern = '/(?<=\s|^)#(\w+)/';
 	// TODO: Fix so it does not match with url#fragments (\B vs \s)
 	// But for some reason this does not work: '/(?<!\()\s#\w+(?!\))/iu';

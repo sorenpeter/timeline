@@ -1,6 +1,6 @@
 # timeline - create you own social website
 
-(Created by sørenpeter / www.darch.dk)
+Created by sørenpeter (www.darch.dk)
 
 So are you also tired and depress by having to use big tech's social medias to stay connected with friends and interesting people?
 And are you a creative human, who want back control over you art, music, words, code, instead of having to shuehorn your soul into the grid of blackbox algoritmes?
@@ -94,11 +94,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # TODO
 
-## Bugs
+## 🐞 Bugs
 
 - Fix issues with parsing markdown vs. twtxt syntax
+	- replace slimdown with our own basic parser, supporting lists, block quotes, code/blocks, links, images
 
-## Features
+
+## 🚀 Features
 
 - UI for uploading images
 - UI buttoms for markdown when making post
@@ -107,23 +109,18 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # 🙏 Credits / shoutouts
 
-* [twtxt](https://twtxt.readthedocs.io) - the original decentralised, minimalist microblogging service for hackers
+## Ideas and inspiration 
 
-* [yarn.social](https://yarn.social) - the multi-user pods allowed everyone to use twtxt as a social media without selfhosting
+* [twtxt](https://twtxt.readthedocs.io) - The original decentralised, minimalist microblogging service for hackers
 
-- List of other twtxt tools
+* [yarn.social](https://yarn.social) - The multi-user pods allowed everyone to use twtxt as a social media without selfhosting
 
-## Code and more by others
+* [groovy-twtxt](https://git.mills.io/mckinley/groovy-twtxt) - A curated list of groovy twtxt-related projects
 
-* twtxt-php
+## Code by others
 
-* Slimdown // or make our own basic parser: Lists, block quotes, code/blocks, links, images
+* [twtxt-php](https://github.com/eapl-gemugami/twtxt-php) - A minimalistic and personal PHP site for your twtxt microblogging.
 
-*
+* [Slimdown](https://github.com/jbroadway/slimdown) - A simple regex-based Markdown parser in PHP. 
 
-/*
-	* [picoblog](https://0xff.nu/picoblog) - the PHP backend that pixelblog are using for rendering the timeline view
-	* [Thumb](https://github.com/jamiebicknell/Thumb) - a simple thumbnail generation script written in PHP
-	* [Tabler Icons](https://tabler-icons.io) - the icon set that is used for navigation item
-	* [ekkoflok](https://ekkoflok.dk) - thanks for inspiration and help with PHP gallery functionality 
-*/
+

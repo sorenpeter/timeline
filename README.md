@@ -21,7 +21,7 @@ You can also search for others feeds using [WebFinger](https://webfinger.net/), 
 My visions for timeline is to bring back the fun and quirckness of bygone sites such as Geocities of the 1990s and Myspace of the 2000s, that enables creating a personlised place for you to express yourself online and also being able to follow others who inspire you. At the same time providing a good looking basic design with the help of [Simple.css](https://simplecss.org), which allows you to customise the look and feel. Even to the level where timeline aligns with the design of your excsing webpage, like I did on: [darch.dk/timeline](https://darch.dk/timeline).
 
 ![](media/screenshot.png)
-<center> *Conversation view with replies / Profile view / Gallery View* </center>
+_Conversation view with replies / Profile view / Gallery View_
 
 ## 🚨 DISCLAIMER / WARNING
 
@@ -79,13 +79,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # TODO
 
-## 🐞 Bugs
+## 🐞 Bugs to fix
 
 - Fix issues with parsing markdown vs. twtxt syntax
 	- replace slimdown with our own basic parser, supporting lists, block quotes, code/blocks, links, images
 
 
-## 🚀 Features
+## 🚀 Features to code
 
 - Make profile the default view, if user is not logged in (redo routing code)
 

@@ -6,7 +6,7 @@ So are you also tired and depress by having to use big tech's social medias to s
 And are you a creative human, who want back control over you art, music, words, code, instead of having to shoehorn your soul into the grid of blackbox algoritmes?
 Then it is you, who I've made timeline for.
 
-- The decentralised social micro-blogging platform that actually respects your privacy
+>> The decentralised social micro-blogging platform that actually respects your privacy
 
 ## 🧶 What is timeline and twtxt/yarn?
 
@@ -20,14 +20,8 @@ You can also search for others feeds using [WebFinger](https://webfinger.net/), 
 
 My visions for timeline is to bring back the fun and quirckness of bygone sites such as Geocities of the 1990s and Myspace of the 2000s, that enables creating a personlised place for you to express yourself online and also being able to follow others who inspire you. At the same time providing a good looking basic design with the help of [Simple.css](https://simplecss.org), which allows you to customise the look and feel. Even to the level where timeline aligns with the design of your excsing webpage, like I did on: [darch.dk/timeline](https://darch.dk/timeline).
 
-
-## 🪐 Features (screenshots)
-
-**Conversation view with replies **![](media/screenshot-conversation.png)
-
-![](media/screenshot-gallery.png)
-
-![](media/screenshot-profile.png)
+![](media/screenshot.png)
+**Conversation view with replies / Profile view / Gallery View**
 
 ## 🚨 DISCLAIMER / WARNING
 

@@ -50,9 +50,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	www.example.net/timeline/            (go here to see your timeline)
 	www.example.net/timeline/gallery/    (go here to see your gallery)
 	www.example.net/timeline/post/       (go here to post to your feed)
-	www.example.net/twtxt.txt         	(where you feed lives and other can follow you)
-	www.example.net/avatar.png        	(your pretty picture)
-	www.example.net/README.md         	(can be deleted)
+	www.example.net/twtxt.txt            (where you feed lives and other can follow you)
+	www.example.net/avatar.png           (your pretty picture)
 	```
 
 	- or you can rename the folder `timeline` to something else
@@ -75,9 +74,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - Upload your own `avatar.png` (can also be a .jpg or .gif)
 	- Edit your `twtxt.txt` and `config.ini` with the correct path
 
-- Open up `custom.css` and try out the provided themes by uncommenting the code
-
-- Change the colors and other elements in `custom.css` to you liking
+- Copy `custom_template.css` to `custom.css` and try changinge the coloers to you liking
 
 
 # TODO

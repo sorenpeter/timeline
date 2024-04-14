@@ -3,43 +3,31 @@
 Created by sørenpeter (www.darch.dk)
 
 So are you also tired and depress by having to use big tech's social medias to stay connected with friends and interesting people?
-And are you a creative human, who want back control over you art, music, words, code, instead of having to shuehorn your soul into the grid of blackbox algoritmes?
+And are you a creative human, who want back control over you art, music, words, code, instead of having to shoehorn your soul into the grid of blackbox algoritmes?
 Then it is you, who I've made timeline for.
+
+- The decentralised social micro-blogging platform that actually respects your privacy
 
 ## 🧶 What is timeline and twtxt/yarn?
 
 timeline is a handfull of small files that you upload to a server and access it via a browser.
 It then gives you an interface for posting words, links (and images too, soon), as well as following other peoples feeds and enganging in conversations by posting replies.
 
-For the social features timeline are using the [twtxt](https://twtxt.readthedocs.io) format and most of the [yarn.social extentions](https://dev.twtxt.net).
+For the social features timeline are using the [twtxt](https://twtxt.readthedocs.io) format and most of the [Twtxt Extensions](https://dev.twtxt.net) developed in the context of [Yarn.social](https://yarn.social/).
+
 timeline also support its own flavour of webmentions, so it is posible to be notified about `@mentions` from feeds you are not currenly/yet following.
-You can also search for others feeds using webfinger, if they got that set up, like it's the case for most yarn.social pods.
+You can also search for others feeds using [WebFinger](https://webfinger.net/), if they got that set up on their servser, like it's the case for most yarn.social pods.
 
-My visions for timeline is to bring back the fun and quirckness of Geocities (1990s) Myspace (2000s) of creating a personlised place for you to express yourself online and also being able to follow others who inspire(s?) you. At the same time provide a good looking basic design with the help of [simple.css](TODO), which allows you to customise the look and feel. Even to the level where timeline align with the design of excsing webpage, like I did on: [darch.dk/timeline](https://darch.dk/timeline).
-
-
-## 🪐 Features
-
-// Screenshot and captions
-
-- **Social reader, Profile and Gallery view** (TODO: Screenshots)
-
-	- **Basic timeline** A timeline view similar to how your twitter or facebook feed would look like with text, hash-tags and images.
-
-	- **Profile**
-
-	- **Gallery** And a gallery view similar to instagram, where alle your posted images are presented in a grid design.
+My visions for timeline is to bring back the fun and quirckness of bygone sites such as Geocities of the 1990s and Myspace of the 2000s, that enables creating a personlised place for you to express yourself online and also being able to follow others who inspire you. At the same time providing a good looking basic design with the help of [Simple.css](https://simplecss.org), which allows you to customise the look and feel. Even to the level where timeline aligns with the design of your excsing webpage, like I did on: [darch.dk/timeline](https://darch.dk/timeline).
 
 
-- **twtxt/yarn client and server**
-	- Same post on twtxt.net, darch.dk/timeline, raw and jenny or tt
+## 🪐 Features (screenshots)
 
-- **Cusosmines the look and feel.**
+**Conversation view with replies **![](media/screenshot-conversation.png)
 
-- **Webmentions**
+![](media/screenshot-gallery.png)
 
-- **Webfinder**
-
+![](media/screenshot-profile.png)
 
 ## 🚨 DISCLAIMER / WARNING
 
@@ -68,9 +56,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	www.example.net/timeline/            (go here to see your timeline)
 	www.example.net/timeline/gallery/    (go here to see your gallery)
 	www.example.net/timeline/post/       (go here to post to your feed)
-	www.example.net/twtxt.txt         (where you feed lives and other can follow you)
-	www.example.net/avatar.png        (your pretty picture)
-	www.example.net/README.md         (can be deleted)
+	www.example.net/twtxt.txt         	(where you feed lives and other can follow you)
+	www.example.net/avatar.png        	(your pretty picture)
+	www.example.net/README.md         	(can be deleted)
 	```
 
 	- or you can rename the folder `timeline` to something else
@@ -81,6 +69,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 5. Open up `www.example.net/timeline/` in your browser and check for any errors
 
+### Webfinger setup
+
+> TODO
 
 ## 🎨 Customization
 
@@ -101,6 +92,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ## 🚀 Features
+
+- Make profile the default view, if user is not logged in (redo routing code)
 
 - UI for uploading images
 - UI buttoms for markdown when making post

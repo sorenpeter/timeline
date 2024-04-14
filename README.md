@@ -2,11 +2,11 @@
 
 Created by sørenpeter (www.darch.dk)
 
-So are you also tired and depress by having to use big tech's social medias to stay connected with friends and interesting people?
-And are you a creative human, who want back control over you art, music, words, code, instead of having to shoehorn your soul into the grid of blackbox algoritmes?
-Then it is you, who I've made timeline for.
+So are you also tired of having to use big tech's social medias to stay connected with friends and interesting people, and having your privacy pried upon?
 
->> The decentralised social micro-blogging platform that actually respects your privacy
+And are you a creative human, who want back control over you art, music, words, code, instead of having to shoehorn your soul into the grid of blackbox algoritmes?
+
+Then it is you, who I've made timeline for.
 
 ## 🧶 What is timeline and twtxt/yarn?
 
@@ -21,7 +21,7 @@ You can also search for others feeds using [WebFinger](https://webfinger.net/), 
 My visions for timeline is to bring back the fun and quirckness of bygone sites such as Geocities of the 1990s and Myspace of the 2000s, that enables creating a personlised place for you to express yourself online and also being able to follow others who inspire you. At the same time providing a good looking basic design with the help of [Simple.css](https://simplecss.org), which allows you to customise the look and feel. Even to the level where timeline aligns with the design of your excsing webpage, like I did on: [darch.dk/timeline](https://darch.dk/timeline).
 
 ![](media/screenshot.png)
-**Conversation view with replies / Profile view / Gallery View**
+<center> *Conversation view with replies / Profile view / Gallery View* </center>
 
 ## 🚨 DISCLAIMER / WARNING
 
@@ -63,18 +63,21 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 5. Open up `www.example.net/timeline/` in your browser and check for any errors
 
-### Webfinger setup
+### Webfinger endpoint setup
 
-> TODO
+6. For allowing others to look you on using webfinger, you need to move the `.well-known` folder from within the `_webfinger_endpoint` to the root of your domain, so it is accesable from www.example.net/.well-know/webfinger 
+
+7. You also need to edit the `index.php` file wihtin the `.well-know/webfinger` folder and set the correct path for you timeline installation in `$timeline_dir` variable.
+
 
 ## 🎨 Customization
 
-* Upload your own `avatar.png` (can also be a .jpg or .gif)
+- Upload your own `avatar.png` (can also be a .jpg or .gif)
 	- Edit your `twtxt.txt` and `config.ini` with the correct path
 
-* Open up `custom.css` and try out the provided themes by uncommenting the code
+- Open up `custom.css` and try out the provided themes by uncommenting the code
 
-* Change the colors and other elements in `custom.css` to you liking
+- Change the colors and other elements in `custom.css` to you liking
 
 
 # TODO
@@ -98,16 +101,16 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Ideas and inspiration 
 
-* [twtxt](https://twtxt.readthedocs.io) - The original decentralised, minimalist microblogging service for hackers
+- [twtxt](https://twtxt.readthedocs.io) - The original decentralised, minimalist microblogging service for hackers
 
-* [yarn.social](https://yarn.social) - The multi-user pods allowed everyone to use twtxt as a social media without selfhosting
+- [yarn.social](https://yarn.social) - The multi-user pods allowed everyone to use twtxt as a social media without selfhosting
 
-* [groovy-twtxt](https://git.mills.io/mckinley/groovy-twtxt) - A curated list of groovy twtxt-related projects
+- [groovy-twtxt](https://git.mills.io/mckinley/groovy-twtxt) - A curated list of groovy twtxt-related projects
 
 ## Code by others
 
-* [twtxt-php](https://github.com/eapl-gemugami/twtxt-php) - A minimalistic and personal PHP site for your twtxt microblogging.
+- [twtxt-php](https://github.com/eapl-gemugami/twtxt-php) - A minimalistic and personal PHP site for your twtxt microblogging.
 
-* [Slimdown](https://github.com/jbroadway/slimdown) - A simple regex-based Markdown parser in PHP. 
+- [Slimdown](https://github.com/jbroadway/slimdown) - A simple regex-based Markdown parser in PHP. 
 
 

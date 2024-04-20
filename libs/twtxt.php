@@ -365,12 +365,21 @@ function getTwtsFromTwtxtString($url) {
 			}
 		}
 
+		// Clean up nick if set to something like `@soren@darch.dk` instead of just `soren`
+		// mosty for (re)feeds from Mastodon etc.
+		if (str_contains($twtxtData->nick, "@")) {
+			$str = $twtxtData->nick;
+			$str = ltrim($str,"@");
+			$twtxtData->nick = explode("@",$str)[0]; // take the first [0] from splitting the nick at "@"
+		}
+
 		// Fallback for nick and url if not set in twtxt.txt
+		// TODO: Use nick from local follow list as fallback?
 		if ($twtxtData->nick === "") {
-			$host_to_nick = parse_url($url, PHP_URL_HOST);
-			$host_to_nick = str_replace("www.", "", $host_to_nick);
-			$host_to_nick = explode(".", $host_to_nick)[0];
-			$twtxtData->nick = $host_to_nick;
+			$str = parse_url($url, PHP_URL_HOST);
+			$str = str_replace("www.", "", $str);
+			$str = explode(".", $str)[0]; // take the first [0] from splitting the host at "."
+			$twtxtData->nick = $str;
 		}
 		if ($twtxtData->mainURL === "") {
 			$twtxtData->mainURL = $url;

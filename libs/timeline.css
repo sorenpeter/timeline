@@ -178,6 +178,14 @@ a.author {
     color: var(--accent);
 }
 
+.profile a.button {
+    font-size: small;
+    color: var(--accent);
+    background-color: var(--accent-bg);
+    padding: 0.25em 0.5rem;
+    margin-left: 0.5rem;
+}
+
 .profile-nav {
     margin-top: 1rem;
     font-size: smaller;    

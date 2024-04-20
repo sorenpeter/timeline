@@ -85,7 +85,7 @@ if ($is_gallery) {
 	  <span class="right">
 			<!-- <a href="following.php">Following <?php echo count($twtFollowingList); ?></a> |  -->
 			<a target="_blank" href="<?=$profile->mainURL?>"><?=$profile->mainURL?></a>
-			(<a href="https://yarn.social">How to follow</a>)
+			<a class="button" href="https://yarn.social" >How to follow</a>
 	  </span>
 
 	  <div class="tagcloud">

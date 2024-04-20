@@ -334,6 +334,7 @@ function getTwtsFromTwtxtString($url) {
 		}
 
 		if (str_starts_with($currentLine, '#')) {
+
 			// Check if comments (starting with #) have some metadata
 			if (!is_null(getSingleParameter('url', $currentLine))) {
 				$currentURL = getSingleParameter('url', $currentLine);
@@ -363,6 +364,18 @@ function getTwtsFromTwtxtString($url) {
 				$twtxtData->following[] = getSingleParameter('follow', $currentLine);
 			}
 		}
+
+		// Fallback for nick and url if not set in twtxt.txt
+		if ($twtxtData->nick === "") {
+			$host_to_nick = parse_url($url, PHP_URL_HOST);
+			$host_to_nick = str_replace("www.", "", $host_to_nick);
+			$host_to_nick = explode(".", $host_to_nick)[0];
+			$twtxtData->nick = $host_to_nick;
+		}
+		if ($twtxtData->mainURL === "") {
+			$twtxtData->mainURL = $url;
+		}
+
 
 		if (!str_starts_with($currentLine, '#')) {
 			$explodedLine = explode("\t", $currentLine);

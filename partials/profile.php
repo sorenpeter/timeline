@@ -23,11 +23,19 @@ $twt_posts = array_filter($twts, function ($twt) use ($pattern) {
 	return !preg_match($pattern, $twt->originalTwtStr);
 });
 
+$twt_gallery = array_filter($twts, function ($twt) {
+	return preg_match('/!\[(.*?)\]\((.*?)\)/', $twt->originalTwtStr);
+	//return preg_match('/(<img[^>]+>)/i', $twt->content);
+});
+
+
+
 // Get active view/filter
 $is_gallery = str_contains(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), "gallery");
 $is_replies = str_contains(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), "replies");
 
 if ($is_gallery) {
+	//$twts = $twt_gallery;
 	$posts_active = "";
 	$replies_active = "";
 	$gallery_artive = "class='active'";  

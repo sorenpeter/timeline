@@ -1,4 +1,4 @@
-# timeline - create you own social website
+# 🌀 timeline - create you own social website
 
 Created by sørenpeter (www.darch.dk)
 
@@ -110,4 +110,5 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 - [Slimdown](https://github.com/jbroadway/slimdown) - A simple regex-based Markdown parser in PHP. 
 
+- Tag cloud feature is based on php code by [Domingos Faria](https://social.dfaria.eu/search)
 

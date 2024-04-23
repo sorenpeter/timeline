@@ -49,12 +49,7 @@ body > header {
 }
 
 body > header p {
-/*  max-width: 40rem;*/
   margin: 1rem;
-}
-
-header > nav a {
-/*    border: none;*/
 }
 
 header > nav form {
@@ -143,7 +138,7 @@ a.author {
 /* === PROFILE === */
 
 .profile {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     margin-bottom: 1rem;
 }
 
@@ -172,19 +167,13 @@ a.author {
 .profile a,
 .profile a:visited {
     color: var(--text);
+    text-decoration: none;
 }
 
 .profile a:hover {
     color: var(--accent);
 }
 
-.profile a.button {
-    font-size: small;
-    color: var(--accent);
-    background-color: var(--accent-bg);
-    padding: 0.25em 0.5rem;
-    margin-left: 0.5rem;
-}
 
 .profile-nav {
     margin-top: 1rem;
@@ -195,14 +184,42 @@ a.author {
     padding: 0.25rem;
 }
 
-.profile-filters a {
-    text-decoration: none;
+.profile-filters a {    
     padding-right: 0.5rem;
     font-weight: bold;    
 }
 
 .profile a.active {
     color: var(--accent);
+}
+
+.profile a.button {
+    font-size: small;
+    /*color: var(--accent); */
+    background-color: var(--accent-bg);
+    padding: 0.25em 0.5rem;
+    margin-left: 0.5rem;
+}
+
+
+a.txt-link i {
+    display: none;
+    color: var(--accent);
+}
+
+a.txt-link span {
+    text-decoration: underline;
+}
+
+a.txt-link:hover span {
+    text-decoration: none;
+}
+
+/* Only show icon for link to txt */
+
+@media only screen and (max-width: 720px) {
+    a.txt-link i { display: initial; }
+    a.txt-link span { display: none; }
 }
 
 /* == Tag Cloud ===================== */
@@ -273,7 +290,18 @@ article small {
 article small a,
 article small a:visited {
     color: var(--text);
+    text-decoration: none;
+    font-weight: bold;
+}
 
+article small a.right,
+article small a.right:visited {
+    font-weight: normal;
+}
+
+article small a:hover {
+    color: var(--accent);
+/*    text-decoration: underline;*/
 }
 
 
@@ -297,7 +325,7 @@ nav.pagnation {
 /* === REFRESH === */
 
 #refreshInfo {
-	display: block;
+    display: block;
 }
 
 #refreshInfo {

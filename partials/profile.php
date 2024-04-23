@@ -76,19 +76,21 @@ if ($is_gallery) {
 	</div>
 	<div class="profile-nav">
 
-	  <span class="profile-filters">
-			<a <?=$posts_active?> href="<?=$profileURL?>" >Posts</a>
-			<a <?=$replies_active?> href="<?=$baseURL?>/replies?profile=<?=$profile->mainURL?>" >Replies</a>
-			<a <?=$gallery_artive?> href="<?=$baseURL?>/gallery?profile=<?=$profile->mainURL?>" >Gallery</a>
-	  </span>
+		<span class="profile-filters">
+			<a <?=$posts_active?> href="<?=$profileURL?>">Posts</a>
+			<a <?=$replies_active?> href="<?=$baseURL?>/replies?profile=<?=$profile->mainURL?>">Replies</a>
+			<a <?=$gallery_artive?> href="<?=$baseURL?>/gallery?profile=<?=$profile->mainURL?>">Gallery</a>
+		</span>
 
-	  <span class="right">
+		<span class="right">
 			<!-- <a href="following.php">Following <?php echo count($twtFollowingList); ?></a> |  -->
-			<a target="_blank" href="<?=$profile->mainURL?>"><?=$profile->mainURL?></a>
+			<a class="txt-link" target="_blank" href="<?=$profile->mainURL?>">
+				<i class="fa fa-file-text-o"></i><span><?=$profile->mainURL?></span>
+			</a>
 			<a class="button" href="https://yarn.social" >How to follow</a>
-	  </span>
+		</span>
 
-	  <div class="tagcloud">
+		<div class="tagcloud">
 			<?php include_once 'partials/tag_cloud.php'; ?>
 		</div>
 

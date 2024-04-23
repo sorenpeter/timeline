@@ -26,15 +26,19 @@
 			<?php
 				if ($twt->replyToHash) {
 					echo 'In reply to: <a href="' . $baseURL . '/conv/' . $twt->replyToHash . '">#' . $twt->replyToHash . '</a>';
-					//echo '<a href="/conv/'.$twt->replyToHash.'">Convesation</a>';
+					//echo '<a href="'.$baseURL.'/conv/'.$twt->replyToHash.'">Convesation</a>';
+				} else {
+					echo '<a href="'.$baseURL.'/conv/'.$twt->hash.'">Read replies</a>';
 				}
 
+				/*
 				if ($twt->replyToHash && isset($_SESSION['password'])) {
 					echo ' | ';
 				}
+				*/
 
 				if (isset($_SESSION['password'])) {
-					echo '<a href="' . $baseURL . '/new?hash=' . $twt->hash . '">Reply</a>';
+					echo ' | <a href="' . $baseURL . '/new?hash=' . $twt->hash . '">Reply</a>';
 				}
 
 			?>

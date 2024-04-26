@@ -4,10 +4,13 @@ require_once("partials/base.php");
 $title = "Following - ".$title;
 
 include 'partials/header.php';
+
+// TODO: Include profile-card, but only tagcloud for user, not all feeds in cache
+
 ?>
 
 <center>
-    <h1><?= $profile->nick ?> follows <?php echo count($twtFollowingList); ?> feeds</h1>
+    <h2><img src="<?= $profile->avatar ?>" class="avatar"> <?= $profile->nick ?> follows <?php echo count($twtFollowingList); ?> feeds</h2>
 
     <table>
 

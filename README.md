@@ -4,7 +4,7 @@ Created by sørenpeter (www.darch.dk)
 
 So are you also tired of having to use big tech's social medias to stay connected with friends and interesting people, and having your privacy pried upon?
 
-And are you a creative human, who want back control over you art, music, words, code, instead of having to shoehorn your soul into the grid of blackbox algoritmes?
+And are you a creative human, who want back control over you art, music, words, code, instead of having to shoehorn your soul into the grid of blackbox algorithms ?
 
 Then it is you, who I've made timeline for.
 
@@ -13,12 +13,14 @@ Then it is you, who I've made timeline for.
 timeline is a handfull of small files that you upload to a server and access it via a browser.
 It then gives you an interface for posting words, links (and images too, soon), as well as following other peoples feeds and enganging in conversations by posting replies.
 
-For the social features timeline are using the [twtxt](https://twtxt.readthedocs.io) format and most of the [Twtxt Extensions](https://dev.twtxt.net) developed in the context of [Yarn.social](https://yarn.social/).
+For the social features timeline are using the [twtxt](https://twtxt.readthedocs.io)  format and most of the twtxt Extensions developed in the context of Yarn.social](https://yarn.social/).
 
-timeline also support its own flavour of webmentions, so it is posible to be notified about `@mentions` from feeds you are not currenly/yet following.
+timeline also support its own flavor  of WebMentions, so it is possible  to be notified about `@mentions` from feeds you are not currently/yet following. You can also search for others feeds using WebFinger, if they got that set up on their server , like it's the case for most yarn.social pods.
 You can also search for others feeds using [WebFinger](https://webfinger.net/), if they got that set up on their servser, like it's the case for most yarn.social pods.
 
-My visions for timeline is to bring back the fun and quirckness of bygone sites such as Geocities of the 1990s and Myspace of the 2000s, that enables creating a personlised place for you to express yourself online and also being able to follow others who inspire you. At the same time providing a good looking basic design with the help of [Simple.css](https://simplecss.org), which allows you to customise the look and feel. Even to the level where timeline aligns with the design of your excsing webpage, like I did on: [darch.dk/timeline](https://darch.dk/timeline).
+My visions for timeline is to bring back the fun and quirkiness  of bygone sites such as Geocities of the 1990s and Myspace of the 2000s, that enables creating a personalized  place for you to express yourself online and also being able to follow others who inspire you.
+
+At the same time providing a good looking basic design with the help of [Simple.css](https://simplecss.org), which allows you to customize  the look and feel. Even to the level where timeline aligns with the design of your excsing webpage, like I did on: [darch.dk/timeline](https://darch.dk/timeline).
 
 ![](media/screenshot.png)
 _Conversation view with replies / Profile view / Gallery View_

@@ -5,8 +5,8 @@ Thumbs.db
 *.DS_Store
 *.txt
 !twtxt_template.txt
+custom.css
 private/cache/*
 !private/cache/.gitkeep
 private/config.ini
 error_log
-custom.css

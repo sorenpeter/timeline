@@ -1,0 +1,29 @@
+# | |___      _| |___  _| |_
+# | __\ \ /\ / / __\ \/ / __|
+# | |_ \ V  V /| |_ >  <| |_
+#  \__| \_/\_/  \__/_/\_\\__|
+#
+# Twtxt is an open, distributed and decentralized microblogging platform
+# for hackers and friends that uses raw text files, easy to read by humans,
+# and with common protocols and free and open.
+#
+# Learn more about twtxt here: https://github.com/buckket/twtxt
+# And about yarn.social:       https://yarn.social
+# Using timeline from:         https://github.com/sorenpeter/timeline
+# Using some extensions from:  https://dev.twtxt.net 
+#
+#        nick = your_name
+#         url = http://example.net/twtxt.txt
+#      avatar = http://example.net/avatar.png
+#        link = Link Text http://example.net
+# description = Bio text about you
+#
+# Semi-random selection of feeds to get you started:
+# follow = eapl.me https://eapl.me/twtxt.txt
+# follow = eapl.mx https://eapl.mx/twtxt.txt
+# follow = prologic https://twtxt.net/user/prologic/twtxt.txt
+# follow = sorenpeter http://darch.dk/twtxt.txt
+# follow = stigatle https://yarn.stigatle.no/user/stigatle/twtxt.txt
+# follow = yarn_search https://search.twtxt.net/twtxt.txt
+#~~~#
+2024-04-23T20:05:00Z	Testing posting from http://example.net/timeline/

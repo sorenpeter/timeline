@@ -6,6 +6,12 @@ Thumbs.db
 *.txt
 !twtxt_template.txt
 custom.css
+media/*
+!media/avatar.png
+!media/default.png
+!media/logo.png
+!media/screenshot.png
+!media/webmention.png
 private/cache/*
 !private/cache/.gitkeep
 private/config.ini

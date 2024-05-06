@@ -1,25 +1,0 @@
-# Mentions recived:
-# nick = webmentions
-# avatar = https://darch.dk/timeline/media/webmention.png
-# url = https://darch.dk/timeline/mentions.txt
-2023-11-27T06:10:16Z	Valid webmention on: <http://algorave.dk> (target: <http://darch.dk>) from: 178.157.252.73
-2023-11-27T06:16:14Z	Recived webmention from: http://algorave.dk mentioning http://darch.dk (IP: 178.157.252.73)
-2023-11-27T15:41:24Z	Recived webmention from http://algorave.dk mentioning http://darch.dk (IP: 217.116.228.10)
-2023-11-27T15:42:36Z	Recived webmention from http://algorave.dk mentioning http://darch.dk
-2023-11-27T15:55:27Z	Recived webmention from http://algorave.dk/bbs.txt#2023-11-27T15:54:08Z mentioning http://darch.dk/twtxt.txt
-2024-03-16T23:39:30Z	https://darch.dk/twtxt.txt# mentioned you in:  > 	@<sp https://darch.dk/twtxt.txt> and @<sorenpeter https://darch.dk/twtxt.txt>
-2024-03-16T23:41:00Z	https://darch.dk/twtxt.txt# mentioned you in:  > 	Yo @<sorenpeter https://darch.dk/twtxt.txt> let's see if this webmentions thing works?!
-2024-03-16T23:42:57Z	https://darch.dk/twtxt.txt# mentioned you in:  > Yo @<sorenpeter https://darch.dk/twtxt.txt> let's see if this webmentions thing works?!
-2024-03-16T23:53:37Z	https://darch.dk/twtxt.txt# mentioned you in:  > Hej @<sp https://darch.dk/twtxt.txt>, dur det?
-2024-03-16T23:56:46Z	You were mentioned in: https://darch.dk/twtxt.txt#:~:text=2024-03-16T23:56:46Z > @<sp https://darch.dk/twtxt.txt> ser det her bedre ud?
-2024-03-17T00:07:33Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-17T00:07:32Z,%0A" rel="noopener">darch.dk/twtxt.txt#:~:text=2024-03-17T00:07:32Z</a> > (#dzobbnq) Thanks @<prologic https://twtxt.net/user/prologic/twtxt.txt>, I also just manage to get my own version of webmentions working. Please have a read at [Webmentions vs. Custom Mentions Spec for Twtxt/Yarn - HedgeDoc](https://docs.mills.io/NEOwhHmqTfOejKWiaOw9rw#) and [User Lookup for Twtxt/Yarn - Webfinger or Decentralized Identifiers (DIDs) - HedgeDoc](https://docs.mills.io/rRpmdWHRT7Kg7nTYnXleSg#) for how it sorta works2024-03-24T22:14:48Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:14:48Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:14:48Z</a> > @<sorenpeter http://darch.dk/twtxt.txt> this dot?
-2024-03-24T22:17:30Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:17:30Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:17:30Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>
-2024-03-24T22:21:08Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:21:08Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:21:08Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>
-2024-03-24T22:21:25Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:21:25Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:21:25Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>
-2024-03-24T22:22:46Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:22:46Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:22:46Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>
-2024-03-24T22:23:18Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:23:18Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:23:18Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>
-2024-03-24T22:25:53Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:25:53Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:25:53Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>
-2024-03-24T22:26:06Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:26:06Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:26:06Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>
-2024-03-24T22:33:59Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:33:59Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:33:59Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>  @<sorenpeter http://darch.dk/twtxt.txt>  @<sorenpeter http://darch.dk/twtxt.txt>
-2024-03-24T22:33:59Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:33:59Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:33:59Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>  @<sorenpeter http://darch.dk/twtxt.txt>  @<sorenpeter http://darch.dk/twtxt.txt>
-2024-03-24T22:33:59Z	You were mentioned in: <a href="https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:33:59Z,%0A" rel=noopener>https://darch.dk/twtxt.txt#:~:text=2024-03-24T22:33:59Z</a> > @<sorenpeter http://darch.dk/twtxt.txt>  @<sorenpeter http://darch.dk/twtxt.txt>  @<sorenpeter http://darch.dk/twtxt.txt>

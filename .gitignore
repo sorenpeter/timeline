@@ -12,7 +12,7 @@ media/*
 !media/logo.png
 !media/screenshot.png
 !media/webmention.png
-private/cache*/*
+private/cache/*
 !private/cache/.gitkeep
 private/config.ini
 error_log

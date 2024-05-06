@@ -1,0 +1,126 @@
+# | |___      _| |___  _| |_
+# | __\ \ /\ / / __\ \/ / __|
+# | |_ \ V  V /| |_ >  <| |_
+#  \__| \_/\_/  \__/_/\_\\__|
+#
+# Twtxt is an open, distributed
+# microblogging platform that
+# uses human-readable text files,
+# common transport protocols, and
+# free software.
+#
+# Learn more about twtxt at
+# https://github.com/buckket/twtxt
+#
+# ------------------------------------------
+# nick = melyanna
+# url = http://tilde.club/~melyanna/twtxt.txt
+# lang = en
+# ------------------------------------------
+#
+
+2020-08-03T14:43:13+00:00	Hello, world
+2020-08-03T14:49:26+00:00	Oh, looks like a script was eating my twtx file
+2020-08-06T06:25:00+00:00	I made some really good vegan gyros with tzatziki yesterday
+2020-08-06T06:25:24+00:00	It was satisfying to make and to eat
+2020-08-06T06:25:53+00:00	Does that mean I will enjoy cooking now?
+2020-08-11T08:53:06+00:00	Goodmorning Netizens!
+2020-08-11T08:53:24+00:00	I should probably update my NOW page...
+2020-08-16T10:20:44+00:00	I finally got to watch The VVitch
+2020-08-16T10:21:22+00:00	It is not scary but did make me uneasy
+2020-08-16T10:22:06+00:00	It looks amazing and I loved the dialogues
+2020-08-16T10:23:38+00:00	Next on my watch list of horror films is US
+2020-08-18T19:27:50+00:00	Back on my main Arch-based laptop
+2020-08-18T19:28:23+00:00	I have a really long todo list but I am so tired I will just go to sleep and think about it tomorrow
+2020-08-19T12:47:35+00:00	Figuring out the IndieWeb and making my main website compatible
+2020-08-20T07:40:10+00:00	Ready to explore the gemini protocol as it looks awesome so far
+2020-08-20T13:58:09+00:00	@<lucidiot https://tilde.town/~lucidiot/twtxt.txt> I'll link it here once I am ready!
+2020-08-21T09:20:39+00:00	You can now find me on Gemini at gemini://tanelorn.city/~melyanna
+2020-08-21T09:22:15+00:00	I do not have much up there yet but I am working on it
+2020-08-23T19:35:25+00:00	Today I redesigned melyanna.net to make it look nice and readable with Lynx
+2020-08-23T19:37:24+00:00	Even if I gave priority to Lynx and mobile I am happy with how it looks on desktop browsers too
+2020-08-23T19:38:08+00:00	Now I really need to improve the content and make sure that through it I can be reached everywhere...
+2020-08-26T12:47:26+00:00	I added scripts to my bash so it cheers me up with friendly greetings and messages
+2020-08-26T12:48:24+00:00	I am not sure it is actually cheering me up but at least it looks cute
+2020-08-29T09:52:49+00:00	I feel like I am not using my time very well but I also feel too tired to be productive or even just present
+2020-08-29T13:04:51+00:00	Making a bash gemlog script to maintain my gemini log
+2020-08-29T18:29:36+00:00	It is amazing how much more modern and sleek Arch with KDE Plasma looks compared to Windows
+2020-08-29T18:32:22+00:00	I see no reason why a modern GNU Linux installation would be less appealing than windows to an average user
+2020-08-29T18:34:36+00:00	Maybe I would not go with Arch but Ubuntu, Elementary, Pop!_OS, or Manjaro are perfectly fine for the average user
+2020-08-29T18:37:03+00:00	And KDE connect is the best tool for connecting a phone with a PC that I have ever tried
+2020-08-31T11:35:41+00:00	I installed DietPi on my Rpi4 today and I think it is the distro that works best on it.
+2020-09-01T06:42:45+00:00	Happy first day of September!
+2020-09-01T18:33:36+00:00	Is it bad that I am using Urban Dictionary even when I need a regular dictionary?
+2020-09-13T07:08:51+00:00	Hello netizens!
+2020-09-13T07:09:16+00:00	I have been away for a few days because work got intense
+2020-09-13T07:09:55+00:00	I was so tired I slept all day yesterday
+2020-09-28T12:27:43+00:00	Long time no seen!
+2020-09-28T12:28:33+00:00	I worked so hard the past month and it went so fast!
+2020-10-11T16:24:53+00:00	Today felt productive as I did some art and planted a couple of seeds in my digital garden
+2020-10-31T15:58:31+00:00	I re-read my script that updates my gemini log automatically
+2020-10-31T15:59:10+00:00	I suppose I was very inspired that day because it is pretty smart
+2020-10-31T23:24:19+00:00	✿
+2020-11-01T00:19:25+00:00	Goodnight netizens!
+2020-11-14T17:12:47+00:00	I think I will re-read Neuromancer this evening...
+2020-12-10T19:48:50+00:00	Spent some time at work talking about accessibility in games and loved the positive attitude and desire to keep improving
+2020-12-18T08:06:23+00:00	Finally a day off!
+2020-12-18T20:11:17+00:00	I am on day 13 of a 21 days fitness program and I am loving it so far
+2020-12-18T20:11:51+00:00	Goodnight netizens!
+2020-12-19T09:22:30+00:00	Good morning netizens!
+2020-12-20T11:14:59+00:00	Hello and happy Sunday netizens!
+2020-12-22T08:08:26+00:00	Goodmorning netizens! Guess who had a horrible night?
+2020-12-24T12:39:25+00:00	Done with the workout of today, 2 more to go and I have finished the 21 days program
+2020-12-25T11:20:34+00:00	Happy Sol Invictus netizens!
+2020-12-28T15:47:29+00:00	My phone died so I got a Pinephone
+2020-12-29T15:24:22+00:00	Just a note that I have a little gemini capsule at gemini://tanelorn.city/~melyanna/
+2020-12-30T09:18:45+00:00	My workout today was very satisfying!
+2020-12-30T17:05:29+00:00	Got my kakebo for 2021, in 2020 it really helped me with saving money.
+2021-01-01T12:57:19+00:00	Sorry but I do not have it in me to start 2021 with any optimism
+2021-01-03T10:30:40+00:00	I am glad I journaled consistently last year as it allowed me to put a lot of introspection into my next goals and in this note to myself https://garden.melyanna.net/notes/you-are-the-project.html
+2021-01-06T19:15:08+00:00	There is no funnier activity than untangling xmas lights to put them away...
+2021-02-20T13:03:05+00:00	Hello World, long time no seen
+2021-02-20T13:03:28+00:00	I have been buried with work lately
+2021-02-20T13:04:29+00:00	But I want to get back to reasonable hours so I can work on personal stuff and study
+2021-06-17T20:09:49+00:00	It has been ages
+2021-12-10T14:58:13+00:00	Hello World!
+2022-05-07T10:02:25+00:00	I am back...?
+2022-05-07T10:16:58+00:00	This is a test
+2022-05-07T10:21:11+00:00	Another test...
+2022-05-07T10:25:15+00:00	I am doing a charity run tomorrow!
+2022-05-08T19:24:16+00:00	I did the Wings for Life World Run today and I feel very good for the first time in a long time!
+2022-05-09T20:41:23+00:00	Look at my fancy new gemini capsule at gemini://tilde.club/~melyanna/
+2022-05-11T10:54:32+00:00	Type X to self-doubt
+2022-05-11T11:13:56+00:00	It is Is it an allergy, iron deficiency, or do I have covid? season
+2022-05-14T15:03:17+00:00	Time for some ice cream I think!
+2022-05-14T18:55:01+00:00	Pizza and beer is always good!
+2022-05-14T18:55:51+00:00	I enjoyed a quiet Saturday today
+2022-05-22T11:31:51+00:00	Looks like it could rain soon!
+2022-05-22T14:38:01+00:00	I started adding a list of books that changed my life to my tilde at http://tilde.club/~melyanna/library/
+2022-05-28T09:13:49+00:00	It is surprising how not having a routine affects me, I stopped exercising last week because I have stitches and everything else fell apart
+2022-06-04T16:41:19+00:00	Finished Love Death Robots in one go and it was fantastic!
+2022-06-06T14:39:40+00:00	All this time spent being grumpy about how adding my Now updates directly into the html page is uncomfortable, and it *just* occurred to me I can chug it into a text file and use cat.
+2022-06-06T18:45:52+00:00	Looking at my Feels blog it is clear that I am terrible at coming up with good post titles...
+2022-06-12T16:32:15+00:00	It is so hot today, hard to be productive and do *anything* really...
+2022-07-02T16:22:34+00:00	I am officially off and so burned out...
+2022-07-03T10:20:31+00:00	I slept a lot and relaxed all morning yet I still feel sleepy...
+2022-07-03T14:37:52+00:00	My gemini capsule has a gemlog now and I update it usign a script I made...
+2022-07-03T19:21:59+00:00	Spent the afternoon updating my tilde and now it is time to unwind with some meditation and a book!
+2022-07-05T16:18:40+00:00	I have become so jaded that when I meet people who are genuinely good I am taken aback and surprised as I do not expect it to happen anymore.
+2022-07-06T07:29:18+00:00	I slept poorly yet the cooler weather is making me feel a lot better than I felt yesterday
+2022-07-06T07:29:40+00:00	I will probably crash in the afternoon but right now I am going to use my energy to take a walk outside
+2022-07-10T19:18:17+00:00	Finally started Stranger Things and watched episodes 1 to 5 so far, I quite like it.
+2022-07-10T19:39:31+00:00	I do have that damn song stuck in my head now... It is a good song but still...
+2022-07-11T18:42:24+00:00	I enjoy going through status.cafe users and looking at their web pages, so many awesome websites!
+2022-07-13T19:48:29+00:00	My no-buy month begins this week! Of course essentials are allowed but no extras!
+2022-07-13T20:20:21+00:00	Time to go to sleep, hoping I do get any given how how it is here right now...
+2022-07-17T16:32:03+00:00	I have discovered the power of pandoc!
+2022-07-18T19:02:10+00:00	I wonder if KISS sets are still a thing. I loved making them a very long time ago.
+2022-07-18T19:08:51+00:00	Oh wow I had forgotten about LHA! https://web.archive.org/web/20040608103917/http://otakuworld.com/kiss/
+2022-10-18T17:57:27+00:00	I am back again!
+2022-11-01T10:46:18+00:00	Excited for my trip to Finland and I just finished packing!
+2022-12-27T19:33:47+00:00	All packed and ready to go to Vienna!
+2022-12-28T14:24:38+00:00	Away for my holidays in Vienna!
+2023-04-29T18:38:20+00:00	Is this thing on?
+2023-05-06T21:36:00+00:00	I wish I could turn into a bear so I could go to my cave and sleep for three months
+2023-05-07T19:13:02+00:00	I have a contact form now at https://melyanna.ichi.city/contact.html
+2024-01-06T17:16:21+00:00	This is a test!

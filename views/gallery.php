@@ -1,4 +1,57 @@
 <?php
+
+if (!empty($_GET['url'])) { // Show twts for some user (Profile view)
+    $twtsURL = $_GET['url'];
+} else {
+
+    // temp to get default url
+    $config = parse_ini_file('private/config.ini'); 
+
+    $twtsURL = $config['public_txt_url'];
+}
+
+require_once("partials/base.php");
+
+$title = "Gallery for ".$title;
+
+include_once 'partials/header.php';
+
+//echo $twtsURL." bob!";
+
+include_once 'partials/profile_card.php';
+
+include_once 'partials/search.php';
+
+?>
+
+<!-- PHP: GALLERY -->
+<div class="gallery">
+
+<?php
+
+foreach ($twts as $twt) {
+    $images = getImagesFromTwt($twt->content);
+
+    foreach ($images as $img) {
+        echo '<a href="'.$baseURL.'/conv/'.$twt->hash.'">'.$img[0].'</a>';
+    }
+
+} 
+
+?>
+
+</div>
+
+<!-- PHP: FOOTER  --><?php include_once 'partials/footer.php';?>
+
+
+
+
+<?php
+
+// Old gallery //
+
+/*
 require_once("partials/base.php");
 
 // require_once 'libs/Thumbnail.php';
@@ -15,8 +68,8 @@ $thumb = new \CoffeeCode\Cropper\Cropper("media/thumbnails", 75, 5, true);
 
 <!-- PHP: PROFILE CARD -->
 <?php
-if (!empty($_GET['profile'])) { // Show twts for some user
-    $twtsURL = $_GET['profile'];
+if (!empty($_GET['url'])) { // Show twts for some user
+    $twtsURL = $_GET['url'];
 
     // TODO: Give a propper error if feed is not valid
     if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
@@ -26,7 +79,7 @@ if (!empty($_GET['profile'])) { // Show twts for some user
     // $parsedTwtxtFile = getTwtsFromTwtxtString($twtsURL);
     if (!is_null($parsedTwtxtFile)) {
         $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
-        include 'partials/profile.php';
+        include 'partials/profile_card.php';
     }
 } else {
     // TODO: default to rendering the local users gallery, if no profile specified
@@ -82,11 +135,7 @@ foreach ($twts as $twt) {
 
     }
 */
-
-
-}
+ 
 ?>
 
-</div>
-
-<!-- PHP: FOOTER  --><?php include_once 'partials/footer.php';?>
+<!-- </div> -->

@@ -1,0 +1,44 @@
+#    __           __       __
+#   / /__      __/ /__  __/ /_
+#  / __/ | /| / / __/ |/_/ __/
+# / /_ | |/ |/ / /__>  </ /_
+# \__/ |__/|__/\__/_/|_|\__/
+#
+#
+# twtxt is a decentralized microblogging platform.
+# learn about it at https://github.com/buckket/twtxt
+# you can join at https://yarn.social
+#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#   nick = BBS
+# avatar = http://algorave.dk/logo.png
+#    url = http://algorave.dk/bbs.txt
+#    web = http://algorave.dk/bbs
+#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+
+2023-05-02T15:05:20Z	<__sorenpeter__> is this bbs still alive?
+2023-05-02T15:13:01Z	<__sp__> testing 
+2023-05-02T15:15:07Z	<__sp__> tying out way of formating names
+2023-05-02T15:15:32Z	<__sp__> trying out way of formating names
+2023-05-02T15:18:58Z	<__darch__> blast from the past
+2023-05-02T17:02:48Z	<__abc__> test
+2023-05-02T17:32:06Z	<__person__> noget andet
+2023-05-02T18:57:05Z	<__Alice__> where is Bob?
+2023-05-02T19:14:30Z	<__darch__> testing
+2023-05-02T19:22:21Z	<__anon__> hacked
+2023-05-03T06:16:00Z	<__[sorenpeter](https://darch.dk/twtxt.txt)>__ and then the message 
+2023-05-05T06:43:26Z	<__Anonymus__> no name or link
+2023-05-05T06:43:34Z	<__SP__> no link
+2023-05-05T06:43:48Z	<__[Anonymus](http://darch.dk/php-atom/)__> no name
+2023-05-05T06:44:07Z	<__[SP](http://darch.dk/php-atom/feed.xml)__> name and link
+2023-05-05T06:46:33Z	<__SP__> image test #markdown ![](https://darch.dk/twtxt/2022-01-25_screenshot-2022-01-21-at-15.33.45.png)
+2023-05-05T06:47:10Z	<__SP__> image test no.2 #html <img src="https://darch.dk/twtxt/2022-01-25_screenshot-2022-01-21-at-15.33.45.png">
+2023-05-29T11:55:42Z	<__darch__> testing out generating twt-hash using php
+2023-05-29T18:01:01Z	<__darch__> is posts with links okay? http://darch.dk
+2023-05-29T18:01:43Z	<__darch__> how about #markdown links: [darch.dk](http://darch.dk)
+2023-05-29T18:04:30Z	<__darch__> or is it #tags that messe up the hash?
+2023-06-01T18:25:36Z	<__test__> #test test
+2023-11-27T15:54:08Z	<__Anonymus__> Testing #webmentions @<sp http://darch.dk/twtxt.txt>

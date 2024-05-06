@@ -59,7 +59,13 @@ header > nav form {
 header > nav select {
     padding: 0.4rem;
 }
-    
+
+/* Hide text, so only icons on mobile */
+@media only screen and (max-width: 720px) {
+    header > nav a { padding: 2rem }
+    header > nav a span { display: none; }
+}
+
 /* === Timeline Style === */
 
 .right {
@@ -214,7 +220,7 @@ a.txt-link:hover span {
     text-decoration: none;
 }
 
-/* Only show icon for link to txt */
+/* Only show icon for link to txt*/
 
 @media only screen and (max-width: 720px) {
     a.txt-link i { display: initial; }

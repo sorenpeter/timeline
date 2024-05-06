@@ -1,12 +1,12 @@
 <?php
 
 // Get info about profile from URL as an objects
-if (!empty($_GET['profile'])) {
+if (!empty($_GET['url'])) {
 	$url = $twtsURL;
 }
 
 $profile = getTwtsFromTwtxtString($url);
-$profileURL = $baseURL . '/?profile=' . $profile->mainURL;
+$profileURL = $baseURL . '/profile?url=' . $profile->mainURL;
 $textareaValue = "@<$profile->nick $profile->mainURL> ";
 
 // TODO: Move this to twtxt.php or base.php
@@ -27,7 +27,6 @@ $twt_gallery = array_filter($twts, function ($twt) {
 	return preg_match('/!\[(.*?)\]\((.*?)\)/', $twt->originalTwtStr);
 	//return preg_match('/(<img[^>]+>)/i', $twt->content);
 });
-
 
 
 // Get active view/filter
@@ -78,8 +77,8 @@ if ($is_gallery) {
 
 		<span class="profile-filters">
 			<a <?=$posts_active?> href="<?=$profileURL?>">Posts</a>
-			<a <?=$replies_active?> href="<?=$baseURL?>/replies?profile=<?=$profile->mainURL?>">Replies</a>
-			<a <?=$gallery_artive?> href="<?=$baseURL?>/gallery?profile=<?=$profile->mainURL?>">Gallery</a>
+			<a <?=$replies_active?> href="<?=$baseURL?>/replies?url=<?=$profile->mainURL?>">Replies</a>
+			<a <?=$gallery_artive?> href="<?=$baseURL?>/gallery?url=<?=$profile->mainURL?>">Gallery</a>
 		</span>
 
 		<span class="right">

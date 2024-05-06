@@ -10,11 +10,11 @@
 
 <?php foreach ($twts as $twt) {?>
 	<article class="post-entry" id="<?=$twt->hash?>">
-		<a href="<?=$baseURL?>/?profile=<?=$twt->mainURL?>">
+		<a href="<?=$baseURL?>/profile?url=<?=$twt->mainURL?>">
 			<img src='<?=$twt->avatar?>' class="avatar" onerror="this.onerror=null;this.src='<?= $baseURL ?>/media/default.png';">
 		</a>
 		<div>
-			<a href="<?=$baseURL?>/?profile=<?=$twt->mainURL?>" class="author">
+			<a href="<?=$baseURL?>/profile?url=<?=$twt->mainURL?>" class="author">
 				<strong><?=$twt->nick?></strong>@<?=parse_url($twt->mainURL, PHP_URL_HOST);?>
 			</a>
 

@@ -1,0 +1,455 @@
+# Twtxt is an open, distributed microblogging platform that
+# uses human-readable text files, common transport protocols,
+# and free software.
+#
+# Learn more about twtxt at  https://github.com/buckket/twtxt
+#
+# This is hosted by a Yarn.social pod twtxt.net running yarnd 0.15.1@7fd3daed 2023-11-26T10:40:12+10:00 go1.21.4
+# Learn more about Yarn.social at https://yarn.social
+#
+# nick        = ionores
+# url         = https://twtxt.net/user/ionores/twtxt.txt
+# avatar      = https://twtxt.net/user/ionores/avatar#uuosr27ggloc3q5rczl45mmrg7v5trgyibn2xngxvybnnawppxda
+# description = 
+#
+# following   = 41
+##
+# follow = abucci https://anthony.buc.ci/user/abucci/twtxt.txt
+# follow = adi https://twtxt.net/user/adi/twtxt.txt
+# follow = adi@f.adi.onl https://f.adi.onl/user/adi/twtxt.txt
+# follow = antonio https://twtxt.net/user/antonio/twtxt.txt
+# follow = carsten https://yarn.zn80.net/user/carsten/twtxt.txt
+# follow = crunched https://twtxt.net/user/crunched/twtxt.txt
+# follow = darch https://twtxt.net/user/darch/twtxt.txt
+# follow = david https://netbros.com/user/david/twtxt.txt
+# follow = dooven https://twtxt.net/user/dooven/twtxt.txt
+# follow = eaplmx https://twtxt.net/user/eaplmx/twtxt.txt
+# follow = eldersnake https://yarn.andrewjvpowell.com/user/eldersnake/twtxt.txt
+# follow = eldersnake@twtxt.net https://twtxt.net/user/eldersnake/twtxt.txt
+# follow = fab gemini://foobucket.xyz/fab.twtxt.txt
+# follow = hacker-news https://feeds.twtxt.net/hacker-news/twtxt.txt
+# follow = home_datacenter https://twtxt.net/user/home_datacenter/twtxt.txt
+# follow = ionores https://twtxt.net/user/ionores/twtxt.txt
+# follow = jlj https://twt.nfld.uk/user/jlj/twtxt.txt
+# follow = kevin https://txt.om.gay/twtxt.txt
+# follow = kt84 https://twtxt.net/user/kt84/twtxt.txt
+# follow = linux_gizmos https://feeds.twtxt.net/linux_gizmos/twtxt.txt
+# follow = lyse https://lyse.isobeef.org/twtxt.txt
+# follow = lyse@lyse.isobeef.org http://lyse.isobeef.org
+# follow = markwylde https://twtxt.net/user/markwylde/twtxt.txt
+# follow = mutefall https://twtxt.net/user/mutefall/twtxt.txt
+# follow = nexeq https://twtxt.net/user/nexeq/twtxt.txt
+# follow = off_grid_living https://twtxt.net/user/off_grid_living/twtxt.txt
+# follow = onezeroeight https://twtxt.net/user/onezeroeight/twtxt.txt
+# follow = petstorm https://twtxt.net/user/petstorm/twtxt.txt
+# follow = prologic https://twtxt.net/user/prologic/twtxt.txt
+# follow = quark https://ferengi.one/twtxt.txt
+# follow = screem https://twtxt.net/user/screem/twtxt.txt
+# follow = stats https://twtxt.net/user/stats/twtxt.txt
+# follow = stigatle https://twtxt.net/user/stigatle/twtxt.txt
+# follow = stigatle@yarn.stigatle.no https://yarn.stigatle.no/user/stigatle/twtxt.txt
+# follow = stutteringsteve https://twtxt.net/user/stutteringsteve/twtxt.txt
+# follow = thecanine https://twtxt.net/user/thecanine/twtxt.txt
+# follow = thewismit https://twtxt.psynergy.io/user/thewismit/twtxt.txt
+# follow = twtxtsf https://twtxt.net/user/twtxtsf/twtxt.txt
+# follow = ullarah https://txt.quisquiliae.com/user/ullarah/twtxt.txt
+# follow = vain https://www.uninformativ.de/twtxt.txt
+# follow = xuu https://txt.sour.is/user/xuu/twtxt.txt
+
+2020-08-01T00:04:24Z	Hello world ! ☺
+2020-08-01T01:28:39Z	Okay.  And good job ! 👍
+2020-08-01T01:30:23Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> Okay. And good job ! 👍
+2020-08-02T18:23:53Z	NASA TV 👋 :)
+2020-08-05T20:21:08Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> I also noticed the new function! But not yet used.🙋
+2020-08-05T20:35:43Z	First Ever Image of a Multi-Planet System around a Sun-like Star Captured by ESO Telescope ![](https://twtxt.net/media/9CzUVUQWYycUQaEwEQ68nK.png)
+2020-08-10T02:18:02Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> <a href="https://reactiongifs.com/?p=17048"><img src="https://www.reactiongifs.com/wp-content/uploads/2013/11/LOKI_approves.gif"></a>
+2020-08-10T02:29:52Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (re Loki Approves!) Your First Twt from CLI.
+2020-08-11T02:01:25Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBNeX5SseWbCHsRRiUzjuCZv4pQ_3m1j4s7sqyRJcFoajM9L4&s)  *for your doggie. 😁
+2020-08-11T02:22:36Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> (re #<iOS https://twtxt.net/search?tag=iOS> App!) Great news !!! 🎉🎉🎉👌👍
+2020-08-11T03:43:21Z	![](https://www.skyandtelescope.com.au/wp-content/uploads/2020/08/Image-for-web_04_Hadrien_Devillepoix_pointing_to_Madura_meteorite_credit_Anthony_Lagain_Curtin-792x420-1.jpg )  [Australian scientists find two meteorites in two weeks](https://www.skyandtelescope.com.au/australian-scientists-find-two-meteorites-in-two-weeks/) #<science https://twtxt.net/search?tag=science>
+2020-08-14T01:10:50Z	@<kt84 https://twtxt.net/user/kt84/twtxt.txt> Enjoy your weekend ! 😀
+2020-08-14T17:42:17Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (re  1-click hosted pods) The "baby" is growing fast! 😉😁😁
+2020-08-18T02:27:55Z	@<stats https://twtxt.net/user/stats/twtxt.txt> The 100 Spartans !!! 😁😁😁
+2020-08-26T23:11:37Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> Morning 😀  1☕+2🍩
+2020-08-31T14:10:32Z	![](https://twtxt.net/media/8Z66hs7Jb2yZpjvTXNRxsM) #<TourdeFrance https://twtxt.net/search?tag=TourdeFrance> #<cyclisme https://twtxt.net/search?tag=cyclisme> #<sport https://twtxt.net/search?tag=sport>
+2020-09-10T15:02:13Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<do3laja https://twtxt.net/search?tag=do3laja>) A day in hell! 😱
+2020-09-10T15:33:18Z	[Sensors of world’s largest digital camera snap first 3,200-megapixel images at SLAC](https://www6.slac.stanford.edu/news/2020-09-08-sensors-world-largest-digital-camera-snap-first-3200-megapixel-images-slac.aspx)
+2020-09-11T14:08:00Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<uubfkqa https://twtxt.net/search?tag=uubfkqa>) It is really impressive!
+2020-09-11T14:09:11Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<qw4nq5a https://twtxt.net/search?tag=qw4nq5a>) 📹🎉🎉👌😀
+2020-09-15T06:23:31Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<52xeltq https://twtxt.net/search?tag=52xeltq>) Happy birthday !!! 😀
+2020-09-15T06:32:22Z	California Daily Wildfire Update [California Daily Wildfire Update](https://www.fire.ca.gov/daily-wildfire-report/)
+2020-09-15T06:46:31Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> @<lukem https://twtxt.net/user/lukem/twtxt.txt> (#<7yisdmq https://twtxt.net/search?tag=7yisdmq>) 👍proton
+2020-09-15T19:58:34Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<lukem https://twtxt.net/user/lukem/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<7yisdmq https://twtxt.net/search?tag=7yisdmq>) Yes and so far no problem. 😀 *You can use proton with Microsoft Outlook/Mozilla Thunderbird/Apple Mail.* https://protonmail.com/bridge/thunderbird
+2020-09-20T11:05:35Z	Busy day today! Tour de France and 24 Hours of Le Mans. 😉😀📺🍺
+2020-09-21T08:57:52Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<2yg7cyq https://twtxt.net/search?tag=2yg7cyq>) This year from the sofa.
+2020-09-21T09:56:32Z	[Fears for 270 whales trapped off Australian coast ](https://7news.com.au/news/animals/fears-for-270-whales-trapped-off-australian-coast--c-1332420) 😞
+2020-09-23T21:27:57Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<hjertnes https://twtxt.net/user/hjertnes/twtxt.txt> (#<vwfboka https://twtxt.net/search?tag=vwfboka>) Try this App: [session](https://getsession.org/)
+2020-09-24T09:37:29Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<vwfboka https://twtxt.net/search?tag=vwfboka>) Yep. + no phone numbers !
+2020-09-26T01:21:58Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<5nghmvq https://twtxt.net/search?tag=5nghmvq>) Baked potato & 🍺.😁
+2020-09-26T08:41:15Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<5nghmvq https://twtxt.net/search?tag=5nghmvq>) Yes I stuff them. Olive oil, fresh cream, smoked ham, garlic, cheese, chopped shallots, salt, pepper. 😀
+2020-09-26T09:19:14Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<5nghmvq https://twtxt.net/search?tag=5nghmvq>) You're lucky! 😀 But don't eat too much! 😉😁
+2020-09-26T09:30:59Z	![](https://twtxt.net/media/cNQ6pT7wM2QyXiu3UFjmdR) She's 11 years old. 😀 😁
+2020-09-26T10:14:02Z	Blond or dark beer?
+2020-09-26T10:39:08Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<yrrrn4a https://twtxt.net/search?tag=yrrrn4a>) Not a photo. A gif!
+2020-09-26T23:33:36Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<lb3kalq https://twtxt.net/search?tag=lb3kalq>) Tired, me? Never ! ![](https://majorspoilers.com/wp-content/uploads/2017/12/Everyman-Simpsons.jpg) 😎
+2020-10-01T11:22:35Z	Remember to eat today (October 1) only carrots! 😁
+2020-10-01T12:55:52Z	A cool  🐍cube! 😀 [led cube](https://there.oughta.be/an/led-cube)
+2020-10-01T16:21:33Z	@<felixp7 https://twtxt.net/user/felixp7/twtxt.txt> (#<rglox5q https://twtxt.net/search?tag=rglox5q>) An interesting study on the perception of time: [Duration Selectivity in Right Parietal Cortex Reflects the Subjective Experience of Time](https://www.jneurosci.org/content/40/40/7749)
+2020-10-11T15:41:37Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<goababa https://twtxt.net/search?tag=goababa>) I think it's a squirrel.
+2020-10-11T22:17:40Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<off_grid_living https://twtxt.net/user/off_grid_living/twtxt.txt> (#<jwrjuqq https://twtxt.net/search?tag=jwrjuqq>) I don't like the rain !!!! 😠👎
+2020-10-12T06:58:31Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<37agega https://twtxt.net/search?tag=37agega>) Clear sky ... No clouds on the horizon and two people who think they are Icarus. Nice picture ! 😀👍📷
+2020-10-12T07:35:05Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<37agega https://twtxt.net/search?tag=37agega>) Yep. 😁😎  ![](https://twtxt.net/media/ZiBRiaqWUakX63XT95saN7)
+2020-10-12T08:54:21Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<37agega https://twtxt.net/search?tag=37agega>) I know but I didn't want to upload it to the server.
+2020-10-12T09:07:30Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<37agega https://twtxt.net/search?tag=37agega>) OK no problem.
+2020-10-12T19:58:04Z	@<off_grid_living https://twtxt.net/user/off_grid_living/twtxt.txt> (#<z3rzrfq https://twtxt.net/search?tag=z3rzrfq>) Hope he will do a good job.
+2020-10-13T07:06:49Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<xhtzmza https://twtxt.net/search?tag=xhtzmza>) I hope that all will be well (goryon/App Store)! 😀
+2020-10-13T12:20:51Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<o5bljaa https://twtxt.net/search?tag=o5bljaa>) "old stale accounts": 👎 😈 😁
+2020-10-14T20:21:36Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<ce4ijia https://twtxt.net/search?tag=ce4ijia>) I'm halfway through my cup of coffee ! ☕😁
+2020-10-14T20:46:50Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<ce4ijia https://twtxt.net/search?tag=ce4ijia>) I just finished my cup! 😱😬😭😭😭😭😭
+2020-10-14T21:24:56Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<ce4ijia https://twtxt.net/search?tag=ce4ijia>) Coffee and beer! 😂💪
+2020-10-15T17:16:17Z	@<lukem https://twtxt.net/user/lukem/twtxt.txt> (#<qrnrx6a https://twtxt.net/search?tag=qrnrx6a>) Congratulations! 😁👍🎉
+2020-10-16T08:12:17Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<lukem https://twtxt.net/user/lukem/twtxt.txt> (#<miym2wq https://twtxt.net/search?tag=miym2wq>) It's a good choice.👌
+2020-10-18T20:06:12Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<5kamq5a https://twtxt.net/search?tag=5kamq5a>) Don't look behind you! There is a big shark !!! 😁😁😁  ![](https://twtxt.net/media/yZXycR87Pme8mLBmNKtaFJ)
+2020-10-18T21:13:46Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<5kamq5a https://twtxt.net/search?tag=5kamq5a>) Does it bring back memories?😀
+2020-10-18T21:26:44Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<5kamq5a https://twtxt.net/search?tag=5kamq5a>) And Heartbreak High?
+2020-10-18T22:16:40Z	Australian.
+2020-10-18T22:24:38Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<ttf3lna https://twtxt.net/search?tag=ttf3lna>)  TV program.
+2020-10-18T22:34:51Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> Your favorite TV shows from the 90s ?
+2020-10-18T22:54:42Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<td2nyhq https://twtxt.net/search?tag=td2nyhq>) 👏👍👌   mmm... TACOS ! 😁
+2020-10-18T23:02:21Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<td2nyhq https://twtxt.net/search?tag=td2nyhq>) So I'm hungry! I'll go get some crisps. 😁😁😁
+2020-10-19T00:50:23Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<5kamq5a https://twtxt.net/search?tag=5kamq5a>) 😂😂😂
+2020-10-19T00:54:48Z	"Mad about you", US show?
+2020-10-19T00:55:29Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<r7qo3ga https://twtxt.net/search?tag=r7qo3ga>) yep 😀😊
+2020-10-19T01:54:09Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<pbv2u7a https://twtxt.net/search?tag=pbv2u7a>) As they say, tastes and colors.....😀
+2020-10-19T08:39:00Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<dooven https://twtxt.net/user/dooven/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<docs7cq https://twtxt.net/search?tag=docs7cq>) 👏👏👏👏👏🎉🎉🎉🎉👍👍👍👌👌👌💪💪💪🍺🍺🍺
+2020-10-19T09:41:51Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<dooven https://twtxt.net/user/dooven/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<docs7cq https://twtxt.net/search?tag=docs7cq>) ![](https://twtxt.net/media/43Q3SQcxs8U3QyvPW3zkeF)
+2020-10-20T02:34:34Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> @<dooven https://twtxt.net/user/dooven/twtxt.txt> (#<docs7cq https://twtxt.net/search?tag=docs7cq>)  ![](https://twtxt.net/media/HNRcCsxjF84N2zLPLi26nc)
+2020-10-20T19:13:30Z	@<felixp7 https://twtxt.net/user/felixp7/twtxt.txt> (#<tmzloda https://twtxt.net/search?tag=tmzloda>) Be careful not to become addicted to it... 😉😀
+2020-10-22T11:38:25Z	OSIRIS-REx Meets Bennu’s Surprises [OSIRIS-REx Meets Bennu’s Surprises](https://m.youtube.com/watch?v=j_hSNBmpuqY)
+2020-10-22T11:43:55Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<ddmkayq https://twtxt.net/search?tag=ddmkayq>) I remember and understand the reason for censorship.
+2020-10-22T12:48:22Z	You are right the word ~~censorship~~ may not be appropriate.
+2020-10-22T14:55:51Z	Dutch Ethical Hacker Logs into Trump’s Twitter Account  [Dutch Ethical Hacker Logs into Trump’s Twitter Account](https://www.volkskrant.nl/nieuws-achtergrond/dutch-ethical-hacker-logs-into-trump-s-twitter-account~badaa815/)
+2020-10-22T16:12:10Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<m54ormq https://twtxt.net/search?tag=m54ormq>) Unfortunately this is not an isolated case!😟
+2020-10-23T10:04:46Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<s7u5gmq https://twtxt.net/search?tag=s7u5gmq>) Session 😀 [session](https://getsession.org/)
+2020-10-25T16:44:56Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<l5lmsja https://twtxt.net/search?tag=l5lmsja>) So it's calmed down?⛈🌀☁
+2020-10-25T21:45:35Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<osgxbra https://twtxt.net/search?tag=osgxbra>) 👋😀☕x3
+2020-10-25T21:59:35Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<osgxbra https://twtxt.net/search?tag=osgxbra>) I don't like cold coffee. So I drink it quickly ! 😁
+2020-10-25T22:43:24Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<osgxbra https://twtxt.net/search?tag=osgxbra>) I have one too. But never on hand... 😬😁😁
+2020-10-25T23:29:30Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<osgxbra https://twtxt.net/search?tag=osgxbra>) I confirm. The handle of my cup has been broken for ... some time !!! 😁😁😁
+2020-10-26T14:08:50Z	👋NASA will announce an exciting new discovery about the Moon from the Stratospheric Observatory for Infrared Astronomy (SOFIA) at a media teleconference at 12 p.m. (EASTERN U.S. TIME) / Monday, Oct. 26.  [NASA Live](https://www.youtube.com/watch?feature=emb_title&v=21X5lGlDOfg)  [Space News Pod](https://www.youtube.com/watch?v=JaXEHT-qDhs)  #<moon https://twtxt.net/search?tag=moon> #<nasa https://twtxt.net/search?tag=nasa> #<astronomy https://twtxt.net/search?tag=astronomy>
+2020-10-26T23:50:49Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<4ce43zq https://twtxt.net/search?tag=4ce43zq>) Yep. Water on the moon's sunny surface (water molecules in the Clavius crater).
+2020-10-27T00:21:16Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<4ce43zq https://twtxt.net/search?tag=4ce43zq>) The idea of the century: beer with lunar water !!!😎😁🍺
+2020-10-28T13:04:51Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<nxbyymq https://twtxt.net/search?tag=nxbyymq>) I believe that this year, there are more storms than in previous years. 🌀🌀🌀🌀🌀🌀🌀🌀⛈
+2020-10-29T20:57:16Z	@<off_grid_living https://twtxt.net/user/off_grid_living/twtxt.txt> (#<ywh2naa https://twtxt.net/search?tag=ywh2naa>) You never take a break, do you? 😀
+2020-10-29T21:03:16Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<bdubepq https://twtxt.net/search?tag=bdubepq>) 👍☕ I don't count anymore! 😀
+2020-10-31T12:20:41Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<kw3xhoq https://twtxt.net/search?tag=kw3xhoq>) You have to watch your head! 😁
+2020-10-31T12:36:57Z	Sean Connery... RIP 😢
+2020-11-01T15:31:23Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<53govpq https://twtxt.net/search?tag=53govpq>) Good luck with your new job! 🍻😀
+2020-11-02T07:45:44Z	@<off_grid_living https://twtxt.net/user/off_grid_living/twtxt.txt> (#<3i7pjoa https://twtxt.net/search?tag=3i7pjoa>) Very interesting. I take note !📝😀
+2020-11-05T09:06:37Z	@<kt84 https://twtxt.net/user/kt84/twtxt.txt> (#<w352y6a https://twtxt.net/search?tag=w352y6a>) A person of interest in the area ?
+2020-11-08T11:45:53Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<mxdo2aa https://twtxt.net/search?tag=mxdo2aa>) You should have been more patient... and taken the picture at the right time! 😁😁😁
+2020-11-09T15:14:48Z	@<dooven https://twtxt.net/user/dooven/twtxt.txt> (#<22oexra https://twtxt.net/search?tag=22oexra>) Where is it ?
+2020-11-09T18:58:22Z	@<dooven https://twtxt.net/user/dooven/twtxt.txt> (#<22oexra https://twtxt.net/search?tag=22oexra>) Okay, thanks! 😀
+2020-11-10T09:20:46Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<nw6rcca https://twtxt.net/search?tag=nw6rcca>) 0530 ! 😀
+2020-11-15T14:13:49Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<ls2pnaa https://twtxt.net/search?tag=ls2pnaa>) `9`
+2020-11-18T09:18:00Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<tmwmymq https://twtxt.net/search?tag=tmwmymq>) I'm waiting for the end of season 2 to watch all the episodes at once. 🍕🍺🍩☕😎😁
+2020-11-18T09:36:34Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<wr2powq https://twtxt.net/search?tag=wr2powq>) black and white 🐕.
+2020-11-20T09:12:40Z	@<birb https://twtxt.net/user/birb/twtxt.txt> (#<xweaeva https://twtxt.net/search?tag=xweaeva>) The King is back ! 😁
+2020-11-20T09:35:08Z	@<off_grid_living https://twtxt.net/user/off_grid_living/twtxt.txt> (#<qiuuejq https://twtxt.net/search?tag=qiuuejq>) Have a great weekend!😀
+2020-11-21T14:10:18Z	@<lukem https://twtxt.net/user/lukem/twtxt.txt> (#<7gcpfaa https://twtxt.net/search?tag=7gcpfaa>) 👏👍 But there's something missing at the bottom left, isn't there ?😉😁
+2020-11-21T17:08:39Z	@<lukem https://twtxt.net/user/lukem/twtxt.txt> (#<7gcpfaa https://twtxt.net/search?tag=7gcpfaa>) The site: A link / icon to twtxt is missing. 😀 The egg: I haven't looked for it yet.
+2020-11-23T20:01:03Z	DPS Crew Discovers Mysterious Monolith😱👽  [DPS Crew Discovers Mysterious Monolith/Utah](https://ksltv.com/449486/dps-crew-discovers-mysterious-monolith-from-air-in-remote-utah-wilderness/)
+2020-11-26T19:51:08Z	How to set ProtonMail as your default email app in iOS  [How to set ProtonMail as your default email app in iOS](https://protonmail.com/support/knowledge-base/ios-default-email/)
+2020-11-26T20:07:37Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<u6w3oja https://twtxt.net/search?tag=u6w3oja>) Happy Thanksgiving! ☺
+2020-11-30T10:48:02Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<a5mae3a https://twtxt.net/search?tag=a5mae3a>) I only watched the first two episodes.
+2020-11-30T11:35:39Z	I see that the community keeps growing! That's good. 👏
+2020-11-30T15:54:54Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<kmvnzxq https://twtxt.net/search?tag=kmvnzxq>) I read it too. But I never imagined that it would cause such an influx of new members!
+2020-12-06T16:09:51Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<qh2d56q https://twtxt.net/search?tag=qh2d56q>) Congrats man! Great performance👏👍🍺  👉Paralymp 🇯🇵 2021 ? 😀😁
+2020-12-06T16:54:58Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<markwylde https://twtxt.net/user/markwylde/twtxt.txt> (#<nb6nkoa https://twtxt.net/search?tag=nb6nkoa>) I'm waiting for the PicoRio.
+2020-12-08T16:44:31Z	German secure email provider Tutanota forced to monitor an account, after regional court ruling   [German secure email provider Tutanota forced to monitor an account, after regional court ruling](https://techcrunch.com/2020/12/08/german-secure-email-provider-tutanota-forced-to-monitor-an-account-after-regional-court-ruling/)
+2020-12-08T17:09:37Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<e3c65ua https://twtxt.net/search?tag=e3c65ua>) No.  Self-hosted on ODROID-HC4?
+2020-12-09T13:28:36Z	@<chelseyc90 https://twtxt.net/user/chelseyc90/twtxt.txt> (#<ptu3bca https://twtxt.net/search?tag=ptu3bca>) Hmm I only see 2 glasses of beer. Not good....!😉😀
+2020-12-11T13:32:58Z	CentOS is dead. Long live Rockylinux ! 👏👍 [Rockylinux](https://rockylinux.org/)
+2020-12-21T15:47:54Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<becrobinson86 https://twtxt.net/user/becrobinson86/twtxt.txt> (#<rwvvxcq https://twtxt.net/search?tag=rwvvxcq>) So we're both alcoholics?  😂 Noooo I'm not an alcoholic !!! 😭😤  *Fuck ! I need a beer... My hand is starting too shaaakeee.*
+2020-12-21T16:16:27Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<tky57za https://twtxt.net/search?tag=tky57za>) Horatio Caine is on the case ! 👍😁
+2020-12-22T14:46:07Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<fxmoyoa https://twtxt.net/search?tag=fxmoyoa>) I like it! Very nice. 😀
+2020-12-23T23:58:45Z	On my short list:  The Mandalorian -> season 2 (8 episodes)  The 100 -> season 7 (16 episodes)  📺😁
+2020-12-24T00:58:43Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<vwfaeeq https://twtxt.net/search?tag=vwfaeeq>) Like everyone else: on D
+2020-12-24T01:03:58Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<vwfaeeq https://twtxt.net/search?tag=vwfaeeq>) *Set ninety-seven years after a nuclear war has destroyed civilization, when a spaceship housing humanity's lone survivors sends one hundred juvenile delinquents back to Earth, in hopes of possibly re-populating the planet.* (imdb) 😁
+2020-12-24T01:22:05Z	So ... Have you been good this year? Be sincere! 🎅🎅🎅😁
+2020-12-24T02:25:08Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<qwtqgaa https://twtxt.net/search?tag=qwtqgaa>) I've been good. But if it's Santa's niece asking, am I allowed to lie? 😉😁
+2020-12-25T01:25:29Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<6h345ca https://twtxt.net/search?tag=6h345ca>) Thanks, and the same to you.🎄🎄🎄
+2020-12-25T01:39:37Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<xtwfwpa https://twtxt.net/search?tag=xtwfwpa>) Die Hard ! 😂😂😂
+2020-12-27T11:23:34Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<ebildhq https://twtxt.net/search?tag=ebildhq>) **TWTXT AVIATION** 😁😁😁
+2020-12-27T11:36:41Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<nm3k3sa https://twtxt.net/search?tag=nm3k3sa>) And you like the show?
+2020-12-31T11:53:53Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<4tvmlea https://twtxt.net/search?tag=4tvmlea>) `1. g4 Nf6 2. f3 b6 3. h4 d5 4. e4 a5 5. g5 Bf5 6. Ke2 b5 7. Bg2 Bg6 8. exd5 Bh5 9. Qe1 Bxf3+ 10. Kf1 Nc6 11. Qxe7+ Nxe7 12. Bxf3 Rg8 13. Be4 Nexd5 14. Nf3 Qc8 15. Kg1 Qh3 16. Bg6 Rb8 17. Na3 hxg6 18. h5 Nf4 19. Rh2 Rb7 20. hxg6 Ke7 21. Rb1 Ne8 22. c3 c5 23. Ne5 Qf1+ 24. Kxf1 b4 25. Rh6 bxc3 26. bxc3 Ne6 { White resigns. } 0-1`
+2020-12-31T12:02:34Z	🎉🎉🎉🎊Happy New Year everyone !!! 🎉🎉🎉🎊 🍺🍻🍺
+2020-12-31T23:18:04Z	📣Happy New Year 2021 !!! 🎉🎉🎉🍻
+2021-01-01T00:13:24Z	@<off_grid_living https://twtxt.net/user/off_grid_living/twtxt.txt> (#<fyw7ega https://twtxt.net/search?tag=fyw7ega>) Happy New Year ! 🎉😀
+2021-01-01T00:21:03Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<7nyxhzq https://twtxt.net/search?tag=7nyxhzq>) Thanks ! 😀
+2021-01-01T00:55:26Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<3gx7hka https://twtxt.net/search?tag=3gx7hka>) No, but I like to be early! This year I'm celebrating all the time zones!😂🍺🍺🍺
+2021-01-01T01:18:38Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<3gx7hka https://twtxt.net/search?tag=3gx7hka>) Yep! Sorry. I had forgotten the last sentence in the fridge when I went to get something fresh. 😉😁🍺
+2021-01-01T01:59:06Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<3gx7hka https://twtxt.net/search?tag=3gx7hka>) This is not the first time this has happened.
+2021-01-01T13:37:28Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<ogreraa https://twtxt.net/search?tag=ogreraa>) Happy New Year 2021 !😀🍻
+2021-01-05T00:05:16Z	(#<qbgazsq https://twtxt.net/search?tag=qbgazsq>) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Long question, short answer: Yes ! 😁
+2021-01-05T00:45:44Z	@<lyxal https://twtxt.net/user/lyxal/twtxt.txt> (#<jkeykwq https://twtxt.net/search?tag=jkeykwq>) It happened to me last year! 😁
+2021-01-05T01:34:21Z	@<lyxal https://twtxt.net/user/lyxal/twtxt.txt> (#<jkeykwq https://twtxt.net/search?tag=jkeykwq>) This is the most boring part : remove the little pieces of paper !
+2021-01-06T02:49:28Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<23rcyra https://twtxt.net/search?tag=23rcyra>) I have been watching since 2013, season after season ! 😎💪😀
+2021-01-08T12:53:29Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<3iuw3tq https://twtxt.net/search?tag=3iuw3tq>) For how long?
+2021-01-12T12:45:54Z	👇 [The top ten best countries in the world to work from home in 2021 revealed](https://www.standard.co.uk/business/digital-nomad-index-best-countries-work-from-home-b740968.html)
+2021-01-14T12:20:31Z	👇 [Google 'experiment' blocks Australian news from local searches](https://news.abs-cbn.com/overseas/01/14/21/google-experiment-blocks-australian-news-from-local-searches)
+2021-01-14T12:31:41Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<u6jmita https://twtxt.net/search?tag=u6jmita>) 👌😀
+2021-01-15T19:12:43Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<yxyhboa https://twtxt.net/search?tag=yxyhboa>) Waiting for Signal to work again, test [Session](https://getsession.org/) 😉😀  *You too @<adi https://twtxt.net/user/adi/twtxt.txt>! 😀
+2021-01-15T19:56:47Z	Session = Signal + Tor - no phone numbers  👉 [session](https://getsession.org/)
+2021-01-15T20:12:11Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<adi https://twtxt.net/user/adi/twtxt.txt> (#<yxyhboa https://twtxt.net/search?tag=yxyhboa>) 👌👏😀
+2021-01-15T20:19:49Z	@<adi https://twtxt.net/user/adi/twtxt.txt> @<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<yxyhboa https://twtxt.net/search?tag=yxyhboa>) Well, now you just have to convince your friends to give up whatsapp -> Signal /Session!  😀😀😀#therealmissionimpossible
+2021-01-15T20:50:25Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<adi https://twtxt.net/user/adi/twtxt.txt> (#<yxyhboa https://twtxt.net/search?tag=yxyhboa>) yep. 👉 [session-protocol](https://getsession.org/introducing-the-session-protocol/)
+2021-01-15T20:57:03Z	There is no time for a coffee ...☕👌😀
+2021-01-17T01:32:18Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<yxyhboa https://twtxt.net/search?tag=yxyhboa>) Yep and "I have no more space on the mem card!"
+2021-01-17T02:34:56Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> @<adi https://twtxt.net/user/adi/twtxt.txt> (#<yxyhboa https://twtxt.net/search?tag=yxyhboa>) Without their "contacts", I don't think so.
+2021-01-17T02:51:06Z	It's time to drink a good cold beer!🍺👌😁
+2021-01-17T04:15:00Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<djssqya https://twtxt.net/search?tag=djssqya>) A Heineken that I bought earlier today.
+2021-01-17T04:31:46Z	Netflix (a documentary) - "Night Stalker: The Hunt for a Serial Killer" 🍕👌😀
+2021-01-17T04:37:10Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<djssqya https://twtxt.net/search?tag=djssqya>) I need one ....😭
+2021-01-21T07:32:15Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<iqzacia https://twtxt.net/search?tag=iqzacia>) I love sparrows! Think of them especially during the winter and give them seeds. 😀
+2021-01-21T22:05:36Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<iqzacia https://twtxt.net/search?tag=iqzacia>)  ![](https://twtxt.net/media/wtWAoFNiDtjHdjQNwp3asn)
+2021-01-21T23:05:56Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<iqzacia https://twtxt.net/search?tag=iqzacia>) Because of the weather, this is the only one I could photograph with my smartphone! 📱😂
+2021-01-21T23:34:44Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<mckmtgq https://twtxt.net/search?tag=mckmtgq>) And they are herbivorous lezards!
+2021-01-25T10:18:01Z	Mission accomplished Mr. Phelps! One of my contacts: whatsapp -> signal. 🎉
+2021-01-28T12:14:09Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<nxntfeq https://twtxt.net/search?tag=nxntfeq>) 👌👏 😀
+2021-01-29T07:47:07Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<jack https://twtxt.net/user/jack/twtxt.txt> (#<x7e73va https://twtxt.net/search?tag=x7e73va>) "jack" - for a second I thought it was the other jack! 😂😂😂
+2021-01-29T08:52:22Z	The bookmark icon ❤ is confusing.  May be : 📌
+2021-01-29T11:38:05Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<vevdhna https://twtxt.net/search?tag=vevdhna>) `diamonds` and `diamonds-o` ?
+2021-01-29T13:57:29Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<vevdhna https://twtxt.net/search?tag=vevdhna>) Why not. `circle` or `diamonds ` is much better than `heart`.   `heart` you have to keep it for the option: I like or I agree with your twt.
+2021-01-30T03:32:05Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<zj4msla https://twtxt.net/search?tag=zj4msla>) 👌😀
+2021-01-30T03:52:04Z	😮 [Element (Matrix chat app) suspended from the Google Play Store](https://news.ycombinator.com/item?id=25964226)
+2021-01-30T13:28:25Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<v6hgvnq https://twtxt.net/search?tag=v6hgvnq>)   👇 ["Morning all. We've had contact from Google confirming that the suspension is due to abusive content somewhere on Matrix; we're working with them to explain how Element works and get the situation resolved."](https://https://mobile.twitter.com/element_hq/status/1355465650114846720)
+2021-02-01T12:41:37Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<adi https://twtxt.net/user/adi/twtxt.txt> (#<ugbwz5a https://twtxt.net/search?tag=ugbwz5a>) With pods, you just replace the big jack with 100 mini ~~jack~~ prologic. 😁  Solution: one person / a self-hosted pod.
+2021-02-02T17:47:17Z	@<adi https://twtxt.net/user/adi/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<ugbwz5a https://twtxt.net/search?tag=ugbwz5a>) Me too.😀
+2021-02-04T12:25:48Z	@<xuu https://txt.sour.is/user/xuu/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<l5qdaba https://twtxt.net/search?tag=l5qdaba>) Deedum and Ariane/F-Droid.
+2021-02-05T12:38:21Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (common cold) And now you feel better?
+2021-02-07T18:38:32Z	@<kt84 https://twtxt.net/user/kt84/twtxt.txt> (#<bscf7ma https://twtxt.net/search?tag=bscf7ma>) With olive oil and cottage cheese .... It's perfect! 👌😋😀
+2021-02-11T16:22:45Z	Life Without Google: [Australia Is Now Facing the Unthinkable](https://www.bloomberg.com/news/articles/2021-02-11/life-without-google-australia-is-now-facing-the-unthinkable)  👉 Try [mojeek.com](https://www.mojeek.com/)
+2021-02-11T20:02:30Z	@<vain https://www.uninformativ.de/twtxt.txt> (#<sxz3j5q https://twtxt.net/search?tag=sxz3j5q>) ddg for years + mojeek for a few months. 😀
+2021-02-12T10:28:52Z	(#<q2vddea https://twtxt.net/search?tag=q2vddea>) @<vain https://www.uninformativ.de/twtxt.txt> 5) 👉 Put rosehip marmalade, for example ! 😋😀
+2021-02-18T20:57:21Z	Perseverance ! 👏🎉😀
+2021-02-21T00:13:07Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> @<jlj https://twt.nfld.uk/user/jlj/twtxt.txt> @<vain https://www.uninformativ.de/twtxt.txt> (#<kanuqhq https://twtxt.net/search?tag=kanuqhq>) I've been using it for a few weeks and it does its job well. (mojeek) 👌😀
+2021-02-21T00:37:19Z	For command line lovers: aerc-mail.  > aerc is an email client that runs in your terminal. It's highly efficient and extensible, perfect for the discerning hacker.  👉 [aerc](https://aerc-mail.org)
+2021-02-23T14:21:01Z	Draw me a kangaroo... 😀  [Australian scientists have discovered the country's oldest known rock art - a 17,300-year-old painting of a kangaroo.](https://www.bbc.com/news/world-australia-56164484)
+2021-02-23T14:58:50Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<twtxt https://twtxt.net/user/twtxt/twtxt.txt> (#<mvsjvea https://twtxt.net/search?tag=mvsjvea>) I'm still here! 👋😀
+2021-02-23T15:07:53Z	😁  ![](https://twtxt.net/media/7CAsPBLKxcvmhALGzUc8uY)
+2021-02-23T15:24:58Z	He's eating my cucumber!
+2021-02-23T15:38:37Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<pjyk2uq https://twtxt.net/search?tag=pjyk2uq>) yep.
+2021-02-23T16:08:30Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> Still awake?
+2021-02-23T16:24:40Z	@<thewismit https://twtxt.psynergy.io/user/thewismit/twtxt.txt> (#<52fxjzq https://twtxt.net/search?tag=52fxjzq>) No trace of the author! 😁
+2021-02-23T20:11:59Z	☕ 😀
+2021-03-04T15:03:37Z	@<darch https://twtxt.net/user/darch/twtxt.txt> (#<msgkguq https://twtxt.net/search?tag=msgkguq>) I use it less and less.
+2021-03-04T15:28:47Z	@<darch https://twtxt.net/user/darch/twtxt.txt> (#<msgkguq https://twtxt.net/search?tag=msgkguq>) > An SMS static site is a website you author to by sending text messages to a special number. Words and photos you send are added to the top of your page.   👉  [SMS static](https://phasedust.com/)
+2021-03-11T10:40:15Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<pkjzkfa https://twtxt.net/search?tag=pkjzkfa>) Morning... ☕☕☕😀
+2021-03-19T13:14:14Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> (#<ktadj4a https://twtxt.net/search?tag=ktadj4a>) Hi and welcome back! 😀
+2021-03-19T13:39:50Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<azpbepq https://twtxt.net/search?tag=azpbepq>) Morning ! 😀
+2021-03-19T18:04:10Z	@movq (#<4hdpbdq https://twtxt.net/search?tag=4hdpbdq>) Nice picture ! 👍😀
+2021-03-19T18:39:04Z	I'm going to walk my dog.🐕😀
+2021-03-20T02:03:46Z	😱 🌋  [Volcano erupts near Iceland's capital Reykjavik](https://www.bbc.com/news/world-europe-56465393)
+2021-03-20T16:37:42Z	[POCKIT](https://www.youtube.com/watch?v=L1Ui-y8ajJ0) : An interesting project!
+2021-03-24T16:31:52Z	@<onezeroeight https://twtxt.net/user/onezeroeight/twtxt.txt> (#<ryd7zva https://twtxt.net/search?tag=ryd7zva>) sauerkraut /sauerkrautsaft  👌😋
+2021-03-28T13:54:52Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<duf7ebq https://twtxt.net/search?tag=duf7ebq>) 😁😁😁
+2021-03-28T15:42:27Z	It's never too late !😋😂😂😂
+2021-03-28T21:56:03Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<hqddcrq https://twtxt.net/search?tag=hqddcrq>) Great performance ! Congrats.👏👍😀
+2021-03-29T05:40:44Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<i3u6qgq https://twtxt.net/search?tag=i3u6qgq>) It's not the first time, is it?
+2021-04-01T13:53:13Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<oirhj3a https://twtxt.net/search?tag=oirhj3a>) 😂😁
+2021-04-01T14:35:34Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<fgpvwwa https://twtxt.net/search?tag=fgpvwwa>)  🐦... I'm flying!   🐦... Try again!   🐦 beep, beep 😂😁😀
+2021-04-02T10:49:33Z	@<lyse https://lyse.isobeef.org/twtxt.txt> (#<aae5f5a https://twtxt.net/search?tag=aae5f5a>) Haha... an egret and a snail ! 😀
+2021-05-02T00:32:36Z	Now SpaceX / Crew-1 Mission Return-> NASA TV
+2021-05-02T00:41:28Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<uizwffa https://twtxt.net/search?tag=uizwffa>) NASA TV / YouTube. (from ISS).
+2021-05-04T07:31:47Z	@<lyse https://lyse.isobeef.org/twtxt.txt> (#<vwcgtka https://twtxt.net/search?tag=vwcgtka>) Beautiful images & landscapes!
+2021-06-17T16:08:32Z	@<lyse https://lyse.isobeef.org/twtxt.txt> (#<y6muzmq https://twtxt.net/search?tag=y6muzmq>) Yes, very beautiful pictures!📷 👌👏😀
+2021-06-17T16:15:19Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<whcybdq https://twtxt.net/search?tag=whcybdq>) I think you're not the only one! 😁
+2021-06-26T10:35:36Z	@<lyse https://lyse.isobeef.org/twtxt.txt> (#<dv5fbhq https://twtxt.net/search?tag=dv5fbhq>) At first glance, it looks solid.👌😀
+2021-06-28T12:13:09Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<7bc3n6a https://twtxt.net/search?tag=7bc3n6a>) A good recovery... ! 😀
+2021-06-30T16:57:24Z	![](https://twtxt.net/media/VrRw4pCxSYjrdhZampAE64.webm)  😁
+2021-07-01T09:36:59Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<nmfhxra https://twtxt.net/search?tag=nmfhxra>) Nice mysterious mist! 😀
+2021-07-02T09:22:20Z	20°C /☀ 👌 ☕
+2021-07-02T18:53:53Z	@<usr https://twtxt.net/user/usr/twtxt.txt> (#<tdmfg6a https://twtxt.net/search?tag=tdmfg6a>) Now 26°C ! I'm going to have a beer. 🍺 😀
+2021-07-02T19:33:02Z	@<ionores https://twtxt.net/user/ionores/twtxt.txt> @<usr https://twtxt.net/user/usr/twtxt.txt> (#<tdmfg6a https://twtxt.net/search?tag=tdmfg6a>) 🍺x2😉😁
+2021-07-03T11:35:38Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<m4xunqq https://twtxt.net/search?tag=m4xunqq>) Not bad !👌😀
+2021-07-04T07:42:31Z	@movq (#<sqprqda https://twtxt.net/search?tag=sqprqda>) 7 / 2009 😀
+2021-07-04T07:51:50Z	> A decentralized app for code collaboration  👉 [Radicle](https://radicle.xyz/)
+2021-07-07T11:12:20Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<gjjwa6q https://twtxt.net/search?tag=gjjwa6q>) Before making a decision, ask yourself why you chose Github and why you stayed there for so long. Alternatives have been around for some time. If Copilot is 😈, then spread your wings and fly, fly Prologic! 😀  #<github https://twtxt.net/search?tag=github> #<copilot https://twtxt.net/search?tag=copilot>
+2021-07-11T14:31:24Z	Virgin Galactic Unity 22 Spaceflight Livestream 👉 [VGU22](https://www.youtube.com/watch?v=RTpWYWIfP7Y) 😀
+2021-07-11T20:10:27Z	⚽EURO⚽: England / Italy 📺🍺😀
+2021-07-14T20:20:37Z	@<lyse https://lyse.isobeef.org/twtxt.txt> (#<7bz242q https://twtxt.net/search?tag=7bz242q>)  Where do you think the snail is going? 😀
+2021-07-14T20:36:30Z	@<adi https://twtxt.net/user/adi/twtxt.txt> @<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<jb3c2ra https://twtxt.net/search?tag=jb3c2ra>) Beer, girls ..... 👌❤😜😀
+2021-07-14T22:06:34Z	> A web host that protects your privacy. "We can not share what we do not know." is more than just our unofficial motto. You don’t need to be a journalist or activist to benefit from a service that values your privacy. We believe privacy is a fundamental human right and that seeking privacy is completely normal.  👉 [incognet](https://incognet.io/)
+2021-07-21T09:50:18Z	So @<prologic https://twtxt.net/user/prologic/twtxt.txt> when do you start training? 2032 is tomorrow! 🎯😀 #<brisbane2032 https://twtxt.net/search?tag=brisbane2032> #<paralympicgames2032 https://twtxt.net/search?tag=paralympicgames2032>
+2021-07-21T10:35:07Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> (#<jwjsxgq https://twtxt.net/search?tag=jwjsxgq>) Nothing serious, I hope. I wish you both a good recovery!
+2021-07-26T10:58:52Z	@<lyse https://lyse.isobeef.org/twtxt.txt> (#<ietbhpa https://twtxt.net/search?tag=ietbhpa>) 05.jpg 😀
+2021-08-14T10:46:32Z	@<dooven https://twtxt.net/user/dooven/twtxt.txt> (#<jlixbsq https://twtxt.net/search?tag=jlixbsq>) Hi and welcome back ! 😀
+2021-08-14T11:09:59Z	@<jlj https://twt.nfld.uk/user/jlj/twtxt.txt> (#<2kuchra https://twtxt.net/search?tag=2kuchra>) Tell us the whole story. 😀
+2021-08-18T21:01:15Z	@<adi https://twtxt.net/user/adi/twtxt.txt> (#<2i4byna https://twtxt.net/search?tag=2i4byna>) 👌😀
+2021-08-28T08:45:20Z	@<lyse https://lyse.isobeef.org/twtxt.txt> (#<zl54zrq https://twtxt.net/search?tag=zl54zrq>) I see cows, sheep (lots of sheep) but no livestock guardian dog !!!
+2021-09-02T12:33:19Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> @<adi https://twtxt.net/user/adi/twtxt.txt> (#<rvludua https://twtxt.net/search?tag=rvludua>) ☕4😀
+2021-09-22T13:37:37Z	>Encrypted email service based on decentralized private identity. Ubikom uses Bitcoin-style Elliptic Curve Cryptography. In fact, Ubikom keys are identical to Bitcoin keys. To send and receive messages, you use any standard email client, such as Mozilla Thunderbird, iOS Mail, or any other client that supports SMTP and POP3. Encryption and decryption is done on the fly by the proxy (which you can also run yourself, if you like).   👉 [ubikom](https://github.com/regnull/ubikom)
+2021-11-10T09:31:36Z	(#hfal6kq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> I also vote for removal.😀
+2021-11-10T10:32:16Z	(#inpfntq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> I'm fine, thanks.  I've been a bit busy these days. 😀
+2021-11-10T12:14:45Z	(#hfal6kq) @<kt84 https://twtxt.net/user/kt84/twtxt.txt> Likewise. 😀
+2021-11-11T23:41:02Z	(#2abigoa) @<darch https://twtxt.net/user/darch/twtxt.txt> Good job/Nice color scheme ! 👍👌😀
+2021-11-13T00:33:19Z	(#gkev7tq) @<prologic https://twtxt.net/user/prologic/twtxt.txt>  ![](https://twtxt.net/media/fUtbLh7Q97VPQasGj4EnQC)
+2021-11-13T00:48:58Z	(#gkev7tq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> She's 13
+2021-11-13T01:01:57Z	(#gkev7tq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> yep. Life expectancy is 15-19 years.
+2021-11-14T12:01:59Z	You're lucky ! At home it's cloudy.😟
+2021-11-20T14:26:28Z	(#77td2mq) @<lyse https://lyse.isobeef.org/twtxt.txt> Oh ... the little squirrel! Probably looking for supplies for winter. 😀
+2021-11-20T14:50:49Z	(#m5akmoa) @<prologic https://twtxt.net/user/prologic/twtxt.txt> That's a tidy desk! 😀
+2021-11-20T15:04:45Z	(#6kmqofa) REGISTER  👇  `error executing template register: template: register:12:56: executing "content" at <tr . "RegisterFormEmail">: error calling tr: message "RegisterFormEmail" not found in language "en"`
+2021-11-20T16:21:49Z	(#6kmqofa) @<darch https://twtxt.net/user/darch/twtxt.txt> Okay. 😀
+2021-11-20T16:31:10Z	(#a5mlsjq) @<lyse https://lyse.isobeef.org/twtxt.txt> As a child, I loved listening to the woodpecker in my old walnut tree. 😀
+2021-11-20T16:36:34Z	(#6kmqofa) @<darch https://twtxt.net/user/darch/twtxt.txt> When I click on REGISTER, it works, but I haven't created an account. Otherwise good job. I like.👍😀
+2021-11-20T17:25:41Z	(#jpfsp4q) @<fastidious https://arrakis.netbros.com/user/fastidious/twtxt.txt> And on TV there was Woody... 😂😂😂
+2021-11-20T19:32:06Z	(#xygdbva) @<fastidious https://arrakis.netbros.com/user/fastidious/twtxt.txt> And your hand did not shake !!!👏👍 😀  Nice picture !👌😀
+2021-11-20T20:48:01Z	(#6fjkidq) @<darch https://twtxt.net/user/darch/twtxt.txt> We drink the same thing and at the same time !!!!😂😂😂🍻🍻🍻🍺
+2021-11-20T20:57:54Z	(#m5akmoa) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Keeping my desk tidy and opening a beer bottle with my teeth are the two things I can't do! And yet I practice a lot!😂😂😂😂😂
+2021-11-20T21:29:27Z	(#m5akmoa) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Ay, caramba!  You are a real professional bottle opener!!! 😁😁😁
+2021-11-21T18:26:34Z	(#tzvf26q) As soon as I saw the photo, my brain: Windows XP... XP... ~~Beer~~ Windows... 😂😂😂
+2021-11-21T21:57:34Z	I installed the new Goryon for android (an old smartphone) to test it ...  Old application:   ![](https://twtxt.net/media/RQPVTsqWQEJ2RbSf5KcGnC)  New application: !!!   ![](https://twtxt.net/media/xvUUmGkMQ67TxLUbpchJeS)
+2021-11-21T22:14:54Z	(#bgwdxja) @<prologic https://twtxt.net/user/prologic/twtxt.txt> I installed yours via Aurora Store (I deleted my google account)😀
+2021-11-21T23:15:56Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt>  Hey ! What's going on with your Gemini Server (gmi.antonio.is)?
+2021-11-21T23:17:12Z	(#bgwdxja) @<prologic https://twtxt.net/user/prologic/twtxt.txt>  It works ! Thank you and good job!😀👌👏
+2021-11-21T23:37:36Z	(#bgwdxja) @<eldersnake https://twtxt.net/user/eldersnake/twtxt.txt>  You also use Aurora ?
+2021-11-21T23:59:13Z	(#bgwdxja) @<prologic https://twtxt.net/user/prologic/twtxt.txt>  yep ! 😀
+2021-11-23T13:57:48Z	(#2gb4f5a) Or a Victorian Tall Top Hat ! 😁😁
+2021-11-23T13:59:01Z	(#3n4vfcq) 👌😀
+2021-11-23T14:01:07Z	☕x4😀
+2021-11-26T14:17:43Z	(#k6ggleq) @<prologic https://twtxt.net/user/prologic/twtxt.txt>  Give it your all, buddy ! Good luck !!!😀
+2021-11-27T12:35:38Z	(#nqmpm3q) @<lyse https://lyse.isobeef.org/twtxt.txt> 😋😋😋👌
+2021-11-27T12:53:47Z	(#k6ggleq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Congrats, man!👏👍😀
+2021-11-27T13:14:44Z	(#yxvzg2q) @<kt84 https://twtxt.net/user/kt84/twtxt.txt> Hey ... little bird, watch out for sunburn! 😂😂😂
+2021-11-27T21:07:15Z	GitHub is down !
+2021-11-27T21:31:22Z	(#eujlvna) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Here is another reason not to go back there !!! 😉😀😀
+2021-11-27T21:35:54Z	😂😂😂
+2021-11-27T22:04:21Z	(#eujlvna) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Yes, but for how long ?
+2021-11-27T22:23:32Z	(#c5c6ufq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> "Millions of developers" = COPILOT 😂😉
+2021-11-27T23:22:02Z	(#c5c6ufq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Trust in me ! 🐍Trust in me ! 🐍  😂
+2021-11-27T23:32:22Z	2 chocolate filled donuts and a cup of chicory ! 😀
+2021-11-28T08:46:10Z	(#bpnpynq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Pixelorama ? 👉 [Pixelorama](https://github.com/Orama-Interactive/Pixelorama)
+2021-11-28T10:03:42Z	(#bpnpynq) @<prologic https://twtxt.net/user/prologic/twtxt.txt>  iOS / Android:  >A friendly browser-based tool for anonymizing photographs taken at protests. It will remove identifying metadata (Exif data) from photographs, and also allow you to selectively blur parts of the image to cover faces and other identifiable information.  👉 [image-scrubber](https://github.com/everestpipkin/image-scrubber)
+2021-11-29T13:45:35Z	(#zke7l7q) VSCodium 👌, but Kate is not bad either! 😀
+2021-11-29T15:44:31Z	(#iyxkf2a) @<lyse https://lyse.isobeef.org/twtxt.txt> I love watching the snow fall! 😀
+2021-11-29T16:34:41Z	Jack is looking for a new job! Any suggestions... 😁
+2021-12-07T13:50:30Z	(#y5o35ea) @<lyse https://lyse.isobeef.org/twtxt.txt> Oh the little bird... So cute! 😍😀
+2021-12-07T14:08:50Z	(#fxtbjda) @<fastidious https://arrakis.netbros.com/user/fastidious/twtxt.txt> With neighbors like this, you no longer need to turn on the lights in your house! It saves you money !!! 😂😂😂
+2021-12-12T08:21:13Z	(#vd2takq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Santa doesn’t care about the price! Go ahead, put her on the list ....😂
+2021-12-15T11:22:00Z	(#w3b4byq) @<jlj https://twt.nfld.uk/user/jlj/twtxt.txt> Third dose?
+2021-12-16T09:04:11Z	(#w3b4byq) @<jlj https://twt.nfld.uk/user/jlj/twtxt.txt> Apparently it's better to alternate vaccines: Moderna for the third dose if you had Pfizer for the first two doses and vice versa.
+2021-12-16T09:43:21Z	(#j3mxmfa) @<ullarah https://txt.quisquiliae.com/user/ullarah/twtxt.txt> Bad luck, [Phil](https://www.imdb.com/title/tt0107048/), bad luck! 😀
+2021-12-16T11:53:42Z	(#t4upn3a) @<prologic https://twtxt.net/user/prologic/twtxt.txt> And that's just the beginning!
+2021-12-17T22:47:16Z	(#rw4fwca) @<lyse https://lyse.isobeef.org/twtxt.txt> Me it’s a pot of water on the radiator or on the bedside table.
+2021-12-17T23:07:15Z	(#hs5rija) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Damn, that's Eleanor Abernathy's cat ! 😁
+2021-12-18T18:20:12Z	(#uig6f4q) @<lyse https://lyse.isobeef.org/twtxt.txt> Put petroleum jelly (vaseline) on the blisters.
+2021-12-20T21:49:32Z	(#4ydzplq) @<lyse https://lyse.isobeef.org/twtxt.txt> You did a very good job.👍 But the jump is not bad at all! 👏👌😀
+2021-12-21T10:09:08Z	(#r4z52ea) @<lyse https://lyse.isobeef.org/twtxt.txt> Nice. Hopefully you will have a White Christmas this year !
+2021-12-21T10:47:21Z	(#r4z52ea) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Hope Santa's sleigh has AC! 😁
+2021-12-24T12:38:03Z	(#khrhcoq) @<ullarah https://txt.quisquiliae.com/user/ullarah/twtxt.txt> Merry Christmas to you, too.
+2021-12-25T10:24:49Z	Merry Christmas, @<prologic https://twtxt.net/user/prologic/twtxt.txt>, @<kt84 https://twtxt.net/user/kt84/twtxt.txt> !
+2021-12-25T10:32:05Z	Merry Christmas to all !!! 🎄
+2021-12-29T10:58:50Z	(#5ngszda) > I refuse to host a separate Windows machine to do this.  👇 [Did you try this ?](https://snapcraft.io/foobar2000)
+2021-12-30T18:20:15Z	(#hzas24q) @<lyse https://lyse.isobeef.org/twtxt.txt> Yes but the 6th is missing, a beer pipe! 😁  More seriously, [here](https://www.healthywa.wa.gov.au/Articles/A_E/Bore-water) is an interesting article about water.
+2021-12-31T12:11:34Z	(#klc2rjq) @<vain https://www.uninformativ.de/twtxt.txt> This is the new Bermuda Triangle, land version! You're lucky to live nearby ...😁
+2021-12-31T12:32:51Z	(#n6hbpjq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Yes but there are still [many regions / countries] (https://www.timeanddate.com/countdown/newyear) that have not celebrated the New Year. 😁
+2021-12-31T15:10:42Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> I wish you a year full of happiness and success in your projects. Happy New Year 2022! 🎉🎆🎇
+2022-01-02T15:00:26Z	(#j7nsj2a) @<prologic https://twtxt.net/user/prologic/twtxt.txt> I think I found my new wallpaper (if you agree)!👌😀
+2022-01-02T22:56:07Z	(#j7nsj2a) @<prologic https://twtxt.net/user/prologic/twtxt.txt> That would be nice of you. Thanks.
+2022-01-04T16:11:08Z	@<antonio https://twtxt.net/user/antonio/twtxt.txt> Happy New Year 2022! 👋😀
+2022-01-07T16:51:30Z	(#sqt3rbq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> The logo is well thought out and always visible (dark/light theme).
+2022-01-08T13:17:21Z	(#lmbddda) @<prologic https://twtxt.net/user/prologic/twtxt.txt> 👌😀
+2022-01-11T17:10:25Z	> Moxie Marlinspike leaves encrypted-messaging app Signal  👉 [signal/Moxie](https://www.bbc.com/news/technology-59937614)
+2022-01-16T08:51:16Z	(#2h7yjkq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> The contrast between the colors is strong! Beautiful photo but above all a nice place.
+2022-01-16T09:32:16Z	(#rufivnq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> I don't know why, but this photo reminds me of Charlton Heston. 🤔
+2022-01-16T14:15:16Z	[Badger credited for unearthing 'hoard' of Roman coins found on floor of cave Spain](https://www.abc.net.au/news/2022-01-11/badger-credited-for-unearthing-hoard-of-roman-coins/100748842)
+2022-01-16T15:25:34Z	(#45xtn6a) @<lyse https://lyse.isobeef.org/twtxt.txt> 😂
+2022-01-17T11:47:22Z	Have you ever drunk elderflower cordial?
+2022-01-17T14:58:16Z	(#22qz2ua) @<fastidious https://arrakis.netbros.com/user/fastidious/twtxt.txt> I drank it recently and wanted to know if I was the only one who liked its taste. 😀
+2022-01-17T19:24:51Z	(#by4rzwq) @<off_grid_living https://twtxt.net/user/off_grid_living/twtxt.txt> Do you know what species of flowering plants your bees forage?
+2022-01-18T05:45:39Z	> Now, new finds from a small site in Peru suggest the Wari may have forged political alliances by serving drug-laced beer to local elites at periodic parties, extending their empire one trippy feast at a time.  👉 [Drug-laced beer may have forged ancient Peruvian empire](https://www.science.org/content/article/drug-laced-beer-may-have-forged-ancient-peruvian-empire)
+2022-01-19T12:36:41Z	(#4m22tga) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Congratulations! 🥳
+2022-01-21T09:22:50Z	(#dm5uara) @<prologic https://twtxt.net/user/prologic/twtxt.txt> That's good news, man. 🥳 Nothing and no one will stop the Yarn! 😃
+2022-01-21T11:54:26Z	(#i3moqkq) @<jlj https://twt.nfld.uk/user/jlj/twtxt.txt> I’m so sorry to hear that. 😢
+2022-01-21T12:07:58Z	👉 [Encryption: UK data watchdog criticises government campaign](https://www.bbc.com/news/technology-60072191)
+2022-01-25T01:48:07Z	(#2xpphya) @fab ArchLinux (AUR) / Mx Linux / Ubuntu /raspberry pi? Install `fbcat imagemagick` Ctrl + Alt + F1 login/password  `sudo fbcat > capt00.ppm` `convert capt00.ppm capt00.jpeg`
+2022-01-25T18:20:41Z	(#dioj4pq) @<lyse https://lyse.isobeef.org/twtxt.txt> Nice picts! Especially this one and that of the path. 📷👌
+2022-01-28T01:59:19Z	(#4xto2iq) @<darch https://twtxt.net/user/darch/twtxt.txt> nuqjatlh? jIyajbe'. :(
+2022-01-28T02:02:06Z	(#e52ytya) @<prologic https://twtxt.net/user/prologic/twtxt.txt> majQa' :)
+2022-02-01T09:28:41Z	(#cwre2va) @<david https://netbros.com/user/david/twtxt.txt> How many Buddha statues do you have?
+2022-02-01T23:05:51Z	> Following is a tutorial that would help beginners to install Void Linux for the first time.  👉 [Complete installation guide](https://linuxiac.com/void-linux-installation)
+2022-02-02T08:01:25Z	(#lwvgsoq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> 👌Now you have to go to the [next level!](https://m.youtube.com/watch?v=dfMlfEKNxRY) 😀
+2022-02-07T08:16:45Z	(#wlhlsvq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Blue skies, for me! 👌😁
+2022-02-07T08:31:42Z	(#3mtkrua) @<vain https://www.uninformativ.de/twtxt.txt>   > River is a dynamic tiling Wayland compositor with flexible runtime configuration.  👉 [river](https://github.com/riverwm/river)
+2022-02-14T01:57:25Z	(#bgxj5dq) @<lyse https://lyse.isobeef.org/twtxt.txt> I vote for the photo with the moon!😀👍
+2022-02-14T02:02:09Z	> Are Your Ready for Vim? A Beginner Guide  👉 [Vim for Beginners](https://thevaluable.dev/vim-commands-beginner/)
+2022-02-21T09:02:45Z	(#7bkcv7a) @<david https://netbros.com/user/david/twtxt.txt> Nice view ! 👌
+2022-02-28T01:31:45Z	(#o237a2q) @<vain https://www.uninformativ.de/twtxt.txt> Or right in the center of the Earth!😄
+2022-03-02T16:06:30Z	(#d6iwh2a) @<prologic https://twtxt.net/user/prologic/twtxt.txt> It's good to know that all is well for you and your family. :)
+2022-03-04T01:00:45Z	(#a4eab3q) @<carsten https://yarn.zn80.net/user/carsten/twtxt.txt>   👉 [Secure Messaging Apps Comparison](https://www.securemessagingapps.com)
+2022-03-04T16:58:27Z	(#hmfgdda) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Completely destroyed and not just damaged!😢
+2022-03-14T04:25:53Z	(#3owxysq) @<lyse https://lyse.isobeef.org/twtxt.txt> I hope the photo of the woodpecker wasn't the camera's swansong!
+2022-03-20T02:59:49Z	(#zi7jfja) @<carsten https://yarn.zn80.net/user/carsten/twtxt.txt> Two, maybe three triangles a day!👌😋😃
+2022-03-25T01:31:52Z	**WalnutPi** - a small laptop from walnut ! More details in the comments...   👉 [WalnutPi ](https://www.reddit.com/r/woodworking/comments/tjx00f/i_had_a_go_at_making_a_small_laptop_from_walnut/)
+2022-03-25T17:35:48Z	(#gb5buoa) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Yep, and based on a Raspberry Pi 4b.
+2022-03-28T04:22:40Z	(#mmshy2q) @<crunched https://twtxt.net/user/crunched/twtxt.txt>   NixOs / Fedora with Plasma.
+2022-03-31T03:39:42Z	(#7g343ea) @<nexeq https://twtxt.net/user/nexeq/twtxt.txt> Congrats on your new job! Try to do your job well and normally everything should go well.😀
+2022-04-03T23:22:38Z	(#xl3ygta) @<prologic https://twtxt.net/user/prologic/twtxt.txt> [Mirotalk](https://github.com/miroslavpejic85/mirotalk) ?
+2022-04-04T21:46:08Z	(#kn4vira) @<lyse https://lyse.isobeef.org/twtxt.txt> It's a bird, isn't it ?
+2022-04-09T21:40:59Z	(#sh4wkhq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> morning ☕
+2022-04-12T04:12:25Z	(#ou36g5q) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Next time, try a tennis ball...
+2022-04-14T23:51:10Z	(#y56yyoq) @<lyse https://lyse.isobeef.org/twtxt.txt> Very beautiful flowers. Especially the garden pansies.🌸😀
+2022-04-18T00:59:32Z	(#xnpn2nq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> These are nice pictures.👌I also like to walk in nature.☺️
+2022-04-26T00:26:58Z	(#l3fhzqq) @<mckinley https://twtxt.net/user/mckinley/twtxt.txt> Since a few weeks, I use [petrolette](https://petrolette.space/).
+2022-04-26T01:00:29Z	(#xunmtbq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> How you relax is your business.🤣 To each their own, right? 😉
+2022-04-30T01:24:27Z	(#ut577nq) @<kevin https://txt.om.gay/twtxt.txt> Take a wig, just in case. 🤣
+2022-04-30T02:42:59Z	(#rkcpowq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> I think she’s right.
+2022-05-03T00:30:53Z	(#7kxa5vq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> A beach all to yourself. 👌😀
+2022-05-03T00:39:37Z	(#gneet3a) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Keep calm, it's only a sunset!  😂
+2022-05-03T00:59:03Z	(#3fxfygq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> A video sharing website built on LBRY.
+2022-05-27T02:13:43Z	(#7epxnhq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> It's been a quiet week for me. Not too much work and no bad news! 👌😀
+2022-05-30T23:54:03Z	(#ahhuydq) @<lyse https://lyse.isobeef.org/twtxt.txt> Very nice 📷👌
+2022-06-05T17:43:25Z	(#kvrpbcq) @<novaburst https://twt.nfld.uk/user/novaburst/twtxt.txt>  𝙷𝚊𝚙𝚙𝚢 𝙱𝚒𝚛𝚝𝚑𝚍𝚊𝚢! 🥳
+2022-06-09T00:48:23Z	(#iil2ahq) @<carsten http://yarn.zn80.net/user/carsten/twtxt.txt>  They are very beautiful portraits. My favorite portraits 🐯  🐘 🦘
+2022-06-28T02:20:02Z	(#fdpyt2a) @<vain https://www.uninformativ.de/twtxt.txt>   According to a study (in summer) :   ⚪ 43% of red sunsets and 51% of yellow sunsets predicted rain
+2022-07-06T02:31:35Z	(#omsxfeq) @<screem https://twtxt.net/user/screem/twtxt.txt> Next time take the stairs. 😁
+2022-07-23T01:05:30Z	(#k4rmmoa) @<ullarah https://txt.quisquiliae.com/user/ullarah/twtxt.txt> Glad you're back, man.
+2022-07-23T01:53:31Z	(#ldm4vha) @<lyse https://lyse.isobeef.org/twtxt.txt> Extreme heat, drought, fires - a hellish summer!
+2022-07-23T02:23:43Z	(#yww567a) @<prologic https://twtxt.net/user/prologic/twtxt.txt> A pink elephant in the roooom...😄
+2022-07-27T01:37:16Z	(#5hz42nq) @<lyse https://lyse.isobeef.org/twtxt.txt> As always, great photos!👌📷😀
+2022-07-27T03:18:13Z	(#zuvgjia) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Rest well and don't think too much. I hope you get better soon.
+2022-08-31T07:34:46Z	(#gvsbepa) @<eaplmx https://twtxt.net/user/eaplmx/twtxt.txt> Nice !😃
+2022-09-08T20:59:34Z	(#lyzjd4q) @<lyse https://lyse.isobeef.org/twtxt.txt> Beautiful pictures as always ! 😃
+2022-09-12T08:12:24Z	(#dkj52nq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Happy birthday in advance, buddy! 🎂🎉
+2022-10-13T11:16:40Z	(#sxtq7ma) @<abucci https://anthony.buc.ci/user/abucci/twtxt.txt>  [Removing SMS support from Signal Android](https://news.ycombinator.com/item?id=33179047)
+2022-12-24T20:10:47Z	Merry Christmas to everyone🎅🎅🎅
+2023-01-01T01:15:17Z	Happy New Year to all!  🥳
+2023-01-01T01:20:03Z	(#mxpwv4a) @<prologic https://twtxt.net/user/prologic/twtxt.txt> All the Best for the New Year🥂🎉
+2023-04-20T07:30:35Z	(#7p3yc2q) Hope you feel better soon!
+2023-04-21T01:00:40Z	(#ngx5uqq) @<lyse https://lyse.isobeef.org/twtxt.txt> It has straw in its beak to build its nest ! 😃  #ilovespring
+2023-04-21T21:52:35Z	(#fbhtntq) @<lyse https://lyse.isobeef.org/twtxt.txt> Nice photos ! You are lucky to live close to nature.
+2023-04-21T22:11:46Z	(#cm5ebcq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> YES.... This is the best news of the day, buddy!
+2023-04-23T13:02:16Z	(#e2f6nsq) @<carsten https://yarn.zn80.net/user/carsten/twtxt.txt> Try [forgejo](https://forgejo.org) !
+2023-07-16T10:41:05Z	My circle is 96.1% perfect, can you beat that? https://neal.fun/perfect-circle/  😀
+2023-07-16T11:49:13Z	(#lt45rea) No better yet. 😭 ..... Maybe after a cold beer !🍺😄😜
+2023-07-16T14:58:00Z	(#lt45rea) ![](https://twtxt.net/media/zSCnXjXaPKE2GTqF93gh7E.png)
+2023-08-23T19:07:05Z	(#aex52eq) [Piped](https://github.com/TeamPiped/Piped)  ?
+2023-08-30T15:58:52Z	(#xevmcwa) ![](https://twtxt.net/media/zKcmeZmviKxAnq69P9muWD.png)  😄
+2023-09-05T20:12:32Z	(#bktt3rq) This guy's an artist, a real one! Good job! 👍
+2023-09-08T18:20:03Z	(#zs4fbfa) @<abucci https://anthony.buc.ci/user/abucci/twtxt.txt> Happy birthday, old man! 🎉🍻🙂
+2023-09-09T13:13:55Z	(#65ldwpq) Try observing comet [Nishimura](https://www.astronomy.com/observing/comet-nishimura-is-brightening-fast-see-it-now/)instead! 😀
+2023-09-10T10:18:48Z	(#s7fbadq) The end of the summer holidays, the colourful leaves, the freshness of the air, the departure of migratory birds and the time to pick walnuts and plums  -  that's what autumn meant to me when I was a child. Nice pict! 😀
+2023-09-10T11:04:40Z	That's the kind of study I like. 😉   👇 [Which Countries Drink the Most Beer?](https://www.visualcapitalist.com/which-countries-drink-the-most-beer-2/)
+2023-09-12T09:27:34Z	Well it seems like the town of São Lourenço do Bairro suddenly turned into the world's largest wine fountain! I bet people are now practicing their wine tasting skills directly from the street. Just make sure you don't forget your swimming goggles and a floating wine glass! 🍷🤣   👉 [Red River](https://www.abc.net.au/news/2023-09-12/millions-of-litres-of-wine-streams-through-portuguese-village/102843422?utm_campaign=abc_news_web&utm_content=link&utm_medium=content_shared&utm_source=abc_news_web)
+2023-09-12T23:01:15Z	(#moj7urq) ![](https://twtxt.net/media/pJuWqGaD9oCis8FMY7k75Q.png)   😄👌
+2023-09-16T09:46:20Z	(#s63orsq) The sunsets, always spectacular! Nice pict. 📷👍
+2023-10-02T10:44:06Z	(#wwkif3a) Nice photo of the burning sky!
+2023-10-03T14:45:05Z	(#zxmtx4a) ![](https://twtxt.net/media/CjvegNSU3ddzTFFMxJQnfn.png)
+2023-12-24T10:03:08Z	(#7thohva) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Thanks, buddy! Merry Christmas 🎅 with family!!! 😀
+2023-12-24T11:37:12Z	(#7thohva) @<prologic https://twtxt.net/user/prologic/twtxt.txt> That's because for a few hours I'm going to be Santa... ! 🤫😉🎅
+2023-12-27T11:29:44Z	@<prologic https://twtxt.net/user/prologic/twtxt.txt> Is everything okay? No damage? 🌩🌧
+2023-12-27T12:02:46Z	(#qocxhgq) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Didn't you have a storm? ❔️
+2023-12-31T14:45:18Z	👋 For those who have already entered the New Year: Happy New Year 2024!!!!! 🍾🍾🍾🎆🎆🎆🎉🎉🎉🥳
+2024-01-01T11:11:39Z	[Luciole](https://www.luciole-vision.com/luciole-en.html) - A typeface for visual impairment  > Word massing, spacing, the structure of the letters: the concept for Luciole adheres to a dozen specific design criteria to provide the best possible reading experience for the visually impaired.

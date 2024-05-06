@@ -68,7 +68,9 @@ function getSingleParameter($keyToFind, $string) {
 		return null;
 	}
 
-	$pattern = '/\s*' . $keyToFind . '\s*=\s*([^#\n]+)/';
+	$pattern = '/\s*(?<!\S)' . $keyToFind . '\s*=\s*([^#\n]+)/';
+		// Fix: not machting with nick as in: `# follow = dbucklin@www.davebucklin.com https://www.davebucklin.com/twtxt.txt?nick=dbucklin`
+	//$pattern = '/\s*' . $keyToFind . '\s*=\s*([^#\n]+)/';
 	//$pattern = '/\s*' . $keyToFind . '\s*=\s*([^\s#]+)/'; // Only matches the first word
 	preg_match($pattern, $string, $matches);
 
@@ -159,7 +161,7 @@ function replaceMentionsFromTwt(string $twtString): string {
 
 	$pattern = '/@<([^ ]+)\s([^>]+)>/';
 	//$replacement = '<a href="/?url=$2">@$1</a>';
-	$replacement = '<a href="'.str_replace("/index.php", "", $_SERVER["SCRIPT_NAME"]).'/?profile=$2">@$1</a>';
+	$replacement = '<a href="'.str_replace("/index.php", "", $_SERVER["SCRIPT_NAME"]).'/profile?url=$2">@$1</a>';
 	$replacement .= '<a href="$2" class="webmention"></a>'; // Adds a hidden link direcly to the twtxt.txt of the mentioned target
 	#$twtString = '@<nick https://eapl.mx/twtxt.txt>';
 	#$pattern = '/@<([^ ]+) ([^>]+)>/';

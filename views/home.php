@@ -2,6 +2,7 @@
 // Only paginate if it's a main timeline view
 $paginateTwts = true;
 
+/*
 if (!empty($_GET['profile'])) { // Show twts for some user (Profile view)
     $twtsURL = $_GET['profile'];
 
@@ -13,31 +14,27 @@ if (!empty($_GET['profile'])) { // Show twts for some user (Profile view)
     // If it's a profile, don't paginate
     $paginateTwts = false;
 }
+*/
 
 // Load twts, taking $paginateTwts into consideration
 require_once 'partials/base.php';
-include_once 'partials/header.php';
-?>
 
-<!-- PHP: PROFILE CARD -->
-<?php
-if (!empty($_GET['profile'])) { // Show twts for some user (Profile view)
-    $twtsURL = $_GET['profile'];
+$title = "Timeline for ".$title;
 
-    if (!is_null($parsedTwtxtFile)) {
-        $parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
-        include 'partials/profile.php';
-    }
+
+// Redirect guests to Profile view, if url not set til home twtxt.txt
+
+if (!isset($_SESSION['password']) && ($_GET['url'] != $config['public_txt_url']) ) {
+    header('Location: ./profile');
+    exit();
 }
-?>
 
-<!-- PHP: NEW POST BOX -->
-<?php
+include_once 'partials/header.php';
+
 if (isset($_SESSION['password'])) {
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
 }
-?>
 
-<!-- PHP: TIMELINE --><?php include_once 'partials/timeline.php'?>
+include_once 'partials/timeline.php';
 
-<!-- PHP: FOOTER  --><?php include_once 'partials/footer.php';?>
+include_once 'partials/footer.php';

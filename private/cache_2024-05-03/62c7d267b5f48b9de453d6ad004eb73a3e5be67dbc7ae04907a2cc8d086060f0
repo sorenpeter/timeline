@@ -1,0 +1,45 @@
+# Twtxt is an open, distributed microblogging platform that
+# uses human-readable text files, common transport protocols,
+# and free software.
+#
+# Learn more about twtxt at  https://github.com/buckket/twtxt
+#
+# This is hosted by a Yarn.social pod twtxt.net running yarnd 0.15.1@7fd3daed 2023-11-26T10:40:12+10:00 go1.21.4
+# Learn more about Yarn.social at https://yarn.social
+#
+# nick        = dfaria
+# url         = https://twtxt.net/user/dfaria/twtxt.txt
+# avatar      = https://twtxt.net/user/dfaria/avatar#gkaqzpjc24u7tv7efqjidojimojlunwqbo6ayie7fq3wetpig64a
+# description = 
+#
+# following   = 
+#
+# link = Original Twtxt https://dfaria.eu/twtxt.txt
+#
+2022-11-02T20:38:02Z	My twtxt is here: https://dfaria.eu/twtxt.txt
+2022-11-11T16:39:22Z	(#4ildduq) @<marado https://twtxt.net/user/marado/twtxt.txt> This is not bad: https://search.twtxt.net/
+2023-04-10T22:56:12Z	(#cmvzuda) @<marado https://twtxt.net/user/marado/twtxt.txt> 🙂
+2023-04-15T20:49:09Z	Why does the #twtxt system have no like button with count? It doesn't seem difficult to implement...
+2023-06-01T18:36:31Z	(#tevmqda) @<dfaria https://twtxt.net/user/dfaria/twtxt.txt>  📌
+2023-06-09T20:35:52Z	This error appeared: 🤔 > >Error following <no value>: error looking up @df@dfaria.eu via webfinger: invalid content-type:
+2023-06-09T20:36:47Z	(#x5tb5fa) `Error following <no value>: error looking up @df@dfaria.eu via webfinger: invalid content-type:`
+2023-06-09T20:39:02Z	(#x5tb5fa) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Any tips on this?
+2023-06-26T23:21:37Z	(#p2pexuq) @<thiegui https://texto-plano.xyz/~thiegui/twtxt.txt> You can register via cURL: $ curl -X POST 'https://registry.twtxt.org/api/plain/users url=XX&nickname=XX'
+2023-06-27T16:11:07Z	(#p2pexuq) @<thiegui https://texto-plano.xyz/~thiegui/twtxt.txt> Weird! The cURL and that API was working last year.
+2023-06-27T16:12:53Z	(#p2pexuq) @<thiegui https://texto-plano.xyz/~thiegui/twtxt.txt> You can try this one: https://twtxt.envs.net/
+2023-06-27T21:52:48Z	(#5kmolsq) @<madcap https://ciberlandia.pt/users/madcap> 🙂
+2023-06-28T21:54:33Z	(#p2pexuq) @<thiegui https://texto-plano.xyz/~thiegui/twtxt.txt> Great :)
+2023-06-30T10:47:28Z	(#7zalhsq) @@texto-plano.xyz 👍
+2023-07-06T22:21:25Z	(#fdwgtna) @<eapl.mx https://eapl.mx/twtxt.txt> Great 👍
+2023-07-06T22:31:06Z	(#qrgmwkq) @<eapl.mx https://eapl.mx/twtxt.txt> There are errors in the links to the response profiles. For examples, `@<eapl https://eapl.mx/twtxt.txt> Felicidades!` the link opens `https://eapl.mx/twtxt.txt>`
+2023-07-06T22:35:38Z	(#fdwgtna) @<eapl.mx https://eapl.mx/twtxt.txt> But why is it "dated in the future"???
+2023-07-07T23:41:27Z	(#q5b6yfq) @<eapl.mx https://eapl.mx/twtxt.txt> Thanks 👍
+2023-07-24T23:47:38Z	(#j6yzgja) @<eapl.mx https://eapl.mx/twtxt.txt> 👋
+2023-10-03T21:58:52Z	(#rayikcq) @<eapl.me https://eapl.me/twtxt.txt> Shared web hosting plans are cheap...
+2024-04-21T15:34:10Z	(#nypdk5a) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Your position doesn't make any sense: it's closing down and arbitrarily limiting the use of the Twtxt protocol. One more reason not to use https://twtxt.net/
+2024-04-26T22:49:21Z	(#nypdk5a) The problem is that you have arbitrarily concelled my domain. This is a violation of freedom of expression. Why didn't you cancel other accounts, such as notiz.blog , maurice-renck.de , sour.is , staystrong.run , galusik.fr , etc ? What is the difference between these domains and my domain? Canceling for no reason is absurd! Bye bye twtxt.net - this canceling thing sucks!
+2024-04-27T08:29:27Z	(#yptbj5q) @<bender https://twtxt.net/user/bender/twtxt.txt> You don't know me and you're already making arbitrary judgments about me. I only got upset because they didn't warn me that they were going to block my domain. Nobody likes being canceled without warning. There were other civilized ways of letting me know that there was a problem with my domain instead of blocking it unilaterally. Bye-bye!
+2024-04-27T08:41:34Z	(#yptbj5q) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Of course, there are alternatives to make the "discovery" tab work better. If you don't want so much noise (which I totally understand), just adapt the algorithm so that it only shows 2 or 3 posts from each domain. In the case of replies there was no such limitation. But that's different from blocking the domain completely (and without any prior warning).
+2024-04-27T09:05:02Z	(#nypdk5a) @<sorenpeter http://darch.dk/twtxt.txt> Thank you. I understand these problems. But instead of blocking the domain unilaterally, it's possible to adapt the algorithm to show only one post per day, for example. (In the case of replies, it would be different). This curation idea is interesting, but it doesn't have to mean blocking domains. I strongly believe in indieweb and I don't want to see this project fall into problems similar to the big silos (like Twitter and Facebook where whoever is in charge blocks accounts arbitrarily). For me the indieweb, as should be the case with the twtxt protocol, is the space of true freedom of expression. Thanks for understanding and sharing! 🌞
+2024-04-27T09:19:48Z	(#lhfziyq) @<sorenpeter http://darch.dk/twtxt.txt> Your project is getting better and better. Thanks for sharing 🙏  Things I would add: RSS feed.
+2024-04-27T09:24:12Z	(#nypdk5a) @<prologic https://twtxt.net/user/prologic/twtxt.txt> Your solution seems reasonable to me. Thanks 🙏

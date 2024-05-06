@@ -1,0 +1,31 @@
+# Twtxt is an open, distributed microblogging platform that
+# uses human-readable text files, common transport protocols,
+# and free software.
+#
+# Learn more about twtxt at  https://github.com/buckket/twtxt
+#
+# This is hosted by a Yarn.social pod twtxt.net running yarnd 0.15.1@7fd3daed 2023-11-26T10:40:12+10:00 go1.21.4
+# Learn more about Yarn.social at https://yarn.social
+#
+# nick        = saltyim
+# url         = https://twtxt.net/user/saltyim/twtxt.txt
+# avatar      = https://twtxt.net/user/saltyim/avatar#qud3qjkdviutqiwq2ae6jb2velu766jaj3cpfp7m4t5d2mniljqq
+# description = salty.im is an open specification for a new Saltpack based e2e encrypted messaging protocol and platform for secure communications with a focus on privacy, security and being self-hosted.
+#
+# following   = 
+##
+2022-03-17T15:23:24Z	[Salty IM Specification v1 - HedgeDoc](https://docs.mills.io/s/6Ka1wfU4E)  Draft v1 of the Base Spec for [Salty IM](https://salty.im) ready for review and feedback.
+2022-03-18T04:35:06Z	👋 FYI: https://git.mills.io/prologic/salty.im/issues/2 is proposing some minor revisions to the Salty IM Spec to clean things up a little and make things even simpler. It also clarifies the Message Format as well as a way to support Events. Please comment if you have something to add, otherwise I'll make the revision and publish a new Salty IM Spev v1.1 👌
+2022-03-18T04:36:38Z	📣 **FYI:** Also there is a `#salty.im` IRC Channel on Libera Chat that I setup as well for project discussions/etc -- Yes we'll dog-food Salty IM at some point when we've rewritten it and actually support "Group" chat 😅
+2022-03-19T16:40:21Z	[Releases - salty-chat - v0.0.4](https://git.mills.io/prologic/saltyim/releases/tag/0.0.4)  The `salty-chat` shell script has now been rewritten in Go and v0.0.4 is now the latest version. So far things are still working pretty nicely 👌 Thanks @<xuu https://txt.sour.is/user/xuu/twtxt.txt> @<retronav https://twtxt.net/user/retronav/twtxt.txt> and @<david https://netbros.com/user/david/twtxt.txt> for all your help so far 🙇‍♂️
+2022-03-20T01:29:27Z	[Releases - saltyim - v0.0.5](https://git.mills.io/prologic/saltyim/releases/tag/0.0.5)  - Fixed a whole bunch more UX issues with setup that @<mutefall https://twtxt.net/user/mutefall/twtxt.txt> found. Thank you ! 🙇‍♂️ - Rewrite the shitty `chat` UI using [tcell](https://github.com/gdamore/tcell) and [tview](https://github.com/rivo/tview) -- It's no longer a shit UI 😂
+2022-03-20T03:46:57Z	[Releases - saltyim - v0.0.6](https://git.mills.io/prologic/saltyim/releases/tag/0.0.6)  - Fixed a few bugs to do with inbox configurability and env var behaviours. Thanks @<mutefall https://twtxt.net/user/mutefall/twtxt.txt> - Fixed the UX not showing your own messages, also fixed the formatting
+2022-03-22T00:11:00Z	I have most excellent news regarding [Salty IM](https://salty.im) 😂  The integrated Broker is working nicely! As well as the [config file](https://git.mills.io/prologic/saltyim/src/branch/master/example-config.yml) to make configuring `salty-chat` even easier.  I will cut a v0.1.0 (yes you read that right) release soon, and update documentation, bild a Docker Swarm stack (already) and docker-compose (for those that don't use Swarm), etc.  I'm now in a position where I can iterate on the Broker as well as the up and coming PWA (I'm looking at you @<retronav https://twtxt.net/user/retronav/twtxt.txt> 😅) 👌 #<salty https://twtxt.net/search?tag=salty>
+2022-03-23T12:46:32Z	[Releases - saltyim - v0.0.18](https://git.mills.io/prologic/saltyim/releases/tag/0.0.18)
+2022-03-24T01:42:10Z	[Salty IM - Mills](https://git.mills.io/saltyim)  There is now a Gitea Org for [Salty IM](https://salty.im) and I've moved all relevant repos over. Thanks @<novaburst https://tilde.cafe/~novaburst/twtxt.txt> for the suggestion 🙇‍♂️
+2022-03-24T03:26:24Z	On Twitter™ [sengork on Twitter: "https://t.co/NM3uv7WGER - A decentralised, self-hosted, secure and private messaging platform – https://t.co/pBfxPfUlPI" / Twitter](https://twitter.com/sengork/status/1506789432979910656) from [gengork](https://twitter.com/sengork)  Well it's happening, people are starting to talk about [Salty.im](https://salty.im) 😅
+2022-05-06T22:53:11Z	[Releases - saltyim v0.0.21 - Mills](https://git.mills.io/saltyim/saltyim/releases/tag/0.0.21)  cc @<mckinley https://twtxt.net/user/mckinley/twtxt.txt> @<mutefall https://twtxt.net/user/mutefall/twtxt.txt> (thanks for the reviews!) and @<eaplmx https://twtxt.net/user/eaplmx/twtxt.txt>
+2022-10-24T04:52:42Z	📣 **FYI:** A new repo called [assets](https://git.mills.io/saltyim/assets) was created for [Salty.im](https://salty.im) and the logo updated with something I found (_appropriately licensed and open_) that was "close enough" to the original. #<Salty.im https://twtxt.net/search?tag=Salty.im>
+2022-11-22T13:31:40Z	I am sad to say that we were not successful in our NLnet funding submission for Salty IM 😢 Maybe next time 🤞
+2022-11-28T22:04:03Z	Here is the [feedback](https://docs.mills.io/s/guS_XTcr9) we got from the NLNet Funding Submission we put forward for [Salty IM](https://salty.im) 👌
+2023-01-07T10:35:11Z	[Slaty Chat](https://git.mills.io/saltyim/saltyim) now has a TUI that supports "multiple chats" at once 😅  ![](https://twtxt.net/media/u8Td2XfZTjJ7SNQc9uowrR.png)

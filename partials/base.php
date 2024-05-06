@@ -31,6 +31,10 @@ $config = parse_ini_file('private/config.ini');
 // TODO: Take the title from the config.ini
 $title = "Timeline"; // Fallback, should be set in all views
 
+if (isset($config['site_title'])) {
+	$title = $config['site_title'];
+}
+
 // HACKED by sp@darch.dk
     if(!empty($_GET['list'])) {
         $url = $baseURL.$_GET['list'];
@@ -75,11 +79,20 @@ $fileContent = mb_convert_encoding($fileContent, 'UTF-8');
 $fileLines = explode("\n", $fileContent);
 $twtFollowingList = [];
 
-if (!empty($_GET['profile'])) { // Show profile for some user
-	$twtsURL = $_GET['profile'];
+/*
+if (!empty($_GET['url'])) { // Show profile for some user
+	$twtsURL = $_GET['url'];
 	if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
 		die('Not a valid URL');
 	}
+
+	$parsedTwtxtFile = getTwtsFromTwtxtString($twtsURL);
+	if (!is_null($parsedTwtxtFile)) {
+		$parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
+	}
+*/
+
+if (!empty($twtsURL)) {
 
 	$parsedTwtxtFile = getTwtsFromTwtxtString($twtsURL);
 	if (!is_null($parsedTwtxtFile)) {
@@ -130,6 +143,8 @@ if (!empty($_GET['search'])) {
 	});
 } 
 */
+
+// TODO: (re)move or rename `?hash=` to something/where else?
 
 if (!empty($_GET['hash'])) {
 	$hash = $_GET['hash'];

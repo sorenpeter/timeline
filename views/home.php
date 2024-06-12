@@ -33,6 +33,12 @@ include_once 'partials/header.php';
 
 if (isset($_SESSION['password'])) {
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
+} else {
+    
+    echo '<center><h2>Timeline</h2>';
+
+    echo '<p>Recent posts from feeds followed by <a href="./profile">
+    <strong>'.$config['public_nick'].'</strong>@'. parse_url($profile->mainURL, PHP_URL_HOST).'</a></p></center>';
 }
 
 include_once 'partials/timeline.php';

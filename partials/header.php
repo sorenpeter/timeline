@@ -40,20 +40,20 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
             <?php //if ($validSession) {  // TODO: Make login seqcure ?>
             <?php if( isset($_SESSION['password'])) { /*
                 if($_SESSION['password']=="$password") {*/ // Hacky login ?>   
-                <li><a href="<?= $baseURL ?>/refresh?url=<?= $url ?>"><i class="fa fa-refresh">&nbsp;</i><span>Refresh</span></a></li>
-                <li><a href="<?= $baseURL ?>"><i class="fa fa-comments-o">&nbsp;</i><span>Timeline</span></a></li>
-                <li><a href="<?= $baseURL ?>/profile"><i class="fa fa-user-circle">&nbsp;</i><span>Profile</span></a></li>                
-                <li><a href="<?= $baseURL ?>/gallery?url=<?= $config['public_txt_url'] ?>"><i class="fa fa-picture-o">&nbsp;</i><span>Gallery</span></a></li>
-                <li><a href="<?= $baseURL ?>/following"><i class="fa fa-users">&nbsp;</i><span>Following <?php // echo count($twtFollowingList); ?></span></a></li>
-                <li><a href="<?= $baseURL ?>/add"><i class="fa fa-user-plus">&nbsp;</i><span>Add feed</span></a></li>
-                <li><a href="<?= $baseURL ?>/logout"><i class="fa fa-sign-out">&nbsp;</i><span>Log Out</span></a></li>
+                <li><a href="<?= $baseURL ?>/refresh?url=<?= $url ?>"><i class="fa fa-refresh"></i><span>Refresh</span></a></li>
+                <li><a href="<?= $baseURL ?>"><i class="fa fa-comments-o"></i><span>Timeline</span></a></li>
+                <li><a href="<?= $baseURL ?>/profile"><i class="fa fa-user-circle"></i><span>Profile</span></a></li>                
+                <li><a href="<?= $baseURL ?>/gallery?url=<?= $config['public_txt_url'] ?>"><i class="fa fa-picture-o"></i><span>Gallery</span></a></li>
+                <li><a href="<?= $baseURL ?>/following"><i class="fa fa-users"></i><span>Following <?php // echo count($twtFollowingList); ?></span></a></li>
+                <li><a href="<?= $baseURL ?>/add"><i class="fa fa-user-plus"></i><span>Add feed</span></a></li>
+                <li><a href="<?= $baseURL ?>/logout"><i class="fa fa-sign-out"></i><span>Log Out</span></a></li>
                 <li><?php // include 'partials/lists.php'; ?></li>
             <?php /*}*/ } else { ?>
-                <li><a href="<?= $baseURL ?>/profile"><i class="fa fa-user-circle">&nbsp;</i><span>Profile</span></a></li>
-                <li><a href="<?= $baseURL ?>/gallery?url=<?= $config['public_txt_url'] ?>"><i class="fa fa-picture-o">&nbsp;</i><span>Gallery</span></a></li>
-                <li><a href="<?= $baseURL ?>/following"><i class="fa fa-users">&nbsp;</i><span>Following <?php // echo count($twtFollowingList); ?></span></a></li>
-                <li><a href="<?= $baseURL ?>?url=<?= $config['public_txt_url'] ?>"><i class="fa fa-comments-o">&nbsp;</i><span>Timeline</span></a></li>
-                <li><a href="<?= $baseURL ?>/login" class="secondary"><i class="fa fa-sign-in">&nbsp;</i><span>Log in</span></a></li>
+                <li><a href="<?= $baseURL ?>/profile"><i class="fa fa-user-circle"></i><span>Profile</span></a></li>
+                <li><a href="<?= $baseURL ?>/gallery?url=<?= $config['public_txt_url'] ?>"><i class="fa fa-picture-o"></i><span>Gallery</span></a></li>
+                <li><a href="<?= $baseURL ?>/following"><i class="fa fa-users"></i><span>Following <?php // echo count($twtFollowingList); ?></span></a></li>
+                <li><a href="<?= $baseURL ?>?url=<?= $config['public_txt_url'] ?>"><i class="fa fa-comments-o"></i><span>Timeline</span></a></li>
+                <li><a href="<?= $baseURL ?>/login" class="secondary"><i class="fa fa-sign-in"></i><span>Log in</span></a></li>
             <?php }  ?>
         </ul>
     </nav>

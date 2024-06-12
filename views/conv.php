@@ -17,9 +17,10 @@ $title = "Conversation: ".$id." - ".$title;
 include_once 'partials/header.php';
 ?>
 
-<h2>Conversation</h2>
-
-<p>Recent twts in reply to <a href="<?= $baseURL ?>/post/<?= $id ?>">#<?= $id ?></a></p>
+<center>
+    <h2>Conversation</h2>
+    <p>Recent posts in reply to <a href="<?= $baseURL ?>/post/<?= $id ?>">#<?= $id ?></a></p>
+</center>
 
 <!-- PHP: GET TIMELINE  --><?php include_once 'partials/timeline.php'?>
 

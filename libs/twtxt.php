@@ -408,9 +408,9 @@ function getTwtsFromTwtxtString($url) {
 				// that's why I leave the UTF-8 representation for future reference
 				$twtContent = str_replace("\u{2028}", "\n<br>\n", $twtContent);
 				
-				//$twtContent = replaceMarkdownLinksFromTwt($twtContent);
-				//$twtContent = replaceImagesFromTwt($twtContent);
-				$twtContent = Slimdown::render($twtContent);
+				$twtContent = replaceMarkdownLinksFromTwt($twtContent);
+				$twtContent = replaceImagesFromTwt($twtContent);
+				//$twtContent = Slimdown::render($twtContent);
 				$twtContent = replaceLinksFromTwt($twtContent); // TODO: 
 
 				// Get and remove the hash

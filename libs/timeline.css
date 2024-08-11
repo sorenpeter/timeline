@@ -283,6 +283,7 @@ article .twt-msg > blockquote {
 
 article .twt-msg img {
     margin: 0.25rem -0.25rem;
+    display: block;
 }
 
 article .twt-msg > img:first-child {

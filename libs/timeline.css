@@ -320,7 +320,7 @@ article small a:hover {
 
 #new_twt {
     border: none;
-    text-align: center
+/* text-align: center*/
 }
 
 #new_twt input[type="submit"] {

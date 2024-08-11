@@ -2,6 +2,7 @@
 // TODO: Give a warning if the file is not found
 $config = parse_ini_file('private/config.ini');
 
+
 if ($config['debug_mode']) {
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
@@ -151,12 +152,27 @@ if (isset($_GET['hash'])) {
 <article id="new_twt">
 	<form method="POST">
 		<div id="posting">
+			<div id="toolbar"></div>
 			<textarea class="textinput" id="new_post" name="new_post"
 				rows="4" cols="100" autofocus required onfocus="var val=this.value; this.value=''; this.value= val;"
 				placeholder="Your twt"><?= $textareaValue ?></textarea>
 			<!-- <br> -->
 			<input type="submit" value="Post" name="submit">
 		</div>
+
+		<script type="text/javascript">
+		  var tinyMDE = new TinyMDE.Editor({
+		  	element: "new_post",
+		  	// content: "Type your twt"
+		  });
+		  var commandBar = new TinyMDE.CommandBar({
+		    element: "toolbar",
+		    editor: tinyMDE,
+		    commands: ['bold', 'italic', 'strikethrough', 'ul', 'ol',  'blockquote', 'code', '|', 'insertLink', 'insertImage'],
+		    
+		  });
+		</script>
+
 	</form>
 </article>
 

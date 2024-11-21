@@ -25,6 +25,7 @@ class TwtxtFile {
 class Twt {
 	public $originalTwtStr;
 	public $hash;
+	public $timestamp;
 	public $fullDate;
 	public $displayDate;
 	public $content;

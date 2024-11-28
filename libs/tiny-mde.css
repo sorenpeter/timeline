@@ -16,9 +16,9 @@
   margin: 0.5rem 0;
   border-radius: var(--standard-border-radius);
   min-height: 6rem;
-  background-color: #222; /* darch.dk only */
 }
-/*
+
+/* 
 .TMBlankLine {
   height:24px;
 }
@@ -47,13 +47,13 @@
 */
 
 .TMMark_TMCode {
-  font-family:monospace;
-  font-size:.9em;  
+  font-family: monospace;
+  font-size: 0.9em;  
 }
 
 .TMFencedCodeBacktick, .TMFencedCodeTilde, .TMIndentedCode, .TMCode {
-  font-family:monospace;
-  font-size:.9em;
+  font-family: monospace;
+  font-size: 0.9em;
   background-color: var(--accent-bg);
 }
 

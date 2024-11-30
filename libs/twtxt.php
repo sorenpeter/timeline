@@ -434,20 +434,22 @@ function getTwtsFromTwtxtString($url) {
 				//$twtContent = str_replace("\u{2028}", "\n<br>\n", $twtContent);
 				$twtContent = str_replace("\u{2028}", "\n", $twtContent);
 
-				//$twtContent = replaceMarkdownLinksFromTwt($twtContent);
-				//$twtContent = replaceImagesFromTwt($twtContent);
-
-				$Parsedown = new Parsedown();
-				$twtContent = $Parsedown->text($twtContent);
-
 				$twtContent = embedYoutubeFromTwt($twtContent); 
-				//$twtContent = replaceLinksFromTwt($twtContent);
 
 				// Get and remove the hash
 				$hash = getReplyHashFromTwt($twtContent);
 				if ($hash) {
 					$twtContent = str_replace("(#$hash)", '', $twtContent);
 				}
+
+				// Interpret the content as markdown
+				$Parsedown = new Parsedown();
+				$twtContent = $Parsedown->text($twtContent);
+
+				// TODO: Remove obserlete fuctions, or build our own simpler markdown parser?
+				//$twtContent = replaceMarkdownLinksFromTwt($twtContent); 
+				//$twtContent = replaceImagesFromTwt($twtContent);
+				//$twtContent = replaceLinksFromTwt($twtContent);
 
 				// TODO: Make ?tag= filtering feature
 				$twtContent = replaceTagsFromTwt($twtContent); 
@@ -482,7 +484,6 @@ function getTwtsFromTwtxtString($url) {
 				$twt->mainURL = $twtxtData->mainURL;
 
 				$twtxtData->twts[$timestamp] = $twt;
-				// TODO: Interpret the content as markdown -- @DONE using Slimdown.php above
 			}
 		}
 	}

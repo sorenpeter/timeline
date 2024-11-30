@@ -83,8 +83,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## 🐞 Bugs to fix
 
-- Fix issues with parsing markdown vs. twtxt syntax
-	- replace slimdown with our own basic parser, supporting lists, block quotes, code/blocks, links, images
+- [x] (2024-11-30) Fix issues with parsing markdown vs. twtxt syntax (replaceed slimdown with Parsedown, supporting lists, block quotes, code/blocks, links, images)
 
 
 ## 🚀 Features to code

@@ -124,6 +124,8 @@ function getImagesFromTwt(string $twtString) {
 function getTagsFromTwt(string $twtString) {
 	//$pattern = '/(?<!\()\B#\w+(?!\))/iu';
 	$pattern = '/(?<=\B)#(\w+)/';
+	//$pattern = '/(?<=\s)#(\w+)/';
+	//$pattern = '/\s#(\w+)/';
 	//$pattern = "/\(#\w{7}\)/";
 	//$pattern = '/(?<=\s|^)#(\w+)/';
 	// TODO: Fix so it does not match with url#fragments (\B vs \s)
@@ -209,7 +211,9 @@ function replaceImagesFromTwt(string $twtString) {
 }
 
 function replaceTagsFromTwt(string $twtString) {
-	$pattern = '/#(\w+)?/';
+	//$pattern = '/#(\w+)?/';
+	$pattern = '/(?<=\s)#(\w+)/';
+
 	//$replacement = '<a href="#">#\1</a>'; // Dummy link
 	$replacement = '<a href="?search=$1" class="tag">#${1}</a>';
 	$result = preg_replace($pattern, $replacement, $twtString);
@@ -225,10 +229,6 @@ function embedYoutubeFromTwt(string $twtString) {
 	if(preg_match_all($pattern, $twtString, $youtubeLinks)) {
 		
 		$youtubeLinks = array_unique($youtubeLinks[1]); // Remove dublicate cause by raw URLs conceverter to links
-
-		//echo "<pre>";
-		//print_r($youtubeLinks);
-		//echo "</pre>";
 
 		foreach ($youtubeLinks as $videoID) {
 			$twtString .= '<iframe loading="lazy" src="https://www.youtube.com/embed/'.$videoID.'" class="embed-video" allow="encrypted-media" title="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';
@@ -435,7 +435,6 @@ function getTwtsFromTwtxtString($url) {
 
 				//$twtContent = replaceMarkdownLinksFromTwt($twtContent);
 				//$twtContent = replaceImagesFromTwt($twtContent);
-				//$twtContent = Slimdown::render($twtContent);
 
 				$Parsedown = new Parsedown();
 				$twtContent = $Parsedown->text($twtContent);

@@ -20,7 +20,6 @@ declare (strict_types = 1);
 require_once('libs/session.php');
 require_once('libs/twtxt.php');
 require_once('libs/hash.php');
-require_once('libs/Slimdown.php');
 require_once('libs/Parsedown.php');
 
 const TWTS_PER_PAGE = 50;

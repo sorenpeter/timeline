@@ -10,6 +10,11 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="<?= $baseURL ?>/media/logo.png">
+    <?php if( isset($_SESSION['password'])) { ?>
+        <script src="<?= $baseURL ?>/libs/tiny-mde.min.js"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/tiny-mde.min.css" /> -->
+        <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/tiny-mde.css" />        
+    <?php } ?>
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/simple.css">
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/timeline.css">
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/custom.css">

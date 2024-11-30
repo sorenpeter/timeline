@@ -1,0 +1,233 @@
+.TinyMDE {
+/*  background-color:#fff;
+  color:#000;
+  font-size:16px;
+  line-height:24px;
+  outline: none;
+  padding:5px; */
+
+  color: var(--text);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: var(--standard-border-radius);
+  min-height: 6rem;
+}
+
+/* 
+.TMBlankLine {
+  height:24px;
+}
+
+.TMH1, .TMSetextH1 {
+  font-size:22px;
+  line-height:32px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.TMSetextH1 {
+  margin-bottom:0px;
+}
+
+.TMSetextH1Marker {
+  margin-bottom:8px;
+}
+
+.TMH2, .TMSetextH2 {
+  font-size:20px;
+  line-height:28px;
+  font-weight:bold;
+  margin-bottom:4px;
+}
+*/
+
+.TMMark_TMCode {
+  font-family: monospace;
+  font-size: 0.9em;  
+}
+
+.TMFencedCodeBacktick, .TMFencedCodeTilde, .TMIndentedCode, .TMCode {
+  font-family: monospace;
+  font-size: 0.9em;
+  background-color: var(--accent-bg);
+}
+
+.TMCodeFenceBacktickOpen, .TMCodeFenceTildeOpen {
+  border-bottom: 1px solid var(--border);
+  font-family: monospace;
+  font-size:.9em;
+}
+
+.TMCodeFenceBacktickClose, .TMCodeFenceTildeClose {
+  border-top: 1px solid var(--border);
+  font-family: monospace;
+  font-size:.9em;
+}
+
+.TMInfoString {
+  color: var(--accent);
+}
+
+.TMCode {
+  border:1px solid var(--border);
+  border-radius: 2px;
+}
+
+.TMBlockquote {
+  font-style: italic;
+  border-left:2px solid var(--border);
+  padding-left:10px;
+  margin-left:10px;
+}
+
+/*
+.TMMark {
+  color:#a0a0a0;
+}
+
+.TMMark_TMH1, .TMMark_TMH2 {
+  color:#ff8080;
+}
+*/
+
+.TMMark_TMUL, .TMMark_TMOL {
+  color: var(--accent);
+}
+
+.TMImage {
+  text-decoration: underline;
+  text-decoration-color: #00ff00;
+}
+
+.TMLink {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.TMLinkLabel {
+  text-decoration: underline;
+  font-family: monospace;
+}
+
+.TMLinkLabel_Definition, .TMLinkLabel_Valid {
+  color: #40c040;
+}
+
+.TMLinkLabel_Invalid {
+  color: #ff0000;
+}
+
+.TMLinkTitle {
+  font-style:italic;
+}
+
+.TMLinkDestination, .TMAutolink {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+/*
+.TMHR { 
+  position: relative;
+}
+
+.TMHR:before { 
+  content: '';
+  position: absolute;
+  bottom: 50%;
+  left: 40%;
+  border-bottom: 2px solid #808080;
+  width: 20%;
+  z-index:0;
+}
+*/
+
+.TMHTML, .TMHTMLBlock {
+  font-family:monospace;
+  font-size:.9em;
+  color:#8000ff;
+}
+
+.TMHTMLBlock {
+  color:#6000c0;
+}
+
+.TMCommandBar {
+/*  background-color:#f8f8f8;
+  height:24px;
+  border:4px solid #f8f8f8; */
+  box-sizing: content-box;
+  display:flex;
+  user-select: none;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;  
+  -ms-overflow-style: none; 
+}
+
+.TMCommandBar::-webkit-scrollbar {
+  display: none;
+}
+
+.TMCommandButton {
+  box-sizing: border-box;
+  display: inline-block;
+  height:24px;
+  width:24px;
+  padding:3px;
+  margin-right:4px; 
+  color: var(--text-light);
+  fill: var(--text-light);
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size:20px;
+  line-height:18px;
+  font-family: sans-serif;
+}
+
+.TMCommandDivider {
+  box-sizing: content-box;
+  height:24px;
+  margin-left:4px;
+  margin-right:8px;
+  width:0px;
+/*  border-left:1px solid var(--border);*/
+/*  border-right:1px solid #ffffff;*/
+  border-left:1px solid var(--border);
+}
+
+.TMCommandButton_Active {
+  font-weight: bold;
+  color: var(--accent-bg);
+  fill: var(--accent-bg);
+  background-color: var(--accent);
+}
+
+.TMCommandButton_Inactive {
+/*  background-color:#f8f8f8;*/
+  background-color: var(--accent-bg);
+}
+
+.TMCommandButton_Disabled {
+/*  color:#a0a0a0;
+  fill:#a0a0a0; */
+  color: var(--text-light);
+  fill: var(--text-light);  
+}
+
+@media (hover: hover) {
+  .TMCommandButton_Active:hover,
+  .TMCommandButton_Disabled:hover,
+  .TMCommandButton_Inactive:hover {
+/*    background-color:#e0e0ff;*/
+/*    fill:#000000;*/
+    fill: var(--accent);
+
+  }
+}

@@ -231,7 +231,7 @@ function embedYoutubeFromTwt(string $twtString) {
 		//echo "</pre>";
 
 		foreach ($youtubeLinks as $videoID) {
-			$twtString .= '<br><iframe loading="lazy" src="https://www.youtube.com/embed/'.$videoID.'" class="embed-video" allow="encrypted-media" title="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';
+			$twtString .= '<iframe loading="lazy" src="https://www.youtube.com/embed/'.$videoID.'" class="embed-video" allow="encrypted-media" title="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';
 		}
 	}
 
@@ -430,13 +430,18 @@ function getTwtsFromTwtxtString($url) {
 
 				// For some reason I was having trouble finding this nomenclature
 				// that's why I leave the UTF-8 representation for future reference
-				$twtContent = str_replace("\u{2028}", "\n<br>\n", $twtContent);
+				//$twtContent = str_replace("\u{2028}", "\n<br>\n", $twtContent);
+				$twtContent = str_replace("\u{2028}", "\n", $twtContent);
 
-				$twtContent = replaceMarkdownLinksFromTwt($twtContent);
-				$twtContent = replaceImagesFromTwt($twtContent);
+				//$twtContent = replaceMarkdownLinksFromTwt($twtContent);
+				//$twtContent = replaceImagesFromTwt($twtContent);
 				//$twtContent = Slimdown::render($twtContent);
-				$twtContent = embedYoutubeFromTwt($twtContent); // TODO: Find the right order to embed youtube, so we don't get two video due to links containing URL as link texts
-				$twtContent = replaceLinksFromTwt($twtContent); // TODO
+
+				$Parsedown = new Parsedown();
+				$twtContent = $Parsedown->text($twtContent);
+
+				$twtContent = embedYoutubeFromTwt($twtContent); 
+				//$twtContent = replaceLinksFromTwt($twtContent);
 
 				// Get and remove the hash
 				$hash = getReplyHashFromTwt($twtContent);

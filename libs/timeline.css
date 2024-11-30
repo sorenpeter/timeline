@@ -141,11 +141,6 @@ img.avatar {
     border: none;
 }
 
-.embed-video {
-    width: 100%;
-    aspect-ratio: 16/9;
-}
-
 a.author {
     text-decoration: none;
     color: var(--text);
@@ -173,7 +168,6 @@ a.author {
     font-size: larger;
     line-height: 1;
 }
-
 
 .profile p {
     margin: 0.2rem 0;
@@ -278,12 +272,31 @@ article .twt-msg {
     overflow-wrap: anywhere; 
 }
 
+article .twt-msg p {
+    margin: 0.25rem 0;
+}
+
 article .twt-msg > blockquote {
-    margin: 0;
+    margin: 0.5rem 0;
     border-left: thick solid grey;
     padding: 0.25rem 0.5rem;
     display: inline-block;
     font-style: italic;
+}
+
+article .twt-msg ul,
+article .twt-msg ol {
+    padding-left: 2rem;
+}
+
+article .twt-msg li {
+    padding-left: 0.5rem;
+}
+
+
+article .twt-msg pre {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
 }
 
 article .twt-msg img {
@@ -297,6 +310,14 @@ article .twt-msg > img:first-child {
 
 article .twt-msg > img:last-child {
     margin-bottom: 0;
+}
+
+article .embed-video {
+    margin-top: 0.5rem;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 0.25rem;    
 }
 
 article small {

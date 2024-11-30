@@ -141,6 +141,11 @@ img.avatar {
     border: none;
 }
 
+.embed-video {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
 a.author {
     text-decoration: none;
     color: var(--text);

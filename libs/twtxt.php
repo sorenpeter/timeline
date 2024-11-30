@@ -180,8 +180,9 @@ function replaceLinksFromTwt(string $twtString) {
 	// 1. Look into how yarnd handles this
 
 	// Regular expression pattern to match URLs
-	$pattern = '/(?<!\S)(\b(https?|ftp|gemini|spartan|gopher):\/\/\S+|\b(?!:\/\/)\w+(?:\.\w+)+(?:\/\S+)?)(?!\S)/';
-    
+	//$pattern = '/(?<!\S)(\b(https?|ftp|gemini|spartan|gopher):\/\/\S+|\b(?!:\/\/)\w+(?:\.\w+)+(?:\/\S+)?)(?!\S)/';
+	$pattern = '/(?<!\S)(?<!href="|">)(?<!src=\")((http|ftp)+(s)?:\/\/[^<>\s]+)/is';
+
 	// Replace URLs with clickable links
 	$replacement = '<a href="$1">$1</a>';
 	$result = preg_replace($pattern, $replacement, $twtString);
@@ -212,6 +213,29 @@ function replaceTagsFromTwt(string $twtString) {
 	//$replacement = '<a href="#">#\1</a>'; // Dummy link
 	$replacement = '<a href="?search=$1" class="tag">#${1}</a>';
 	$result = preg_replace($pattern, $replacement, $twtString);
+
+	return $result;
+}
+
+function embedYoutubeFromTwt(string $twtString) {
+
+    // original regex source: https://gist.github.com/afeld/1254889#gistcomment-1253992
+	$pattern = '/(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/mi';
+
+	if(preg_match_all($pattern, $twtString, $youtubeLinks)) {
+		
+		$youtubeLinks = array_unique($youtubeLinks[1]); // Remove dublicate cause by raw URLs conceverter to links
+
+		//echo "<pre>";
+		//print_r($youtubeLinks);
+		//echo "</pre>";
+
+		foreach ($youtubeLinks as $videoID) {
+			$twtString .= '<br><iframe loading="lazy" src="https://www.youtube.com/embed/'.$videoID.'" class="embed-video" allow="encrypted-media" title="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';
+		}
+	}
+
+	$result = $twtString;
 
 	return $result;
 }
@@ -407,11 +431,12 @@ function getTwtsFromTwtxtString($url) {
 				// For some reason I was having trouble finding this nomenclature
 				// that's why I leave the UTF-8 representation for future reference
 				$twtContent = str_replace("\u{2028}", "\n<br>\n", $twtContent);
-				
+
 				$twtContent = replaceMarkdownLinksFromTwt($twtContent);
 				$twtContent = replaceImagesFromTwt($twtContent);
 				//$twtContent = Slimdown::render($twtContent);
-				$twtContent = replaceLinksFromTwt($twtContent); // TODO: 
+				$twtContent = embedYoutubeFromTwt($twtContent); // TODO: Find the right order to embed youtube, so we don't get two video due to links containing URL as link texts
+				$twtContent = replaceLinksFromTwt($twtContent); // TODO
 
 				// Get and remove the hash
 				$hash = getReplyHashFromTwt($twtContent);

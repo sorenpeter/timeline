@@ -124,7 +124,8 @@ function getImagesFromTwt(string $twtString) {
 
 function getTagsFromTwt(string $twtString) {
 	//$pattern = '/(?<!\()\B#\w+(?!\))/iu';
-	$pattern = '/(?<=\B)#(\w+)/';
+	//$pattern = '/(?<=\B)#(\w+)/';
+	$pattern = '/(?<=\B)#([\p{L}\p{N}_]+)/u';
 	//$pattern = '/(?<=\s)#(\w+)/';
 	//$pattern = '/\s#(\w+)/';
 	//$pattern = "/\(#\w{7}\)/";
@@ -213,8 +214,9 @@ function replaceImagesFromTwt(string $twtString) {
 
 function replaceTagsFromTwt(string $twtString) {
 	//$pattern = '/#(\w+)?/';
-	$pattern = '/(?<=\s)#(\w+)/';
-
+	//$pattern = '/(?<=\s)#(\w+)/';
+	$pattern = '/(?<=\B)#([\p{L}\p{N}_]+)/u';
+	
 	//$replacement = '<a href="#">#\1</a>'; // Dummy link
 	$replacement = '<a href="?search=$1" class="tag">#${1}</a>';
 	$result = preg_replace($pattern, $replacement, $twtString);

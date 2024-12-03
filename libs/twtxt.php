@@ -10,8 +10,7 @@ if ($config['debug_mode']) {
 	error_reporting(E_ALL);
 }
 
-class TwtxtFile
-{
+class TwtxtFile {
 	public $mainURL = ''; // First found URL
 	public $URLs = [];
 	public $nick = '';
@@ -24,8 +23,7 @@ class TwtxtFile
 	public $twts = [];
 }
 
-class Twt
-{
+class Twt {
 	public $originalTwtStr;
 	public $hash;
 	public $timestamp;
@@ -67,8 +65,7 @@ curl_setopt($curl, CURLOPT_SSLVERSION, 4);
  * found, the function returns the value of the key as a string after trimming any whitespace. If no
  * match is found, the function returns null.
  */
-function getSingleParameter($keyToFind, $string)
-{
+function getSingleParameter($keyToFind, $string) {
 	if (!str_contains($string, $keyToFind)) {
 		return null;
 	}
@@ -86,8 +83,7 @@ function getSingleParameter($keyToFind, $string)
 	return null;
 }
 
-function getDoubleParameter($keywordToFind, $string)
-{
+function getDoubleParameter($keywordToFind, $string) {
 	// Returns string or null
 	$pattern = '/#\s*' . preg_quote($keywordToFind, '/') . '\s*=\s*(\S+)\s*(\S+)/';
 	// Matches "# <keyword> = <value> <value>"
@@ -101,8 +97,7 @@ function getDoubleParameter($keywordToFind, $string)
 	return null;
 }
 
-function getReplyHashFromTwt(string $twtString): string
-{
+function getReplyHashFromTwt(string $twtString): string {
 	// Extract the text between parentheses using regular expressions
 	$pattern = '/\(#([^\)]+)\)/'; // Matches "(#<text>)"
 	preg_match($pattern, $twtString, $matches);
@@ -115,8 +110,7 @@ function getReplyHashFromTwt(string $twtString): string
 	return '';
 }
 
-function getImagesFromTwt(string $twtString)
-{
+function getImagesFromTwt(string $twtString) {
 	$pattern = '/(<img[^>]+>)/i';
 	preg_match_all($pattern, $twtString, $matches, PREG_SET_ORDER);
 
@@ -129,8 +123,7 @@ function getImagesFromTwt(string $twtString)
 	return $result;
 }
 
-function getTagsFromTwt(string $twtString)
-{
+function getTagsFromTwt(string $twtString) {
 	//$pattern = '/(?<!\()\B#\w+(?!\))/iu';
 	//$pattern = '/(?<=\B)#(\w+)/';
 	$pattern = '/(?<=\B)#([\p{L}\p{N}_]+)/u';
@@ -152,8 +145,7 @@ function getTagsFromTwt(string $twtString)
 	return $result;
 }
 
-function getMentionsFromTwt(string $twtString)
-{
+function getMentionsFromTwt(string $twtString) {
 	$pattern = '/@<([^>]+)\s([^>]+)>/'; // Matches "@<nick url>"
 	preg_match_all($pattern, $twtString, $matches, PREG_SET_ORDER);
 
@@ -168,8 +160,7 @@ function getMentionsFromTwt(string $twtString)
 	return $result;
 }
 
-function replaceMentionsFromTwt(string $twtString): string
-{
+function replaceMentionsFromTwt(string $twtString): string {
 	// Example input: 'Hello @<eapl.mx https://eapl.mx/twtxt.txt>, how are you? @<nick https://server.com/something/twtxt.txt>';
 	// Example output: Hello <a href="?url=https://eapl.mx/twtxt.txt">@eapl.mx@eapl.mx/twtxt.txt</a>, how are you? <a href="?url=https://server.com/something/twtxt.txt">@nick@server.com/something/twtxt.txt</a>
 
@@ -188,8 +179,7 @@ function replaceMentionsFromTwt(string $twtString): string
 	//return preg_replace($pattern,'<a href="$2">@$1</a>',$twtString);
 }
 
-function replaceLinksFromTwt(string $twtString)
-{
+function replaceLinksFromTwt(string $twtString) {
 
 	// TODO: Make this NOT match with `inline code` to avoid links in code-snippets
 	// 1. Look into how yarnd handles this
@@ -205,8 +195,7 @@ function replaceLinksFromTwt(string $twtString)
 	return $result;
 }
 
-function replaceMarkdownLinksFromTwt(string $twtString)
-{
+function replaceMarkdownLinksFromTwt(string $twtString) {
 	$pattern = '/\[([^\]]+)\]\(([^)]+)\)/';
 
 	$replacement = '<a href="$2">$1</a>';
@@ -215,8 +204,7 @@ function replaceMarkdownLinksFromTwt(string $twtString)
 	return $result;
 }
 
-function replaceImagesFromTwt(string $twtString)
-{
+function replaceImagesFromTwt(string $twtString) {
 	$pattern = '/!\[(.*?)\]\((.*?)\)/';
 	//$replacement = '<img src="$2" alt="$1">';
 	$replacement = '<a href="$2"><img src="$2" alt="$1"></a>';
@@ -225,8 +213,7 @@ function replaceImagesFromTwt(string $twtString)
 	return $result;
 }
 
-function replaceTagsFromTwt(string $twtString)
-{
+function replaceTagsFromTwt(string $twtString) {
 	//$pattern = '/#(\w+)?/';
 	//$pattern = '/(?<=\s)#(\w+)/';
 	$pattern = '/(?<=\B)#([\p{L}\p{N}_]+)/u';
@@ -238,8 +225,7 @@ function replaceTagsFromTwt(string $twtString)
 	return $result;
 }
 
-function embedYoutubeFromTwt(string $twtString)
-{
+function embedYoutubeFromTwt(string $twtString) {
 
 	// original regex source: https://gist.github.com/afeld/1254889#gistcomment-1253992
 	$pattern = '/(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/mi';
@@ -259,8 +245,7 @@ function embedYoutubeFromTwt(string $twtString)
 }
 
 
-function getTimeElapsedString($timestamp, $full = false)
-{
+function getTimeElapsedString($timestamp, $full = false) {
 	$now = new DateTime;
 	$ago = new DateTime;
 	$ago->setTimestamp($timestamp);
@@ -306,8 +291,7 @@ function getTimeElapsedString($timestamp, $full = false)
 	return $string ? implode(', ', $string) . " $agoText" : 'just now';
 }
 
-function getCachedFileContentsOrUpdate($fileURL, $cacheDurationSecs = 15)
-{
+function getCachedFileContentsOrUpdate($fileURL, $cacheDurationSecs = 15) {
 	# TODO: Process the Warning
 	# Warning: file_get_contents(https://eapl.mx/twtxt.net):
 	# failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found in
@@ -326,8 +310,7 @@ function getCachedFileContentsOrUpdate($fileURL, $cacheDurationSecs = 15)
 	return $contents;
 }
 
-function getCachedFileContents($filePath)
-{
+function getCachedFileContents($filePath) {
 	$cacheFile = getCachedFileName($filePath);
 
 	// Check if cache file exists and it's not expired
@@ -338,8 +321,7 @@ function getCachedFileContents($filePath)
 	return null;
 }
 
-function updateCachedFile($filePath)
-{
+function updateCachedFile($filePath) {
 	$cacheFilePath = getCachedFileName($filePath);
 	# TODO: Report down URLs and stop loading them after a few tries
 
@@ -395,8 +377,7 @@ function updateCachedFile($filePath)
 	}
 }
 
-function getTwtsFromTwtxtString($url)
-{
+function getTwtsFromTwtxtString($url) {
 	$fileContent = getCachedFileContents($url);
 
 	if (is_null($fileContent)) {
@@ -545,8 +526,7 @@ function getTwtsFromTwtxtString($url)
 	return $twtxtData;
 }
 
-function insertFollowingURL($urlString)
-{
+function insertFollowingURL($urlString) {
 	// Check if it's a valid URL
 	// Retrieve the nickname, if didn't find a nick, ask for one
 
@@ -562,26 +542,22 @@ function insertFollowingURL($urlString)
 	echo $result;
 }
 
-function getCachedFileName($filePath)
-{
+function getCachedFileName($filePath) {
 	return __DIR__ . '/../private/cache/' . hash('sha256', $filePath); // TODO: make better path
 }
 
 if (!function_exists('str_starts_with')) {
-	function str_starts_with($haystack, $needle)
-	{
+	function str_starts_with($haystack, $needle) {
 		return (string)$needle !== '' && strncmp($haystack, $needle, strlen($needle)) === 0;
 	}
 }
 if (!function_exists('str_ends_with')) {
-	function str_ends_with($haystack, $needle)
-	{
+	function str_ends_with($haystack, $needle) {
 		return $needle !== '' && substr($haystack, -strlen($needle)) === (string)$needle;
 	}
 }
 if (!function_exists('str_contains')) {
-	function str_contains($haystack, $needle)
-	{
+	function str_contains($haystack, $needle) {
 		return $needle !== '' && mb_strpos($haystack, $needle) !== false;
 	}
 }

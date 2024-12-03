@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 $config = parse_ini_file('private/config.ini');
@@ -70,7 +71,7 @@ function getSingleParameter($keyToFind, $string) {
 	}
 
 	$pattern = '/\s*(?<!\S)' . $keyToFind . '\s*=\s*([^#\n]+)/';
-		// Fix: not machting with nick as in: `# follow = dbucklin@www.davebucklin.com https://www.davebucklin.com/twtxt.txt?nick=dbucklin`
+	// Fix: not machting with nick as in: `# follow = dbucklin@www.davebucklin.com https://www.davebucklin.com/twtxt.txt?nick=dbucklin`
 	//$pattern = '/\s*' . $keyToFind . '\s*=\s*([^#\n]+)/';
 	//$pattern = '/\s*' . $keyToFind . '\s*=\s*([^\s#]+)/'; // Only matches the first word
 	preg_match($pattern, $string, $matches);
@@ -165,7 +166,7 @@ function replaceMentionsFromTwt(string $twtString): string {
 
 	$pattern = '/@<([^ ]+)\s([^>]+)>/';
 	//$replacement = '<a href="/?url=$2">@$1</a>';
-	$replacement = '<a href="'.str_replace("/index.php", "", $_SERVER["SCRIPT_NAME"]).'/profile?url=$2">@$1</a>';
+	$replacement = '<a href="' . str_replace("/index.php", "", $_SERVER["SCRIPT_NAME"]) . '/profile?url=$2">@$1</a>';
 	$replacement .= '<a href="$2" class="webmention"></a>'; // Adds a hidden link direcly to the twtxt.txt of the mentioned target
 	#$twtString = '@<nick https://eapl.mx/twtxt.txt>';
 	#$pattern = '/@<([^ ]+) ([^>]+)>/';
@@ -175,7 +176,7 @@ function replaceMentionsFromTwt(string $twtString): string {
 
 	// from https://github.com/hxii/picoblog/blob/master/picoblog.php
 	//$pattern = '/\@<([a-zA-Z0-9\.]+)\W+(https?:\/\/[^>]+)>/';
-    //return preg_replace($pattern,'<a href="$2">@$1</a>',$twtString);
+	//return preg_replace($pattern,'<a href="$2">@$1</a>',$twtString);
 }
 
 function replaceLinksFromTwt(string $twtString) {
@@ -216,7 +217,7 @@ function replaceTagsFromTwt(string $twtString) {
 	//$pattern = '/#(\w+)?/';
 	//$pattern = '/(?<=\s)#(\w+)/';
 	$pattern = '/(?<=\B)#([\p{L}\p{N}_]+)/u';
-	
+
 	//$replacement = '<a href="#">#\1</a>'; // Dummy link
 	$replacement = '<a href="?search=$1" class="tag">#${1}</a>';
 	$result = preg_replace($pattern, $replacement, $twtString);
@@ -226,15 +227,15 @@ function replaceTagsFromTwt(string $twtString) {
 
 function embedYoutubeFromTwt(string $twtString) {
 
-    // original regex source: https://gist.github.com/afeld/1254889#gistcomment-1253992
+	// original regex source: https://gist.github.com/afeld/1254889#gistcomment-1253992
 	$pattern = '/(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/mi';
 
-	if(preg_match_all($pattern, $twtString, $youtubeLinks)) {
-		
+	if (preg_match_all($pattern, $twtString, $youtubeLinks)) {
+
 		$youtubeLinks = array_unique($youtubeLinks[1]); // Remove dublicate cause by raw URLs conceverter to links
 
 		foreach ($youtubeLinks as $videoID) {
-			$twtString .= '<iframe loading="lazy" src="https://www.youtube.com/embed/'.$videoID.'" class="embed-video" allow="encrypted-media" title="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';
+			$twtString .= '<iframe loading="lazy" src="https://www.youtube.com/embed/' . $videoID . '" class="embed-video" allow="encrypted-media" title="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';
 		}
 	}
 
@@ -320,27 +321,59 @@ function getCachedFileContents($filePath) {
 	return null;
 }
 
-function updateCachedFile($filePath, $cacheDurationSecs = 15) {
+function updateCachedFile($filePath) {
 	$cacheFilePath = getCachedFileName($filePath);
+	# TODO: Report down URLs and stop loading them after a few tries
 
-	// File doesn't exist in cache or has expired, so fetch and cache it
-	// TODO: Seems it's not working right!
-	$fileDoesntExist = !file_exists($cacheFilePath);
-	$fileIsOld = false;
-	if (!$fileDoesntExist) {
-		$fileIsOld = !((time() - filemtime($cacheFilePath)) < $cacheDurationSecs);
+	# Get the last modification time of the local file
+	$lastModifiedTime = file_exists($cacheFilePath) ? filemtime($cacheFilePath) : false;
+	$lastModifiedHeader = $lastModifiedTime ? gmdate('D, d M Y H:i:s', $lastModifiedTime) . ' GMT' : null;
+
+	# echo "lastModifiedHeader: $lastModifiedHeader<br>\n";
+
+	# Set up the HTTP context with the 'If-Modified-Since' header
+	$options = [
+		'http' => [
+			'method' => 'GET',
+			'header' => $lastModifiedHeader ? "If-Modified-Since: $lastModifiedHeader\r\n" : '',
+		]
+	];
+
+	$context = stream_context_create($options);
+
+	$response = @file_get_contents($filePath, false, $context);
+
+	# Check if HTTP headers are available, usually when the server is available
+	if (!isset($http_response_header)) {
+		# echo "Failed to fetch headers. No HTTP request was made.\n";
+		return;
 	}
 
-	if ($fileDoesntExist || $fileIsOld) {
-		#echo "Loading Cached file $cacheFilePath<br>\n";
-		$contents = @file_get_contents($filePath);
+	if ($http_response_header) {
+		# var_dump($http_response_header);
 
-		if ($contents === false) {
-			// File loaded with errors, skip saving it
-			return;
+		foreach ($http_response_header as $header) {
+			# Look for the Last-Modified header
+			if (preg_match('/^Last-Modified:\s*(.+)$/i', $header, $matches)) {
+				$dateString = $matches[1]; // Extracted date
+				# echo "Extracted Date: $dateString\n";
+
+				// Convert to Unix timestamp
+				$lastModifiedTimestamp = strtotime($dateString);
+				if ($lastModifiedTimestamp > $lastModifiedTime) {
+					# echo "Remote file is newer. Load it!<br>\n";
+				} else {
+					# echo "Not modified since last request. No update needed.<br>\n";
+					return;
+				}
+			}
 		}
+	}
 
-		file_put_contents($cacheFilePath, $contents);
+	# Save the content if it was successfully retrieved
+	if ($response !== false) {
+		file_put_contents($cacheFilePath, $response);
+		#echo "File updated successfully.\n";
 	}
 }
 
@@ -398,8 +431,8 @@ function getTwtsFromTwtxtString($url) {
 		// mosty for (re)feeds from Mastodon etc.
 		if (str_contains($twtxtData->nick, "@")) {
 			$str = $twtxtData->nick;
-			$str = ltrim($str,"@");
-			$twtxtData->nick = explode("@",$str)[0]; // take the first [0] from splitting the nick at "@"
+			$str = ltrim($str, "@");
+			$twtxtData->nick = explode("@", $str)[0]; // take the first [0] from splitting the nick at "@"
 		}
 
 		// Fallback for nick and url if not set in twtxt.txt
@@ -436,7 +469,7 @@ function getTwtsFromTwtxtString($url) {
 				//$twtContent = str_replace("\u{2028}", "\n<br>\n", $twtContent);
 				$twtContent = str_replace("\u{2028}", "\n", $twtContent);
 
-				$twtContent = embedYoutubeFromTwt($twtContent); 
+				$twtContent = embedYoutubeFromTwt($twtContent);
 
 				// Get and remove the hash
 				$hash = getReplyHashFromTwt($twtContent);
@@ -454,7 +487,7 @@ function getTwtsFromTwtxtString($url) {
 				//$twtContent = replaceLinksFromTwt($twtContent);
 
 				// TODO: Make ?tag= filtering feature
-				$twtContent = replaceTagsFromTwt($twtContent); 
+				$twtContent = replaceTagsFromTwt($twtContent);
 
 				// TODO: Get mentions
 				$mentions = getMentionsFromTwt($twtContent);

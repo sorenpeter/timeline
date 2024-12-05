@@ -10,6 +10,8 @@ if ($config['debug_mode']) {
 	error_reporting(E_ALL);
 }
 
+$agentVersion = trim(file_get_contents('./version.txt'));
+
 class TwtxtFile {
 	public $mainURL = ''; // First found URL
 	public $URLs = [];
@@ -331,11 +333,34 @@ function updateCachedFile($filePath) {
 
 	# echo "lastModifiedHeader: $lastModifiedHeader<br>\n";
 
+	global $config;
+	global $agentVersion;
+
+	# TODO: Check this from the main page, not in this function
+	if (!array_key_exists('public_txt_url', $config) || !array_key_exists('public_nick', $config)) {
+		die("Check your config.ini file. 'public_txt_url' or 'public_nick' missing");
+	}
+
+	$url = $config['public_txt_url'];
+	$nick = $config['public_nick'];
+
+	if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
+		die("Check your config.ini file. 'public_txt_url' not valid");
+	}
+
+	# TODO: Add a validation for the nickname. For example at least 1 character.
+
+	$agentName = 'timeline';
+	$userAgentHeader = "User-Agent: $agentName/$agentVersion (+$url; @$nick)\r\n";
+
+	$header = $lastModifiedHeader ? "If-Modified-Since: $lastModifiedHeader\r\n" : '';
+	$header .= $userAgentHeader;
+
 	# Set up the HTTP context with the 'If-Modified-Since' header
 	$options = [
 		'http' => [
 			'method' => 'GET',
-			'header' => $lastModifiedHeader ? "If-Modified-Since: $lastModifiedHeader\r\n" : '',
+			'header' => $header,
 		]
 	];
 

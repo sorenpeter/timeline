@@ -70,7 +70,7 @@ function getSingleParameter($keyToFind, $string) {
 	}
 
 	$pattern = '/\s*(?<!\S)' . $keyToFind . '\s*=\s*([^#\n]+)/';
-		// Fix: not machting with nick as in: `# follow = dbucklin@www.davebucklin.com https://www.davebucklin.com/twtxt.txt?nick=dbucklin`
+	// Fix: not machting with nick as in: `# follow = dbucklin@www.davebucklin.com https://www.davebucklin.com/twtxt.txt?nick=dbucklin`
 	//$pattern = '/\s*' . $keyToFind . '\s*=\s*([^#\n]+)/';
 	//$pattern = '/\s*' . $keyToFind . '\s*=\s*([^\s#]+)/'; // Only matches the first word
 	preg_match($pattern, $string, $matches);
@@ -223,6 +223,15 @@ function replaceTagsFromTwt(string $twtString) {
 
 	return $result;
 }
+
+function replaceMarkdownSpoilersFromTwt(string $twtString) {
+	$pattern = '/>!( ?.+?)((\r?\n\r?\n\w)|\Z)/';
+	$replacement = '<details><summary>$1<summary>$2</details>';
+	$result = preg_replace($pattern, $replacement, $twtString);
+
+	return $result;
+}
+
 
 function embedYoutubeFromTwt(string $twtString) {
 
@@ -435,6 +444,8 @@ function getTwtsFromTwtxtString($url) {
 				// that's why I leave the UTF-8 representation for future reference
 				//$twtContent = str_replace("\u{2028}", "\n<br>\n", $twtContent);
 				$twtContent = str_replace("\u{2028}", "\n", $twtContent);
+
+				$twtContent = replaceMarkdownSpoilersFromTwt($twtContent); // Testing for: https://darch.dk/timeline/conv/kwxr5aq
 
 				$twtContent = embedYoutubeFromTwt($twtContent); 
 

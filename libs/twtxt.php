@@ -10,7 +10,7 @@ if ($config['debug_mode']) {
 	error_reporting(E_ALL);
 }
 
-$agentVersion = trim(file_get_contents('./version.txt'));
+$agentVersion = trim(file_get_contents('./VERSION'));
 
 class TwtxtFile {
 	public $mainURL = ''; // First found URL

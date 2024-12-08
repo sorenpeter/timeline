@@ -3,19 +3,18 @@ require_once("partials/base.php");
 
 $title = "Login - ".$title;
 
-include 'partials/header.php';
-?>
-
-<?php
     // Password comes from libs/session.php
     if (isset($_SESSION['password'])) {
         if ($_SESSION['password'] == $password) {
             header("Location: .");
+            include 'partials/header.php';
             die();
         }
     }
 
-    else { ?>
+    else { 
+      include 'partials/header.php';
+?>
         <center>
         <h2>Enter password or TOTP</h2>
         <form method="post" action="" id="login_form">

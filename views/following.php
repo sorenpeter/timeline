@@ -18,7 +18,7 @@ include 'partials/header.php';
             <!-- <th></th> -->
             <th>Nick</th>
             <th>URL</th>
-            <?php if($_SESSION['password']=="$password") { ?>
+            <?php if(isset($_SESSION['password']) && $_SESSION['password']=="$password") { ?>
                 <th>Time ago</th>
             <?php } ?>
         </tr>
@@ -33,7 +33,7 @@ include 'partials/header.php';
                 <!-- <a href="?remove_url=<?= $currentFollower[1] ?>">Remove</a> -->
                 <!-- <?php // } ?> -->
             </td>
-            <?php if($_SESSION['password']=="$password") { ?>
+            <?php if(isset($_SESSION['password']) && $_SESSION['password']=="$password") { ?>
             <td>
                 <?php
                     // Test first if URL is a valid feed:

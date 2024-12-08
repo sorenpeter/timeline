@@ -1,4 +1,3 @@
-
 <?php
 
 if (!empty($_GET['url'])) { // Show twts for some user (Profile view)

@@ -38,29 +38,27 @@ if(!stristr($_POST['source'], ":~:text=")) {
  	exit;
 }
 
+// Process Webmentions with text fragment as to point to a twt in a twtxt.txt
 if (stristr($sourceFile, $_POST['target'])) {
 	header($_SERVER['SERVER_PROTOCOL'] . ' 202 Accepted');
 
 	# Now do something with $sourceFile e.g. parse it for h-entry and h-card and store what you find.
 
-	// TODO: test if $datetime is to be found in $sourceFile
+	// TODO: test if $url_time is to be found in $sourceFile
 	//		 		and then write the $twt to the $log
 
-	$datetime = explode( ":~:text=", $_POST['source'] );
-	$pattern = '/^'.$datetime[1].'\t(.*?)$/m';
+	$url_time = explode( "#:~:text=", $_POST['source'] ); // split source into array with [0] for url and [1] for datetime
+	//$url = preg_replace("(^https?://)", "", $url_time[0] );
+	$pattern = '/^'.$url_time[1].'\t(.*?)$/m';
 	preg_match($pattern, $sourceFile, $twt); // $twt[1] contains your line.
-
-	//preg_match('/^'.$datetime[1].'\t(.*?)$/m', $sourceFile, $twt);
 
 	$log  = date("Y-m-d\TH:i:s\Z") . "\t" 
 		//.'You were mentioned in: <a href="'.$_POST['source'].',%0A" rel=noopener>'.$_POST['source'].'</a>' // "%0A" means new line
-		.'You were mentioned in: <a href="'.$_POST['source'].',%0A" rel=noopener>'.$_POST['source'].'</a>' // "%0A" means new line
-		." " // add a line break before blockquote
+		.'Mention from '.$url_time[0].' in <a href="'.$url_time[0].'#:~:text='.urlencode($url_time[1]).'" rel="noopener" target="_blank">'.$url_time[1].'</a>'
+		// TODO: find a way to make this as markdown and the render it with correct rel and target
+		." " // add a twt line break before blockquote
 		."> " . $twt[1]
-	    //."Recived webmention from ".$_POST['source']
-	    //." mentioning ".$_POST['target']
-	   	//." (IP: ".$_SERVER['REMOTE_ADDR'].")"
-	    .PHP_EOL;
+    .PHP_EOL;
 	 	file_put_contents($logfile, $log, FILE_APPEND);
 
 

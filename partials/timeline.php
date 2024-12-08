@@ -43,7 +43,7 @@
 
 			?>
 				<!--  (<a href="new_twt.php?hash=<?=$twt->hash?>">via email</a>) TODO: mailto-link -->
-				<a href='<?=$baseURL?>/post/<?=$twt->hash?>' class="right"><span title="<?=$twt->fullDate?> "><?=$twt->displayDate?></span></a>
+				<a href='<?=$baseURL?>/post/<?=$twt->hash?>' class="right"><span title="<?=$twt->fullDate?>"><?=$twt->displayDate?></span></a>
 			</small>
 		</div>
 	</article>

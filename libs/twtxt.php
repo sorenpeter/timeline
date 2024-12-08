@@ -331,7 +331,7 @@ function updateCachedFile($filePath) {
 	$lastModifiedTime = file_exists($cacheFilePath) ? filemtime($cacheFilePath) : false;
 	$lastModifiedHeader = $lastModifiedTime ? gmdate('D, d M Y H:i:s', $lastModifiedTime) . ' GMT' : null;
 
-	# echo "lastModifiedHeader: $lastModifiedHeader<br>\n";
+	#echo "lastModifiedHeader: $lastModifiedHeader<br>\n";
 
 	global $config;
 	global $agentVersion;
@@ -349,6 +349,10 @@ function updateCachedFile($filePath) {
 	}
 
 	# TODO: Add a validation for the nickname. For example at least 1 character.
+	// if ($nick === "") {
+	// 	die("Check your config.ini file. 'public_nick' not valid");
+	// }
+
 
 	$agentName = 'timeline';
 	$userAgentHeader = "User-Agent: $agentName/$agentVersion (+$url; @$nick)\r\n";

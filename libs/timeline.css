@@ -6,7 +6,7 @@
     "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
     "Helvetica Neue", sans-serif;
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  --standard-border-radius: 5px;
+  --standard-border-radius: 0.25rem;
 
   /* Default (light) theme */
   --bg: #fff;
@@ -64,6 +64,11 @@ header > nav select {
 @media only screen and (max-width: 720px) {
     header > nav a { padding: 2rem }
     header > nav a span { display: none; }
+}
+
+.notice {
+  border-radius: 0.25rem;
+  margin: 2rem 0.5rem;
 }
 
 /* === Timeline Style === */
@@ -183,7 +188,6 @@ a.author {
 .profile a:hover {
     color: var(--accent);
 }
-
 
 .profile-nav {
     margin-top: 1rem;

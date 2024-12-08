@@ -24,9 +24,11 @@ $title = "Timeline for ".$title;
 
 // Redirect guests to Profile view, if url not set til home twtxt.txt
 
-if (!isset($_SESSION['password']) && ($_GET['url'] != $config['public_txt_url']) ) {
-    header('Location: ./profile');
-    exit();
+if (!isset($_SESSION['password']) && (isset($_GET['url']))) {
+       if ($_GET['url'] != $config['public_txt_url']) {
+               header('Location: ./profile');
+               exit();
+       }
 }
 
 include_once 'partials/header.php';

@@ -10,7 +10,7 @@ foreach ($twts as $twt) {
     $tag_array = getTagsFromTwt($twt->content);
 
     foreach ($tag_array as $tag) {
-      $tags[] = $tag[0];
+      $tags[] = strtolower($tag[0]); // Also convert all tags to lower case
     }   
 }
 

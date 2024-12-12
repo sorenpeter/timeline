@@ -4,8 +4,8 @@
 # http://creativecommons.org/publicdomain/zero/1.0/
 
 // Set path to your mentions twtxt file:
-$logfile = './mentions.txt'; /* Make sure file is writeable */
-
+//$logfile = './mentions.txt'; /* Make sure file is writeable */
+$logfile = $config['webmentions_txt_path'];
 
 
 if (!isset($_POST['source']) || !isset($_POST['target'])) {

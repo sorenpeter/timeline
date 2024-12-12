@@ -506,6 +506,9 @@ function getTwtsFromTwtxtString($url) {
 					$twtContent = str_replace("(#$hash)", '', $twtContent);
 				}
 
+				// TODO: Make ?tag= filtering feature
+				$twtContent = replaceTagsFromTwt($twtContent);
+
 				// Interpret the content as markdown
 				$Parsedown = new Parsedown();
 				$twtContent = $Parsedown->text($twtContent);
@@ -515,8 +518,6 @@ function getTwtsFromTwtxtString($url) {
 				//$twtContent = replaceImagesFromTwt($twtContent);
 				//$twtContent = replaceLinksFromTwt($twtContent);
 
-				// TODO: Make ?tag= filtering feature
-				$twtContent = replaceTagsFromTwt($twtContent);
 
 				// TODO: Get mentions
 				$mentions = getMentionsFromTwt($twtContent);

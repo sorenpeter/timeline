@@ -274,7 +274,7 @@ article.post-entry {
 
 article .twt-msg {
     padding: 0.5rem 0.5rem 0.5rem 0 ;
-/*    overflow-wrap: anywhere; */
+    overflow-wrap: anywhere; 
 }
 
 article .twt-msg p {
@@ -407,8 +407,8 @@ nav.pagnation {
 
 /* === FOOTER === */
 
-footer {
-    border-top: thin solid grey;
+body > footer {
     margin-top: 1rem;
-    text-align: center;
+    padding-top: 0.75rem;
+    border-top: thin solid grey;
 }

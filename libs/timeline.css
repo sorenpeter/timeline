@@ -268,12 +268,13 @@ article {
 article.post-entry {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 2.5rem auto;
+/*    grid-template-columns: 2.5rem auto;*/
+    grid-template-columns: 2.5rem minmax(min(50vw, 30ch), 1fr);
 }
 
 article .twt-msg {
     padding: 0.5rem 0.5rem 0.5rem 0 ;
-    overflow-wrap: anywhere; 
+/*    overflow-wrap: anywhere; */
 }
 
 article .twt-msg p {
@@ -323,6 +324,7 @@ article .embed-video {
     aspect-ratio: 16/9;
     border-radius: 0.25rem;    
 }
+
 
 article small {
     font-size: small;

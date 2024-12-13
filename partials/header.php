@@ -47,7 +47,9 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
                 if($_SESSION['password']=="$password") {*/ // Hacky login ?>   
                 <li><a href="<?= $baseURL ?>/refresh?url=<?= $url ?>"><i class="fa fa-refresh"></i><span>Refresh</span></a></li>
                 <li><a href="<?= $baseURL ?>"><i class="fa fa-comments-o"></i><span>Timeline</span></a></li>
-                <li><a href="<?= $baseURL ?>/profile?url=<?= $config['public_webmentions'] ?>"><i class="fa fa-at"></i><span>Mentions</span></a></li>
+                <?php if (!empty($config['public_webmentions'])) { ?>
+                    <li><a href="<?= $baseURL ?>/profile?url=<?= $config['public_webmentions'] ?>"><i class="fa fa-at"></i><span>Mentions</span></a></li>
+                <?php }  ?>
                 <li><a href="<?= $baseURL ?>/profile"><i class="fa fa-user-circle"></i><span>Profile</span></a></li>                
                 <li><a href="<?= $baseURL ?>/gallery?url=<?= $config['public_txt_url'] ?>"><i class="fa fa-picture-o"></i><span>Gallery</span></a></li>
                 <li><a href="<?= $baseURL ?>/following"><i class="fa fa-users"></i><span>Following <?php // echo count($twtFollowingList); ?></span></a></li>

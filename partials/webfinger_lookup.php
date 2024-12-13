@@ -15,6 +15,7 @@ $wf_acct = "";
 $wf_nick = "";
 $wf_url = "";
 $wf_error = "";
+$wf_request = "";
 
 if(isset($_POST['submit'])) { 
 	$wf_request = $_POST["webfinger"];

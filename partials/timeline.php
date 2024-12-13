@@ -39,7 +39,7 @@
 
 				if (isset($_SESSION['password'])) {
 					echo ' | <a href="' . $baseURL . '/new?hash=' . $twt->hash . '">Reply</a>';
-				}
+				} 
 
 			?>
 				<!--  (<a href="new_twt.php?hash=<?=$twt->hash?>">via email</a>) TODO: mailto-link -->

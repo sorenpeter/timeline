@@ -68,7 +68,7 @@ foreach ($twtFollowingList as $following) {
     // Javascript for updating the progress bar and information
     echo "<script language=\"javascript\">
             document.getElementById(\"refreshURL\").innerHTML = \"$feed\";
-            document.getElementById(\"refreshCounter\").innerHTML = \"($i of $total.')\";
+            document.getElementById(\"refreshCounter\").innerHTML = \"($i of $total)\";
             document.getElementById(\"refreshProgress\").value = \"$float\";
             document.getElementById(\"refreshProgress\").innerHTML = \"$percent\";
         </script>";

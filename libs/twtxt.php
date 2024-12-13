@@ -506,6 +506,9 @@ function getTwtsFromTwtxtString($url) {
 					$twtContent = str_replace("(#$hash)", '', $twtContent);
 				}
 
+				// Convert HTML entities to their corresponding characters
+				$twtContent = html_entity_decode($twtContent);
+
 				// TODO: Make ?tag= filtering feature
 				$twtContent = replaceTagsFromTwt($twtContent);
 

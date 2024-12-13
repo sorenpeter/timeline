@@ -5,7 +5,7 @@
 
 // Set path to your mentions twtxt file:
 //$logfile = './mentions.txt'; /* Make sure file is writeable */
-require_once("partials/base.php");
+$config = parse_ini_file('private/config.ini');
 $logfile = $config['webmentions_txt_path'];
 
 

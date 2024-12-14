@@ -2,7 +2,6 @@
 // TODO: Give a warning if the file is not found
 $config = parse_ini_file('private/config.ini');
 
-
 if ($config['debug_mode']) {
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
@@ -13,18 +12,12 @@ $txt_file_path = $config['txt_file_path'];
 $public_txt_url = $config['public_txt_url'];
 $timezone = $config['timezone'];
 
-require_once('libs/session.php');
-
-// if (!has_valid_session()) {
-// 	header('Location: /login.php');
-// 	exit();
-// }
+require_once 'libs/session.php';
 
 if (!isset($_SESSION['password'])) {
 	header('Location: ./login');
 	exit();
 }
-
 
 if (isset($_POST['submit'])) {
 	$new_post = filter_input(INPUT_POST, 'new_post');
@@ -53,7 +46,7 @@ if (isset($_POST['submit'])) {
 
 	/*if (!date_default_timezone_set($timezone)) {
 		date_default_timezone_set('UTC');
-	}*/ // Turned this off, so now the server need to have set the right timezone, seem to work for CET 
+	}*/ // Turned this off, so now the server need to have set the right timezone, seem to work for CET
 
 	//$datetime = gmdate('Y-m-d\TH:i:s\Z', $date->format('U'));
 	//$twt = $datetime . "\t$new_post\n";
@@ -72,16 +65,16 @@ if (isset($_POST['submit'])) {
 		// Fall back if the marker is not found.
 		$contents .= $twt;
 	}*/
-	
+
 	// Append twt at the end of file
 	$contents .= $twt;
-	
+
 // TODO: Add error handling if write to the file fails
 	// For example due to permissions problems
 	// https://www.w3docs.com/snippets/php/how-can-i-handle-the-warning-of-file-get-contents-function-in-php.html
 
-	$file_write_result = file_put_contents($txt_file_path, $contents); 
-// TODO: replace with file_put_contents($logfile, $log, FILE_APPEND)  -- https://www.w3schools.com/php/func_filesystem_file_put_contents.asp
+	$file_write_result = file_put_contents($txt_file_path, $contents);
+	// TODO: replace with file_put_contents($logfile, $log, FILE_APPEND)  -- https://www.w3schools.com/php/func_filesystem_file_put_contents.asp
 
 	// Send webmentions
 	include_once 'partials/webmentions_send.php';
@@ -91,33 +84,31 @@ if (isset($_POST['submit'])) {
 	//exit;
 
 } else {
-	require_once("partials/base.php");
+	require_once "partials/base.php";
 	$title = "New post - ".$title;
 	include_once 'partials/header.php';
 
+	if (!isset($textareaValue)) {
+		$textareaValue = '';
+	}
 
-if (!isset($textareaValue)) {
-	$textareaValue = '';
-}
+	if (isset($_GET['hash'])) {
+		$hash = $_GET['hash'];
+		$textareaValue = "(#$hash) ";
 
-if (isset($_GET['hash'])) {
-	$hash = $_GET['hash'];
-	$textareaValue = "(#$hash) ";
+		// COPY from conv.php
+		// TODO: make into a partial or global function
+		// Get the hashes (both post and replies) as $hash from the router and return an inverted list
+		$twt_op = array_filter($twts, function($twt) use ($hash) {
+			return $twt->hash === $hash; //|| $twt->replyToHash === $hash;
+		});
+		//$twts = array_reverse($twts, true);
 
-	// COPY from conv.php
-	// TODO: make into a partial or global function
-	// Get the hashes (both post and replies) as $hash from the router and return an inverted list	
-    $twt_op = array_filter($twts, function($twt) use ($hash) {
-        return $twt->hash === $hash; //|| $twt->replyToHash === $hash;
-    });
-    //$twts = array_reverse($twts, true);    
+		//$textareaValue .= print_r($twts);
+		//$textareaValue .= $twts["nick"];
 
-    //$textareaValue .= print_r($twts);
-    //$textareaValue .= $twts["nick"];
-
-	include_once 'partials/timeline.php';
-}
-
+		include_once 'partials/timeline.php';
+	}
 ?>
 
 <article id="new_twt">
@@ -140,7 +131,7 @@ if (isset($_GET['hash'])) {
 		    element: "toolbar",
 		    editor: tinyMDE,
 		    commands: ['bold', 'italic', 'strikethrough', 'ul', 'ol',  'blockquote', 'code', '|', 'insertLink', 'insertImage'],
-		    
+
 		  });
 		</script>
 

@@ -1,9 +1,8 @@
-<?php 
+<?php
 
 $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 
 ?>
-
 <!doctype html>
 <html>
 <head>
@@ -12,8 +11,7 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
     <link rel="icon" type="image/x-icon" href="<?= $baseURL ?>/media/logo.png">
     <?php if( isset($_SESSION['password'])) { ?>
         <script src="<?= $baseURL ?>/libs/tiny-mde.min.js"></script>
-        <!-- <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/tiny-mde.min.css" /> -->
-        <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/tiny-mde.css" />        
+        <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/tiny-mde.css" />
     <?php } ?>
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/simple.css">
     <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/timeline.css">
@@ -26,31 +24,33 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 
 <header>
     <p>
-        <a href="/">
+        <a href="<?= $baseURL ?>">
             <img class="logo" src="<?= $baseURL ?>/media/logo.png">
             <?= $config['site_title']; ?>
         </a>
-<!--        <a href="/">
+        <!--
+        <a href="/">
             <img class="logo" src="<?= $profile->avatar ?>" alt="" loading="lazy">
             <?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
         </a>
-         <a href="/">
+        <a href="/">
             <img class="logo" src="<?= $profile->avatar ?>" alt="" loading="lazy">
             <?= $profile->nick ?>@<?= parse_url($profile->mainURL, PHP_URL_HOST); ?>
-        </a> -->
-    </p> 
+        </a>
+        -->
+    </p>
     <nav>
 
         <ul class="secondary">
-            <?php //if ($validSession) {  // TODO: Make login seqcure ?>
+            <?php //if ($validSession) {  // TODO: Make login secure ?>
             <?php if( isset($_SESSION['password'])) { /*
-                if($_SESSION['password']=="$password") {*/ // Hacky login ?>   
+                if($_SESSION['password']=="$password") {*/ // Hacky login ?>
                 <li><a href="<?= $baseURL ?>/refresh?url=<?= $url ?>"><i class="fa fa-refresh"></i><span>Refresh</span></a></li>
                 <li><a href="<?= $baseURL ?>"><i class="fa fa-comments-o"></i><span>Timeline</span></a></li>
                 <?php if (!empty($config['public_webmentions'])) { ?>
                     <li><a href="<?= $baseURL ?>/profile?url=<?= $config['public_webmentions'] ?>"><i class="fa fa-at"></i><span>Mentions</span></a></li>
                 <?php }  ?>
-                <li><a href="<?= $baseURL ?>/profile"><i class="fa fa-user-circle"></i><span>Profile</span></a></li>                
+                <li><a href="<?= $baseURL ?>/profile"><i class="fa fa-user-circle"></i><span>Profile</span></a></li>
                 <li><a href="<?= $baseURL ?>/gallery?url=<?= $config['public_txt_url'] ?>"><i class="fa fa-picture-o"></i><span>Gallery</span></a></li>
                 <li><a href="<?= $baseURL ?>/following"><i class="fa fa-users"></i><span>Following <?php // echo count($twtFollowingList); ?></span></a></li>
                 <li><a href="<?= $baseURL ?>/add"><i class="fa fa-user-plus"></i><span>Add feed</span></a></li>

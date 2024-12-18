@@ -1,5 +1,6 @@
 <?php
 # Shows the timeline for a user
+
 declare (strict_types = 1);
 
 # Parameters
@@ -15,7 +16,6 @@ declare (strict_types = 1);
 # If page is higher than N, shows nothing
 #
 # hash(string) =
-#
 
 require_once('libs/session.php');
 require_once('libs/twtxt.php');
@@ -36,13 +36,12 @@ if (isset($config['site_title'])) {
 }
 
 // HACKED by sp@darch.dk
-    if(!empty($_GET['list'])) {
-        $url = $baseURL.$_GET['list'];
-        //$url = "https://darch.dk/".$_GET['list'];
-    }
-    else {
-        $url = $config['public_txt_url'];
-    }
+if(!empty($_GET['list'])) {
+	$url = $baseURL.$_GET['list'];
+}
+else {
+	$url = $config['public_txt_url'];
+}
 
 /*
 if(isset($_GET['selectList'])){
@@ -93,12 +92,10 @@ if (!empty($_GET['url'])) { // Show profile for some user
 */
 
 if (!empty($twtsURL)) {
-
 	$parsedTwtxtFile = getTwtsFromTwtxtString($twtsURL);
 	if (!is_null($parsedTwtxtFile)) {
 		$parsedTwtxtFiles[$parsedTwtxtFile->mainURL] = $parsedTwtxtFile;
 	}
-
 } else { // Show timeline for the URL
 	$parsedTwtxtFiles = [];
 	foreach ($fileLines as $currentLine) {
@@ -141,7 +138,7 @@ if (!empty($_GET['search'])) {
 	$twts = array_filter($twts, function ($twt) use ($pattern) {
 		return preg_match($pattern, $twt->content);
 	});
-} 
+}
 */
 
 // TODO: (re)move or rename `?hash=` to something/where else?

@@ -13,6 +13,7 @@ $public_txt_url = $config['public_txt_url'];
 $timezone = $config['timezone'];
 
 require_once 'libs/session.php';
+require_once 'libs/load_timezone.php';
 
 if (!isset($_SESSION['password'])) {
 	header('Location: ./login');
@@ -28,11 +29,7 @@ if (isset($_POST['submit'])) {
 	// Remove Carriage return if needed
 	$new_post = str_replace("\r", '', $new_post);
 
-	// TODO: If twt is emply, show an error
-	/*
-	if ($new_post) {
-	}
-	*/
+	// TODO: If twt is empty, show an error
 
 	// Check if we have a point to insert the next Twt
 	define('NEW_TWT_MARKER', "#~~~#\n");
@@ -52,7 +49,7 @@ if (isset($_POST['submit'])) {
 	//$twt = $datetime . "\t$new_post\n";
 	//$twt = date('c') . "\t$new_post\n";
 	$datetime = date('Y-m-d\TH:i:sp'); // abracting to be used for webmentions
-	$twt = "\n" . $datetime . "\t" .$new_post; // NB: only works with PHP 8
+	$twt = "\n$datetime\t$new_post"; // NB: only works with PHP 8
 
 	// TODO: Delete?
 	/*if (strpos($contents, NEW_TWT_MARKER) !== false) {
@@ -69,7 +66,7 @@ if (isset($_POST['submit'])) {
 	// Append twt at the end of file
 	$contents .= $twt;
 
-// TODO: Add error handling if write to the file fails
+	// TODO: Add error handling if write to the file fails
 	// For example due to permissions problems
 	// https://www.w3docs.com/snippets/php/how-can-i-handle-the-warning-of-file-get-contents-function-in-php.html
 
@@ -85,12 +82,10 @@ if (isset($_POST['submit'])) {
 
 } else {
 	require_once "partials/base.php";
-	$title = "New post - ".$title;
+	$title = "New post - $title";
 	include_once 'partials/header.php';
 
-	if (!isset($textareaValue)) {
-		$textareaValue = '';
-	}
+	$textareaValue = $textareaValue ?? '';
 
 	if (isset($_GET['hash'])) {
 		$hash = $_GET['hash'];

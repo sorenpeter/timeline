@@ -10,9 +10,9 @@ if ($config['debug_mode']) {
 
 require_once('session.php');
 
-if (!isset($_SESSION['valid_session']))  {
+if (!isset($_SESSION['valid_session'])) {
 	$secretKey = $config['totp_secret'];
-	$cookieVal = decodeCookie($secretKey);
+	$cookieVal = isSavedCookieValid($secretKey);
 
 	if ($cookieVal === false) { # Valid cookie ?
 		header('Location: login.php');
@@ -56,27 +56,30 @@ if (isset($_POST['submit'])) {
 		exit;
 	}
 } else { ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>twtxt</title>
-	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-<h1><a href=".">twtxt</a></h1>
-<form method="POST" class="column">
-		<div id="login">
-<?php if ($invalidURL) { ?>
-			<div class="alert">URL is invalid, check it!</div><br>
-<?php } ?>
-			<label for="fname">URL to twtxt.txt file</label>
-			<br>
-  		<input type="text" id="url" name="url" class="input" autocomplete="off"><br>
-			<input type="submit" value="Add URL" class="btn">
-		</div>
-	</form>
-</body>
-</html>
+	<!DOCTYPE html>
+	<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>twtxt</title>
+		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		<h1><a href=".">twtxt</a></h1>
+		<form method="POST" class="column">
+			<div id="login">
+				<?php if ($invalidURL) { ?>
+					<div class="alert">URL is invalid, check it!</div><br>
+				<?php } ?>
+				<label for="fname">URL to twtxt.txt file</label>
+				<br>
+				<input type="text" id="url" name="url" class="input" autocomplete="off"><br>
+				<input type="submit" value="Add URL" class="btn">
+			</div>
+		</form>
+	</body>
+
+	</html>
 <?php } ?>

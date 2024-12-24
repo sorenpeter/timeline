@@ -1,6 +1,7 @@
 <?php
+require_once "libs/persistent_session.php";
 
-session_start();
+deletePersistentCookie();
 session_unset();
 session_destroy();
 

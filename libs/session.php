@@ -1,30 +1,33 @@
 <?php
-require_once('libs/TOTP.php');
+require_once 'libs/TOTP.php';
+require_once 'libs/persistent_session.php';
+
 $config = parse_ini_file('private/config.ini');
-$password = $config['password'];
+$passwordInConfig = $config['password'];
 
-session_start();
+# TODO: Replace using $_SESSION['password'] in other files
+# to check for a valid session, as in 'new_twt.php'
+# Use hasValidSession() instead
 
-if (isset($_POST['submit_pass']) && $_POST['pass'])
-{
-    $pass = $_POST['pass'];
+if (isset($_POST['submit_pass']) && $_POST['pass']) {
+    $passwordInForm = $_POST['pass'];
 
-    // @eapl.me 2023-11-23 - I'm trying to add support to passwords
-    // and TOTP (passwordless). So, in the Pwd field you can enter
-    // the password, or the current TOTP
-    if ($pass == $password)
-    {
-        $_SESSION['password'] = $pass;
+    if ($passwordInForm == $passwordInConfig) {
+        $_SESSION['password'] = $passwordInForm;
+        saveLoginSuccess();
+    } elseif ($isCodeValid = verifyTOTP(
+        $config['totp_secret'],
+        $passwordInForm,
+        intval($config['totp_digits'])
+    )) {
+        $_SESSION['password'] = 'valid_totp';
+        saveLoginSuccess();
+    } else {
+        $error = 'Incorrect Password';
     }
-    elseif ($isCodeValid = verifyTOTP(
-        $config['totp_secret'], $pass, intval($config['totp_digits']))
-    )
-    {
-        // If TOTP is valid, assume that we entered the Password
-        $_SESSION['password'] = $password;
-    }
-    else
-    {
-        $error = "Incorrect Password";
-    }
+}
+
+# Check for an empty password
+if (isset($_POST['submit_pass']) && !$_POST['pass']) {
+    $error = 'Type a password';
 }

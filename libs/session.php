@@ -14,14 +14,14 @@ if (isset($_POST['submit_pass']) && $_POST['pass']) {
 
     if ($passwordInForm == $passwordInConfig) {
         $_SESSION['password'] = $passwordInForm;
-        saveLoginSuccess();
+        saveLogin();
     } elseif ($isCodeValid = verifyTOTP(
         $config['totp_secret'],
         $passwordInForm,
         intval($config['totp_digits'])
     )) {
         $_SESSION['password'] = 'valid_totp';
-        saveLoginSuccess();
+        saveLogin();
     } else {
         $error = 'Incorrect Password';
     }

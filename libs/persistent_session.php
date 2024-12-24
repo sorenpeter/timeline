@@ -9,11 +9,12 @@ if (!empty($missing_keys)) {
 	die('Missing required keys in config.ini: ' . implode(', ', $missing_keys));
 }
 
-# To make it more secure, something like JWT could be used instead
-
 const COOKIE_NAME = 'timeline_login';
 const ENCRYPTION_METHOD = 'aes-256-cbc';
 const EXPIRATION_DAYS = 30;
+
+const HASH_LENGTH = 128;
+const HASH_ALGORITHM = 'sha512';
 
 session_start([
 	'name' => 'timeline_session',
@@ -25,50 +26,80 @@ session_start([
 	'cookie_samesite' => 'Strict', # Not compatible with PHP < 7.3
 ]);
 
-function hasValidSession(): bool|string {
+function hasValidSession(): bool {
 	# If short lived session is valid
-	if (isset($_SESSION['valid_session'])) {
+	if (isset($_SESSION['session_expiration'])) {
 		return true;
 	}
+
+	# TODO: Check if the session has expired
+	# Add more protection to prevent session fixation
+	# https://owasp.org/www-community/attacks/Session_fixation
 
 	# Otherwise, check the persistent cookie
 	return isSavedCookieValid();
 }
 
-function encrypt(string $data, string $key, string $method): string {
-	$ivSize = openssl_cipher_iv_length($method);
-	$iv = openssl_random_pseudo_bytes($ivSize);
-	$encrypted = openssl_encrypt($data, $method, $key, OPENSSL_RAW_DATA, $iv);
-	$encrypted = strtoupper(implode(unpack('H*', $encrypted)));
-
-	return $encrypted;
-}
-
-function decrypt(string $data, string $key, string $method): string | bool {
-	$data = pack('H*', $data);
-	$ivSize = openssl_cipher_iv_length($method);
-	$iv = openssl_random_pseudo_bytes($ivSize);
-	$decrypted = openssl_decrypt($data, $method, $key, OPENSSL_RAW_DATA, $iv);
-
-	var_dump($decrypted);
-
-	if ($decrypted === false) {
+function getCookieData() {
+	if (!isset($_COOKIE[COOKIE_NAME])) {
+		#echo "Cookie " . COOKIE_NAME . " not found";
 		return false;
 	}
 
-	return trim($decrypted);
-}
+	$raw = base64_decode($_COOKIE[COOKIE_NAME]);
+	#var_dump($raw);
 
-function saveLoginSuccess() {
-	$_SESSION['valid_session'] = true;
+	# Cookie should be at least the size of the hash length.
+	# If it's not, we can just bail out
+	if (strlen($raw) < HASH_LENGTH) {
+		#echo "Didn't get minimum length";
+		return false;
+	}
 
 	$config = parse_ini_file('private/config.ini');
 
-	# Set a cookie to remember the user
-	$cookieExpiry = EXPIRATION_DAYS * 24 * 60 * 60 + time();
-	$encodedCookieValue = generateCookieValue(strval($cookieExpiry), $config['secret_key']);
+	# The cookie data contains the actual data w/ the hash concatonated to the end,
+	# since the hash is a fixed length, we can extract the last hash_length chars
+	# to get the hash.
+	$hash = substr($raw, strlen($raw) - HASH_LENGTH, HASH_LENGTH);
+	$data = substr($raw, 0, - (HASH_LENGTH));
 
-	setcookie(COOKIE_NAME, $encodedCookieValue, [
+	# Calculate what the hash should be, based on the data. If the data has not been
+	# tampered with, $hash and $hash_calculated will be the same
+	$hash_calculated = hash_hmac(HASH_ALGORITHM, $data, $config['secret_key']);
+
+	# If we calculate a different hash, we can't trust the data.
+	if ($hash_calculated !== $hash) {
+		#echo "Different HASH";
+		return False;
+	}
+
+	# Is it expired ?
+	if (intval($data) < time()) {
+		#echo "Cookie expired";
+		return False;
+	}
+
+	return $data;
+}
+
+function makePersistentCookie() {
+	$config = parse_ini_file('private/config.ini');
+
+	$cookieExpiry = EXPIRATION_DAYS * 24 * 60 * 60 + time(); # X days
+	#$cookieExpiry = 10 + time(); # Debug value - 5 minutes
+
+	# Calculate a hash for the data and append it to the end of the data string
+	$cookieValue = strval($cookieExpiry);
+
+	$hash = hash_hmac(HASH_ALGORITHM, $cookieValue, $config['secret_key']);
+	$cookieValue .= $hash;
+	$cookieValue = base64_encode($cookieValue);
+
+	# Also create the short-timed session
+	$_SESSION['session_expiration'] = $cookieExpiry;
+
+	return setcookie(COOKIE_NAME, $cookieValue, [
 		'expires' => $cookieExpiry,
 		'secure' => $config['secure_cookies'],
 		'httponly' => true,
@@ -76,35 +107,22 @@ function saveLoginSuccess() {
 	]);
 }
 
-function generateCookieValue($value, $secretKey) {
-	$key = bin2hex($secretKey);
-
-	$encrypted = encrypt($value, $key, ENCRYPTION_METHOD);
-	return $encrypted;
+function saveLogin() {
+	makePersistentCookie();
 }
 
 function isSavedCookieValid() {
-	if (!isset($_COOKIE[COOKIE_NAME])) {
-		return false;
-	}
-
-	$config = parse_ini_file('private/config.ini');
-
-	$encoded_cookie_value = $_COOKIE[COOKIE_NAME];
-	$key = bin2hex($config['secret_key']);
-
-	$cookieVal = decrypt($encoded_cookie_value, $key, ENCRYPTION_METHOD);
-
-	if ($cookieVal === false) {
+	$cookieExpiry = getCookieData();
+	
+	if ($cookieExpiry === false) {
 		deletePersistentCookie();
 		return false;
 	}
 
-	# TODO: Check that the cookie is not expired
+	# Refresh session
+	$_SESSION['session_expiration'] = intval($cookieExpiry);
 
-	saveLoginSuccess(); # Extend expiracy for previous cookie
-
-	return true; # If it was decoded correctly, it's a valid session
+	return true;
 }
 
 function deletePersistentCookie() {

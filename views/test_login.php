@@ -4,6 +4,7 @@
 require_once "libs/persistent_session.php";
 
 if (!hasValidSession()) {
+    echo "Not a valid session - Go to /login";
     #header("Location: /login");
     exit;
 }

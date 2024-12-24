@@ -9,6 +9,10 @@ if (!empty($missing_keys)) {
 	die('Missing required keys in config.ini: ' . implode(', ', $missing_keys));
 }
 
+if (strlen($config['secret_key']) < 32) {
+	die('Secret key in config.ini must be at least 32 characters long');
+}
+
 const COOKIE_NAME = 'timeline_login';
 const ENCRYPTION_METHOD = 'aes-256-cbc';
 const EXPIRATION_DAYS = 30;
@@ -113,7 +117,7 @@ function saveLogin() {
 
 function isSavedCookieValid() {
 	$cookieExpiry = getCookieData();
-	
+
 	if ($cookieExpiry === false) {
 		deletePersistentCookie();
 		return false;

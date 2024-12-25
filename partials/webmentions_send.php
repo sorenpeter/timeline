@@ -1,6 +1,6 @@
 <?php
 
-// Send webmentions (TODO: move to it own file?)
+// Send webmentions
 $new_mentions = getMentionsFromTwt($twt); 
 
 foreach ($new_mentions as $mention) {

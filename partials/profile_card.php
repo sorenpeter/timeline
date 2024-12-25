@@ -63,7 +63,7 @@ if ($is_gallery) {
 	  <div>
 
 		  <a href="<?=$profileURL?>" class="author">
-			<strong><?=$profile->nick?></strong>@<?=parse_url($profile->mainURL, PHP_URL_HOST);?>
+			<strong>@<?=$profile->nick?></strong><?=$profile->domain?>
 		  </a>
 
 			<p><?=$profile->description?></p>

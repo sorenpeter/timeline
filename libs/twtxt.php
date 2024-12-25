@@ -16,6 +16,7 @@ class TwtxtFile {
 	public $mainURL = ''; // First found URL
 	public $URLs = [];
 	public $nick = '';
+	public $domain = '';
 	public $avatar = '';
 	public $emoji = '';
 	public $description = '';
@@ -456,8 +457,7 @@ function getTwtsFromTwtxtString($url) {
 			}
 		}
 
-		// Clean up nick if set to something like `@soren@darch.dk` instead of just `soren`
-		// mosty for (re)feeds from Mastodon etc.
+		// Clean up nick if set to something like `@soren@darch.dk` instead of just `soren` - mosty for (re)feeds from Mastodon etc.
 		if (str_contains($twtxtData->nick, "@")) {
 			$str = $twtxtData->nick;
 			$str = ltrim($str, "@");
@@ -465,15 +465,23 @@ function getTwtsFromTwtxtString($url) {
 		}
 
 		// Fallback for nick and url if not set in twtxt.txt
-		// TODO: Use nick from local follow list as fallback?
 		if ($twtxtData->nick === "") {
 			$str = parse_url($url, PHP_URL_HOST);
 			$str = str_replace("www.", "", $str);
-			$str = explode(".", $str)[0]; // take the first [0] from splitting the host at "."
+			//$str = explode(".", $str)[0]; // take the first [0] from splitting the host at "."
 			$twtxtData->nick = $str;
 		}
 		if ($twtxtData->mainURL === "") {
 			$twtxtData->mainURL = $url;
+		}
+
+		// Use only nick as handle if nick and domain is the same
+		$twtxtData->domain = parse_url($twtxtData->mainURL, PHP_URL_HOST);
+
+		if ($twtxtData->nick === $twtxtData->domain) {
+				$twtxtData->domain = "";
+		} else {
+			$twtxtData->domain = "@".$twtxtData->domain;
 		}
 
 
@@ -550,6 +558,7 @@ function getTwtsFromTwtxtString($url) {
 				$twt->emoji = $twtxtData->emoji;
 				$twt->nick = $twtxtData->nick;
 				$twt->mainURL = $twtxtData->mainURL;
+				$twt->domain = $twtxtData->domain;
 
 				$twtxtData->twts[$timestamp] = $twt;
 			}

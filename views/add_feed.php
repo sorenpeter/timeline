@@ -1,6 +1,9 @@
 <?php
-require_once('partials/base.php');
-require_once('partials/webfinger_lookup.php');
+require_once 'partials/base.php';
+require_once 'partials/webfinger_lookup.php';
+require_once 'libs/session.php';
+
+checkValidSessionOrRedirectToLogin();
 
 // TODO: Give a warning if the file is not found
 $config = parse_ini_file('private/config.ini');
@@ -12,18 +15,6 @@ if ($config['debug_mode']) {
 }
 
 $txt_file_path = $config['txt_file_path'];
-
-if (!isset($_SESSION['password'])) {
-	header('Location: ./login');
-	exit();
-}
-
-/*
-if (!has_valid_session()) {
-	header('Location: login.php');
-	exit();
-}
-*/
 
 if (isset($_POST['url'])) {
 	$url = trim(filter_input(INPUT_POST, 'url'));
@@ -67,36 +58,36 @@ if (isset($_POST['url'])) {
 	exit;
 } else { ?>
 
-<?php
-$title = "Add feed - ".$title;
+	<?php
+	$title = "Add feed - " . $title;
 
-include 'partials/header.php';
-?>
+	include 'partials/header.php';
+	?>
 
-<h2>Webfinger lookup</h2>
+	<h2>Webfinger lookup</h2>
 
-<form method="post" action="">
-	<label>Check if a webfinger handle has a link to a twtxt.txt feed</label>
-	<input type="text" name="webfinger" size="50" autocomplete="off" required placeholder="name@example.com" value="<?= $wf_request; ?>">
-	<br>
-	<input type="submit" name="submit" value="Lookup"><br>
-</form>
-
-<?= $wf_error; ?>
-
-<h1>Add a new feed to follow</h1>
-
-<form method="POST" class="column">
-	<div id="follow">
-		<label for="nick">Nick</label>
-		<input type="text" id="nick" name="nick" class="input" size="50" autocomplete="off" required value="<?= $wf_nick; ?>">
-		<label for="url">URL to follow</label>
-		<input type="url" id="url" name="url" class="input" size="50" autocomplete="off" required value="<?= $wf_url; ?>">
+	<form method="post" action="">
+		<label>Check if a webfinger handle has a link to a twtxt.txt feed</label>
+		<input type="text" name="webfinger" size="50" autocomplete="off" required placeholder="name@example.com" value="<?= $wf_request; ?>">
 		<br>
-		<input type="submit" value="Follow" class="btn">
-	</div>
-</form>
+		<input type="submit" name="submit" value="Lookup"><br>
+	</form>
 
-<!-- PHP: GET FOOTER  --><?php include 'partials/footer.php';?>
+	<?= $wf_error; ?>
+
+	<h1>Add a new feed to follow</h1>
+
+	<form method="POST" class="column">
+		<div id="follow">
+			<label for="nick">Nick</label>
+			<input type="text" id="nick" name="nick" class="input" size="50" autocomplete="off" required value="<?= $wf_nick; ?>">
+			<label for="url">URL to follow</label>
+			<input type="url" id="url" name="url" class="input" size="50" autocomplete="off" required value="<?= $wf_url; ?>">
+			<br>
+			<input type="submit" value="Follow" class="btn">
+		</div>
+	</form>
+
+	<!-- PHP: GET FOOTER  --><?php include 'partials/footer.php'; ?>
 
 <?php } ?>

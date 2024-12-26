@@ -5,9 +5,12 @@ require_once 'libs/persistent_session.php';
 $config = parse_ini_file('private/config.ini');
 $passwordInConfig = $config['password'];
 
-# TODO: Replace using $_SESSION['password'] in other files
-# to check for a valid session, as in 'new_twt.php'
-# Use hasValidSession() instead
+function checkValidSessionOrRedirectToLogin() {
+    if (!hasValidSession()) {
+        header('Location: ./login');
+        exit();
+    }
+}
 
 if (isset($_POST['submit_pass']) && $_POST['pass']) {
     $passwordInForm = $_POST['pass'];

@@ -32,7 +32,7 @@ session_start([
 
 function hasValidSession(): bool {
 	# If short lived session is valid
-	if (isset($_SESSION['session_expiration'])) {
+	if (isset($_SESSION['session_expiration']) && $_SESSION['session_expiration'] > time()) {
 		return true;
 	}
 
@@ -62,23 +62,21 @@ function getCookieData() {
 
 	$config = parse_ini_file('private/config.ini');
 
-	# The cookie data contains the actual data w/ the hash concatonated to the end,
+	# The cookie data contains the actual data w/ the hash concatenated to the end,
 	# since the hash is a fixed length, we can extract the last hash_length chars
 	# to get the hash.
 	$hash = substr($raw, strlen($raw) - HASH_LENGTH, HASH_LENGTH);
 	$data = substr($raw, 0, - (HASH_LENGTH));
 
-	# Calculate what the hash should be, based on the data. If the data has not been
+	# Calculate the expected hash from the data. If the data has not been
 	# tampered with, $hash and $hash_calculated will be the same
 	$hash_calculated = hash_hmac(HASH_ALGORITHM, $data, $config['secret_key']);
 
-	# If we calculate a different hash, we can't trust the data.
 	if ($hash_calculated !== $hash) {
-		#echo "Different HASH";
+		#echo "Different HASH. Tempered data?";
 		return False;
 	}
 
-	# Is it expired ?
 	if (intval($data) < time()) {
 		#echo "Cookie expired";
 		return False;
@@ -91,7 +89,7 @@ function makePersistentCookie() {
 	$config = parse_ini_file('private/config.ini');
 
 	$cookieExpiry = EXPIRATION_DAYS * 24 * 60 * 60 + time(); # X days
-	#$cookieExpiry = 10 + time(); # Debug value - 5 minutes
+	#$cookieExpiry = 10 + time(); # Debug value - 10 seconds
 
 	# Calculate a hash for the data and append it to the end of the data string
 	$cookieValue = strval($cookieExpiry);
@@ -122,6 +120,9 @@ function isSavedCookieValid() {
 		deletePersistentCookie();
 		return false;
 	}
+
+	# @eapl As it's implemented, the user has to login again in 30 days
+	# since the first login, which I think is a good compromise.
 
 	# Refresh session
 	$_SESSION['session_expiration'] = intval($cookieExpiry);

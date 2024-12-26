@@ -39,7 +39,7 @@
 
 				if (isset($_SESSION['password'])) {
 					echo ' | <a href="' . $baseURL . '/new?hash=' . $twt->hash . '">Reply</a>';
-				} 
+				}
 
 			?>
 				<!--  (<a href="new_twt.php?hash=<?=$twt->hash?>">via email</a>) TODO: mailto-link -->
@@ -49,9 +49,8 @@
 	</article>
 
 <?php }
+require_once 'libs/session.php';
 
-if (!isset($_SESSION['password'])) {
+if (!hasValidSession()) {
 	echo '<center><a href="mailto:' . $config['email'] . '?subject=RE: ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '" class="button">Comment via email</a></center>';
 }
-
-?>

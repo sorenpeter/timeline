@@ -38,6 +38,7 @@ class Twt {
 	public $avatar;
 	public $emoji;
 	public $nick;
+	public $domain;
 	public $mainURL;
 	public $images = [];
 	public $tags = [];

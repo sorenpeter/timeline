@@ -1,8 +1,8 @@
 <?php
 require_once "libs/twtxt.php";
 
-// Send webmentions (TODO: move to it own file?)
-$new_mentions = getMentionsFromTwt($twt);
+// Send webmentions
+$new_mentions = getMentionsFromTwt($twt); 
 
 foreach ($new_mentions as $mention) {
 	//print_r(getMentionsFromTwt($twt));

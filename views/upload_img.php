@@ -1,20 +1,14 @@
-
 <?php
+require_once "partials/base.php";
+require_once 'libs/session.php';
 
-require_once("partials/base.php");
+checkValidSessionOrRedirectToLogin();
 
-if (!isset($_SESSION['password'])) {
-  header('Location: ./login');
-  die();
-}
-
-$title = "Upload - ".$title;
+$title = "Upload - $title";
 
 include_once 'partials/header.php';
 
-
 if (!empty($_POST)) {
-
   // Based on code from: https://www.w3schools.com/php/php_file_upload.asp
 
   //echo getcwd() ."<br>";

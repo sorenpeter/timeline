@@ -1,10 +1,8 @@
 <?php
 require_once "partials/base.php";
+require_once 'libs/session.php';
 
-if (!isset($_SESSION['password'])) {
-    header('Location: ./login');
-    exit();
-}
+checkValidSessionOrRedirectToLogin();
 
 ob_start();
 

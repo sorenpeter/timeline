@@ -18,25 +18,23 @@ if (!empty($_GET['profile'])) { // Show twts for some user (Profile view)
 
 // Load twts, taking $paginateTwts into consideration
 require_once 'partials/base.php';
+require_once 'libs/session.php';
 
-$title = "Timeline for ".$title;
+$title = "Timeline for $title";
 
-
-// Redirect guests to Profile view, if url not set til home twtxt.txt
-
-if (!isset($_SESSION['password']) && (isset($_GET['url']))) {
-       if ($_GET['url'] != $config['public_txt_url']) {
-               header('Location: ./profile');
-               exit();
-       }
+// Redirect guests to Profile view, if URL isn't set to home twtxt.txt
+if (!hasValidSession() && isset($_GET['url'])) {
+    if ($_GET['url'] != $config['public_txt_url']) {
+        header('Location: ./profile');
+        exit();
+    }
 }
 
 include_once 'partials/header.php';
 
-if (isset($_SESSION['password'])) {
+if (hasValidSession()) {
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
 } else {
-    
     echo '<center><h2>Timeline</h2>';
 
     echo '<p>Recent posts from feeds followed by <a href="./profile">

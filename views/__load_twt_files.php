@@ -8,15 +8,12 @@ require_once('libs/twtxt.php');
 require_once('libs/hash.php');
 */
 
-require_once("partials/base.php");
+require_once "partials/base.php";
+require_once "libs/session.php";
+
+checkValidSessionOrRedirectToLogin();
 
 $config = parse_ini_file('private/config.ini');
-
-if (!isset($_SESSION['password'])) {
-	header('Location: ./login');
-	exit();
-}
-
 
 $max_execution_time = intval($config['max_execution_time']);
 if ($max_execution_time < 1) {
@@ -69,15 +66,15 @@ foreach ($fileLines as $currentLine) {
 
 $i = 1;
 $total = count($twtFollowingList);
-foreach ($twtFollowingList as $following) {	
+foreach ($twtFollowingList as $following) {
 	$float = $i/$total;
     $percent = intval($float * 100)."%";
-    
+
     // Javascript for updating the progress bar and information
     echo '<script language="javascript">
     		document.getElementById("refreshLabel").innerHTML = "Updating: '.$following[1].' ('.$i.'/'.$total.')";
-    		document.getElementById("refreshProgress").value = "'.$float.'"; 
-    		document.getElementById("refreshProgress").innerHTML = "'.$percent.'"; 
+    		document.getElementById("refreshProgress").value = "'.$float.'";
+    		document.getElementById("refreshProgress").innerHTML = "'.$percent.'";
     	</script>';
 
     updateCachedFile($following[1]);

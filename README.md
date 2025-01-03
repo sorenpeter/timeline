@@ -39,13 +39,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ## 🛠 Installation and setup
 
 0. You need to have a webhosting with **PHP 8** and perferable running Apache or similar for timeline to work.
-	
+
 	> There are free options, but I would suggest that you pay for your hosting and also get a nice domain, so you have more ownership over your data and online idetenty.
 
 1. Download the code from https://github.com/sorenpeter/timeline as a zip
 
 2. Upload the content of the zip to you webhosting using a FTP client
-	
+
 	- The default would be to put eveything from within the timeline-main folder in the root so you will have:
 
 	```
@@ -66,7 +66,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### Webfinger endpoint setup
 
-6. For allowing others to look you on using webfinger, you need to move the `.well-known` folder from within the `_webfinger_endpoint` to the root of your domain, so it is accesable from www.example.net/.well-know/webfinger 
+6. For allowing others to look you on using webfinger, you need to move the `.well-known` folder from within the `_webfinger_endpoint` to the root of your domain, so it is accesable from www.example.net/.well-know/webfinger
 
 7. You also need to edit the `index.php` file wihtin the `.well-know/webfinger` folder and set the correct path for you timeline installation in `$timeline_dir` variable.
 
@@ -84,6 +84,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ## 🐞 Bugs to fix
 
 - [x] (2024-11-30) Fix issues with parsing markdown vs. twtxt syntax (replaceed slimdown with Parsedown, supporting lists, block quotes, code/blocks, links, images)
+- [x] (2024-12-26) Extend session duration for 30 days
+- [ ] (2024-12-26) Read the config.ini in a centralized place and add validations useful when installing or upgrading `timeline`.
 
 
 ## 🚀 Features to code
@@ -97,7 +99,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # 🙏 Credits / shoutouts
 
-## Ideas and inspiration 
+## Ideas and inspiration
 
 - [twtxt](https://twtxt.readthedocs.io) - The original decentralised, minimalist microblogging service for hackers
 
@@ -109,7 +111,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 - [twtxt-php](https://github.com/eapl-gemugami/twtxt-php) - A minimalistic and personal PHP site for your twtxt microblogging.
 
-- [Slimdown](https://github.com/jbroadway/slimdown) - A simple regex-based Markdown parser in PHP. 
+- [Slimdown](https://github.com/jbroadway/slimdown) - A simple regex-based Markdown parser in PHP.
 
 - Tag cloud feature is based on php code by [Domingos Faria](https://social.dfaria.eu/search)
 

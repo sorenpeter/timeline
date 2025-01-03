@@ -1,4 +1,8 @@
 <?php
+require_once 'libs/session.php';
+
+checkValidSessionOrRedirectToLogin();
+
 // TODO: Give a warning if the file is not found
 $config = parse_ini_file('private/config.ini');
 
@@ -12,12 +16,6 @@ $txt_file_path = $config['txt_file_path'];
 $public_txt_url = $config['public_txt_url'];
 $timezone = $config['timezone'];
 
-require_once 'libs/session.php';
-
-if (!isset($_SESSION['password'])) {
-	header('Location: ./login');
-	exit();
-}
 
 if (isset($_POST['submit'])) {
 	$new_post = filter_input(INPUT_POST, 'new_post');

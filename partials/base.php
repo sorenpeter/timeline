@@ -17,31 +17,21 @@ declare (strict_types = 1);
 #
 # hash(string) =
 
-require_once('libs/session.php');
-require_once('libs/twtxt.php');
-require_once('libs/hash.php');
-require_once('libs/Parsedown.php');
-
-const TWTS_PER_PAGE = 50;
+require_once 'libs/session.php';
+require_once 'libs/twtxt.php';
+require_once 'libs/hash.php';
+require_once 'libs/Parsedown.php';
+require_once 'libs/load_timezone.php';
 
 // TODO: Move twts per page to config.ini
 // Add a fallback if the number is invalid (it should be between 1 and 999)
+const TWTS_PER_PAGE = 50;
 $config = parse_ini_file('private/config.ini');
 
-// TODO: Take the title from the config.ini
-$title = "Timeline"; // Fallback, should be set in all views
-
-if (isset($config['site_title'])) {
-	$title = $config['site_title'];
-}
+$title = $config['site_title'] ?? "Timeline";
 
 // HACKED by sp@darch.dk
-if(!empty($_GET['list'])) {
-	$url = $baseURL.$_GET['list'];
-}
-else {
-	$url = $config['public_txt_url'];
-}
+$url = !empty($_GET['list']) ? $baseURL.$_GET['list'] : $config['public_txt_url'];
 
 /*
 if(isset($_GET['selectList'])){
@@ -57,11 +47,7 @@ if(isset($_GET['selectList'])){
 }
 */
 
-date_default_timezone_set('UTC');
-
-if (!empty($_GET['url'])) {
-	$url = $_GET['url'];
-}
+$url = !empty($_GET['url']) ? filter_var($_GET['url'], FILTER_SANITIZE_URL) : $url;
 
 if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
 	die('Not a valid URL');

@@ -142,6 +142,7 @@ if (!empty($_GET['hash'])) {
 	$twts = array_reverse($twts, true);
 }
 
+// Pagnation
 $page = 1;
 if (!empty($_GET['page'])) {
 	$page = intval($_GET['page']);

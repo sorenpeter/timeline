@@ -23,7 +23,6 @@ My visions for timeline is to bring back the fun and quirkiness  of bygone sites
 At the same time providing a good looking basic design with the help of [Simple.css](https://simplecss.org), which allows you to customize  the look and feel. Even to the level where timeline aligns with the design of your excsing webpage, like I did on: [darch.dk/timeline](https://darch.dk/timeline).
 
 See my talk about twtxt and timeline at Piksel Festival 2024: https://www.darch.dk/twtxtalk-piksel
-[![](https://i.ytimg.com/vi_webp/1RVFxNPzRDg/maxresdefault.webp)](https://www.youtube.com/watch?v=1RVFxNPzRDg)
 
 ![](media/screenshot.png)
 _Conversation view with replies / Profile view / Gallery View_

@@ -1,4 +1,5 @@
 <?php
+
 // Only paginate if it's a main timeline view
 $paginateTwts = true;
 

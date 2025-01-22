@@ -1,12 +1,11 @@
 <?php
 
+//$paginateTwts = true;
+
 if (!empty($_GET['url'])) { // Show twts for some user (Profile view)
     $twtsURL = $_GET['url'];
 } else {
-
-    // temp to get default url
-    $config = parse_ini_file('private/config.ini'); 
-
+    $config = parse_ini_file('private/config.ini');
     $twtsURL = $config['public_txt_url'];
 }
 
@@ -15,8 +14,6 @@ require_once("partials/base.php");
 $title = "Posts by ".$title;
 
 include_once 'partials/header.php';
-
-//echo $twtsURL."bob";
 
 include_once 'partials/profile_card.php';
 

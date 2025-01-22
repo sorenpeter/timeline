@@ -22,10 +22,10 @@ require_once('libs/twtxt.php');
 require_once('libs/hash.php');
 require_once('libs/Parsedown.php');
 
-const TWTS_PER_PAGE = 10;
-
+const TWTS_PER_PAGE = 20;
 // TODO: Move twts per page to config.ini
 // Add a fallback if the number is invalid (it should be between 1 and 999)
+
 $config = parse_ini_file('private/config.ini');
 
 // TODO: Take the title from the config.ini
@@ -157,6 +157,9 @@ if (!empty($_GET['hash'])) {
 }
 
 // Pagnation
+
+//$twts_per_page = $config['twts_per_page'];
+
 $page = 1;
 if (!empty($_GET['page'])) {
 	$page = intval($_GET['page']);

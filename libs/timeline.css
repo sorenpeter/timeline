@@ -405,6 +405,22 @@ nav.pagnation {
     border-radius: 0.25rem;
 }
 
+
+.pagnation {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.pagnation a {
+    text-decoration: none;
+    background-color: var(--accent-bg);
+}
+
+.pagnation strong {
+    padding: 0 1rem;
+}
+
 /* === FOOTER === */
 
 body > footer {

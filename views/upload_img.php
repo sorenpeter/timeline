@@ -8,14 +8,18 @@ $title = "Upload - $title";
 
 include_once 'partials/header.php';
 
+$media_upload = getcwd() . "/" . $config["media_upload"] .  "/";
+
 if (!empty($_POST)) {
   // Based on code from: https://www.w3schools.com/php/php_file_upload.asp
 
   //echo getcwd() ."<br>";
   //echo __DIR__ . "<br>";
+  //echo "upload path: " . $config["media_upload"];
 
-  $target_dir = getcwd()."/media/";
-  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  //$media_upload = getcwd()."/media/";
+  $media_upload = getcwd().$config["media_upload"];
+  $target_file = $media_upload . basename($_FILES["fileToUpload"]["name"]);
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -39,7 +43,7 @@ if (!empty($_POST)) {
 
   // Check file size
   if ($_FILES["fileToUpload"]["size"] > 5000000) {
-    echo "Sorry, your file is too large.<br>";
+    echo "<p class='notice'>Sorry, your file is too large.</p>";
     $uploadOk = 0;
   }
 
@@ -66,12 +70,40 @@ if (!empty($_POST)) {
 
 ?>
 
-
 <form action="" method="post" enctype="multipart/form-data">
   Select image to upload:<br>
   <input type="file" name="fileToUpload" id="fileToUpload"><br>
   <input type="submit" value="Upload Image" name="submit">
 </form>
+
+
+<?php 
+
+$imgs_on_server = glob($media_upload."*.{jpg,jpeg,png,gif}", GLOB_BRACE);
+
+// Sort image files by date (based on: https://stackoverflow.com/questions/124958/glob-sort-array-of-files-by-last-modified-datetime-stamp
+usort($imgs_on_server, fn($a, $b) => -(filemtime($a) - filemtime($b)));
+
+echo '<table class="center">';
+
+foreach ($imgs_on_server as $img) {
+
+  $public_file = $config["public_media"] . "/" . basename($img);
+
+  echo '<tr class="preview">';
+  echo '<td><a href="'.$public_file.'">';
+      echo '<img src="'.$public_file.'" style="width=50px;">';
+  echo '</a></td>';
+
+  //$img = str_replace('../', $base_url, $img);
+  echo '<td><code>![]('.$public_file.')</code></td>';
+  echo '</tr>';
+}
+
+echo '</table>';
+
+?>
+
 
 
 <!-- PHP: FOOTER  --><?php include_once 'partials/footer.php';?>

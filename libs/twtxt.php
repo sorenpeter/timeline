@@ -169,12 +169,21 @@ function replaceMentionsFromTwt(string $twtString): string {
 	// Example output: Hello <a href="?url=https://eapl.mx/twtxt.txt">@eapl.mx@eapl.mx/twtxt.txt</a>, how are you? <a href="?url=https://server.com/something/twtxt.txt">@nick@server.com/something/twtxt.txt</a>
 
 	$pattern = '/@<([^ ]+)\s([^>]+)>/';
+
 	//$replacement = '<a href="/?url=$2">@$1</a>';
 	$replacement = '<a href="' . str_replace("/index.php", "", $_SERVER["SCRIPT_NAME"]) . '/profile?url=$2">@$1</a>';
-	$replacement .= '<a href="$2" class="webmention"></a>'; // Adds a hidden link direcly to the twtxt.txt of the mentioned target
+	//$replacement .= '<a href="$2" class="webmention"></a>'; // Adds a hidden link direcly to the twtxt.txt of the mentioned target
 	#$twtString = '@<nick https://eapl.mx/twtxt.txt>';
 	#$pattern = '/@<([^ ]+) ([^>]+)>/';
 	#$replacement = '@$1';
+
+	/*
+	$pattern_only_url = '/@<(https?:\/\/[^>]+)>/';
+	if (preg_match($pattern_only_url, $twtString)) {
+		$replacement = '<a href="' . str_replace("/index.php", "", $_SERVER["SCRIPT_NAME"]) . '/profile?url=$1">@$1</a>';
+	}
+	*/
+	
 	$result = preg_replace($pattern, $replacement, $twtString);
 	return $result;
 

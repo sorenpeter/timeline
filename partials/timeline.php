@@ -39,7 +39,8 @@
 				}
 				*/
 
-				if (isset($_SESSION['password'])) {
+				require_once 'libs/session.php';
+				if (hasValidSession()) {
 					echo ' | <a href="' . $baseURL . '/new?hash=' . $twt->hash . '">Reply</a>';
 				}
 

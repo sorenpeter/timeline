@@ -1,7 +1,7 @@
 <?php
+require_once 'libs/session.php';
 
 $profile = getTwtsFromTwtxtString($config['public_txt_url']);
-
 ?>
 <!doctype html>
 <html>
@@ -9,7 +9,7 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="<?= $baseURL ?>/media/logo.png">
-    <?php if( isset($_SESSION['password'])) { ?>
+    <?php if (hasValidSession()) { ?>
         <script src="<?= $baseURL ?>/libs/tiny-mde.min.js"></script>
         <link rel="stylesheet" type="text/css" href="<?= $baseURL ?>/libs/tiny-mde.css" />
     <?php } ?>
@@ -43,8 +43,7 @@ $profile = getTwtsFromTwtxtString($config['public_txt_url']);
 
         <ul class="secondary">
             <?php //if ($validSession) {  // TODO: Make login secure ?>
-            <?php if( isset($_SESSION['password'])) { /*
-                if($_SESSION['password']=="$password") {*/ // Hacky login ?>
+            <?php if (hasValidSession()) { // Hacky login ?>
                 <li><a href="<?= $baseURL ?>/refresh?url=<?= $url ?>"><i class="fa fa-refresh"></i><span>Refresh</span></a></li>
                 <li><a href="<?= $baseURL ?>"><i class="fa fa-comments-o"></i><span>Timeline</span></a></li>
                 <?php if (!empty($config['public_webmentions'])) { ?>

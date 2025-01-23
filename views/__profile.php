@@ -1,17 +1,15 @@
 <?php
-require_once("partials/base.php");
+require_once "partials/base.php";
 
-$title = "Profile for"." - ".$title;
+$title = "Profile for - $title";
 
-include('partials/header.php');
+include 'partials/header.php';
 ?>
 
 <!-- PHP: PROFILE CARD -->
 <?php
-
 //$twtsURL = $config['public_txt_url'];
 //$profile = getTwtsFromTwtxtString($twtsURL);
-
 
 /* from base.php */
 
@@ -35,7 +33,7 @@ else { // Show timeline for the URL
     $twtsURL = $config['public_txt_url'];
     // $twtsURL = "https://lyse.isobeef.org/twtxt.txt";
     // $profile = getTwtsFromTwtxtString($twtsURL);
-    header("Location: ".$baseURL."/profile?url=".$twtsURL);
+    header("Location: $baseURL/profile?url=$twtsURL");
 
     /*
     if (filter_var($twtsURL, FILTER_VALIDATE_URL) === FALSE) {
@@ -94,9 +92,12 @@ krsort($twts, SORT_NUMERIC);
 
 <!-- PHP: NEW POST BOX -->
 <?php
-if( isset($_SESSION['password'])) {
+require_once 'libs/session.php';
+
+if (hasValidSession()) {
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
-} ?>
+}
+?>
 
 <!-- PHP: TIMELINE --><?php include 'partials/timeline.php'?>
 

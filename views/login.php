@@ -1,14 +1,14 @@
 <?php
-require_once "partials/base.php";
+require_once 'partials/base.php';
 
 $title = "Login - $title";
 
 // $password comes from libs/session.php
-if (isset($_SESSION['password'])) {
-    if ($_SESSION['password'] == $passwordInConfig) {
-        header("Location: .");
-        die();
-    }
+require_once 'libs/session.php';
+
+if (hasValidSession()) {
+    header("Location: .");
+    die();
 } else {
     include 'partials/header.php';
 ?>

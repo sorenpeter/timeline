@@ -26,10 +26,12 @@ include_once 'partials/header.php';
 
 
 <?php
+require_once 'libs/session.php';
 
-if (isset($_SESSION['password'])) {
+if (hasValidSession()) {
     $textareaValue = "(#$id) ";
     include 'views/new_twt.php';
-} ?>
+}
+?>
 
 <!-- PHP: GET FOOTER  --><?php include_once 'partials/footer.php';?>

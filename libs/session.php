@@ -16,14 +16,16 @@ if (isset($_POST['submit_pass']) && $_POST['pass']) {
     $passwordInForm = $_POST['pass'];
 
     if ($passwordInForm == $passwordInConfig) {
-        $_SESSION['password'] = $passwordInForm;
+        # TODO: Remove this legacy auth method completely
+        # $_SESSION['password'] = $passwordInForm;
         saveLogin();
     } elseif ($isCodeValid = verifyTOTP(
         $config['totp_secret'],
         $passwordInForm,
         intval($config['totp_digits'])
     )) {
-        $_SESSION['password'] = 'valid_totp';
+        # TODO: Remove this legacy auth method completely
+        # $_SESSION['password'] = 'valid_totp';
         saveLogin();
     } else {
         $error = 'Incorrect Password';

@@ -1,12 +1,12 @@
 <?php
-require_once("partials/base.php");
+require_once 'partials/base.php';
 
-$title = "Following - " . $title;
+$title = "Following - $title";
 
 include 'partials/header.php';
+require_once 'libs/session.php';
 
 // TODO: Include profile-card, but only tagcloud for user, not all feeds in cache
-
 ?>
 
 <center>
@@ -18,7 +18,7 @@ include 'partials/header.php';
             <!-- <th></th> -->
             <th>Nick</th>
             <th>URL</th>
-            <?php if (isset($_SESSION['password']) && $_SESSION['password'] == "$passwordInConfig") { ?>
+            <?php if (hasValidSession()) { ?>
                 <th>Time ago</th>
             <?php } ?>
         </tr>
@@ -29,13 +29,13 @@ include 'partials/header.php';
                 <td><a href="<?= $baseURL ?>/profile?url=<?= $currentFollower[1] ?>"><?= $currentFollower[0] ?></a></td>
                 <!-- <td><a href="/?twt=<?= $currentFollower[1] ?>"><?= $currentFollower[0] ?></a></td> -->
                 <td><?= $currentFollower[1] ?>
-                    <!-- <?php //if ($validSession) { 
+                    <!-- <?php //if ($validSession) {
                             ?> -->
                     <!-- <a href="?remove_url=<?= $currentFollower[1] ?>">Remove</a> -->
-                    <!-- <?php // } 
+                    <!-- <?php // }
                             ?> -->
                 </td>
-                <?php if (isset($_SESSION['password']) && $_SESSION['password'] == "$passwordInConfig") { ?>
+                <?php if (hasValidSession()) { ?>
                     <td>
                         <?php
                         // Test first if URL is a valid feed:

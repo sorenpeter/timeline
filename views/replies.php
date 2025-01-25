@@ -19,9 +19,11 @@ include_once 'partials/header.php';
 
 include_once 'partials/profile_card.php';
 
-if( isset($_SESSION['password'])) {
+require_once 'libs/session.php';
+
+if (hasValidSession()) {
     include 'views/new_twt.php'; // TODO: Split up new_twt into a view and a partial
-} 
+}
 
 //include_once 'partials/search.php';
 
@@ -31,7 +33,7 @@ include_once 'partials/footer.php';
 
 /*
 
-// Old replies // 
+// Old replies //
 
 <?php
 require_once("partials/base.php");

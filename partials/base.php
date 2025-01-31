@@ -23,10 +23,6 @@ require_once 'libs/hash.php';
 require_once 'libs/Parsedown.php';
 require_once 'libs/load_timezone.php';
 
-// TODO: Move twts per page to config.ini
-// Add a fallback if the number is invalid (it should be between 1 and 999)
-const TWTS_PER_PAGE = 50;
-
 $title = $config['site_title'] ?? "Timeline";
 
 // HACKED by sp@darch.dk
@@ -141,19 +137,6 @@ if (!empty($_GET['hash'])) {
 	$twts = array_reverse($twts, true);
 }
 
-// Pagnation
-
-//$twts_per_page = $config['twts_per_page'];
-
-$page = 1;
-if (!empty($_GET['page'])) {
-	$page = intval($_GET['page']);
-}
-
-// If we should paginate our twts list
-if (!empty($paginateTwts)) {
-	$startingTwt = (($page - 1) * TWTS_PER_PAGE);
-	$twts = array_slice($twts, $startingTwt, TWTS_PER_PAGE);
-}
+// echo "Total twts before filtering: " . count($twts); // Pagnation (moved to pagnation.php)
 
 $baseURL = str_replace("/index.php", "", $_SERVER['SCRIPT_NAME']);

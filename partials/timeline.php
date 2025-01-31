@@ -6,9 +6,13 @@
 <?php }?>
 -->
 
-<?php // echo "count: " . count($twts); ?>
 
-<?php include_once 'partials/search.php'; ?>
+<?php
+
+include_once 'partials/search.php'; 
+include_once 'partials/pagnation.php';
+
+?>
 
 <?php foreach ($twts as $twt) { ?>
 	<article class="post-entry" id="<?=$twt->hash?>">
@@ -51,9 +55,21 @@
 		</div>
 	</article>
 
-<?php }
+<?php } 
 
-include_once 'partials/pagnation.php';
+if ($paginateTwts) { ?>
+
+	<div class="pagnation">
+		<?php if ($page > 1) { ?>
+			<a href="<?= $page_url . $page-1 ?>"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</a>
+		<?php } else { ?>
+			<span style="color: var(--disabled);"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</span>
+		<?php } ?>
+		<strong>&nbsp;<?= $page ?>&nbsp;</strong>
+		<a href="<?= $page_url . $page+1 ?>">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+	</div>
+
+<?php }
 
 require_once 'libs/session.php';
 

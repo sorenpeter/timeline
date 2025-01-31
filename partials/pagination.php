@@ -4,7 +4,7 @@ $maxTwts = $config['twts_per_page'] ?? 50; // Fallback number if twts_per_page n
 
 $totalTwts = count($twts);
 
-if ( ($maxTwts >= $totalTwts) || ($paginateTwts == false) ) {
+if ( ($maxTwts >= $totalTwts) || ($paginateTwts === false) ) {
 	// echo "Only " . $totalTwts . " so no need for pagnation. (max: ". $maxTwts . ")<br>";
 	$paginateTwts = false;
 
@@ -20,7 +20,7 @@ if ( ($maxTwts >= $totalTwts) || ($paginateTwts == false) ) {
 	$startingTwt = (($currentPage - 1) * $maxTwts);
 	$twts = array_slice($twts, $startingTwt, $maxTwts);
 
-	// Fingure out base URL for prev/next links
+	// Figure out base URL for prev/next links
 	$pageURL = $_SERVER['REQUEST_URI'];
 	//echo $pageURL."<hr>";
 

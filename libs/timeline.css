@@ -359,7 +359,7 @@ article small a:hover {
     min-width: 33%;
 }
 
-nav.pagnation {
+nav.pagination {
     display: flex;
     justify-content: center;
     padding: 0.5rem 0;
@@ -406,18 +406,18 @@ nav.pagnation {
 }
 
 
-.pagnation {
+.pagination {
     display: flex;
     justify-content: center;
     margin: 1rem;
 }
 
-.pagnation a {
+.pagination a {
     text-decoration: none;
     background-color: var(--accent-bg);
 }
 
-.pagnation strong {
+.pagination strong {
     padding: 0 1rem;
 }
 

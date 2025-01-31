@@ -9,7 +9,7 @@
 <?php
 
 include_once 'partials/search.php'; 
-include_once 'partials/pagnation.php';
+include_once 'partials/pagination.php';
 
 ?>
 
@@ -58,7 +58,7 @@ include_once 'partials/pagnation.php';
 
 if ($paginateTwts) { ?>
 
-	<div class="pagnation">
+	<div class="pagination">
 		<?php if ($currentPage> 1) { ?>
 			<a href="<?= $pageURL . $currentPage- 1 ?>"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</a>
 		<?php } else { ?>

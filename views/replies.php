@@ -1,6 +1,6 @@
 <?php
 
-//$paginateTwts = true;
+$paginateTwts = true;
 
 if (!empty($_GET['url'])) { // Show twts for some user (Profile view)
     $twtsURL = $_GET['url'];

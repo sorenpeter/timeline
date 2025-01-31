@@ -6,7 +6,6 @@
 <?php }?>
 -->
 
-
 <?php
 
 include_once 'partials/search.php'; 
@@ -60,19 +59,21 @@ include_once 'partials/pagnation.php';
 if ($paginateTwts) { ?>
 
 	<div class="pagnation">
-		<?php if ($page > 1) { ?>
-			<a href="<?= $page_url . $page-1 ?>"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</a>
+		<?php if ($currentPage> 1) { ?>
+			<a href="<?= $pageURL . $currentPage- 1 ?>"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</a>
 		<?php } else { ?>
 			<span style="color: var(--disabled);"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</span>
 		<?php } ?>
-		<strong>&nbsp;<?= $page ?>&nbsp;</strong>
-		<a href="<?= $page_url . $page+1 ?>">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+		<strong>&nbsp;<?= $currentPage /* . " / " . $totalPages */ ?>&nbsp;</strong>
+		<?php if ($currentPage < $totalPages) { ?>
+			<a href="<?= $pageURL . $currentPage+1 ?>">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+		<?php } else { ?>
+			<span style="color: var(--disabled);">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+		<?php } ?>
 	</div>
-
+	
 <?php }
 
-require_once 'libs/session.php';
-
-if (!hasValidSession()) {
-	echo '<center><a href="mailto:' . $config['email'] . '?subject=RE: ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '" class="button">Comment via email</a></center>';
+if (!hasValidSession() && isset($config['email']) ) {
+	echo '<center><a href="mailto:' . $config['email'] . '?subject=RE: ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '" class="button">Reply via email</a></center>';
 }

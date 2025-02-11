@@ -20,7 +20,7 @@ include_once 'partials/pagination.php';
 		</a>
 		<div>
 			<a href="<?=$baseURL?>/profile?url=<?=$twt->mainURL?>" class="author">
-				<strong>@<?=$twt->nick?></strong><?=$twt->domain?>
+				<strong><?=$twt->nick?></strong> (<?=$twt->domain?>)
 			</a>
 
 			<div class="twt-msg">

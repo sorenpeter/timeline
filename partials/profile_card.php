@@ -63,7 +63,7 @@ if ($is_gallery) {
 	  <div>
 
 		  <a href="<?=$profileURL?>" class="author">
-			<strong>@<?=$profile->nick?></strong><?=$profile->domain?>
+			<strong><?=$profile->nick?></strong> (<?=$profile->domain?>)
 		  </a>
 
 			<p><?=$profile->description?></p>

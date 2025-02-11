@@ -475,6 +475,7 @@ function getTwtsFromTwtxtString($url) {
 		}
 
 		// Fallback for nick and url if not set in twtxt.txt
+
 		if ($twtxtData->nick === "") {
 			$str = parse_url($url, PHP_URL_HOST);
 			$str = str_replace("www.", "", $str);
@@ -486,14 +487,18 @@ function getTwtsFromTwtxtString($url) {
 		}
 
 		// Use only nick as handle if nick and domain is the same
+		
 		$twtxtData->domain = parse_url($twtxtData->mainURL, PHP_URL_HOST);
 
+		/*
 		if ($twtxtData->nick === $twtxtData->domain) {
 				$twtxtData->domain = "";
 		} else {
 			$twtxtData->domain = "@".$twtxtData->domain;
 		}
+		*/
 
+		//
 
 		if (!str_starts_with($currentLine, '#')) {
 			$explodedLine = explode("\t", $currentLine);

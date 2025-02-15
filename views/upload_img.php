@@ -131,23 +131,28 @@ $imgs_on_server = glob($media_upload."*.{jpg,jpeg,png,gif}", GLOB_BRACE);
 // Sort image files by date (based on: https://stackoverflow.com/questions/124958/glob-sort-array-of-files-by-last-modified-datetime-stamp
 usort($imgs_on_server, fn($a, $b) => -(filemtime($a) - filemtime($b)));
 
-echo '<table class="center">';
+echo '<center><em>Copy the code for images and paste it into the new message box</em></center>';
 
 foreach ($imgs_on_server as $img) {
 
   $public_file = $config["public_media"] . "/" . basename($img);
-
+/*
   echo '<tr class="preview">';
   echo '<td><a href="'.$public_file.'">';
-      echo '<img src="'.$public_file.'" style="width=50px;">';
+      echo '<img src="'.$public_file.'" style="width:300px; max-height:200px; object-fit: cover;">';
   echo '</a></td>';
 
   //$img = str_replace('../', $base_url, $img);
   echo '<td><code>![]('.$public_file.')</code></td>';
   echo '</tr>';
+*/
+  echo '<section class="upload-grid">';
+  echo '<code>![]('.$public_file.')</code>';
+  echo '<a href="'.$public_file.'"><img src="'.$public_file.'"></a>';
+  echo '</section>';
 }
 
-echo '</table>';
+//echo '</table>';
 
 ?>
 

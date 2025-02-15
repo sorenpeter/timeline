@@ -105,9 +105,10 @@ if (isset($_POST['submit'])) {
 
 <article id="new_twt">
 	<form method="POST">
-		<div id="posting">
-			<small class="right" style="margin-top: 0.25rem ;"><a href="./upload" target="_blank">Upload images</a></small>
-			<div id="toolbar"></div>
+		<div id="posting">	
+			<div id="toolbar">
+				<a href="./upload" target="_blank" class="upload-link" title="Upload images"><i class="fa fa-upload" aria-hidden="true"></i></a>
+			</div>
 			<textarea class="textinput" id="new_post" name="new_post"
 				rows="4" cols="100" autofocus required onfocus="var val=this.value; this.value=''; this.value= val;"
 				placeholder="Your twt"><?= $textareaValue ?></textarea>

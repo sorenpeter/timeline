@@ -359,11 +359,39 @@ article small a:hover {
     min-width: 33%;
 }
 
-nav.pagination {
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem 0;
+#new_twt a.upload-link {
+    float: right;
+    margin-top: -0.1rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+    color: var(--text-light);
 }
+
+#new_twt a.upload-link:hover,
+#new_twt a.upload-link:hover span {
+    color: var(--accent);
+}
+
+/* === Upload Image Form === */
+
+.upload-grid {
+    display: grid;
+    grid-template-columns: 1fr 10rem;
+    grid-gap: 1rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+.upload-grid img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+.upload-grid code {
+}
+
 
 /* === REFRESH === */
 

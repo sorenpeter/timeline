@@ -8,6 +8,8 @@ $title = "Upload - $title";
 
 include_once 'partials/header.php';
 
+if(!isset($config["media_upload"])) exit("<p class='notice'>The path for <code>media_upload</code> is not set in your <code>config.ini</code></p>");
+
 $media_upload = getcwd() . "/" . $config["media_upload"] .  "/";
 
 ?>
@@ -148,7 +150,7 @@ foreach ($imgs_on_server as $img) {
 */
   echo '<section class="upload-grid">';
   echo '<code>![]('.$public_file.')</code>';
-  echo '<a href="'.$public_file.'"><img src="'.$public_file.'"></a>';
+  echo '<a href="'.$public_file.'"><img src="'.$public_file.'" loading="lazy"></a>';
   echo '</section>';
 }
 

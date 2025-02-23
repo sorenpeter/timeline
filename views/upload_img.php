@@ -26,10 +26,12 @@ $media_upload = getcwd() . "/" . $config["media_upload"] .  "/";
 
 // Credits: https://www.geeksforgeeks.org/how-to-select-and-upload-multiple-files-with-html-and-php-using-http-post/
 
+session_start(); // Post-Redirect-Get Pattern based on: https://icodemag.com/prg-pattern-in-php-what-why-and-how/
+
 // Check if form was submitted
 if(isset($_POST['submit'])) {
 
-  echo "<p class='notice'>";
+  $msg = "<p class='notice'>";
 
   // Configure upload directory and allowed file types
   $upload_dir = $media_upload.DIRECTORY_SEPARATOR;
@@ -63,19 +65,19 @@ if(isset($_POST['submit'])) {
 
         // Verify file size - 2MB max
         if ($file_size > $maxsize)    
-          echo "Error: File size is larger than the allowed limit.";
+          $msg .= "Error: File size is larger than the allowed limit. <br>";
 
         // If file with name already exists then append time in
         // front of name of the file to avoid overwriting of file
         if(file_exists($file_path)) {
-          echo "Error uploading {$file_name} - File already exists! <br />";
+          $msg .= "Error uploading {$file_name} - File already exists! <br>";
           // $file_path = $upload_dir.date('Y-m-d_').$file_name;
           
           // if( move_uploaded_file($file_tmpname, $file_path)) {
-          //  echo "{$file_name} successfully uploaded <br />";
+          //  $msg .= "{$file_name} successfully uploaded <br />";
           // }
           // else {         
-          //  echo "Error uploading {$file_name} - File already exists! <br />";
+          //  $msg .= "Error uploading {$file_name} - File already exists! <br />";
           // }
         }
         else {
@@ -86,43 +88,53 @@ if(isset($_POST['submit'])) {
             $public_file = $public_media.basename($file_path);
 
             /*
-                    echo '<table class="center"><tr class="preview">';
-                        echo '<td><a href="'.$public_file.'">';
-                            echo '<img src="'.$public_file.'">';
-                        echo '</a></td>';
+                    $msg .= '<table class="center"><tr class="preview">';
+                        $msg .= '<td><a href="'.$public_file.'">';
+                            $msg .= '<img src="'.$public_file.'">';
+                        $msg .= '</a></td>';
                     
                         //$file = str_replace('../', $base_url, $file);
-                        echo '<td><code>![]('.$public_file.')</code></td>';
-                    echo '</tr></table>';
+                        $msg .= '<td><code>![]('.$public_file.')</code></td>';
+                    $msg .= '</tr></table>';
             */
 
-            echo "<strong>{$file_name}</strong> successfully uploaded<br>";
-            //echo "<img src='{$file_path}' width='48' height='48'>";
-            //echo "<code>![]({$full_url})</code><br />";
-            //echo "<img src=".$file_path." height=200 width=300 />";
+            $msg .= "<strong>{$file_name}</strong> successfully uploaded<br>";
+            //$msg .= "<img src='{$file_path}' width='48' height='48'>";
+            //$msg .= "<code>![]({$full_url})</code><br />";
+            //$msg .= "<img src=".$file_path." height=200 width=300 />";
           }
           else {          
-            echo "Error uploading <strong>{$file_name}</strong><br>";
+            $msg .= "Error uploading <strong>{$file_name}</strong><br>";
           }
         }
       }
       else {
         
         // If file extension not valid
-        echo '<p class="warning">';
-          echo "Error uploading {$file_name} for unknown reason";
-          echo "({$file_ext} file type is not allowed)<br / >";
-        echo '</p>';
+        //$msg .= '<p class="warning">';
+          $msg .= "Error uploading {$file_name} for unknown reason";
+          $msg .= "({$file_ext} file type is not allowed)<br>";
+        //$msg .= '</p>';
       }
     }
   }
   else {
     
     // If no files selected
-    echo "No files selected.";
+    $msg .= "No files selected.<br>";
   }
 
-  echo "</p>";
+  $msg .= "</p>";
+
+  $_SESSION["message"] = $msg;
+  header('Location: '.$_SERVER['REQUEST_URI']);
+  exit;
+}
+
+// Show message store in session
+if (isset($_SESSION["message"])) {
+  echo $_SESSION["message"];
+  unset($_SESSION["message"]);
 }
 
 

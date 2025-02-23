@@ -27,8 +27,6 @@ $media_upload = getcwd() . "/" . $config["media_upload"] .  "/";
 // Credits: https://www.geeksforgeeks.org/how-to-select-and-upload-multiple-files-with-html-and-php-using-http-post/
 
 session_start(); // Post-Redirect-Get Pattern based on: https://icodemag.com/prg-pattern-in-php-what-why-and-how/
-
-// Check if form was submitted
 if(isset($_POST['submit'])) {
 
   $msg = "<p class='notice'>";
@@ -70,7 +68,7 @@ if(isset($_POST['submit'])) {
         // If file with name already exists then append time in
         // front of name of the file to avoid overwriting of file
         if(file_exists($file_path)) {
-          $msg .= "Error uploading {$file_name} - File already exists! <br>";
+          $msg .= "Error uploading <strong>{$file_name}</strong> - File already exists! <br>";
           // $file_path = $upload_dir.date('Y-m-d_').$file_name;
           
           // if( move_uploaded_file($file_tmpname, $file_path)) {
@@ -112,7 +110,7 @@ if(isset($_POST['submit'])) {
         
         // If file extension not valid
         //$msg .= '<p class="warning">';
-          $msg .= "Error uploading {$file_name} for unknown reason";
+          $msg .= "Error uploading <strong>{$file_name}</strong> for unknown reason";
           $msg .= "({$file_ext} file type is not allowed)<br>";
         //$msg .= '</p>';
       }

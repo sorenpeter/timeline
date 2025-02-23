@@ -17,6 +17,8 @@ $public_txt_url = $config['public_txt_url'];
 $timezone = $config['timezone'];
 require_once 'libs/load_timezone.php';
 
+//session_start(); // Post-Redirect-Get Pattern based on: https://icodemag.com/prg-pattern-in-php-what-why-and-how/
+
 if (isset($_POST['submit'])) {
 	$new_post = filter_input(INPUT_POST, 'new_post');
 	$new_post = trim($new_post);
@@ -31,10 +33,12 @@ if (isset($_POST['submit'])) {
 	// Check if we have a point to insert the next Twt
 	define('NEW_TWT_MARKER', "#~~~#\n");
 
-	if (!file_exists($txt_file_path)) {
-		echo 'twtxt.txt file does not exist. Check your config.';
-		exit;
-	}
+	// if (!file_exists($txt_file_path)) {
+	// 	echo '';
+	// 	exit;
+	// }
+
+	if(!file_exists($txt_file_path)) exit("<p class='notice'>twtxt.txt file does not exist. Check your <code>config.ini</code></p>");
 
 	$contents = file_get_contents($txt_file_path);
 
@@ -76,6 +80,10 @@ if (isset($_POST['submit'])) {
 	//header('Refresh:0; url=.');
 	//header("Location: refresh?url=".$public_txt_url); // Trying to fix issue with douple posting
 	//exit;
+
+	//$_SESSION["message"] = $msg;
+	header('Location: '.$_SERVER['QUERY_STRING']);
+	exit;
 
 } else {
 	require_once "partials/base.php";

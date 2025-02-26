@@ -40,6 +40,8 @@ $routes = [
     '/post/([a-zA-Z0-9]{7})' => 'post.php', // matches only twtHash of exactly 7 alphanumeric characters
     '/upload' => 'upload_img.php',
     '/webmention' => 'webmention_endpoint.php',
+
+    '/admin/config-checker' => 'admin/config_checker.php',
     //'/thumb' => 'thumb.php',
     //'/profile/([a-zA-Z0-9_-]+)' => 'profile.php',
 

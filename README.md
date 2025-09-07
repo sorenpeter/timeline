@@ -15,7 +15,7 @@ It then gives you an interface for posting words, links (and images too, soon), 
 
 For the social features timeline are using the [twtxt](https://twtxt.readthedocs.io)  format and most of the twtxt Extensions developed in the context of [Yarn.social](https://yarn.social/).
 
-timeline also support its own flavor  of WebMentions, so it is possible  to be notified about `@mentions` from feeds you are not currently/yet following.
+timeline also support its own flavor of [WebMentions](https://indieweb.org/Webmention), so it is possible to be notified about `@mentions` from feeds you are not currently/yet following.
 You can also search for others feeds using [WebFinger](https://webfinger.net/), if they got that set up on their servser, like it's the case for most yarn.social pods.
 
 My visions for timeline is to bring back the fun and quirkiness  of bygone sites such as Geocities of the 1990s and Myspace of the 2000s, that enables creating a personalized  place for you to express yourself online and also being able to follow others who inspire you.
